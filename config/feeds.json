@@ -1,0 +1,21 @@
+{
+  "_comentario": "Feeds RSS gratuitos exibidos no painel de noticias. Para adicionar/remover: edite a lista 'feeds'. Cada item precisa de name, categoria e url. Apenas titulo+link sao exibidos (nunca o texto completo da materia).",
+  "max_itens": 18,
+  "feeds": [
+    {
+      "name": "Agronegocio (Google News)",
+      "categoria": "Agro",
+      "url": "https://news.google.com/rss/search?q=agroneg%C3%B3cio%20OR%20soja%20OR%20milho%20OR%20%22boi%20gordo%22&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    },
+    {
+      "name": "Energia Solar (Google News)",
+      "categoria": "Energia",
+      "url": "https://news.google.com/rss/search?q=%22energia%20solar%22%20OR%20fotovoltaica%20OR%20%22gera%C3%A7%C3%A3o%20distribu%C3%ADda%22&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    },
+    {
+      "name": "Economia e Juros (Google News)",
+      "categoria": "Economia",
+      "url": "https://news.google.com/rss/search?q=Selic%20OR%20IPCA%20OR%20d%C3%B3lar%20OR%20%22taxa%20de%20juros%22&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "_comentario": "Configuracoes gerais do coletor e do painel. Edite com cuidado (JSON valido).",
+  "solar_location": {
+    "name": "Sorriso-MT",
+    "lat": -12.545,
+    "lon": -55.711,
+    "_comentario": "Ponto usado para irradiacao solar. Troque lat/lon para a sua regiao."
+  },
+  "history_days": 400,
+  "timezone": "America/Sao_Paulo",
+  "manual_overrides": {
+    "_comentario": "Usados SOMENTE quando a fonte automatica falha. Ajuste o valor e a data quando quiser.",
+    "pld": {
+      "value": 150.0,
+      "as_of": "2026-11-01",
+      "note": "Valor configurado manualmente (fonte automatica de PLD indisponivel)."
+    },
+    "boi_gordo": {
+      "value": 310.0,
+      "as_of": "2026-11-01",
+      "note": "Valor configurado manualmente (fallback CEPEA)."
+    }
+  }
+}

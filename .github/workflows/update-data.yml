@@ -1,0 +1,54 @@
+name: Atualizar dados do painel
+
+# Executa automaticamente a cada 6 horas (e permite rodar manualmente).
+# Coleta os indicadores, atualiza data/*.json e faz commit de volta no repo.
+# O GitHub Pages (servindo o branch) republica o site a cada commit.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # 00h, 06h, 12h, 18h UTC
+  workflow_dispatch: {}       # botao "Run workflow" na aba Actions
+  push:
+    branches: [ main ]
+    paths:
+      - "collector/**"
+      - "config/**"
+      - ".github/workflows/update-data.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r collector/requirements.txt
+
+      - name: Coletar dados
+        run: python collector/collect.py
+
+      - name: Commit dos dados atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json data/history.json
+          if git diff --staged --quiet; then
+            echo "Sem mudancas nos dados."
+          else
+            git commit -m "chore(dados): atualizacao automatica $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

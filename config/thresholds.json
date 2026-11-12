@@ -1,0 +1,97 @@
+{
+  "_comentario": "Motor de regras das RECOMENDACOES. Cada regra dispara quando TODAS as condicoes em 'quando' sao verdadeiras. Edite limiar/operador/campo para calibrar. Campos validos: 'value' (valor atual), 'changes.day', 'changes.month', 'changes.year' (variacao em % ou p.p. conforme o indicador). Operadores: '<', '<=', '>', '>=', '==', '!='. 'indicador' deve ser uma chave existente (selic, cdi, ipca, usd, eur, soja, milho, cafe, acucar, algodao, boi_gordo, pld, solar).",
+  "disclaimer": "Leituras automaticas geradas por um motor de regras a partir dos dados mais recentes. NAO constituem recomendacao ou aconselhamento financeiro.",
+  "regras": [
+    {
+      "id": "selic_queda_capex",
+      "titulo": "Janela melhor para financiar expansao/CAPEX",
+      "mensagem": "A Selic esta em tendencia de queda. Credito de investimento tende a ficar mais barato — momento mais favoravel para financiar expansao, maquinario ou projetos solares.",
+      "categoria": "Credito e juros",
+      "severidade": "positivo",
+      "quando": [
+        { "indicador": "selic", "campo": "changes.month", "operador": "<", "limiar": 0 }
+      ]
+    },
+    {
+      "id": "selic_alta_rendafixa",
+      "titulo": "Selic em patamar alto: cautela com alavancagem",
+      "mensagem": "Com a Selic elevada, o custo de capital e alto: avalie priorizar caixa/renda fixa e adiar divida nova nao essencial. Reforce o payback exigido de novos projetos.",
+      "categoria": "Credito e juros",
+      "severidade": "alerta",
+      "quando": [
+        { "indicador": "selic", "campo": "value", "operador": ">=", "limiar": 12 }
+      ]
+    },
+    {
+      "id": "soja_alta_dolar_export",
+      "titulo": "Momento favoravel para exportacao / travar preco da soja",
+      "mensagem": "Soja em alta combinada com dolar valorizado melhora a receita em reais da exportacao. Considere travar preco (hedge) de parte da producao.",
+      "categoria": "Comercializacao",
+      "severidade": "positivo",
+      "quando": [
+        { "indicador": "soja", "campo": "changes.month", "operador": ">", "limiar": 0 },
+        { "indicador": "usd", "campo": "changes.month", "operador": ">", "limiar": 0 }
+      ]
+    },
+    {
+      "id": "dolar_alta_insumos",
+      "titulo": "Dolar em alta: atencao a insumos importados",
+      "mensagem": "A valorizacao do dolar encarece fertilizantes, defensivos e equipamentos importados. Reavalie compras de insumos e contratos em moeda estrangeira.",
+      "categoria": "Custos",
+      "severidade": "alerta",
+      "quando": [
+        { "indicador": "usd", "campo": "changes.month", "operador": ">", "limiar": 3 }
+      ]
+    },
+    {
+      "id": "pld_alto_solar",
+      "titulo": "Energia cara: payback de projeto solar tende a melhorar",
+      "mensagem": "PLD/preco da energia elevado aumenta a economia gerada por geracao propria. O payback de projetos solares tende a encurtar — bom momento para avaliar investimento.",
+      "categoria": "Energia",
+      "severidade": "positivo",
+      "quando": [
+        { "indicador": "pld", "campo": "value", "operador": ">", "limiar": 200 }
+      ]
+    },
+    {
+      "id": "solar_irradiacao_alta",
+      "titulo": "Alta irradiacao na regiao: boa geracao esperada",
+      "mensagem": "A irradiacao solar recente na regiao configurada esta alta, indicando boa geracao fotovoltaica no periodo.",
+      "categoria": "Energia",
+      "severidade": "positivo",
+      "quando": [
+        { "indicador": "solar", "campo": "value", "operador": ">", "limiar": 5.5 }
+      ]
+    },
+    {
+      "id": "ipca_acelerando",
+      "titulo": "Inflacao acelerando: atencao a custos e juros",
+      "mensagem": "O IPCA mensal subiu em relacao ao mes anterior. Pressao inflacionaria pode adiar cortes de juros e elevar custos — reveja precos e contratos indexados.",
+      "categoria": "Macro",
+      "severidade": "alerta",
+      "quando": [
+        { "indicador": "ipca", "campo": "changes.month", "operador": ">", "limiar": 0 }
+      ]
+    },
+    {
+      "id": "milho_queda_racao",
+      "titulo": "Milho em queda: custo de racao/confinamento menor",
+      "mensagem": "A queda do milho reduz o custo de racao e confinamento. Momento favoravel para quem compra milho como insumo (pecuaria, aves, suinos).",
+      "categoria": "Custos",
+      "severidade": "positivo",
+      "quando": [
+        { "indicador": "milho", "campo": "changes.month", "operador": "<", "limiar": 0 }
+      ]
+    },
+    {
+      "id": "cafe_alta_hedge",
+      "titulo": "Cafe em alta forte: avalie travar preco",
+      "mensagem": "Alta expressiva do cafe no mes. Pode ser um bom momento para travar preco (hedge) de parte da producao e garantir margem.",
+      "categoria": "Comercializacao",
+      "severidade": "positivo",
+      "quando": [
+        { "indicador": "cafe", "campo": "changes.month", "operador": ">", "limiar": 5 }
+      ]
+    }
+  ]
+}

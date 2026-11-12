@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Agro + Energia Solar</title>
+  <meta name="description" content="Indicadores de agronegocio e energia solar no Brasil, com atualizacao automatica e fontes gratuitas." />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__logo" aria-hidden="true">🌾⚡</span>
+        <div>
+          <h1 class="brand__title">Painel Agro + Energia Solar</h1>
+          <p class="brand__sub">Indicadores para decisão — Brasil</p>
+        </div>
+      </div>
+      <div class="topbar__actions">
+        <span id="lastUpdate" class="last-update" title="Data/hora da última coleta dos dados">—</span>
+        <button id="themeToggle" class="btn-icon" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="statusBanner" class="banner" hidden></div>
+
+    <!-- RECOMENDAÇÕES / INSIGHTS -->
+    <section class="section" id="insightsSection">
+      <div class="section__head">
+        <h2 class="section__title">Recomendações &amp; Insights</h2>
+        <span class="section__hint">Leituras automáticas por motor de regras</span>
+      </div>
+      <div id="insights" class="insights"></div>
+      <p id="insightsDisclaimer" class="disclaimer"></p>
+    </section>
+
+    <!-- CARDS DE INDICADORES -->
+    <section class="section" id="cardsSection">
+      <div class="section__head">
+        <h2 class="section__title">Visão geral</h2>
+        <span class="section__hint">Clique em um card para ver o histórico</span>
+      </div>
+      <div id="groups"></div>
+    </section>
+
+    <!-- NOTÍCIAS -->
+    <section class="section" id="newsSection">
+      <div class="section__head">
+        <h2 class="section__title">Notícias</h2>
+        <span class="section__hint">Agro · Energia · Economia</span>
+      </div>
+      <div id="news" class="news"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p id="footerUpdate" class="footer__update">—</p>
+      <p class="footer__note">
+        Fontes gratuitas: Banco Central (SGS), AwesomeAPI, Yahoo Finance, CEPEA/ESALQ,
+        Open-Meteo e Google News RSS. Preços de commodities em <strong>futuros</strong> quando
+        indicado. As recomendações são <strong>leituras automáticas</strong> geradas por regras —
+        não constituem recomendação ou aconselhamento financeiro.
+      </p>
+    </div>
+  </footer>
+
+  <!-- MODAL DE GRÁFICO -->
+  <div id="chartModal" class="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="chartTitle">
+      <div class="modal__head">
+        <h3 id="chartTitle" class="modal__title">—</h3>
+        <button class="btn-icon" type="button" data-close aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal__periods" id="chartPeriods"></div>
+      <div class="modal__chartwrap"><canvas id="chartCanvas"></canvas></div>
+      <div class="modal__stats" id="chartStats"></div>
+      <p class="modal__source" id="chartSource"></p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+  <script src="assets/js/format.js" defer></script>
+  <script src="assets/js/recommendations.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
