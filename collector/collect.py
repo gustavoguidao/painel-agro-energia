@@ -5,8 +5,10 @@ Coletor de dados do Dashboard Agro + Energia Solar.
 Roda no GitHub Actions (cron) ou localmente. Para cada indicador:
   - busca a serie historica na fonte gratuita,
   - mescla no historico versionado (data/history.json),
-  - calcula valor atual e variacoes (dia/mes/ano),
-  - em caso de falha, usa cache ou um valor configuravel (nunca inventa, nunca quebra).
+  - calcula valor atual e variacoes coerentes com a frequencia da serie,
+  - propaga o estado "desatualizado" do insumo mais velho para os valores derivados,
+  - em caso de falha, usa cache marcado como desatualizado ou mostra "sem dado".
+    NUNCA inventa, interpola ou preenche em silencio.
 
 Gera:
   data/latest.json   -> valores atuais, variacoes, noticias, metadados
@@ -15,11 +17,13 @@ Gera:
 Para ADICIONAR/REMOVER um indicador: edite a lista REGISTRY mais abaixo.
 Para ADICIONAR/REMOVER um feed de noticias: edite config/feeds.json.
 Para ajustar limiares das recomendacoes: edite config/thresholds.json.
+
+Datas: todas em horario de Brasilia (BRT). No GitHub Actions o relogio e UTC,
+entao usamos today_brt() em vez de date.today().
 """
 
 import json
 import os
-import re
 import sys
 import traceback
 from datetime import date, datetime, timedelta, timezone
@@ -34,15 +38,21 @@ except Exception:  # pragma: no cover
     from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
 # ----------------------------------------------------------------------------
-# Caminhos
+# Caminhos / constantes
 # ----------------------------------------------------------------------------
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_DIR = os.path.join(ROOT, "config")
 DATA_DIR = os.path.join(ROOT, "data")
 
 BRT = timezone(timedelta(hours=-3))  # horario de Brasilia (sem DST desde 2019)
-
 HTTP_TIMEOUT = 25
+
+# Idade maxima (dias) que um dado pode ter antes de ser "fonte velha" (padrao por frequencia).
+MAX_IDADE_PADRAO = {"daily": 4, "weekly": 10, "monthly": 45}
+
+
+def today_brt():
+    return datetime.now(BRT).date()
 
 
 # ----------------------------------------------------------------------------
@@ -51,7 +61,7 @@ HTTP_TIMEOUT = 25
 def make_session():
     s = requests.Session()
     retry = Retry(
-        total=3,
+        total=4,
         backoff_factor=1.5,
         status_forcelist=[429, 500, 502, 503, 504],
         allowed_methods=["GET"],
@@ -95,23 +105,31 @@ def merge_series(old, new, max_points=1200):
     return merged[-max_points:]
 
 
-def value_on_or_before(series, target_iso):
+def val_at_or_before(series, target_iso):
     chosen = None
     for p in series:
         if p["date"] <= target_iso:
             chosen = p
         else:
             break
-    return chosen
+    return chosen["value"] if chosen else None
 
 
-def compute_changes(series, change_type):
-    """Variacao dia/mes/ano. 'pct' = percentual; 'pp' = pontos (diferenca)."""
-    out = {"day": None, "month": None, "year": None}
+def compute_changes(series, change_type, frequency):
+    """Variacoes coerentes com a frequencia da serie.
+
+    - daily  : dia (ponto anterior), mes (~30d), trimestre (~90d), ano (~365d)
+    - weekly : semana (ponto anterior), mes (~28d), trimestre (~91d), ano (~365d); sem 'dia'
+    - monthly: mes (mes anterior), trimestre (3 pontos), ano (12 pontos); sem 'dia'
+
+    'pct' = variacao percentual; 'pp' = diferenca em pontos.
+    """
+    out = {"day": None, "week": None, "month": None, "quarter": None, "year": None}
     if not series:
         return out
     cur = series[-1]["value"]
     cur_date = _d(series[-1]["date"])
+    prev_pt = series[-2]["value"] if len(series) >= 2 else None
 
     def diff(prev_val):
         if prev_val is None or cur is None:
@@ -122,25 +140,54 @@ def compute_changes(series, change_type):
             return None
         return round((cur - prev_val) / prev_val * 100, 2)
 
-    # dia = ponto anterior distinto
-    if len(series) >= 2:
-        out["day"] = diff(series[-2]["value"])
-    # mes ~30 dias; ano ~365 dias
-    m = value_on_or_before(series, (cur_date - timedelta(days=30)).isoformat())
-    if m:
-        out["month"] = diff(m["value"])
-    y = value_on_or_before(series, (cur_date - timedelta(days=365)).isoformat())
-    if y:
-        out["year"] = diff(y["value"])
+    def back(days):
+        return diff(val_at_or_before(series, (cur_date - timedelta(days=days)).isoformat()))
+
+    def nth_back(n):
+        return diff(series[-1 - n]["value"]) if len(series) >= n + 1 else None
+
+    if frequency == "monthly":
+        out["month"] = diff(prev_pt)
+        out["quarter"] = nth_back(3)
+        out["year"] = nth_back(12)
+    elif frequency == "weekly":
+        out["week"] = diff(prev_pt)
+        out["month"] = back(28)
+        out["quarter"] = back(91)
+        out["year"] = back(365)
+    else:  # daily
+        out["day"] = diff(prev_pt)
+        out["month"] = back(30)
+        out["quarter"] = back(90)
+        out["year"] = back(365)
     return out
+
+
+def ipca_acum_12m(series):
+    """Acumulado dos ultimos 12 meses a partir da serie mensal do IPCA (valores em % no mes)."""
+    if len(series) < 12:
+        return None
+    fator = 1.0
+    for p in series[-12:]:
+        fator *= 1 + p["value"] / 100.0
+    return round((fator - 1) * 100, 2)
+
+
+def idade_dias(as_of_iso):
+    if not as_of_iso:
+        return None
+    try:
+        return (today_brt() - _d(as_of_iso)).days
+    except Exception:
+        return None
 
 
 # ----------------------------------------------------------------------------
 # FONTES
 # ----------------------------------------------------------------------------
 def fetch_bcb_sgs(s, cfg, code, transform=None):
-    """Banco Central - API SGS (JSON). Retorna serie [{date,value}]."""
-    end = date.today()
+    """Banco Central - API SGS (JSON). Retorna serie [{date,value}] em dias uteis."""
+    end = today_brt()
     start = end - timedelta(days=cfg["history_days"] + 5)
     url = f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.{code}/dados"
     params = {
@@ -169,39 +216,25 @@ def cdi_annualize(daily_pct):
     return (((1 + daily_pct / 100) ** 252) - 1) * 100
 
 
-def fetch_awesome_fx(s, cfg, pair):
-    """AwesomeAPI - cotacao diaria. pair ex.: 'USD-BRL'. Ultimo ponto e quase tempo real."""
-    n = min(cfg["history_days"], 360)  # endpoint diario limita o historico
-    url = f"https://economia.awesomeapi.com.br/json/daily/{pair}/{n}"
-    raw = get_json(s, url)
-    out = []
-    for row in raw:
-        try:
-            ts = int(row["timestamp"])
-            dt = datetime.fromtimestamp(ts, tz=BRT).date().isoformat()
-            v = float(row["bid"])
-            out.append({"date": dt, "value": round(v, 4)})
-        except Exception:
-            continue
-    if not out:
-        raise ValueError("serie FX vazia")
-    return out
-
-
 def fetch_commodity(s, cfg, yahoo_symbol, stooq_symbol=None):
-    """Futuros via Yahoo Finance (chart API). Fallback: Stooq CSV."""
+    """Futuros via Yahoo Finance (chart API). Fallback: Stooq CSV.
+    Descarta a barra parcial do dia corrente (pregao em andamento): mantem so fechamentos."""
+    hoje = today_brt().isoformat()
     # 1) Yahoo
     try:
         url = f"https://query1.finance.yahoo.com/v8/finance/chart/{yahoo_symbol}"
         j = get_json(s, url, params={"range": "1y", "interval": "1d"})
         res = j["chart"]["result"][0]
         ts = res["timestamp"]
-        closes = res["indicators"]["quote"][0]["close"]
+        q = res["indicators"]["quote"][0]
+        closes = q["close"]
         out = []
         for t, c in zip(ts, closes):
             if c is None:
                 continue
             dt = datetime.fromtimestamp(int(t), tz=BRT).date().isoformat()
+            if dt >= hoje:
+                continue  # ignora a barra parcial do pregao de hoje
             out.append({"date": dt, "value": round(float(c), 4)})
         if out:
             return out
@@ -216,6 +249,8 @@ def fetch_commodity(s, cfg, yahoo_symbol, stooq_symbol=None):
             if len(parts) < 5:
                 continue
             try:
+                if parts[0] >= hoje:
+                    continue
                 out.append({"date": parts[0], "value": round(float(parts[4]), 4)})
             except Exception:
                 continue
@@ -225,62 +260,31 @@ def fetch_commodity(s, cfg, yahoo_symbol, stooq_symbol=None):
 
 
 def fetch_solar(s, cfg):
-    """Irradiacao solar (soma de radiacao de ondas curtas) via Open-Meteo. MJ/m2 -> kWh/m2/dia."""
+    """Irradiacao solar (soma de radiacao de ondas curtas) via Open-Meteo. MJ/m2 -> kWh/m2/dia.
+    Usa SO o arquivo historico (observado); nao grava a previsao como se fosse dado realizado."""
     loc = cfg["solar_location"]
-    end = date.today()
+    end = today_brt()
     start = end - timedelta(days=cfg["history_days"])
     pts = {}
-    # historico (archive tem ~2-5 dias de atraso)
-    try:
-        j = get_json(s, "https://archive-api.open-meteo.com/v1/archive", params={
-            "latitude": loc["lat"], "longitude": loc["lon"],
-            "start_date": start.isoformat(), "end_date": end.isoformat(),
-            "daily": "shortwave_radiation_sum", "timezone": "auto",
-        })
-        for t, v in zip(j["daily"]["time"], j["daily"]["shortwave_radiation_sum"]):
-            if v is not None:
-                pts[t] = v / 3.6
-    except Exception:
-        pass
-    # dias recentes via forecast (preenche a ponta)
-    try:
-        j = get_json(s, "https://api.open-meteo.com/v1/forecast", params={
-            "latitude": loc["lat"], "longitude": loc["lon"],
-            "daily": "shortwave_radiation_sum", "past_days": 31, "forecast_days": 1,
-            "timezone": "auto",
-        })
-        for t, v in zip(j["daily"]["time"], j["daily"]["shortwave_radiation_sum"]):
-            if v is not None:
-                pts[t] = v / 3.6
-    except Exception:
-        pass
+    j = get_json(s, "https://archive-api.open-meteo.com/v1/archive", params={
+        "latitude": loc["lat"], "longitude": loc["lon"],
+        "start_date": start.isoformat(), "end_date": end.isoformat(),
+        "daily": "shortwave_radiation_sum", "timezone": "auto",
+    })
+    for t, v in zip(j["daily"]["time"], j["daily"]["shortwave_radiation_sum"]):
+        if v is not None:
+            pts[t] = v / 3.6
     if not pts:
         raise ValueError("irradiacao solar indisponivel")
     return [{"date": t, "value": round(pts[t], 3)} for t in sorted(pts)]
 
 
-def fetch_cepea_boi(s, cfg):
-    """Best-effort: indicador Boi Gordo CEPEA/B3 (R$/@). Fallback -> override manual."""
-    url = "https://www.cepea.esalq.usp.br/br/indicador/boi-gordo.aspx"
-    html = get_text(s, url)
-    # procura um valor no formato brasileiro proximo a "Indicador"
-    m = re.search(r"Indicador[\s\S]{0,400}?R\$\s*([\d\.]+,\d{2})", html)
-    if not m:
-        m = re.search(r"([\d]{3}\.[\d]{2}|[\d]{3},\d{2})", html)
-    if not m:
-        raise ValueError("nao foi possivel extrair o indicador CEPEA")
-    v = float(m.group(1).replace(".", "").replace(",", "."))
-    today = date.today().isoformat()
-    return [{"date": today, "value": round(v, 2)}]
-
-
 def fetch_ons_cmo(s, cfg, submercado="SE"):
-    """PLD/preco de energia via ONS - CMO Semanal (Custo Marginal de Operacao, base do PLD).
-    CSV publico e estavel por ano. Usa a coluna val_cmomediasemanal do submercado escolhido
-    (SE/CO por padrao). Se falhar, o coletor cai no valor manual de config/settings.json."""
-    years = [date.today().year, date.today().year - 1]
+    """CMO Semanal (ONS) - Custo Marginal de Operacao, R$/MWh, por submercado.
+    NAO e o PLD: o PLD e o CMO limitado por piso/teto regulatorios (ver Fase 4)."""
+    anos = [today_brt().year, today_brt().year - 1]
     pts = {}
-    for y in years:
+    for y in anos:
         url = f"https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cmo_se/CMO_SEMANAL_{y}.csv"
         try:
             txt = get_text(s, url)
@@ -309,72 +313,81 @@ def fetch_ons_cmo(s, cfg, submercado="SE"):
                 continue
             pts[d] = v
     if not pts:
-        raise ValueError("CMO/PLD (ONS) indisponivel")
+        raise ValueError("CMO (ONS) indisponivel")
     return [{"date": d, "value": round(pts[d], 2)} for d in sorted(pts)]
+
+
+def fetch_sem_fonte(s, cfg):
+    """Placeholder honesto: indicador sem fonte automatica gratuita no momento."""
+    raise ValueError("sem fonte automatica")
 
 
 # ----------------------------------------------------------------------------
 # REGISTRO DE INDICADORES  (adicione/remova itens aqui)
+#   frequency: daily | weekly | monthly  (define como as variacoes sao calculadas)
+#   rebuild:   True  -> substitui o historico pela serie da fonte (purga pontos antigos)
 # ----------------------------------------------------------------------------
 REGISTRY = [
     # --- Macro e juros ---
     {"key": "selic", "label": "Selic (meta)", "unit": "% a.a.", "group": "macro",
-     "change_type": "pp", "source": "BCB SGS 432",
+     "change_type": "pp", "frequency": "daily", "source": "BCB SGS 432",
      "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json",
      "fetch": lambda s, c: fetch_bcb_sgs(s, c, 432)},
     {"key": "cdi", "label": "CDI (anualizado)", "unit": "% a.a.", "group": "macro",
-     "change_type": "pp", "source": "BCB SGS 12 (anualizado)",
+     "change_type": "pp", "frequency": "daily", "source": "BCB SGS 12 (anualizado)",
      "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?formato=json",
      "fetch": lambda s, c: fetch_bcb_sgs(s, c, 12, transform=cdi_annualize)},
-    {"key": "ipca", "label": "IPCA (mensal)", "unit": "% no mes", "group": "macro",
-     "change_type": "pp", "source": "BCB SGS 433",
+    {"key": "ipca", "label": "IPCA (mensal)", "unit": "% no mês", "group": "macro",
+     "change_type": "pp", "frequency": "monthly", "source": "BCB SGS 433",
      "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json",
      "fetch": lambda s, c: fetch_bcb_sgs(s, c, 433)},
 
-    # --- Cambio ---
-    {"key": "usd", "label": "Dolar (USD/BRL)", "unit": "R$", "group": "cambio",
-     "change_type": "pct", "source": "AwesomeAPI (USD-BRL)",
-     "source_url": "https://economia.awesomeapi.com.br/json/last/USD-BRL",
-     "fetch": lambda s, c: fetch_awesome_fx(s, c, "USD-BRL")},
-    {"key": "eur", "label": "Euro (EUR/BRL)", "unit": "R$", "group": "cambio",
-     "change_type": "pct", "source": "AwesomeAPI (EUR-BRL)",
-     "source_url": "https://economia.awesomeapi.com.br/json/last/EUR-BRL",
-     "fetch": lambda s, c: fetch_awesome_fx(s, c, "EUR-BRL")},
+    # --- Câmbio (PTAX do Banco Central, dias úteis) ---
+    {"key": "usd", "label": "Dólar (PTAX venda)", "unit": "R$", "group": "cambio",
+     "change_type": "pct", "frequency": "daily", "rebuild": True, "source": "BCB PTAX (SGS 1)",
+     "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json",
+     "fetch": lambda s, c: fetch_bcb_sgs(s, c, 1)},
+    {"key": "eur", "label": "Euro (PTAX venda)", "unit": "R$", "group": "cambio",
+     "change_type": "pct", "frequency": "daily", "rebuild": True, "source": "BCB PTAX (SGS 21619)",
+     "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21619/dados?formato=json",
+     "fetch": lambda s, c: fetch_bcb_sgs(s, c, 21619)},
 
-    # --- Commodities agro (futuros; unidade indicada) ---
+    # --- Commodities agro (futuros de Chicago/ICE; paridade, não preço de praça) ---
     {"key": "soja", "label": "Soja (futuro CBOT)", "unit": "US¢/bushel", "group": "commodities",
-     "change_type": "pct", "source": "Yahoo Finance ZS=F",
+     "change_type": "pct", "frequency": "daily", "drop_today": True, "source": "Yahoo Finance ZS=F",
      "source_url": "https://finance.yahoo.com/quote/ZS=F",
      "fetch": lambda s, c: fetch_commodity(s, c, "ZS=F", "zs.f")},
     {"key": "milho", "label": "Milho (futuro CBOT)", "unit": "US¢/bushel", "group": "commodities",
-     "change_type": "pct", "source": "Yahoo Finance ZC=F",
+     "change_type": "pct", "frequency": "daily", "drop_today": True, "source": "Yahoo Finance ZC=F",
      "source_url": "https://finance.yahoo.com/quote/ZC=F",
      "fetch": lambda s, c: fetch_commodity(s, c, "ZC=F", "zc.f")},
     {"key": "cafe", "label": "Café (futuro ICE)", "unit": "US¢/lb", "group": "commodities",
-     "change_type": "pct", "source": "Yahoo Finance KC=F",
+     "change_type": "pct", "frequency": "daily", "drop_today": True, "source": "Yahoo Finance KC=F",
      "source_url": "https://finance.yahoo.com/quote/KC=F",
      "fetch": lambda s, c: fetch_commodity(s, c, "KC=F", "kc.f")},
     {"key": "acucar", "label": "Açúcar (futuro ICE #11)", "unit": "US¢/lb", "group": "commodities",
-     "change_type": "pct", "source": "Yahoo Finance SB=F",
+     "change_type": "pct", "frequency": "daily", "drop_today": True, "source": "Yahoo Finance SB=F",
      "source_url": "https://finance.yahoo.com/quote/SB=F",
      "fetch": lambda s, c: fetch_commodity(s, c, "SB=F", "sb.f")},
     {"key": "algodao", "label": "Algodão (futuro ICE)", "unit": "US¢/lb", "group": "commodities",
-     "change_type": "pct", "source": "Yahoo Finance CT=F",
+     "change_type": "pct", "frequency": "daily", "drop_today": True, "source": "Yahoo Finance CT=F",
      "source_url": "https://finance.yahoo.com/quote/CT=F",
      "fetch": lambda s, c: fetch_commodity(s, c, "CT=F", "ct.f")},
-    {"key": "boi_gordo", "label": "Boi gordo (CEPEA/B3)", "unit": "R$/@", "group": "commodities",
-     "change_type": "pct", "source": "CEPEA/ESALQ (a vista)",
-     "source_url": "https://www.cepea.esalq.usp.br/br/indicador/boi-gordo.aspx",
-     "fetch": lambda s, c: fetch_cepea_boi(s, c)},
+    {"key": "boi_gordo", "label": "Boi gordo", "unit": "R$/@", "group": "commodities",
+     "change_type": "pct", "frequency": "weekly", "source": "sem fonte automática",
+     "source_url": "https://www.conab.gov.br",
+     "note": "Sem fonte automática no momento (scraping do CEPEA removido por licença). "
+             "Fonte regional (Conab) prevista na próxima fase.",
+     "fetch": fetch_sem_fonte},
 
     # --- Energia ---
-    {"key": "pld", "label": "CMO/PLD (SE/CO)", "unit": "R$/MWh", "group": "energia",
-     "change_type": "pct", "source": "ONS – CMO Semanal (SE/CO)",
+    {"key": "cmo", "label": "CMO semanal (ONS) — SE/CO", "unit": "R$/MWh", "group": "energia",
+     "change_type": "pct", "frequency": "weekly", "source": "ONS — CMO Semanal (SE/CO)",
      "source_url": "https://dados.ons.org.br/dataset/cmo-semanal",
-     "note": "Custo Marginal de Operação semanal (base do PLD).",
+     "note": "Custo Marginal de Operação (não é o PLD; o PLD respeita piso/teto regulatórios).",
      "fetch": lambda s, c: fetch_ons_cmo(s, c, "SE")},
     {"key": "solar", "label": "Irradiação solar", "unit": "kWh/m²/dia", "group": "energia",
-     "change_type": "pct", "source": "Open-Meteo",
+     "change_type": "pct", "frequency": "daily", "source": "Open-Meteo (observado)",
      "source_url": "https://open-meteo.com",
      "fetch": lambda s, c: fetch_solar(s, c)},
 ]
@@ -387,7 +400,6 @@ GROUPS = [
 ]
 
 # Conversao de futuros (US cents) para R$/saca de 60 kg, usando o cambio do dia.
-# 'bushel': preco em US cents/bushel -> kg por bushel do grao. 'lb': US cents/libra.
 LB_KG = 0.453592
 SACA_KG = 60.0
 SACA_CONV = {
@@ -398,7 +410,7 @@ SACA_CONV = {
 
 
 def to_brl_saca(cents, usd, conv):
-    """US cents (por bushel ou libra) -> R$/saca de 60 kg."""
+    """US cents (por bushel ou libra) -> R$/saca de 60 kg (paridade, sem premio/frete/base)."""
     usd_per_unit = cents / 100.0
     if conv["type"] == "bushel":
         usd_per_kg = usd_per_unit / conv["kg"]
@@ -430,7 +442,7 @@ def fetch_news(s, feeds_cfg):
             for it in root.iter("item"):
                 title = (it.findtext("title") or "").strip()
                 link = (it.findtext("link") or "").strip()
-                if not title or not link:
+                if not title or not link.startswith("https://"):
                     continue
                 src_el = it.find("source")
                 source = (src_el.text.strip() if src_el is not None and src_el.text else feed.get("name", ""))
@@ -476,10 +488,13 @@ def main():
     cfg = load_json(os.path.join(CONFIG_DIR, "settings.json"), {})
     cfg.setdefault("history_days", 400)
     cfg.setdefault("solar_location", {"name": "Sorriso-MT", "lat": -12.545, "lon": -55.711})
+    max_idade = dict(MAX_IDADE_PADRAO, **(cfg.get("max_idade_dias") or {}))
     feeds_cfg = load_json(os.path.join(CONFIG_DIR, "feeds.json"), {"feeds": [], "max_itens": 18})
     overrides = (cfg.get("manual_overrides") or {})
 
     history = load_json(os.path.join(DATA_DIR, "history.json"), {})
+    history.pop("pld", None)  # chave antiga renomeada para "cmo"
+    history.pop("boi_gordo", None)  # purga o scrape antigo do CEPEA (sem fonte automatica agora)
     prev_latest = load_json(os.path.join(DATA_DIR, "latest.json"), {"indicators": {}})
     prev_ind = prev_latest.get("indicators", {})
 
@@ -489,22 +504,37 @@ def main():
 
     for item in REGISTRY:
         key = item["key"]
+        freq = item.get("frequency", "daily")
         base = {
             "label": item["label"], "unit": item["unit"], "group": item["group"],
-            "change_type": item["change_type"], "source": item["source"],
-            "source_url": item["source_url"],
+            "change_type": item["change_type"], "frequency": freq,
+            "source": item["source"], "source_url": item["source_url"],
         }
         try:
             series = item["fetch"](session, cfg)
             series = [p for p in series if p.get("value") is not None]
             if not series:
                 raise ValueError("serie vazia")
-            hist = merge_series(history.get(key, []), series)
+            if item.get("rebuild"):
+                hist = sorted(series, key=lambda p: p["date"])[-1200:]
+            else:
+                hist = merge_series(history.get(key, []), series)
+            if item.get("drop_today"):
+                hoje = today_brt().isoformat()
+                hist = [p for p in hist if p["date"] < hoje]
+                if not hist:
+                    raise ValueError("sem fechamento anterior disponivel")
             history[key] = hist
             last = hist[-1]
-            indicators[key] = dict(base, value=last["value"], as_of=last["date"],
-                                   changes=compute_changes(hist, item["change_type"]),
-                                   stale=False, manual=False, note=item.get("note"))
+            idade = idade_dias(last["date"])
+            ind = dict(base, value=last["value"], as_of=last["date"],
+                       idade_dias=idade,
+                       fonte_velha=(idade is not None and idade > max_idade.get(freq, 7)),
+                       changes=compute_changes(hist, item["change_type"], freq),
+                       stale=False, manual=False, note=item.get("note"))
+            if key == "ipca":
+                ind["acum_12m"] = ipca_acum_12m(hist)
+            indicators[key] = ind
             print(f"  [ok] {key}: {last['value']} ({last['date']}, {len(hist)} pts)")
         except Exception as e:
             errors.append(f"{key}: {e}")
@@ -513,44 +543,53 @@ def main():
             if history.get(key):
                 hist = history[key]
                 last = hist[-1]
+                idade = idade_dias(last["date"])
                 indicators[key] = dict(base, value=last["value"], as_of=last["date"],
-                                       changes=compute_changes(hist, item["change_type"]),
+                                       idade_dias=idade, fonte_velha=True,
+                                       changes=compute_changes(hist, item["change_type"], freq),
                                        stale=True, manual=False,
-                                       note="Fonte indisponivel; exibindo ultimo dado em cache.")
+                                       note="Fonte indisponível; exibindo último dado em cache.")
             elif ov and isinstance(ov, dict) and "value" in ov:
                 indicators[key] = dict(base, value=ov["value"], as_of=ov.get("as_of"),
-                                       changes={"day": None, "month": None, "year": None},
+                                       idade_dias=idade_dias(ov.get("as_of")), fonte_velha=True,
+                                       changes=compute_changes([], item["change_type"], freq),
                                        stale=True, manual=True,
                                        note=ov.get("note", "Valor configurado manualmente."))
-            elif key in prev_ind:
-                indicators[key] = dict(prev_ind[key], stale=True,
-                                       note="Fonte indisponivel; ultimo dado conhecido.")
             else:
-                indicators[key] = dict(base, value=None, as_of=None,
-                                       changes={"day": None, "month": None, "year": None},
-                                       stale=True, manual=False, note="Sem dados disponiveis.")
+                indicators[key] = dict(base, value=None, as_of=None, idade_dias=None,
+                                       fonte_velha=True,
+                                       changes=compute_changes([], item["change_type"], freq),
+                                       stale=True, manual=False,
+                                       note=item.get("note") or "Sem dado disponível.")
 
-    # Conversao R$/saca (60 kg) para soja, milho e cafe, usando o historico do dolar.
+    # Conversao R$/saca (60 kg) para soja, milho e cafe. Herda o estado do insumo mais velho:
+    # se o dolar estiver mais velho que a commodity, marca "desatualizado" e diz a data do dolar.
+    usd_ind = indicators.get("usd", {})
     usd_hist = history.get("usd", [])
+    usd_asof = usd_hist[-1]["date"] if usd_hist else None
     for key, conv in SACA_CONV.items():
         if key not in indicators or not history.get(key) or not usd_hist:
             continue
         brl_series = []
         for p in history[key]:
-            u = value_on_or_before(usd_hist, p["date"])
-            if not u:
+            u = val_at_or_before(usd_hist, p["date"])
+            if u is None:
                 continue
-            brl_series.append({"date": p["date"],
-                               "value": round(to_brl_saca(p["value"], u["value"], conv), 2)})
+            brl_series.append({"date": p["date"], "value": round(to_brl_saca(p["value"], u, conv), 2)})
         if not brl_series:
             continue
         history[key + "_brl"] = brl_series
         last_brl = brl_series[-1]
+        commodity_asof = history[key][-1]["date"]
+        usd_old = bool(usd_asof and usd_asof < commodity_asof) or bool(usd_ind.get("fonte_velha"))
         indicators[key]["alt_brl"] = {
             "label": "R$/saca (60kg)", "unit": "R$/sc",
             "value": last_brl["value"], "as_of": last_brl["date"],
-            "changes": compute_changes(brl_series, "pct"),
+            "changes": compute_changes(brl_series, "pct", "daily"),
             "history_key": key + "_brl",
+            "usd_as_of": usd_asof,
+            "stale": usd_old,
+            "note": (f"Usa dólar PTAX de {usd_asof}." if usd_old and usd_asof else None),
         }
 
     try:

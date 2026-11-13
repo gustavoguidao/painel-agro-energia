@@ -112,16 +112,16 @@ body {
 /* Tabs — segmented control */
 .tabs { max-width: var(--maxw); margin: 0 auto; padding: 6px 16px 2px; }
 .tabs__inner {
-  display: inline-flex; gap: 4px; max-width: 100%; overflow-x: auto;
+  display: flex; gap: 4px; width: 100%; overflow-x: auto;
   background: var(--surface-2); border: 1px solid var(--border);
   border-radius: 12px; padding: 4px; scrollbar-width: none;
 }
 .tabs__inner::-webkit-scrollbar { display: none; }
 .tab {
-  background: transparent; border: none; border-radius: 9px;
-  color: var(--ink-soft); padding: 8px 16px; font-size: .88rem; font-weight: 600;
-  cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 7px;
-  transition: .15s;
+  flex: 1 1 0; background: transparent; border: none; border-radius: 9px;
+  color: var(--ink-soft); padding: 8px 10px; font-size: .86rem; font-weight: 600;
+  cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center;
+  justify-content: center; gap: 6px; transition: .15s;
 }
 .tab:hover:not([aria-selected="true"]) { color: var(--ink); background: var(--accent-weak); }
 .tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); box-shadow: 0 1px 3px rgba(0, 0, 0, .18); }
@@ -186,6 +186,13 @@ body {
   background: var(--warn-bg); color: var(--warn); border: 1px solid var(--warn-bd);
   font-size: .66rem; padding: 1px 6px; border-radius: 20px; font-weight: 700;
 }
+.card__note { font-size: .72rem; color: var(--ink-soft); margin: 1px 0 2px; }
+.card--empty { cursor: default; }
+.card--empty:hover { transform: none; border-color: var(--border); }
+.card__nodata { font-size: 1.15rem; font-weight: 700; color: var(--muted); margin: 10px 0 4px; }
+.insight__note { font-size: .7rem; color: var(--muted); margin: 10px 0 0; font-style: italic; border-top: 1px dashed var(--border); padding-top: 8px; }
+.age-amber { color: var(--warn); font-weight: 600; }
+.age-red { color: var(--down); font-weight: 700; }
 
 /* Calculadora de payback */
 .calc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
@@ -243,7 +250,7 @@ body {
 
 @media (max-width: 560px) {
   .brand__title { font-size: 1rem; }
-  .last-update { display: none; }
+  .last-update { font-size: .72rem; }
   .card__value { font-size: 1.4rem; }
 }
 

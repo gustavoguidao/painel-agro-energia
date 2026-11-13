@@ -1,24 +1,20 @@
 {
-  "_comentario": "Configuracoes gerais do coletor e do painel. Edite com cuidado (JSON valido).",
+  "_comentario": "Configuracoes gerais do coletor e do painel. Edite com cuidado (JSON valido, UTF-8).",
   "solar_location": {
     "name": "Sorriso-MT",
     "lat": -12.545,
     "lon": -55.711,
-    "_comentario": "Ponto usado para irradiacao solar. Troque lat/lon para a sua regiao."
+    "_comentario": "Ponto usado para irradiacao solar. Na Fase 2 passa a vir do perfil (fazendas/cidades)."
   },
   "history_days": 400,
   "timezone": "America/Sao_Paulo",
+  "max_idade_dias": {
+    "_comentario": "Idade maxima (dias) antes de um dado virar 'fonte velha'. Regra nao dispara com insumo vencido.",
+    "daily": 4,
+    "weekly": 10,
+    "monthly": 45
+  },
   "manual_overrides": {
-    "_comentario": "Usados SOMENTE quando a fonte automatica falha. Ajuste o valor e a data quando quiser.",
-    "pld": {
-      "value": 150.0,
-      "as_of": "2026-11-01",
-      "note": "Valor configurado manualmente (fonte automatica de PLD indisponivel)."
-    },
-    "boi_gordo": {
-      "value": 310.0,
-      "as_of": "2026-11-01",
-      "note": "Valor configurado manualmente (fallback CEPEA)."
-    }
+    "_comentario": "Valores configurados manualmente (sempre com data), usados quando nao ha fonte automatica. Ex.: boi_gordo quando nao houver fonte regional. Deixe vazio para mostrar 'sem dado' honesto."
   }
 }

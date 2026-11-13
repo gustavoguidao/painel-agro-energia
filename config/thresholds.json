@@ -1,97 +1,87 @@
 {
-  "_comentario": "Motor de regras das RECOMENDACOES. Cada regra dispara quando TODAS as condicoes em 'quando' sao verdadeiras. Edite limiar/operador/campo para calibrar. Campos validos: 'value' (valor atual), 'changes.day', 'changes.month', 'changes.year' (variacao em % ou p.p. conforme o indicador). Operadores: '<', '<=', '>', '>=', '==', '!='. 'indicador' deve ser uma chave existente (selic, cdi, ipca, usd, eur, soja, milho, cafe, acucar, algodao, boi_gordo, pld, solar).",
-  "disclaimer": "Leituras automaticas geradas por um motor de regras a partir dos dados mais recentes. NAO constituem recomendacao ou aconselhamento financeiro.",
+  "_comentario": "Motor de regras das LEITURAS DE MERCADO. Cada regra dispara quando TODAS as condicoes em 'quando' sao verdadeiras. Commodities (soja/milho/cafe) sao avaliadas em R$/saca (serie alt_brl). Uma regra NAO dispara se algum indicador usado estiver com a fonte vencida (desatualizado). Campos validos: 'value', 'acum_12m', e 'changes.day|week|month|quarter|year'. Operadores: '<','<=','>','>=','==','!='. Tom: descritivo (o que mudou e o que conferir), nunca imperativo. Os limiares sao provisorios (Fase 1) e serao calibrados por backtest na Fase 3.",
+  "disclaimer": "Leitura automática gerada por regras a partir dos dados mais recentes. Não é recomendação nem aconselhamento financeiro.",
   "regras": [
     {
-      "id": "selic_queda_capex",
-      "titulo": "Janela melhor para financiar expansao/CAPEX",
-      "mensagem": "A Selic esta em tendencia de queda. Credito de investimento tende a ficar mais barato — momento mais favoravel para financiar expansao, maquinario ou projetos solares.",
-      "categoria": "Credito e juros",
+      "id": "selic_queda",
+      "tema": "juros",
+      "titulo": "Selic recuou no trimestre",
+      "mensagem": "A Selic caiu nos últimos 90 dias. Na prática, o custo de crédito de investimento tende a ceder — vale comparar o custo de financiamento atual com o de meses atrás antes de decidir sobre CAPEX.",
+      "categoria": "Juros",
       "severidade": "positivo",
-      "quando": [
-        { "indicador": "selic", "campo": "changes.month", "operador": "<", "limiar": 0 }
-      ]
+      "quando": [{ "indicador": "selic", "campo": "changes.quarter", "operador": "<", "limiar": -0.25 }]
     },
     {
-      "id": "selic_alta_rendafixa",
-      "titulo": "Selic em patamar alto: cautela com alavancagem",
-      "mensagem": "Com a Selic elevada, o custo de capital e alto: avalie priorizar caixa/renda fixa e adiar divida nova nao essencial. Reforce o payback exigido de novos projetos.",
-      "categoria": "Credito e juros",
+      "id": "selic_alta",
+      "tema": "juros",
+      "titulo": "Selic subiu no trimestre",
+      "mensagem": "A Selic subiu nos últimos 90 dias. O custo de capital está mais alto; projetos novos passam a exigir retorno maior e a parcela de financiamento do cliente fica mais cara.",
+      "categoria": "Juros",
       "severidade": "alerta",
-      "quando": [
-        { "indicador": "selic", "campo": "value", "operador": ">=", "limiar": 12 }
-      ]
+      "quando": [{ "indicador": "selic", "campo": "changes.quarter", "operador": ">", "limiar": 0.25 }]
     },
     {
-      "id": "soja_alta_dolar_export",
-      "titulo": "Momento favoravel para exportacao / travar preco da soja",
-      "mensagem": "Soja em alta combinada com dolar valorizado melhora a receita em reais da exportacao. Considere travar preco (hedge) de parte da producao.",
-      "categoria": "Comercializacao",
-      "severidade": "positivo",
-      "quando": [
-        { "indicador": "soja", "campo": "changes.month", "operador": ">", "limiar": 0 },
-        { "indicador": "usd", "campo": "changes.month", "operador": ">", "limiar": 0 }
-      ]
-    },
-    {
-      "id": "dolar_alta_insumos",
-      "titulo": "Dolar em alta: atencao a insumos importados",
-      "mensagem": "A valorizacao do dolar encarece fertilizantes, defensivos e equipamentos importados. Reavalie compras de insumos e contratos em moeda estrangeira.",
-      "categoria": "Custos",
-      "severidade": "alerta",
-      "quando": [
-        { "indicador": "usd", "campo": "changes.month", "operador": ">", "limiar": 3 }
-      ]
-    },
-    {
-      "id": "pld_alto_solar",
-      "titulo": "Energia cara: payback de projeto solar tende a melhorar",
-      "mensagem": "PLD/preco da energia elevado aumenta a economia gerada por geracao propria. O payback de projetos solares tende a encurtar — bom momento para avaliar investimento.",
-      "categoria": "Energia",
-      "severidade": "positivo",
-      "quando": [
-        { "indicador": "pld", "campo": "value", "operador": ">", "limiar": 200 }
-      ]
-    },
-    {
-      "id": "solar_irradiacao_alta",
-      "titulo": "Alta irradiacao na regiao: boa geracao esperada",
-      "mensagem": "A irradiacao solar recente na regiao configurada esta alta, indicando boa geracao fotovoltaica no periodo.",
-      "categoria": "Energia",
-      "severidade": "positivo",
-      "quando": [
-        { "indicador": "solar", "campo": "value", "operador": ">", "limiar": 5.5 }
-      ]
-    },
-    {
-      "id": "ipca_acelerando",
-      "titulo": "Inflacao acelerando: atencao a custos e juros",
-      "mensagem": "O IPCA mensal subiu em relacao ao mes anterior. Pressao inflacionaria pode adiar cortes de juros e elevar custos — reveja precos e contratos indexados.",
+      "id": "ipca_12m_alto",
+      "tema": "inflacao",
+      "titulo": "Inflação em 12 meses acima de 5%",
+      "mensagem": "O IPCA acumulado em 12 meses está acima de 5%. Pressão de custos e menor espaço para corte de juros — reveja contratos indexados e reajustes.",
       "categoria": "Macro",
       "severidade": "alerta",
-      "quando": [
-        { "indicador": "ipca", "campo": "changes.month", "operador": ">", "limiar": 0 }
-      ]
+      "quando": [{ "indicador": "ipca", "campo": "acum_12m", "operador": ">", "limiar": 5.0 }]
     },
     {
-      "id": "milho_queda_racao",
-      "titulo": "Milho em queda: custo de racao/confinamento menor",
-      "mensagem": "A queda do milho reduz o custo de racao e confinamento. Momento favoravel para quem compra milho como insumo (pecuaria, aves, suinos).",
+      "id": "dolar_alta_trimestre",
+      "tema": "cambio",
+      "titulo": "Dólar subiu no trimestre",
+      "mensagem": "O dólar (PTAX) subiu nos últimos 90 dias. Dois efeitos opostos: encarece insumos e equipamento solar importado, e ao mesmo tempo melhora a receita em reais de grão exportado. Veja qual lado pesa mais no seu caso.",
+      "categoria": "Câmbio",
+      "severidade": "info",
+      "quando": [{ "indicador": "usd", "campo": "changes.quarter", "operador": ">", "limiar": 4 }]
+    },
+    {
+      "id": "dolar_queda_trimestre",
+      "tema": "cambio",
+      "titulo": "Dólar recuou no trimestre",
+      "mensagem": "O dólar (PTAX) caiu nos últimos 90 dias. Insumos e equipamento importado tendem a ficar mais baratos; a receita em reais da exportação tende a cair.",
+      "categoria": "Câmbio",
+      "severidade": "info",
+      "quando": [{ "indicador": "usd", "campo": "changes.quarter", "operador": "<", "limiar": -4 }]
+    },
+    {
+      "id": "soja_brl_alta",
+      "tema": "soja",
+      "titulo": "Soja em alta no mês (R$/saca)",
+      "mensagem": "A paridade da soja em R$/saca subiu no último mês. Compare com a base da sua praça antes de qualquer decisão de venda.",
+      "categoria": "Comercialização",
+      "severidade": "positivo",
+      "quando": [{ "indicador": "soja", "campo": "changes.month", "operador": ">", "limiar": 5 }]
+    },
+    {
+      "id": "soja_brl_queda",
+      "tema": "soja",
+      "titulo": "Soja em queda no mês (R$/saca)",
+      "mensagem": "A paridade da soja em R$/saca caiu no último mês.",
+      "categoria": "Comercialização",
+      "severidade": "alerta",
+      "quando": [{ "indicador": "soja", "campo": "changes.month", "operador": "<", "limiar": -5 }]
+    },
+    {
+      "id": "milho_brl_queda",
+      "tema": "milho",
+      "titulo": "Milho em queda no mês (R$/saca)",
+      "mensagem": "A paridade do milho em R$/saca caiu no último mês. Para quem compra milho como insumo (ração, confinamento), o custo tende a aliviar; para quem vende, é o oposto.",
       "categoria": "Custos",
-      "severidade": "positivo",
-      "quando": [
-        { "indicador": "milho", "campo": "changes.month", "operador": "<", "limiar": 0 }
-      ]
+      "severidade": "info",
+      "quando": [{ "indicador": "milho", "campo": "changes.month", "operador": "<", "limiar": -4 }]
     },
     {
-      "id": "cafe_alta_hedge",
-      "titulo": "Cafe em alta forte: avalie travar preco",
-      "mensagem": "Alta expressiva do cafe no mes. Pode ser um bom momento para travar preco (hedge) de parte da producao e garantir margem.",
-      "categoria": "Comercializacao",
+      "id": "cafe_brl_alta",
+      "tema": "cafe",
+      "titulo": "Café em alta no mês (R$/saca)",
+      "mensagem": "A paridade do café em R$/saca subiu de forma expressiva no último mês.",
+      "categoria": "Comercialização",
       "severidade": "positivo",
-      "quando": [
-        { "indicador": "cafe", "campo": "changes.month", "operador": ">", "limiar": 5 }
-      ]
+      "quando": [{ "indicador": "cafe", "campo": "changes.month", "operador": ">", "limiar": 6 }]
     }
   ]
 }

@@ -20,6 +20,18 @@
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   }
 
+  // Idade relativa da coleta: "há 8 h"; ambar acima de 8 h, vermelho acima de 24 h.
+  function relAge(iso) {
+    const d = new Date(iso);
+    if (isNaN(d)) return { text: "—", cls: "" };
+    const h = (Date.now() - d.getTime()) / 3.6e6;
+    let text;
+    if (h < 1) text = "há " + Math.max(1, Math.round(h * 60)) + " min";
+    else if (h < 48) text = "há " + Math.round(h) + " h";
+    else text = "há " + Math.round(h / 24) + " dias";
+    return { text: text, cls: h > 24 ? "age-red" : (h > 8 ? "age-amber" : "") };
+  }
+
   /* ---------- Tema ---------- */
   function initTheme() {
     let saved = null;
@@ -111,9 +123,13 @@
   /* ---------- Render geral ---------- */
   function renderAll() {
     const L = state.latest;
-    const upd = Fmt.dateTimeBR(L.generated_at);
-    document.getElementById("lastUpdate").textContent = "Atualizado: " + upd;
-    document.getElementById("footerUpdate").textContent = "Última coleta dos dados: " + upd + " (horário de Brasília).";
+    const age = relAge(L.generated_at);
+    const lu = document.getElementById("lastUpdate");
+    lu.textContent = "coletado " + age.text;
+    lu.className = "last-update " + age.cls;
+    lu.title = "Última coleta: " + Fmt.dateTimeBR(L.generated_at) + " (horário de Brasília)";
+    document.getElementById("footerUpdate").textContent =
+      "Última coleta dos dados: " + Fmt.dateTimeBR(L.generated_at) + " (horário de Brasília).";
     renderBanner();
     renderInsights();
     renderGroups();
@@ -123,11 +139,12 @@
 
   function renderBanner() {
     const L = state.latest;
-    const stale = Object.values(L.indicators).filter((i) => i.stale).length;
+    const stale = Object.values(L.indicators).filter((i) => i.stale && i.value != null);
     const el = document.getElementById("statusBanner");
-    if (!stale) { el.hidden = true; return; }
+    if (!stale.length) { el.hidden = true; return; }
     el.hidden = false;
-    el.textContent = `⚠️ ${stale} indicador(es) exibindo dado em cache ou configurado (fonte temporariamente indisponível). Os demais estão atualizados.`;
+    const names = stale.map((i) => esc(i.label) + (i.as_of ? " (de " + Fmt.dateBR(i.as_of) + ")" : "")).join("; ");
+    el.innerHTML = "⚠️ Exibindo em cache: " + names + ". Os demais estão atualizados.";
   }
 
   function esc(s) {
@@ -146,6 +163,7 @@
         'Os limiares podem ser ajustados em <code>config/thresholds.json</code>.</p>';
       return;
     }
+    const disc = (state.thresholds && state.thresholds.disclaimer) || "";
     host.innerHTML = fired.map(({ regra, triggers }) => {
       const sev = regra.severidade || "neutro";
       const sevLabel = sev === "positivo" ? "Positivo" : sev === "alerta" ? "Alerta" : "Info";
@@ -154,6 +172,7 @@
         <h3 class="insight__title">${esc(regra.titulo)}</h3>
         <p class="insight__msg">${esc(regra.mensagem)}</p>
         <div class="insight__trigger">Disparado por: ${triggers.join(" &nbsp;·&nbsp; ")}</div>
+        <p class="insight__note">${esc(disc)}</p>
       </article>`;
     }).join("");
   }
@@ -187,14 +206,14 @@
       return {
         value: ind.value, unit: ind.unit, decimals: Fmt.decimalsFor(ind),
         changes: ind.changes, series: (state.history || {})[key],
-        alt: "R$ " + Fmt.num(ind.alt_brl.value, 2) + "/sc",
+        alt: "R$ " + Fmt.num(ind.alt_brl.value, 2) + "/sc em R$/saca",
       };
     }
     if (ind.alt_brl) {
       return {
         value: ind.alt_brl.value, unit: "R$/sc", decimals: 2,
         changes: ind.alt_brl.changes, series: (state.history || {})[ind.alt_brl.history_key],
-        alt: Fmt.num(ind.value, Fmt.decimalsFor(ind)) + " " + ind.unit + " · futuro",
+        alt: Fmt.num(ind.value, Fmt.decimalsFor(ind)) + " " + ind.unit,
       };
     }
     return {
@@ -217,33 +236,49 @@
     return `<span class="chg chg--${m.cls}">${label} <span class="chg__val">${m.arrow} ${txt}</span></span>`;
   }
 
+  function changeRows(freq, c, ct) {
+    c = c || {};
+    if (freq === "monthly") return chgHTML("Mês", c.month, ct) + chgHTML("Ano", c.year, ct);
+    if (freq === "weekly") return chgHTML("Semana", c.week, ct) + chgHTML("Mês", c.month, ct) + chgHTML("Ano", c.year, ct);
+    return chgHTML("Dia", c.day, ct) + chgHTML("Mês", c.month, ct) + chgHTML("Ano", c.year, ct);
+  }
+
   function cardHTML(key, ind) {
+    // Estado honesto quando nao ha dado (ex.: boi sem fonte automatica): nao inventa numero.
+    if (ind.value == null) {
+      return `<div class="card card--empty">
+        <div class="card__top"><span class="card__label">${esc(ind.label)}</span></div>
+        <div class="card__nodata">sem dado</div>
+        ${ind.note ? `<div class="card__note">${esc(ind.note)}</div>` : ""}
+        <div class="card__src"><span>Fonte: ${esc(ind.source)}</span></div>
+      </div>`;
+    }
     const v = cardView(key, ind);
-    const ct = ind.alt_brl && (state.unitPref[key] || "brl") === "brl" ? "pct" : ind.change_type;
+    const pref = state.unitPref[key] || "brl";
+    const isCommodity = !!ind.alt_brl;
+    const ct = isCommodity && pref === "brl" ? "pct" : ind.change_type;
     const badge = ind.manual ? '<span class="badge-manual" title="Valor configurado manualmente">manual</span>'
       : (ind.stale ? '<span class="badge-stale" title="Dado em cache; fonte indisponível">desatualizado</span>' : "");
-    const toggle = ind.alt_brl ? (() => {
-      const pref = state.unitPref[key] || "brl";
-      return `<span class="unit-toggle" data-key="${key}">
-        <button data-unit="brl" class="${pref === "brl" ? "active" : ""}">R$/sc</button>
-        <button data-unit="orig" class="${pref === "orig" ? "active" : ""}">US¢</button>
-      </span>`;
-    })() : "";
+    const toggle = isCommodity ? `<span class="unit-toggle" data-key="${key}">
+        <button type="button" data-unit="brl" class="${pref === "brl" ? "active" : ""}">R$/sc</button>
+        <button type="button" data-unit="orig" class="${pref === "orig" ? "active" : ""}">US¢</button>
+      </span>` : "";
     const alt = v.alt ? `<div class="card__alt">${esc(v.alt)}</div>` : "";
-    const c = v.changes || {};
+    let notes = "";
+    if (isCommodity && pref === "brl") {
+      notes += `<div class="card__note">Paridade Chicago (sem prêmio, frete e base)`
+        + (ind.alt_brl.note ? " · " + esc(ind.alt_brl.note) : "") + `</div>`;
+    }
+    if (ind.acum_12m != null) notes += `<div class="card__note">Acum. 12m: <b>${Fmt.num(ind.acum_12m, 2)}%</b></div>`;
     return `<div class="card" data-key="${key}" role="button" tabindex="0">
       <div class="card__top">
         <span class="card__label">${esc(ind.label)}</span>
         ${toggle}
       </div>
       ${valueHTML(v.value, v.unit, v.decimals)}
-      ${alt}
+      ${alt}${notes}
       ${sparkSVG(v.series)}
-      <div class="card__changes">
-        ${chgHTML("Dia", c.day, ct)}
-        ${chgHTML("Mês", c.month, ct)}
-        ${chgHTML("Ano", c.year, ct)}
-      </div>
+      <div class="card__changes">${changeRows(ind.frequency, v.changes, ct)}</div>
       <div class="card__src">${badge}<span>Fonte: ${esc(ind.source)} · ${Fmt.dateBR(ind.as_of)}</span></div>
     </div>`;
   }
@@ -267,8 +302,8 @@
         renderGroups();
       });
     });
-    // abrir gráfico
-    host.querySelectorAll(".card").forEach((c) => {
+    // abrir gráfico (apenas cards com dado)
+    host.querySelectorAll(".card[data-key]").forEach((c) => {
       const open = () => openModal(c.getAttribute("data-key"));
       c.addEventListener("click", open);
       c.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
@@ -320,12 +355,11 @@
     const economiaMes = consumo * tarifa * (comp / 100);
     const economiaAno = economiaMes * 12;
     const payback = economiaAno > 0 ? custo / economiaAno : null;
-    const economia25 = economiaAno * 25 - custo;
+    // NAO exibimos "economia em 25 anos" sem desconto (VPL/TIR descontado pela Selic virao na Fase 4).
     host.innerHTML =
       `<div class="result"><div class="result__label">Economia mensal</div><div class="result__value">${brl(economiaMes)}</div></div>` +
       `<div class="result"><div class="result__label">Economia anual</div><div class="result__value">${brl(economiaAno)}</div></div>` +
-      `<div class="result result--hero"><div class="result__label">Payback estimado</div><div class="result__value">${payback == null ? "—" : Fmt.num(payback, 1) + " anos"}</div></div>` +
-      `<div class="result"><div class="result__label">Economia em 25 anos</div><div class="result__value">${brl(economia25)}</div></div>`;
+      `<div class="result result--hero"><div class="result__label">Payback simples</div><div class="result__value">${payback == null ? "—" : Fmt.num(payback, 1) + " anos"}</div></div>`;
   }
 
   /* ---------- Modal + gráfico ---------- */

@@ -2,10 +2,9 @@
 (function (global) {
   "use strict";
 
-  const DECIMALS = { cambio: 4, macro: 2, energia: 2, commodities: 2 };
+  const DECIMALS = { cambio: 2, macro: 2, energia: 2, commodities: 2 };
 
   function decimalsFor(ind) {
-    if (ind.key === "solar") return 2;
     return DECIMALS[ind.group] != null ? DECIMALS[ind.group] : 2;
   }
 
@@ -22,7 +21,7 @@
     const s = new Intl.NumberFormat("pt-BR", {
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
-      signDisplay: "always",
+      signDisplay: "exceptZero",
     }).format(value);
     return s + (suffix || "");
   }

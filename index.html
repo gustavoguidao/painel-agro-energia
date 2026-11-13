@@ -6,7 +6,7 @@
   <title>Painel Agro + Energia Solar</title>
   <meta name="description" content="Indicadores de agronegocio e energia solar no Brasil, com atualizacao automatica e fontes gratuitas." />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=5" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -30,11 +30,11 @@
       <div class="tabs__inner">
         <button class="tab" role="tab" id="tab-recomendacoes" aria-controls="panel-recomendacoes" data-tab="recomendacoes" aria-selected="false">
           <svg class="tab__ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>
-          Recomendação Geral
+          Leituras
         </button>
         <button class="tab" role="tab" id="tab-visao" aria-controls="panel-visao" data-tab="visao" aria-selected="true">
           <svg class="tab__ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M6.5 20v-6"/><path d="M12 20V8"/><path d="M17.5 20v-9"/></svg>
-          Visão Geral
+          Visão geral
         </button>
         <button class="tab" role="tab" id="tab-noticias" aria-controls="panel-noticias" data-tab="noticias" aria-selected="false">
           <svg class="tab__ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h12v14H5.5A1.5 1.5 0 0 1 4 17.5V5z"/><path d="M16 9h3.5V18a1.5 1.5 0 0 1-3 0"/><path d="M7 8.5h6M7 11.5h6M7 14.5h4"/></svg>
@@ -50,8 +50,8 @@
     <!-- ABA: RECOMENDAÇÕES -->
     <section class="tabpanel" id="panel-recomendacoes" role="tabpanel" aria-labelledby="tab-recomendacoes" tabindex="0" hidden>
       <div class="section__head">
-        <h2 class="section__title">Recomendações &amp; Insights</h2>
-        <span class="section__hint">Leituras automáticas por motor de regras</span>
+        <h2 class="section__title">Leituras do mercado</h2>
+        <span class="section__hint">Geradas automaticamente por regras</span>
       </div>
       <div id="insights" class="insights"></div>
       <p id="insightsDisclaimer" class="disclaimer"></p>
@@ -90,7 +90,7 @@
           </label>
         </div>
         <div class="calc__results" id="calcResults"></div>
-        <p class="calc__note">Estimativa simplificada (não considera inflação da tarifa, degradação dos painéis nem custo de disponibilidade). Energia mais cara → payback mais curto.</p>
+        <p class="calc__note">⚠️ Estimativa simplificada: mostra apenas o <strong>payback simples</strong>, sem desconto (valor do dinheiro no tempo), inflação da tarifa, degradação dos painéis, Fio B nem custo de disponibilidade. A versão completa (VPL, TIR e payback descontado pela Selic) virá no módulo solar.</p>
       </div>
     </section>
 
@@ -109,10 +109,11 @@
     <div class="container">
       <p id="footerUpdate" class="footer__update">—</p>
       <p class="footer__note">
-        Fontes gratuitas: Banco Central (SGS), AwesomeAPI, Yahoo Finance, CEPEA/ESALQ,
-        ONS (CMO), Open-Meteo e Google News RSS. Preços de commodities em <strong>futuros</strong>
-        quando indicado; conversão para R$/saca usa o câmbio do dia. As recomendações são
-        <strong>leituras automáticas</strong> geradas por regras — não constituem recomendação
+        Fontes gratuitas: Banco Central (PTAX e SGS), Yahoo Finance (futuros CBOT/ICE),
+        ONS (CMO), Open-Meteo e Google News RSS. As commodities são exibidas como
+        <strong>paridade de Chicago em R$/saca</strong> (sem prêmio, frete e base), usando
+        o câmbio PTAX do dia — não são o preço na praça. As leituras são
+        <strong>geradas automaticamente por regras</strong> — não constituem recomendação
         ou aconselhamento financeiro.
       </p>
     </div>
@@ -137,8 +138,8 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
-  <script src="assets/js/format.js?v=5" defer></script>
-  <script src="assets/js/recommendations.js?v=5" defer></script>
-  <script src="assets/js/app.js?v=5" defer></script>
+  <script src="assets/js/format.js?v=6" defer></script>
+  <script src="assets/js/recommendations.js?v=6" defer></script>
+  <script src="assets/js/app.js?v=6" defer></script>
 </body>
 </html>
