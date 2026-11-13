@@ -24,13 +24,26 @@
         <button id="themeToggle" class="btn-icon" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
       </div>
     </div>
+    <nav class="tabs" role="tablist" aria-label="Seções do painel">
+      <div class="tabs__inner">
+        <button class="tab" role="tab" data-tab="recomendacoes" aria-selected="false">
+          <span class="tab__ico" aria-hidden="true">💡</span> Recomendação Geral
+        </button>
+        <button class="tab" role="tab" data-tab="visao" aria-selected="true">
+          <span class="tab__ico" aria-hidden="true">📊</span> Visão Geral
+        </button>
+        <button class="tab" role="tab" data-tab="noticias" aria-selected="false">
+          <span class="tab__ico" aria-hidden="true">📰</span> Notícias
+        </button>
+      </div>
+    </nav>
   </header>
 
   <main class="container">
     <div id="statusBanner" class="banner" hidden></div>
 
-    <!-- RECOMENDAÇÕES / INSIGHTS -->
-    <section class="section" id="insightsSection">
+    <!-- ABA: RECOMENDAÇÕES -->
+    <section class="tabpanel" id="panel-recomendacoes" role="tabpanel" hidden>
       <div class="section__head">
         <h2 class="section__title">Recomendações &amp; Insights</h2>
         <span class="section__hint">Leituras automáticas por motor de regras</span>
@@ -39,21 +52,50 @@
       <p id="insightsDisclaimer" class="disclaimer"></p>
     </section>
 
-    <!-- CARDS DE INDICADORES -->
-    <section class="section" id="cardsSection">
+    <!-- ABA: VISÃO GERAL -->
+    <section class="tabpanel" id="panel-visao" role="tabpanel">
       <div class="section__head">
         <h2 class="section__title">Visão geral</h2>
         <span class="section__hint">Clique em um card para ver o histórico</span>
       </div>
       <div id="groups"></div>
+
+      <!-- Calculadora de payback solar -->
+      <div class="section__head" style="margin-top:28px">
+        <h2 class="section__title">Calculadora de payback solar</h2>
+        <span class="section__hint">Estimativa de retorno do investimento</span>
+      </div>
+      <div class="calc">
+        <div class="calc__inputs">
+          <label class="field">
+            <span>Consumo mensal (kWh)</span>
+            <input id="calcConsumo" type="number" min="0" step="10" value="1000" inputmode="decimal" />
+          </label>
+          <label class="field">
+            <span>Tarifa de energia (R$/kWh)</span>
+            <input id="calcTarifa" type="number" min="0" step="0.01" value="0.95" inputmode="decimal" />
+          </label>
+          <label class="field">
+            <span>Custo do sistema (R$)</span>
+            <input id="calcCusto" type="number" min="0" step="500" value="18000" inputmode="decimal" />
+          </label>
+          <label class="field">
+            <span>% da conta compensada</span>
+            <input id="calcCompensacao" type="number" min="0" max="100" step="5" value="90" inputmode="decimal" />
+          </label>
+        </div>
+        <div class="calc__results" id="calcResults"></div>
+        <p class="calc__note">Estimativa simplificada (não considera inflação da tarifa, degradação dos painéis nem custo de disponibilidade). Energia mais cara → payback mais curto.</p>
+      </div>
     </section>
 
-    <!-- NOTÍCIAS -->
-    <section class="section" id="newsSection">
+    <!-- ABA: NOTÍCIAS -->
+    <section class="tabpanel" id="panel-noticias" role="tabpanel" hidden>
       <div class="section__head">
         <h2 class="section__title">Notícias</h2>
-        <span class="section__hint">Agro · Energia · Economia</span>
+        <span class="section__hint">Título e link para a matéria original</span>
       </div>
+      <div class="news-filter" id="newsFilter"></div>
       <div id="news" class="news"></div>
     </section>
   </main>
@@ -63,9 +105,10 @@
       <p id="footerUpdate" class="footer__update">—</p>
       <p class="footer__note">
         Fontes gratuitas: Banco Central (SGS), AwesomeAPI, Yahoo Finance, CEPEA/ESALQ,
-        Open-Meteo e Google News RSS. Preços de commodities em <strong>futuros</strong> quando
-        indicado. As recomendações são <strong>leituras automáticas</strong> geradas por regras —
-        não constituem recomendação ou aconselhamento financeiro.
+        ONS (CMO), Open-Meteo e Google News RSS. Preços de commodities em <strong>futuros</strong>
+        quando indicado; conversão para R$/saca usa o câmbio do dia. As recomendações são
+        <strong>leituras automáticas</strong> geradas por regras — não constituem recomendação
+        ou aconselhamento financeiro.
       </p>
     </div>
   </footer>
@@ -78,7 +121,10 @@
         <h3 id="chartTitle" class="modal__title">—</h3>
         <button class="btn-icon" type="button" data-close aria-label="Fechar">✕</button>
       </div>
-      <div class="modal__periods" id="chartPeriods"></div>
+      <div class="modal__controls">
+        <div class="modal__periods" id="chartPeriods"></div>
+        <div class="modal__units" id="chartUnits"></div>
+      </div>
       <div class="modal__chartwrap"><canvas id="chartCanvas"></canvas></div>
       <div class="modal__stats" id="chartStats"></div>
       <p class="modal__source" id="chartSource"></p>

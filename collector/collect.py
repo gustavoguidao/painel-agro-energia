@@ -274,12 +274,43 @@ def fetch_cepea_boi(s, cfg):
     return [{"date": today, "value": round(v, 2)}]
 
 
-def fetch_pld(s, cfg):
-    """PLD/preco de energia. Fonte automatica confiavel e gratuita e dificil de obter de
-    forma generica (CCEE/ONS publicam em arquivos). Por padrao usamos o valor configuravel
-    em config/settings.json (manual_overrides.pld), claramente sinalizado no painel.
-    Deixe este raise para forcar o uso do valor configuravel."""
-    raise ValueError("PLD automatico nao configurado; usando valor manual (ver README)")
+def fetch_ons_cmo(s, cfg, submercado="SE"):
+    """PLD/preco de energia via ONS - CMO Semanal (Custo Marginal de Operacao, base do PLD).
+    CSV publico e estavel por ano. Usa a coluna val_cmomediasemanal do submercado escolhido
+    (SE/CO por padrao). Se falhar, o coletor cai no valor manual de config/settings.json."""
+    years = [date.today().year, date.today().year - 1]
+    pts = {}
+    for y in years:
+        url = f"https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cmo_se/CMO_SEMANAL_{y}.csv"
+        try:
+            txt = get_text(s, url)
+        except Exception:
+            continue
+        lines = txt.splitlines()
+        if not lines:
+            continue
+        header = [h.strip() for h in lines[0].split(";")]
+        try:
+            i_sub = header.index("id_subsistema")
+            i_date = header.index("din_instante")
+            i_val = header.index("val_cmomediasemanal")
+        except ValueError:
+            continue
+        for ln in lines[1:]:
+            cols = ln.split(";")
+            if len(cols) <= max(i_sub, i_date, i_val):
+                continue
+            if cols[i_sub].strip() != submercado:
+                continue
+            d = cols[i_date].strip()[:10]
+            try:
+                v = float(cols[i_val].replace(",", "."))
+            except Exception:
+                continue
+            pts[d] = v
+    if not pts:
+        raise ValueError("CMO/PLD (ONS) indisponivel")
+    return [{"date": d, "value": round(pts[d], 2)} for d in sorted(pts)]
 
 
 # ----------------------------------------------------------------------------
@@ -337,10 +368,11 @@ REGISTRY = [
      "fetch": lambda s, c: fetch_cepea_boi(s, c)},
 
     # --- Energia ---
-    {"key": "pld", "label": "PLD / preço de energia", "unit": "R$/MWh", "group": "energia",
-     "change_type": "pct", "source": "Configuravel (CCEE/ONS)",
-     "source_url": "https://www.ccee.org.br",
-     "fetch": lambda s, c: fetch_pld(s, c)},
+    {"key": "pld", "label": "CMO/PLD (SE/CO)", "unit": "R$/MWh", "group": "energia",
+     "change_type": "pct", "source": "ONS – CMO Semanal (SE/CO)",
+     "source_url": "https://dados.ons.org.br/dataset/cmo-semanal",
+     "note": "Custo Marginal de Operação semanal (base do PLD).",
+     "fetch": lambda s, c: fetch_ons_cmo(s, c, "SE")},
     {"key": "solar", "label": "Irradiação solar", "unit": "kWh/m²/dia", "group": "energia",
      "change_type": "pct", "source": "Open-Meteo",
      "source_url": "https://open-meteo.com",
@@ -353,6 +385,26 @@ GROUPS = [
     {"id": "commodities", "label": "Commodities agro"},
     {"id": "energia", "label": "Energia"},
 ]
+
+# Conversao de futuros (US cents) para R$/saca de 60 kg, usando o cambio do dia.
+# 'bushel': preco em US cents/bushel -> kg por bushel do grao. 'lb': US cents/libra.
+LB_KG = 0.453592
+SACA_KG = 60.0
+SACA_CONV = {
+    "soja": {"type": "bushel", "kg": 27.2155},
+    "milho": {"type": "bushel", "kg": 25.4012},
+    "cafe": {"type": "lb"},
+}
+
+
+def to_brl_saca(cents, usd, conv):
+    """US cents (por bushel ou libra) -> R$/saca de 60 kg."""
+    usd_per_unit = cents / 100.0
+    if conv["type"] == "bushel":
+        usd_per_kg = usd_per_unit / conv["kg"]
+    else:  # lb
+        usd_per_kg = usd_per_unit / LB_KG
+    return usd_per_kg * SACA_KG * usd
 
 
 # ----------------------------------------------------------------------------
@@ -452,7 +504,7 @@ def main():
             last = hist[-1]
             indicators[key] = dict(base, value=last["value"], as_of=last["date"],
                                    changes=compute_changes(hist, item["change_type"]),
-                                   stale=False, manual=False, note=None)
+                                   stale=False, manual=False, note=item.get("note"))
             print(f"  [ok] {key}: {last['value']} ({last['date']}, {len(hist)} pts)")
         except Exception as e:
             errors.append(f"{key}: {e}")
@@ -477,6 +529,29 @@ def main():
                 indicators[key] = dict(base, value=None, as_of=None,
                                        changes={"day": None, "month": None, "year": None},
                                        stale=True, manual=False, note="Sem dados disponiveis.")
+
+    # Conversao R$/saca (60 kg) para soja, milho e cafe, usando o historico do dolar.
+    usd_hist = history.get("usd", [])
+    for key, conv in SACA_CONV.items():
+        if key not in indicators or not history.get(key) or not usd_hist:
+            continue
+        brl_series = []
+        for p in history[key]:
+            u = value_on_or_before(usd_hist, p["date"])
+            if not u:
+                continue
+            brl_series.append({"date": p["date"],
+                               "value": round(to_brl_saca(p["value"], u["value"], conv), 2)})
+        if not brl_series:
+            continue
+        history[key + "_brl"] = brl_series
+        last_brl = brl_series[-1]
+        indicators[key]["alt_brl"] = {
+            "label": "R$/saca (60kg)", "unit": "R$/sc",
+            "value": last_brl["value"], "as_of": last_brl["date"],
+            "changes": compute_changes(brl_series, "pct"),
+            "history_key": key + "_brl",
+        }
 
     try:
         news = fetch_news(session, feeds_cfg)
