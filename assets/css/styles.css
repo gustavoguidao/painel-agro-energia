@@ -10,7 +10,7 @@
   --surface-2: #f2f1ec;
   --ink: #0b0b0b;
   --ink-soft: #52514e;
-  --muted: #898781;
+  --muted: #6b6a63;
   --grid: #e1e0d9;
   --baseline: #c3c2b7;
   --border: rgba(11, 11, 11, .10);
@@ -19,7 +19,7 @@
   --accent-weak: rgba(15, 122, 67, .10);
   --up: #067a2e;
   --down: #c23a2b;
-  --flat: #898781;
+  --flat: #6b6a63;
   --warn: #9a6400;
   --warn-bg: rgba(250, 178, 25, .16);
   --warn-bd: rgba(250, 178, 25, .50);
@@ -35,7 +35,7 @@
     --surface-2: #232321;
     --ink: #f0efec;
     --ink-soft: #c3c2b7;
-    --muted: #898781;
+    --muted: #a7a59b;
     --grid: #2c2c2a;
     --baseline: #383835;
     --border: rgba(255, 255, 255, .10);
@@ -58,7 +58,7 @@
   --surface-2: #232321;
   --ink: #f0efec;
   --ink-soft: #c3c2b7;
-  --muted: #898781;
+  --muted: #a7a59b;
   --grid: #2c2c2a;
   --baseline: #383835;
   --border: rgba(255, 255, 255, .10);
@@ -167,7 +167,7 @@ body {
 .card__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; min-height: 20px; }
 .card__label { font-size: .86rem; font-weight: 600; color: var(--ink); }
 .unit-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; }
-.unit-toggle button { background: var(--surface-2); border: none; color: var(--ink-soft); font-size: .66rem; padding: 2px 7px; cursor: pointer; font-family: inherit; }
+.unit-toggle button { background: var(--surface-2); border: none; color: var(--ink-soft); font-size: .68rem; padding: 4px 10px; min-height: 26px; cursor: pointer; font-family: inherit; }
 .unit-toggle button.active { background: var(--accent); color: var(--accent-ink); font-weight: 700; }
 .card__value { font-size: 1.55rem; font-weight: 800; letter-spacing: -.5px; margin: 8px 0 1px; }
 .card__value small { font-size: .85rem; font-weight: 600; color: var(--ink-soft); }
@@ -243,4 +243,11 @@ body {
   .brand__title { font-size: 1rem; }
   .last-update { display: none; }
   .card__value { font-size: 1.4rem; }
+}
+
+/* Respeita quem prefere menos movimento: remove o deslocamento de hover
+   e encurta transicoes, mantendo as mudancas de estado (cor/borda) instantaneas. */
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  .card:hover, .news-item:hover, .btn-icon:hover, .tab:hover { transform: none; }
 }
