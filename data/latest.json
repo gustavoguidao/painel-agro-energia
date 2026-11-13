@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T01:14:32.614274+00:00",
+  "generated_at": "2026-11-13T01:48:57.217720+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -105,12 +105,12 @@
       "change_type": "pct",
       "source": "AwesomeAPI (EUR-BRL)",
       "source_url": "https://economia.awesomeapi.com.br/json/last/EUR-BRL",
-      "value": 6.2365,
+      "value": 6.2336,
       "as_of": "2026-11-12",
       "changes": {
-        "day": 0.69,
-        "month": 10.77,
-        "year": 1.72
+        "day": 0.65,
+        "month": 10.72,
+        "year": 1.67
       },
       "stale": false,
       "manual": false,
@@ -123,12 +123,12 @@
       "change_type": "pct",
       "source": "Yahoo Finance ZS=F",
       "source_url": "https://finance.yahoo.com/quote/ZS=F",
-      "value": 1223.0,
+      "value": 1224.25,
       "as_of": "2026-11-12",
       "changes": {
-        "day": -0.49,
-        "month": -4.73,
-        "year": 9.15
+        "day": -0.39,
+        "month": -4.63,
+        "year": 9.26
       },
       "stale": false,
       "manual": false,
@@ -136,12 +136,12 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 152.12,
+        "value": 152.28,
         "as_of": "2026-11-12",
         "changes": {
-          "day": 0.56,
-          "month": 6.93,
-          "year": 16.38
+          "day": 0.67,
+          "month": 7.04,
+          "year": 16.5
         },
         "history_key": "soja_brl"
       }
@@ -153,12 +153,12 @@
       "change_type": "pct",
       "source": "Yahoo Finance ZC=F",
       "source_url": "https://finance.yahoo.com/quote/ZC=F",
-      "value": 444.0,
+      "value": 445.5,
       "as_of": "2026-11-12",
       "changes": {
-        "day": -0.89,
-        "month": -8.03,
-        "year": 2.01
+        "day": -0.56,
+        "month": -7.72,
+        "year": 2.35
       },
       "stale": false,
       "manual": false,
@@ -166,12 +166,12 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 59.17,
+        "value": 59.37,
         "as_of": "2026-11-12",
         "changes": {
-          "day": 0.15,
-          "month": 3.23,
-          "year": 8.77
+          "day": 0.49,
+          "month": 3.58,
+          "year": 9.14
         },
         "history_key": "milho_brl"
       }
