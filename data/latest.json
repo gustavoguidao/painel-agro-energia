@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T01:32:28.754374+00:00",
+  "generated_at": "2026-11-13T01:36:26.545995+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -34,7 +34,7 @@
       "source": "BCB SGS 432",
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json",
       "value": 13.75,
-      "as_of": "2026-11-12",
+      "as_of": "2026-11-13",
       "changes": {
         "day": 0.0,
         "month": 0.0,
@@ -94,9 +94,9 @@
         "month": 12.24,
         "year": 6.62
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null
+      "note": "Fonte indisponivel; exibindo ultimo dado em cache."
     },
     "eur": {
       "label": "Euro (EUR/BRL)",
@@ -112,9 +112,9 @@
         "month": 10.72,
         "year": 1.67
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null
+      "note": "Fonte indisponivel; exibindo ultimo dado em cache."
     },
     "soja": {
       "label": "Soja (futuro CBOT)",
@@ -123,12 +123,12 @@
       "change_type": "pct",
       "source": "Yahoo Finance ZS=F",
       "source_url": "https://finance.yahoo.com/quote/ZS=F",
-      "value": 1224.75,
+      "value": 1225.0,
       "as_of": "2026-11-12",
       "changes": {
-        "day": -0.35,
-        "month": -4.6,
-        "year": 9.3
+        "day": -0.33,
+        "month": -4.58,
+        "year": 9.33
       },
       "stale": false,
       "manual": false,
@@ -136,12 +136,12 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 152.34,
+        "value": 152.37,
         "as_of": "2026-11-12",
         "changes": {
-          "day": 0.71,
-          "month": 7.09,
-          "year": 16.55
+          "day": 0.73,
+          "month": 7.11,
+          "year": 16.57
         },
         "history_key": "soja_brl"
       }
@@ -153,12 +153,12 @@
       "change_type": "pct",
       "source": "Yahoo Finance ZC=F",
       "source_url": "https://finance.yahoo.com/quote/ZC=F",
-      "value": 445.25,
+      "value": 445.5,
       "as_of": "2026-11-12",
       "changes": {
-        "day": -0.61,
-        "month": -7.77,
-        "year": 2.3
+        "day": -0.56,
+        "month": -7.72,
+        "year": 2.35
       },
       "stale": false,
       "manual": false,
@@ -166,12 +166,12 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 59.34,
+        "value": 59.37,
         "as_of": "2026-11-12",
         "changes": {
-          "day": 0.44,
-          "month": 3.52,
-          "year": 9.08
+          "day": 0.49,
+          "month": 3.58,
+          "year": 9.14
         },
         "history_key": "milho_brl"
       }
@@ -256,9 +256,9 @@
         "month": null,
         "year": null
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null
+      "note": "Fonte indisponivel; exibindo ultimo dado em cache."
     },
     "pld": {
       "label": "CMO/PLD (SE/CO)",
@@ -285,12 +285,12 @@
       "change_type": "pct",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 4.883,
-      "as_of": "2026-11-12",
+      "value": 6.881,
+      "as_of": "2026-11-13",
       "changes": {
-        "day": -25.23,
-        "month": -27.78,
-        "year": 3.04
+        "day": 40.92,
+        "month": 1.1,
+        "year": 4.88
       },
       "stale": false,
       "manual": false,
@@ -303,127 +303,131 @@
       "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZEh0X3NTMFZlNTlBREpwY2lhOXRvYXQ2QWlCQ0kwbWY0aFRRUXFfU3VqR0kxWnU0LURPZURLeWNsLW1ac0tXaENlVmIwS24wMG9ld2d4Y1NZRGJMcWxUY3pYT25ZcGVxcHJkRnpwVWREX2xJUHZUNkFJOFVncHFvT2MySnN1Mko3dkcwb3pHVk1tMDZhQk11cmZkcGxzaG5sdzRtMjRDaWcwbEd2SGI1OUdlVXlXYzJmZzctdk1lMDc3MDQ5c01Db1Y3VWlDZw?oc=5",
       "source": "Folha de S.Paulo",
       "categoria": "Agro",
-      "date": "2026-11-13T01:00:00-03:00"
+      "date": "2026-11-12T22:00:00-03:00"
     },
     {
       "title": "Banco do Brasil atribui queda no lucro principalmente à inadimplência do agronegócio; ações caíram mais de 8% - G1",
       "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPb1JwOWZOZW9FcmtSWFg5LS1Wcm4yRnFXUWFpaVo1WHJfejczRndzankya1YwYXZuQXdJOTNTV1ZLREFhUDlGMDViT2F0S3NRbHZvSjBUUi1ZV0dOdGJ3ZVowVFAwWG5Ja1I0RURKdFVBXzRLUU9xendOLV94cGVyRHBNaDdRZzhxaUVnYjBaWUdaSXhiWk90T082RXZKRFFRSHRtamF2YWtMa0EyWnFyWEh4VVVva0lsSTltUmc3Wnp4NWFDbXFuWDc4OEIxbmljb05oU04telJaQm8weEVOSWtQaXZvLWlDdFRURWdEdDk1TG9hMWdqM0V0d3hhRWdIZ0dSU2RyUdIBlgJBVV95cUxNNG9sX0cyODhpVXRpWmNRMFlfQkZTUE5vdUNwdHlUS0tSR3hQR2pCRnVWVVZSRnp2VW9SbjlGREV2eGtTeGptb0R0UDU3Wk9ybnQxWGFmN0Z2OFhOVGd6Yk4zVWpkb2p2aVIzSzlpTG5JNnFYSmtudGltZVRteF9YVUVRcE50Znk0ek91UVVYSXpSWUxBMlBNVjY4anhwd2dxYWJQc0ZTSGtKRVJhNkY3SzN5NmVtM1RsOHlld2lQaGc0UDdVWVd1WHdrNC1UcHpmdnRCdDJ3V2NrN2o3dnhHRjBVQW1ESGh0N3dKaXZmZW9NR0JXMGg5Y0FCb0JqRTh3LWFkRnhHQUhaT1JiVlNQMFlNY2V6dw?oc=5",
       "source": "G1",
       "categoria": "Agro",
-      "date": "2026-11-13T00:43:26-03:00"
+      "date": "2026-11-12T21:43:26-03:00"
     },
     {
       "title": "Opinião - Vinicius Torres Freire: Qual é o preço do dólar que vai fazer governo e políticos acordarem? R$ 6? - Folha de S.Paulo",
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOTEoza3lJQUtfcWNRSFQtNnE0SEZxWWpSX1otS2MyY21tM2RCSDRqdGZNNFhKbHlabENTMUVFXzJ1cVFyRzl6SkduSlB2QU1rQUdHM1BlNXNiWi1OaVpQeHlsZGtyRUJ6VXRIR2N3WXNsdTBoSkxEQ3pxWEpiV3VvbTlvVjNhZUJ5VUhBZG4xWTVRN0c1d0p2UzBILXQtc1BlSk1iUktyOE15Y01FeF93d0VNdk9aamhScWVwSFdjVnpmeGRhNEpIdlRMODV5TnRMcFRETg?oc=5",
       "source": "Folha de S.Paulo",
       "categoria": "Economia",
-      "date": "2026-11-13T00:43:00-03:00"
+      "date": "2026-11-12T21:43:00-03:00"
     },
     {
       "title": "Para escapar do dólar, Belluzzo defende salto na aliança com a China e Banco dos BRICS como ‘BNDES global’ - AEPET",
       "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxObjZCbXRoa1lmVkd0dU9TSlk2RjhpR19rUnVyaFB2d09UM3o2VFZVeV9wel9lZEVtNVpYdHBqQ05JMnV1WXVqSGwtM1ZST1ZGVWxQb0JueFpWZ3c0OW9EcUYzX2NPbDE2WkxkVDAzU0FneGwxUXIwaDFxeWxRYmJuNGpab2hEbTF3NDhLU2ZEV1hONjc5V0lXbm85SzExSkg3R0VEb1JETVRjYl81bTdBU3RpWlU0dzE0VFdIcXB0dTYzb1dqZVI3VGlBclByQQ?oc=5",
       "source": "AEPET",
       "categoria": "Economia",
-      "date": "2026-11-13T00:41:39-03:00"
+      "date": "2026-11-12T21:41:39-03:00"
     },
     {
       "title": "Produtores de soja rebatem Banco do Brasil sobre dívidas do agro; estatal nega ter culpado todo o setor - G1",
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTnBjX184ajJiRUtvdFpoZHBTb1NldVE0Nkk1SWNwaFRFVTF6NmFKZlZIOFVKOXVIby1UT2FDQVVsYmlrM1F0YnFhbnR6dlg0ZFp5RGdxOHlBX0xyRkZ4OE1lcklsRlJUZmpRMHpfT1Y2bHBjalUwVHlMRGQteFZsTDJRRUVyc29F0gGXAUFVX3lxTE0ya1pKclVJbHhUT09WTVZTeTdWZGhmUFVkZmptQlRPeXAzV1dxcFgteWxha1QyalpFZDV2dkVDWEszZVNJQlJyT1lEVFd2UXRXZERBTTJaSW1rcmVqdm14TkE3UHJkMTdEZ0pkRzZPYmlmTEotcFh4S1hGTVl6WGZPVzZ3c0pqQ2NVYk9aVm1zR1dpNTI1RFU?oc=5",
       "source": "G1",
       "categoria": "Agro",
-      "date": "2026-11-13T00:39:01-03:00"
+      "date": "2026-11-12T21:39:01-03:00"
     },
     {
       "title": "Plantio da soja alcança 79% da área prevista no Paraná - O Presente Rural",
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNYmRJMmExQkd4RDFEb2xlbnNTZC1LNTQ1TmMwUkdfM01GdlExd0dvVlZmRXV1MHh4N0lIZ1U3YUVjZnExRHN6YUpTcnhjamxGSGZpTTl6Uldfekk2VlEwV04yb2M0NWtHLUpZSjBxYmdFa2pycUp5NFQyaEpuVGd0ay02QjZiclR2ZGN1dw?oc=5",
       "source": "O Presente Rural",
       "categoria": "Agro",
-      "date": "2026-11-13T00:33:30-03:00"
+      "date": "2026-11-12T21:33:30-03:00"
     },
     {
       "title": "Nova regra da ANEEL pode elevar em 73% os cortes atribuídos à energia solar no Nordeste e levar perdas contabilizadas de 7 para 11 TWh, aponta simulação com dados de 2025 - CPG Click Petróleo e Gás",
       "link": "https://news.google.com/rss/articles/CBMisgJBVV95cUxQZllSRkJwbklycUFfakNidGVLbWh1MGpVUE9RbmV4bUJ2VTVfWTM5REdMb0VDWFBqTlllcWFvQ2t2MFhYVGFUWTFydWxNbUVwMkpDMERkS0RCQjVSd3U4Si1EOVhIZjBSQXRlWGdMZnRFY2drODdIQUF4VjBrTWNwNnFwOWpZRE9TY1hlZy0wSVp1VnRkVFhnR3hrVU1BYVJxNGtvQTVzSGc5ZnBCVksxby02S1dMMjliSTVrNGVGdW5zVjM3eFdqWWNpVjlEaXBCSm4xMWVyRUk1THZtUGdweWJYelZxQmN4QW5PanpqREl3MV9oRlM1VE5VaWp6aGNIZkwzNUtIUWRSU0JzZUFCV1M3UVNucG1naEpHQ2UtdGJ3aGdOV0F2Nm1jNkxmUlUwWHc?oc=5",
       "source": "CPG Click Petróleo e Gás",
       "categoria": "Energia",
-      "date": "2026-11-13T00:33:00-03:00"
+      "date": "2026-11-12T21:33:00-03:00"
     },
     {
       "title": "Banco do Brasil rebate críticas e diz que não generalizou agronegócio - Globo Rural",
       "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOSGtGM0YxLXhCOWJhS2tXTEMwQ0hOTXBxcUtnTjdzMlRRUElsXzFpakJhR3QzTDV4a0c0X2ZyeWo3UzN0cTBkbWc5T29hZWpOT25BNWtLNkFabDBFYkZ4dC1mY0JXUV9xME9kdW9wRTB6SF94dFlacWpEMnhNY3NPTWFzSTB1Q05wUEQ3aVE2ZXY0elZMTG5rd25BUVIzaHV5eGtGSzRydUpyZ0JSZF9XaTZfcy1DdjNIOVhPdG45UGJlNTMyMzByQ2RaOWhnZ1RSLWFVNlZ3QlgzYknSAeoBQVVfeXFMT1N2OVQ1R0p3bXhoY1BRQWtKam05NjRULVBGcXJxVVZ6ZzhMVWx6NTRaYlFVekFLYVlkRDNTVkNNbEZSd0o2TXY0aWVmX1ZXaW5LN3N6MzNaNGZvNl9KNThxaV9lZkJpT08zWHhsSFFkaUU4T09MdDlRbE1TTU9BMnV3LV91OWJ1c2RYbEdpb0lFd1hBMnI5NVVGdjlPbUxYNk5McUlLa0U1ZEpvdGRhMGtjTXRYdnd0ZnVhei1XRmhuT1JYR1VHbkRENjhRdXY1T0luS25HUzVVaGo4VXVjOE1SMWttNUNkaElB?oc=5",
       "source": "Globo Rural",
       "categoria": "Agro",
-      "date": "2026-11-13T00:14:41-03:00"
+      "date": "2026-11-12T21:14:41-03:00"
     },
     {
       "title": "BB diz que não responsabiliza agronegócio por queda nos resultado - CNN Brasil",
       "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYnpFclNvb2czLTJzQ2dEV1lqTndNVTYyTmt2Rkh2NFFManlONV9YMEs1dEFYSlZ4SE5uSmZMRmR2WFFpUG0wWWg3TjlwUjRuTGlMRlFoSmhQT3FfVlNTeVp5ZENSdnE1TXpBUnNmdHNMQm5UQXdmQ2Q5RmlkWXVKNUNKOVhsM0I4Uzk3TTJnS2o2aFR1eUZ5NkNnMldfM1lMLXc?oc=5",
       "source": "CNN Brasil",
       "categoria": "Agro",
-      "date": "2026-11-13T00:05:43-03:00"
+      "date": "2026-11-12T21:05:43-03:00"
     },
     {
       "title": "Dólar fecha na maior cotação desde junho de 2025 - G1",
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQc0NoYXpfMDlpa0FxeWJlbkdmOGZzdG0tbEVJOXFSSmotTkc0dG1aQktWRjJlbGhiQ1NoNy1ibVFGMmJMOC0waFpLN0hWRFFMa1VGV1dFU0lKbmlVWWo1YS1nbnR1WWRkNUVYdjF5TEpJcWxFa0trUDR5VVRObHJ2aFVfX2xNeGd5MWpESUJZY256eUxvOUl1X2t1cmdJSllOMG9vMkpCOENlQdIBuAFBVV95cUxOZEVWaEswZzAzOUZ0a3Bib01CT19mQWFEOEdtYjlWMHZWR2M3U1BqcHdYNllRVlZEYk1OUDk5a3pFb3NjbGg1aWJiMDFxek9INXRaeUpPZXR6cTJjaW9zTWJic1l6UlJTMXVLR2RhM0VhdzdGRWcwbFhnZGdGdnplMVYzYm1EV2pUUGRlUXRRdDZva0Uyd3ViSTVfQ0NSblo5MldjUUNwZHhwaldTZFF6eS0wOWJseUxV?oc=5",
       "source": "G1",
       "categoria": "Economia",
-      "date": "2026-11-12T23:56:35-03:00"
+      "date": "2026-11-12T20:56:35-03:00"
     },
     {
       "title": "Dólar fecha a R$ 5,65, maior valor desde junho, com ajuste fiscal - Campo Grande News",
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZTNRSkFLNU1ycEFaczlVMXE5M1RTNzVWN0JkY05ycHgwVm1rYUVCdDJFbmp3eFR6THNPMFprakdZUUgzNkd0ZHduVlF5LW9yNHktUF9PR0xfempzcWxOaGxuTXEydGRhajNpYWpRTXQ0bnJ6UkxITkZFY2VBR2gta1VWUENGM0JJTjVJdXdXVW9lMXdrY0RsTVM3ZXBmLXPSAZ8BQVVfeXFMT0lmTmdTWDRfQ0JEdGZxS3BENHRUMUlPUEVsMGpldm15YkFhSHFjN1VqdlZRUTliVXRxRE4zRDJEcW1PV3J0NVlNcWk3dVZJdDJoMUNwT3lnaUxBMFBDZmI0dERsQThyd0cyRWk0LXh0UC1BWDlvcDl3YW1aSzJ1ZVNEUkI5Um80WXJrRnJ0N1BRYWNSUnlsbmtoR1NqM0w0?oc=5",
       "source": "Campo Grande News",
       "categoria": "Economia",
-      "date": "2026-11-12T23:40:00-03:00"
+      "date": "2026-11-12T20:40:00-03:00"
     },
     {
       "title": "Soja, milho e trigo caem em Chicago Por Reuters - Investing.com Brasil - Finanças, Câmbio e Investimentos",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxORjdiUlNmUzl4ckxUMjM2SkprZ0x0VFVvMGgtUUJtU0FWczVWa3ZPaFNuSjVvSGk3TE55YmNzTW02UHVkTGY1ZFEwWnhrcHJJM3VFd01RZjdaWUVoYmN2ZnlpdEJfX0VROHVTNlBJejFsMzRNWDZqUF9JVVNXNzhGR19IY3p6RTNyNDFPYTl3?oc=5",
       "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
       "categoria": "Agro",
-      "date": "2026-11-12T23:37:00-03:00"
+      "date": "2026-11-12T20:37:00-03:00"
     },
     {
       "title": "Soja, milho e trigo caem em Chicago - TradingView",
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1adGE4Y1prV2lqTkFBSlZvcFVZV3E1cVI1VlBJeGRDQkExXzhFOHdWV2xmV2Y5Ym5aOUlGYTR2T3RlSDRxQmh4YW15cUdZMkl1cFZyUG9xN0JldTMxaWx3OVg0a1dfQ2hxSXVkTnVJVGNzemE2azJF?oc=5",
       "source": "TradingView",
       "categoria": "Agro",
-      "date": "2026-11-12T23:36:57-03:00"
+      "date": "2026-11-12T20:36:57-03:00"
     },
     {
       "title": "Agro rebate Banco do Brasil sobre inadimplência deliberada e queda de lucro - Gazeta do Povo",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQlVQWGgtbURWREYxemV5MHR2VXlnTWhoVnd1cjJGcllpblUtYm5SMk81djJEeWx6d3VEa3N0X3ZPbkxFZ0dtVXcyM1RqWFJ2cFNrYWRjVmNGSmQwRzVQQ3ZLNk45MDRwQ3czb2ZpYzZUTGVWcjk5cXBPUkJ0OHNvcDkwNHNXSTEwN0RRQ3d2aERrZk51dlVJVTNOMEZrbWpjcVpnTVlZX3lVZ3NkQWNfWUFsNUlOZHlMQlE?oc=5",
       "source": "Gazeta do Povo",
       "categoria": "Agro",
-      "date": "2026-11-12T23:33:00-03:00"
+      "date": "2026-11-12T20:33:00-03:00"
     },
     {
       "title": "Feira de agronegócio com entrada gratuita reúne tecnologia, palestras e produtores rurais - G1",
       "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQTDFyb08wd3E0bHM5RURseXo4UTgyU2d3TkdHSExhck9EdDJTR3JCS0EwOG9hVHhlLU9WWGk0VDhTLUM5Tzg2RXM2cHJEdS1hSUZjQ0lBODZuOHpVdjhVS1RWc0YwUjN6OWRfdGZxSWlVZERsREtFcWpKaHVoeElGODV4SU9HeGZiYXh2a2V1U3hEZG1VQWRtVlVtWEVUTFd5LTZZS3pvelhkakhya0FtUHBkSlBudUdPUWk3VFZDY1UzOUE5QkhSOXNiT2RzRWI3eVFsRi1MWk1YWm1HdEo2M25KME9ya0VaMXNtWFZyRVhwbmdteHctYWdKRlFMTzN4eFhrSlBVZ0tJTUHSAZoCQVVfeXFMT0QwanRGLUhMaHh3ZHlXZ3JUb2czWHllanhjVTZPcnJuMXJXaG1SbldQdC1yaVJTT2YtTTRhTE94NzBUUG04LVB0VFlOM3ZheWc1OGktWmRVMFVReml4b0ExMXM3bVhBOHBHdDN3cW82VXZNXzlrRkFFV29sSHlsNGlCQkxvdUZuUVR0RFFRSi03TzRNaS15TXpnTVFNUHVGaGp1VEVtTGEyNGpkOThsc3FRUW5HMS0wNWFlZmNkYUliVGMycDI5MW9JYk5IVlhkU1ZDblBXNkRPYlRDakMyd0ZBU3UzbnlmazJwZ013X0lmZjN4RXFuM25WLTJUUFBJSjBQUVVVVnBsQklOQzF2ZUJmdWVDMldLaWxn?oc=5",
       "source": "G1",
       "categoria": "Agro",
-      "date": "2026-11-12T23:06:25-03:00"
+      "date": "2026-11-12T20:06:25-03:00"
     },
     {
       "title": "Setor de soja rebate Banco do Brasil sobre dívidas do agro e diz que não houve inadimplência deliberada - O GLOBO",
       "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWm1wWmdPWVktcnRLaGg2UzA1bTRFbXVHZF9OV20tbDh2SXBLWmhDVlBueWpRTmlZV3NydGhWZDRWY3U2LUc4M1FhMEc2aWVKRFpjQXFHeEo1TVhJSnRGc3JPcFU4SG56SFlLcHZ3YlVuejZzUGtKR3pLWmhHMnRvS0VoOVU2YjF4U3d3NWI1bjdCam9PTGxFSWw3ODBfamotZVBvZC03bXkzTnlUMURJX3k4dmE0OWxjNkZSdmNtNHNHemlEN210MzB6dUZBdjRxVmk4cENqT2ltbGZLa3dJVmgxMGRFbTRDQ0lyc0FXQXlrWVhnbzlRRU9RV18yeThC0gGPAkFVX3lxTE5idTdyLVJKTW5KYnZPY2J4SmpuQzlQQXNrTGRrUFlId1JmanZkUXVQUkZNaEZvSXNWT2tOS2tLU3lkMU4zZm1CS1VXR01SSGs4eFFveXEyM0xGOURvWGhJQkhBUmNfVWFFU010aUQwS0EtZk9YNFd5cmI5RktyRGtFcjEzZ2FjTGVHaFc0VGZHdEUzSTM1UjA1QnRSWFJ0OFBDSFNhU1pFaXhnWFMyQnZPc1YzRkdmX0YwU1BtLWFlTEdwVkdRLU9rRi1vVF9vNnF3ZGFwajZuMjZUNmlNZzdTUERLdEFfdzJGRkM1ZHlwR2FBeEhGaXNKTjU4c2RwR2RHN3pIWkZlRHc5SWxkNWs?oc=5",
       "source": "O GLOBO",
       "categoria": "Agro",
-      "date": "2026-11-12T22:56:08-03:00"
+      "date": "2026-11-12T19:56:08-03:00"
     },
     {
       "title": "Banco do Brasil aponta recusa de produtores em renegociar dívidas do agronegócio - CartaCapital",
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbWJ5bHdMRHBTandfX2J0SUY0bG9tYXlrQ3lZbDJCUE02V1dQUjdaY3czZkZoZFZCV25PdDY0dlJfUjRjeGQzZVlkSUVJc212VWdORFJ0ejNQRzBka2dJMUpyTHBCOGdtczE3N3EtR2N4S0FfaENMYVROckxhajdtSVRrRXdtUzFyak1ySlktaXBEX09fMXBvTVhVS0RIelRYbFd5WE5kTUNfbjVuczJHN0VBcHhVSVRDNHpZWlBaaw?oc=5",
       "source": "CartaCapital",
       "categoria": "Agro",
-      "date": "2026-11-12T22:54:00-03:00"
+      "date": "2026-11-12T19:54:00-03:00"
     },
     {
       "title": "IPCA registra alta de 0,14% em outubro de 2026 - Fecomércio RS",
       "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNTmVZVnczdWhjeWhDS095cE0yMzRSN2N2ZHRkYlljV0k1czFCT25UMG1jTE8zWEtLR1VVdEhMUkVwdmY0dnBJR0FqSFU5Z3F0QVk3RkRiSTlPa3ZIYTBPWk5BMWNQSEhiNlJQQWxIYjI0enpyRGRidVhYSk9RSzVVWDhrVDhxZEZheTdEN2NxTFJqczBwMDFMd1A4cnQta3RmZnJSWFVPMVo4NlRabHVtZmpwV3oxMksyd0g1bUw1Qk8tTm45cUVuN1hucjR1bXptNmhxamJIemRWQQ?oc=5",
       "source": "Fecomércio RS",
       "categoria": "Economia",
-      "date": "2026-11-12T22:37:33-03:00"
+      "date": "2026-11-12T19:37:33-03:00"
     }
   ],
-  "errors": []
+  "errors": [
+    "usd: 429 Client Error: Too Many Requests for url: https://economia.awesomeapi.com.br/json/daily/USD-BRL/360",
+    "eur: 429 Client Error: Too Many Requests for url: https://economia.awesomeapi.com.br/json/daily/EUR-BRL/360",
+    "boi_gordo: 403 Client Error: Forbidden for url: https://www.cepea.org.br/br/indicador/boi-gordo.aspx"
+  ]
 }
