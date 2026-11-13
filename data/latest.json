@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T18:11:58.662542+00:00",
+  "generated_at": "2026-11-13T18:19:57.516743+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -159,7 +159,7 @@
         "week": null,
         "month": -4.42,
         "quarter": 4.54,
-        "year": 9.5
+        "year": null
       },
       "stale": false,
       "manual": false,
@@ -174,7 +174,7 @@
           "week": null,
           "month": 7.12,
           "quarter": 12.35,
-          "year": 16.25
+          "year": null
         },
         "history_key": "soja_brl",
         "usd_as_of": "2026-11-13",
@@ -199,7 +199,7 @@
         "week": null,
         "month": -8.34,
         "quarter": -3.59,
-        "year": 1.67
+        "year": null
       },
       "stale": false,
       "manual": false,
@@ -214,7 +214,7 @@
           "week": null,
           "month": 2.73,
           "quarter": 3.62,
-          "year": 7.93
+          "year": null
         },
         "history_key": "milho_brl",
         "usd_as_of": "2026-11-13",
@@ -239,7 +239,7 @@
         "week": null,
         "month": -4.27,
         "quarter": -17.13,
-        "year": -30.58
+        "year": null
       },
       "stale": false,
       "manual": false,
@@ -254,7 +254,7 @@
           "week": null,
           "month": 7.28,
           "quarter": -10.93,
-          "year": -26.31
+          "year": null
         },
         "history_key": "cafe_brl",
         "usd_as_of": "2026-11-13",
@@ -279,7 +279,7 @@
         "week": null,
         "month": -13.69,
         "quarter": 9.76,
-        "year": 25.48
+        "year": null
       },
       "stale": false,
       "manual": false,
@@ -302,7 +302,7 @@
         "week": null,
         "month": -2.29,
         "quarter": -5.9,
-        "year": 24.28
+        "year": null
       },
       "stale": false,
       "manual": false,
@@ -380,11 +380,25 @@
   },
   "news": [
     {
+      "title": "Crescimento do agronegócio baiano é destaque na abertura da e-Agro em Salvador - ba.gov.br",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOYmlPd3lnZW1xVE5SRGNvMkNvUm5DMTdNSmIwaXlJdUxaa0ZHWkVkUWRsbGc1aFY3em9YOENkRUpCUXh0V1puTTJDVjNhWDR1cTBvM3AyeUluZ2dwT1FwZ3lrbmVlRGpNcXE4YnIxWFRYTXAwQTJWZW1RbEpod1huOWthU3laV1VnZFFScVVrSEZ1TmtPNmI3cmdzM1V0emZWYnhaM3pxQkVzQnUtMDYwUTFORENqbk40ellyXzJCNGh3eGJzbmc?oc=5",
+      "source": "ba.gov.br",
+      "categoria": "Agro",
+      "date": "2026-11-13T18:13:54-03:00"
+    },
+    {
       "title": "FGV apresenta agenda de cooperação para o comércio sustentável de soja e carne bovina em evento na China - Fundação Getulio Vargas",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQm5oVlFOaG43OUlGeUpYdURCUDV2X1FQTHAzaVJYRDRJUzRDSzI4RlA3TV9fSEJSN2FYT2NBaTlFdHgySzZXVmFPckVKZ2t5dXJlS2x6a2xxcnJYQ3pIaVB4bHBadjRzekh3YTd0eDBrd1k1REdOOVg2NHA3TmU2NVhNTXFSSlREX2d0bFJWNkRGcDJDTllDZ1dvR09BNHRlRm50bktwOTRNZFJVZUFqRjF0NkZfVEk?oc=5",
       "source": "Fundação Getulio Vargas",
       "categoria": "Agro",
       "date": "2026-11-13T18:06:38-03:00"
+    },
+    {
+      "title": "Embarques de soja crescem 34% e impulsionam recorde nos portos do Paraná - O Presente Rural",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOQlA2OFpaODB5Rnhrcy05TXh6aG1rSHdFWXM2ZlUtZk9TOEFTS20tQ2MydU5oVmZ3UHlDeGQwME8tVFFFaW1tbTVlaUx6UmptZXFPT0YzWVEweFB6V1hlc1o5aU1waks3V2NBQnc1VTZfRTdYamlud0ZNNU44ZTJabk82bnJ1blRqWllnRF9QZEh2anlaTGRWUEtWUUwybU1hVGtUVw?oc=5",
+      "source": "O Presente Rural",
+      "categoria": "Agro",
+      "date": "2026-11-13T18:04:38-03:00"
     },
     {
       "title": "Vice-presidente do Nacional-URU critica Santos e Botafogo: 'Não vi 1 dólar' - UOL",
@@ -422,11 +436,25 @@
       "date": "2026-11-13T17:52:00-03:00"
     },
     {
+      "title": "Minas Gerais atrai R$ 28,5 bilhões em projetos de energia solar no Norte do Estado - Diário do Comércio",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOb2U5S0NBRUJyS2tHX0tVQ0FwYmw3c2dDX2JacU40OHhJeEpwZ1F2TjF2THNneHBTYVVXRklZVUtTZzExLTMtTElmMjl5LTBHSk4tQVJvQXloZTFzQ1J1eUEzdXB1MU9KWmtlWDYzbUF5X2xWTnh2dDNDUEZ5QmVqelMtdE9JQkp2SlpReFNaRmhuQQ?oc=5",
+      "source": "Diário do Comércio",
+      "categoria": "Energia",
+      "date": "2026-11-13T17:51:00-03:00"
+    },
+    {
       "title": "Dilceu Sperafico relembra 32 anos de defesa do agronegócio, cobra manutenção de estradas rurais e fala sobre futuro político no PP - Gazeta de Toledo",
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOZm96ZmZHYkdvbEh0UGZXYlhxekgzS2Npa2I3T2FkZVp5YmZXQV9tcDQ1cGQ3TmdpWUd4cDk4NHVaRTM5M0tGR2JRVi1ZUUx0NGl4aE10Z1JrS1JaOVBSRFZOMWJFNnd0VVQ1UlYzTFVBaVdlc2xTN09FdDBMNlQtOFF5TmJzcjZPa3RuVkI2WGFiRS0xcV9LamZPcEdRRkNZU0VtaklxaDh4UTNlN281ODJ4QUc0UDliQWVlMHJlSjB6MUk2Nl90Um51YmpjRjVtQ0tRMGN5N1lvNE85SFU0QU5KYmxRNE1nci1Fc3B6bko0dw?oc=5",
       "source": "Gazeta de Toledo",
       "categoria": "Agro",
       "date": "2026-11-13T17:47:34-03:00"
+    },
+    {
+      "title": "Chuvas irregulares e calor intenso desafiam lavouras de soja em Alto Garças e Rondonópolis - CompreRural",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQZk5iT09UOVFRdUtwc0Z3NkY3UjVXVUVKRjExT1FOeWxrNm8zdncxbVk3by1qNHN1NWJTNnRVVWN0QjRXMHFVYk8wNkpnRHFKNzRQdDhKc3VKeUVSTXhxZElNS0V4WUI3NmlxdGFDV3dwNW44S1Fla2EwM2F0RklQaHFpUF9abzV5cklISmlLYmVJLWlKQmhNWHJhQ2VWTDdDY1JBRkRXQ1ZCTVRsbjVZVW9QNi1aOUZYb0hZ?oc=5",
+      "source": "CompreRural",
+      "categoria": "Agro",
+      "date": "2026-11-13T17:45:00-03:00"
     },
     {
       "title": "EUA vendem 1,15 milhão de t de soja da safra 2026/27, mostra USDA - UOL Notícias",
@@ -476,34 +504,6 @@
       "source": "ge",
       "categoria": "Economia",
       "date": "2026-11-13T17:07:43-03:00"
-    },
-    {
-      "title": "BB: CEO afirma que há 31 mil devedores do agro e abre portas para renegociação - InfoMoney",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQTdlMjQxZTRaM0U5Tm1LLWJqSG9GRUIzQUtMUW9yN3FCN25HM2xERDJyR2tHeDlOWE9kOGw4ZWtSOXB1Z2ppZkg0bENsMnhLQTdPVnROengwVlNOUFdMTFhXenV6ek9ERmdLd0lEN2c1Vm9xZ3RJLVozUkZkRkZXZkMxUUJLYnFpWVpoVU1JUXpROUJYUnJMWFRrUUlTNEVqTzd3dzlHTEFDZ0JOckxnOUUydnRrMlnSAbwBQVVfeXFMUE1zSHlHc3hnWkdOZ3F6MkxFVlU5TnVqeDQ5Q29yb2hCZ1lNcjlMNHdwLVRRYWJrNm1tYTVwU0xFaF9DSVBFNlJaZEsyMjM0RzFkWmxXUTBEcllYbkp5T20zVkQya2ZaUWg5MzN0U216SmVoQWhaMmFYVFd1QmMzNTIzVW9VX0tTbmxDajEzZDJZZmNUbzZadDI5elB4N3VpVG9BSFF4U0xKTUx5dTRORThEZGhxRUhuNHd1czk?oc=5",
-      "source": "InfoMoney",
-      "categoria": "Agro",
-      "date": "2026-11-13T17:03:09-03:00"
-    },
-    {
-      "title": "Mercado Agrícola - 13.nov.26 - Revista Cultivar",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB4a1BpQWh2MUdzeUI1QzFuLV9mLWs5UFNGN3FLa1dObmxNdENPUWx3WVBuMFBHNFRPUVJuZFdBNzVBS0txal9XMmZwU0huVDJnSnRfdkZsbUl4X3dpdEJRUmVXNXVIMzM0dklsM1JDcl82VWhY?oc=5",
-      "source": "Revista Cultivar",
-      "categoria": "Agro",
-      "date": "2026-11-13T16:59:20-03:00"
-    },
-    {
-      "title": "Dólar dispara e fecha a R$ 5,65, maior cotação desde junho de 2025; entenda o que pressionou o câmbio - Mercado e Eventos",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOcTN2M09ucEE4aEFzc0lhbWdZSDBUeU56Z0JaVjV2UmZOVHNhT0NyVDJMQnlkNU50czZSamJmcDRzN3ctZm1oaTMwbW05dGpPUW1xN1dVT3lMcHM2clpseW90ZmVLNjFUREFvMUdDbUFPOGpIbnFtdFFwS3ZSd0xRWTB0UUx0T3pCdVlzaW1lWDVsYy1SZlo5alpEdUFjaGs0YUJ2T2ZLckZfY3dvTTVUNlRkUm8wYi1SLXRPMmdLZEFoWkg2VWNoNDBTZTNUWWZJQlJlYWQxRWMxNndyamtkRjNWdHRYUklTY3lEdDl1MVA?oc=5",
-      "source": "Mercado e Eventos",
-      "categoria": "Economia",
-      "date": "2026-11-13T16:56:26-03:00"
-    },
-    {
-      "title": "Faec recebe embaixador do Cazaquistão para discutir oportunidades de cooperação no agronegócio - Sistema FAEC/SENAR/SINRURAL",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbmxSRjZHd2g3cmlPMGR0NE5lWXE1N2dyUkRrV3JUSUV2NllJZkVDd1NITml6S3Vlb0ptU21UVW1ZUzRaTi05N2VKMUVvS01KaFdMWUM0UVg3ODJKSHNUQlViZjdFWnRXa25SUUxzQ1k4MkdaekUxczJwS2ZCVnRDQmxUM0JVazM1YWdqZ2FibDhFbTN6ZWhybGdrNE9oRVJ1SG92RDhFUk5vUEJMelhweGdEVUpuQjVHaUNtOU1JWWM?oc=5",
-      "source": "Sistema FAEC/SENAR/SINRURAL",
-      "categoria": "Agro",
-      "date": "2026-11-13T16:54:41-03:00"
     }
   ],
   "errors": [
