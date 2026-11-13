@@ -6,14 +6,16 @@
   <title>Painel Agro + Energia Solar</title>
   <meta name="description" content="Indicadores de agronegocio e energia solar no Brasil, com atualizacao automatica e fontes gratuitas." />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=5" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="topbar">
     <div class="topbar__inner">
       <div class="brand">
-        <span class="brand__logo" aria-hidden="true">🌾⚡</span>
+        <span class="brand__logo" aria-hidden="true">
+          <svg viewBox="0 0 30 24" width="38" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c0-6 4-10 9-10"/><path d="M14 11c0-4 3-6.5 6.5-6.5C20.5 8.5 17.5 11 14 11z" fill="currentColor" stroke="none"/><path d="M23 3.5l-3 5.5h2.4l-1.8 6 5.4-8h-2.6l1.6-3.5z" fill="currentColor" stroke="none"/></svg>
+        </span>
         <div>
           <h1 class="brand__title">Painel Agro + Energia Solar</h1>
           <p class="brand__sub">Indicadores para decisão — Brasil</p>
@@ -21,19 +23,22 @@
       </div>
       <div class="topbar__actions">
         <span id="lastUpdate" class="last-update" title="Data/hora da última coleta dos dados">—</span>
-        <button id="themeToggle" class="btn-icon" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
+        <button id="themeToggle" class="btn-icon" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema"></button>
       </div>
     </div>
     <nav class="tabs" role="tablist" aria-label="Seções do painel">
       <div class="tabs__inner">
-        <button class="tab" role="tab" data-tab="recomendacoes" aria-selected="false">
-          <span class="tab__ico" aria-hidden="true">💡</span> Recomendação Geral
+        <button class="tab" role="tab" id="tab-recomendacoes" aria-controls="panel-recomendacoes" data-tab="recomendacoes" aria-selected="false">
+          <svg class="tab__ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>
+          Recomendação Geral
         </button>
-        <button class="tab" role="tab" data-tab="visao" aria-selected="true">
-          <span class="tab__ico" aria-hidden="true">📊</span> Visão Geral
+        <button class="tab" role="tab" id="tab-visao" aria-controls="panel-visao" data-tab="visao" aria-selected="true">
+          <svg class="tab__ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M6.5 20v-6"/><path d="M12 20V8"/><path d="M17.5 20v-9"/></svg>
+          Visão Geral
         </button>
-        <button class="tab" role="tab" data-tab="noticias" aria-selected="false">
-          <span class="tab__ico" aria-hidden="true">📰</span> Notícias
+        <button class="tab" role="tab" id="tab-noticias" aria-controls="panel-noticias" data-tab="noticias" aria-selected="false">
+          <svg class="tab__ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h12v14H5.5A1.5 1.5 0 0 1 4 17.5V5z"/><path d="M16 9h3.5V18a1.5 1.5 0 0 1-3 0"/><path d="M7 8.5h6M7 11.5h6M7 14.5h4"/></svg>
+          Notícias
         </button>
       </div>
     </nav>
@@ -43,7 +48,7 @@
     <div id="statusBanner" class="banner" hidden></div>
 
     <!-- ABA: RECOMENDAÇÕES -->
-    <section class="tabpanel" id="panel-recomendacoes" role="tabpanel" hidden>
+    <section class="tabpanel" id="panel-recomendacoes" role="tabpanel" aria-labelledby="tab-recomendacoes" tabindex="0" hidden>
       <div class="section__head">
         <h2 class="section__title">Recomendações &amp; Insights</h2>
         <span class="section__hint">Leituras automáticas por motor de regras</span>
@@ -53,7 +58,7 @@
     </section>
 
     <!-- ABA: VISÃO GERAL -->
-    <section class="tabpanel" id="panel-visao" role="tabpanel">
+    <section class="tabpanel" id="panel-visao" role="tabpanel" aria-labelledby="tab-visao" tabindex="0">
       <div class="section__head">
         <h2 class="section__title">Visão geral</h2>
         <span class="section__hint">Clique em um card para ver o histórico</span>
@@ -90,7 +95,7 @@
     </section>
 
     <!-- ABA: NOTÍCIAS -->
-    <section class="tabpanel" id="panel-noticias" role="tabpanel" hidden>
+    <section class="tabpanel" id="panel-noticias" role="tabpanel" aria-labelledby="tab-noticias" tabindex="0" hidden>
       <div class="section__head">
         <h2 class="section__title">Notícias</h2>
         <span class="section__hint">Título e link para a matéria original</span>
@@ -132,8 +137,8 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
-  <script src="assets/js/format.js?v=4" defer></script>
-  <script src="assets/js/recommendations.js?v=4" defer></script>
-  <script src="assets/js/app.js?v=4" defer></script>
+  <script src="assets/js/format.js?v=5" defer></script>
+  <script src="assets/js/recommendations.js?v=5" defer></script>
+  <script src="assets/js/app.js?v=5" defer></script>
 </body>
 </html>

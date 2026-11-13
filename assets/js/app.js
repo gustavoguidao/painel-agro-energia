@@ -40,21 +40,39 @@
   function updateThemeIcon() {
     const cur = document.documentElement.getAttribute("data-theme");
     const isDark = cur === "dark" || (!cur && matchMedia("(prefers-color-scheme: dark)").matches);
-    document.getElementById("themeToggle").textContent = isDark ? "☀️" : "🌙";
+    const sun = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+    const moon = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg>';
+    document.getElementById("themeToggle").innerHTML = isDark ? sun : moon;
   }
 
   /* ---------- Abas ---------- */
   function initTabs() {
     try { const t = localStorage.getItem("tab"); if (t) state.tab = t; } catch (e) {}
-    document.querySelectorAll(".tab").forEach((btn) =>
-      btn.addEventListener("click", () => setTab(btn.getAttribute("data-tab"))));
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+    tabs.forEach((btn, i) => {
+      btn.addEventListener("click", () => setTab(btn.getAttribute("data-tab")));
+      btn.addEventListener("keydown", (e) => {
+        let j = null;
+        if (e.key === "ArrowRight") j = (i + 1) % tabs.length;
+        else if (e.key === "ArrowLeft") j = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === "Home") j = 0;
+        else if (e.key === "End") j = tabs.length - 1;
+        if (j === null) return;
+        e.preventDefault();
+        setTab(tabs[j].getAttribute("data-tab"));
+        tabs[j].focus();
+      });
+    });
     setTab(state.tab);
   }
   function setTab(tab) {
     state.tab = tab;
     try { localStorage.setItem("tab", tab); } catch (e) {}
-    document.querySelectorAll(".tab").forEach((b) =>
-      b.setAttribute("aria-selected", b.getAttribute("data-tab") === tab ? "true" : "false"));
+    document.querySelectorAll(".tab").forEach((b) => {
+      const active = b.getAttribute("data-tab") === tab;
+      b.setAttribute("aria-selected", active ? "true" : "false");
+      b.tabIndex = active ? 0 : -1;
+    });
     ["recomendacoes", "visao", "noticias"].forEach((id) => {
       document.getElementById("panel-" + id).hidden = id !== tab;
     });
@@ -130,7 +148,9 @@
     }
     host.innerHTML = fired.map(({ regra, triggers }) => {
       const sev = regra.severidade || "neutro";
+      const sevLabel = sev === "positivo" ? "Positivo" : sev === "alerta" ? "Alerta" : "Info";
       return `<article class="insight insight--${sev}">
+        <div class="insight__sev">${sevLabel}</div>
         <h3 class="insight__title">${esc(regra.titulo)}</h3>
         <p class="insight__msg">${esc(regra.mensagem)}</p>
         <div class="insight__trigger">Disparado por: ${triggers.join(" &nbsp;·&nbsp; ")}</div>
