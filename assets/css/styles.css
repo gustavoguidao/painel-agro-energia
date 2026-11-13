@@ -109,17 +109,22 @@ body {
 }
 .btn-icon:hover { border-color: var(--accent); }
 
-/* Tabs */
-.tabs { max-width: var(--maxw); margin: 0 auto; padding: 0 10px; }
-.tabs__inner { display: flex; gap: 4px; overflow-x: auto; }
-.tab {
-  background: transparent; border: none; border-bottom: 2.5px solid transparent;
-  color: var(--ink-soft); padding: 9px 14px; font-size: .9rem; font-weight: 600;
-  cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 7px;
-  transition: .15s; border-radius: 8px 8px 0 0;
+/* Tabs — segmented control */
+.tabs { max-width: var(--maxw); margin: 0 auto; padding: 6px 16px 2px; }
+.tabs__inner {
+  display: inline-flex; gap: 4px; max-width: 100%; overflow-x: auto;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 4px; scrollbar-width: none;
 }
-.tab:hover { color: var(--ink); background: var(--accent-weak); }
-.tab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+.tabs__inner::-webkit-scrollbar { display: none; }
+.tab {
+  background: transparent; border: none; border-radius: 9px;
+  color: var(--ink-soft); padding: 8px 16px; font-size: .88rem; font-weight: 600;
+  cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 7px;
+  transition: .15s;
+}
+.tab:hover:not([aria-selected="true"]) { color: var(--ink); background: var(--accent-weak); }
+.tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); box-shadow: 0 1px 3px rgba(0, 0, 0, .18); }
 .tab__ico { font-size: .95rem; }
 
 /* Painéis */
@@ -181,20 +186,22 @@ body {
 }
 
 /* Calculadora de payback */
-.calc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px; }
-.calc__inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-.field { display: flex; flex-direction: column; gap: 5px; font-size: .78rem; color: var(--ink-soft); font-weight: 600; }
+.calc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
+.calc__inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; font-size: .78rem; color: var(--ink-soft); font-weight: 600; }
 .field input {
-  background: var(--page); border: 1px solid var(--border); border-radius: 9px; color: var(--ink);
-  padding: 9px 11px; font-size: .95rem; font-family: inherit; width: 100%;
+  background: var(--page); border: 1px solid var(--border); border-radius: 10px; color: var(--ink);
+  padding: 10px 12px; font-size: 1rem; font-family: inherit; width: 100%; transition: .12s;
 }
+.field input:hover { border-color: var(--baseline); }
 .field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
-.calc__results { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 16px; }
-.result { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
-.result__label { font-size: .72rem; color: var(--ink-soft); font-weight: 600; }
-.result__value { font-size: 1.35rem; font-weight: 800; margin-top: 3px; letter-spacing: -.4px; }
-.result--hero .result__value { color: var(--accent); }
-.calc__note { font-size: .74rem; color: var(--muted); margin: 12px 2px 0; font-style: italic; }
+.calc__results { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border); }
+.result { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.result__label { font-size: .72rem; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+.result__value { font-size: 1.4rem; font-weight: 800; margin-top: 5px; letter-spacing: -.4px; }
+.result--hero { background: var(--accent-weak); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.result--hero .result__value { color: var(--accent); font-size: 1.7rem; }
+.calc__note { font-size: .74rem; color: var(--muted); margin: 14px 2px 0; font-style: italic; }
 
 /* Notícias */
 .news-filter { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
