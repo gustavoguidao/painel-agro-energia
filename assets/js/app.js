@@ -132,6 +132,7 @@
       "Última coleta dos dados: " + Fmt.dateTimeBR(L.generated_at) + " (horário de Brasília).";
     renderBanner();
     renderInsights();
+    renderHighlights();
     renderGroups();
     renderNews();
     computeCalc();
@@ -152,29 +153,91 @@
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
   }
 
-  /* ---------- Recomendações ---------- */
+  /* ---------- Leituras de mercado (motor v2 no coletor) ---------- */
+  function sevLabel(sev) {
+    return { positivo: "Positivo", alerta: "Alerta", info: "Info", neutro: "—" }[sev] || "Info";
+  }
+
+  function fmtGat(g) {
+    if (g.valor == null) return "—";
+    if (g.unidade === "%") return Fmt.num(g.valor, 1) + "%";
+    if (g.unidade === "p.p.") return Fmt.num(g.valor, 2) + " p.p.";
+    const dec = g.unidade === "mm" ? 0 : 1;
+    return Fmt.num(g.valor, dec) + (g.unidade ? " " + g.unidade : "");
+  }
+
+  function signalCardHTML(s) {
+    const disc = (state.thresholds && state.thresholds.disclaimer) || "";
+    const sev = s.severidade || "info";
+    const gat = (s.gatilhos || []).map((g) =>
+      `<li><b>${esc(g.serie)}</b> · ${esc(g.metrica)}: <b>${esc(fmtGat(g))}</b>` +
+      (g.limiar && g.limiar !== "—" ? ` <span>(limiar ${esc(g.limiar)})</span>` : "") + `</li>`).join("");
+    const ins = (s.insumos || []).map((i) =>
+      esc(i.nome) + (i.as_of ? " · " + Fmt.dateBR(i.as_of) : "")).join(" &nbsp;·&nbsp; ");
+    const meta = [];
+    if (s.ativo_desde) meta.push("ativo desde " + Fmt.dateBR(s.ativo_desde));
+    if (s.freq_ano && s.freq_ano.pct != null) meta.push("ocorreu em " + s.freq_ano.pct + "% dos dias do último ano");
+    return `<article class="insight insight--${sev}${s.muted ? " insight--muted" : ""}">
+      <div class="insight__head">
+        <span class="insight__sev">${sevLabel(sev)}</span>
+        ${s.estado && !s.muted ? `<span class="insight__estado">${esc(s.estado)}</span>` : ""}
+      </div>
+      <h3 class="insight__title">${esc(s.titulo)}</h3>
+      <p class="insight__msg">${esc(s.texto)}</p>
+      ${gat ? `<ul class="insight__gatilhos">${gat}</ul>` : ""}
+      ${meta.length ? `<div class="insight__meta">${esc(meta.join(" · "))}</div>` : ""}
+      ${ins ? `<div class="insight__insumos">Insumos: ${ins}</div>` : ""}
+      <p class="insight__note">${esc(disc)}</p>
+    </article>`;
+  }
+
   function renderInsights() {
     const host = document.getElementById("insights");
-    const fired = Recomendacoes.evaluate(state.latest.indicators, state.thresholds);
-    document.getElementById("insightsDisclaimer").textContent =
-      (state.thresholds && state.thresholds.disclaimer) || "";
-    if (!fired.length) {
-      host.innerHTML = '<p class="insight--empty">Nenhuma recomendação disparada com os dados atuais. ' +
-        'Os limiares podem ser ajustados em <code>config/thresholds.json</code>.</p>';
+    const disc = (state.thresholds && state.thresholds.disclaimer) || "";
+    document.getElementById("insightsDisclaimer").textContent = disc;
+
+    const sigs = state.latest.signals;
+    if (Array.isArray(sigs)) {
+      if (!sigs.length) {
+        host.innerHTML = '<p class="insight--empty">Nenhuma leitura ativa com os dados atuais. ' +
+          'Os limiares ficam em <code>config/thresholds.json</code> (bloco “sinais”).</p>';
+        return;
+      }
+      host.innerHTML = sigs.map(signalCardHTML).join("");
       return;
     }
-    const disc = (state.thresholds && state.thresholds.disclaimer) || "";
+
+    // Reserva: latest.json antigo (sem "signals") -> motor JS legado.
+    const fired = window.Recomendacoes ? Recomendacoes.evaluate(state.latest.indicators, state.thresholds) : [];
+    if (!fired.length) {
+      host.innerHTML = '<p class="insight--empty">Nenhuma leitura disparada com os dados atuais.</p>';
+      return;
+    }
     host.innerHTML = fired.map(({ regra, triggers }) => {
       const sev = regra.severidade || "neutro";
-      const sevLabel = sev === "positivo" ? "Positivo" : sev === "alerta" ? "Alerta" : "Info";
       return `<article class="insight insight--${sev}">
-        <div class="insight__sev">${sevLabel}</div>
+        <div class="insight__sev">${sevLabel(sev)}</div>
         <h3 class="insight__title">${esc(regra.titulo)}</h3>
         <p class="insight__msg">${esc(regra.mensagem)}</p>
         <div class="insight__trigger">Disparado por: ${triggers.join(" &nbsp;·&nbsp; ")}</div>
         <p class="insight__note">${esc(disc)}</p>
       </article>`;
     }).join("");
+  }
+
+  // Top 3 leituras mais relevantes no topo da Visão geral (já vêm ordenadas por relevância).
+  function renderHighlights() {
+    const host = document.getElementById("highlights");
+    if (!host) return;
+    const top = (state.latest.signals || []).filter((s) => !s.muted).slice(0, 3);
+    if (!top.length) { host.innerHTML = ""; return; }
+    host.innerHTML = '<div class="highlights__head">Leituras em destaque</div>' +
+      '<div class="highlights__row">' + top.map((s) =>
+        `<button type="button" class="hl hl--${s.severidade}" data-goto>
+          <span class="hl__estado">${esc(s.estado || "")}</span>
+          <span class="hl__title">${esc(s.titulo)}</span>
+        </button>`).join("") + "</div>";
+    host.querySelectorAll("[data-goto]").forEach((b) => b.addEventListener("click", () => setTab("recomendacoes")));
   }
 
   /* ---------- Sparkline ---------- */

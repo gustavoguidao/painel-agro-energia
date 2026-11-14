@@ -38,6 +38,11 @@ try:
 except Exception:  # pragma: no cover
     from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
+try:
+    import signals  # motor de leituras v2 (Fase 3), mesmo diretorio
+except ImportError:  # pragma: no cover
+    from collector import signals  # type: ignore
+
 # ----------------------------------------------------------------------------
 # Caminhos / constantes
 # ----------------------------------------------------------------------------
@@ -431,6 +436,37 @@ def collect_rain(s, cfg, indicators, history, errors):
             normal_30 = round(sum(anos) / len(anos), 1) if anos else None
             pct = round(acum_30 / normal_30 * 100) if normal_30 else None
 
+            # Serie "% da normal sazonal" (ultimos ~400 dias) para o motor de leituras (Fase 3):
+            # normal de cada data = media, nos 5 anos de referencia, do acumulado de 30 dias
+            # terminando no mesmo dia/mes. Permite histerese e "ativo desde" sem inventar dado.
+            normal_cache = {}
+
+            def seasonal_normal(mm, dd):
+                k = (mm, dd)
+                if k in normal_cache:
+                    return normal_cache[k]
+                acc = []
+                for y in range(end.year - 5, end.year):
+                    try:
+                        ed = date(y, mm, min(dd, 28))
+                    except Exception:
+                        continue
+                    janela = [obs[(ed - timedelta(days=kk)).isoformat()]
+                              for kk in range(30) if (ed - timedelta(days=kk)).isoformat() in obs]
+                    if len(janela) >= 20:
+                        acc.append(sum(janela))
+                val = sum(acc) / len(acc) if acc else None
+                normal_cache[k] = val
+                return val
+
+            pct_series = []
+            for pt in accum30[-400:]:
+                pd = _d(pt["date"])
+                nrm = seasonal_normal(pd.month, pd.day)
+                if nrm:
+                    pct_series.append({"date": pt["date"], "value": round(pt["value"] / nrm * 100, 1)})
+            history[rp["key"] + "_pct"] = pct_series
+
             idade = idade_dias(last_obs)
             indicators[rp["key"]] = {
                 "label": rp["label"], "unit": "mm", "group": "clima",
@@ -631,6 +667,7 @@ def main():
     cfg.setdefault("solar_location", {"name": "Sorriso-MT", "lat": -12.545, "lon": -55.711})
     max_idade = dict(MAX_IDADE_PADRAO, **(cfg.get("max_idade_dias") or {}))
     feeds_cfg = load_json(os.path.join(CONFIG_DIR, "feeds.json"), {"feeds": [], "max_itens": 18})
+    thresholds = load_json(os.path.join(CONFIG_DIR, "thresholds.json"), {})
     overrides = (cfg.get("manual_overrides") or {})
 
     history = load_json(os.path.join(DATA_DIR, "history.json"), {})
@@ -745,6 +782,14 @@ def main():
     # Chuva por ponto (UF): acumulados, previsao e normal.
     collect_rain(session, cfg, indicators, history, errors)
 
+    # Leituras de mercado v2 (Fase 3): motor em Python; o front so renderiza.
+    try:
+        sinais, sig_errs = signals.build_signals(indicators, history, cfg, thresholds)
+        errors.extend(sig_errs)
+    except Exception as e:
+        sinais = []
+        errors.append(f"signals: {e}")
+
     try:
         news = fetch_news(session, feeds_cfg)
     except Exception as e:
@@ -757,6 +802,7 @@ def main():
         "solar_location": cfg.get("solar_location"),
         "groups": GROUPS,
         "indicators": indicators,
+        "signals": sinais,
         "news": news,
         "errors": errors,
     }
@@ -765,8 +811,9 @@ def main():
     save_json(os.path.join(DATA_DIR, "latest.json"), out)
 
     ok = sum(1 for i in indicators.values() if not i.get("stale"))
+    ativas = sum(1 for s in sinais if not s.get("muted"))
     print(f"\nConcluido: {ok}/{len(indicators)} indicadores ao vivo, "
-          f"{len(news)} noticias, {len(errors)} avisos.")
+          f"{ativas} leitura(s) ativa(s), {len(news)} noticias, {len(errors)} avisos.")
     if errors:
         print("Avisos:", "; ".join(errors))
 

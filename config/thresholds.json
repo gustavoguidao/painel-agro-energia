@@ -1,6 +1,34 @@
 {
-  "_comentario": "Motor de regras das LEITURAS DE MERCADO. Cada regra dispara quando TODAS as condicoes em 'quando' sao verdadeiras. Commodities (soja/milho/cafe) sao avaliadas em R$/saca (serie alt_brl). Uma regra NAO dispara se algum indicador usado estiver com a fonte vencida (desatualizado). Campos validos: 'value', 'acum_12m', e 'changes.day|week|month|quarter|year'. Operadores: '<','<=','>','>=','==','!='. Tom: descritivo (o que mudou e o que conferir), nunca imperativo. Os limiares sao provisorios (Fase 1) e serao calibrados por backtest na Fase 3.",
+  "_comentario": "LEITURAS DE MERCADO. A partir da Fase 3 o motor roda no coletor (collector/signals.py) e grava 'signals' em latest.json; o bloco 'sinais' abaixo define os limiares (com histerese). O bloco 'regras' continua aqui apenas como reserva para o front antigo, caso um latest.json sem 'signals' seja carregado.",
   "disclaimer": "Leitura automática gerada por regras a partir dos dados mais recentes. Não é recomendação nem aconselhamento financeiro.",
+  "sinais": {
+    "_comentario": "Limiares do motor de leituras v2 (Fase 3). PROVISÓRIOS — calibrados por backtest (collector/backtest.py). Histerese: 'enter_*' liga, 'exit_*' desliga (folga); 'min_run' = nº de observações seguidas para ligar.",
+    "preco_percentil": {
+      "_comentario": "Soja e milho em R$/saca: percentil na janela de 12m. Alto >= 90 (sai < 80); baixo <= 10 (sai > 20). Decil extremo, para não ficar 'sempre ligado' em série com tendência.",
+      "enter_high": 90, "exit_high": 80, "enter_low": 10, "exit_low": 20,
+      "min_run": 2, "janela_dias": 365, "decomp_dias": 90
+    },
+    "cambio": {
+      "_comentario": "Dólar PTAX: variação em 90 dias. Alta >= +6% (sai < +3%); queda <= -6% (sai > -3%).",
+      "enter_high": 6, "exit_high": 3, "enter_low": -6, "exit_low": -3,
+      "min_run": 2, "janela_var": 90
+    },
+    "juros": {
+      "_comentario": "Selic (meta): variação em p.p. em 90 dias. Alta >= +0,25 (sai < +0,10); queda <= -0,25 (sai > -0,10). 'checar_frequencia': false porque um ciclo de corte/alta é um estado macro naturalmente persistente (não é ruído de limiar) — a guarda de oscilações continua valendo.",
+      "enter_high": 0.25, "exit_high": 0.1, "enter_low": -0.25, "exit_low": -0.1,
+      "min_run": 1, "janela_var": 90, "checar_frequencia": false
+    },
+    "chuva": {
+      "_comentario": "Chuva 30d vs normal sazonal. Seco <= 60% (sai > 75%); excesso >= 160% (sai < 140%).",
+      "enter_high": 160, "exit_high": 140, "enter_low": 60, "exit_low": 75,
+      "min_run": 3
+    }
+  },
+  "backtest": {
+    "_comentario": "Limites do backtest no CI: uma leitura ativa em mais de max_freq_pct% dos dias, ou que liga mais de max_oscilacoes vezes no ano, é ruído — o CI falha.",
+    "max_freq_pct": 40,
+    "max_oscilacoes": 12
+  },
   "regras": [
     {
       "id": "selic_queda",

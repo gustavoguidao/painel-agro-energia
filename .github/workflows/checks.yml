@@ -1,0 +1,48 @@
+name: Testes e backtest das leituras
+
+# Roda os testes do coletor e o BACKTEST do motor de leituras (Fase 3) quando o
+# codigo/config muda. NAO toca em data/*.json nem no cron de coleta: so valida.
+# O backtest falha se alguma leitura ficar ativa tempo demais ou oscilar demais
+# (ruido de limiar) — ver config/thresholds.json -> "backtest".
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "collector/**"
+      - "config/thresholds.json"
+      - "tests/**"
+      - ".github/workflows/checks.yml"
+  pull_request:
+    paths:
+      - "collector/**"
+      - "config/thresholds.json"
+      - "tests/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r collector/requirements.txt
+          pip install pytest
+
+      - name: Testes (coletor + motor de leituras)
+        run: python -m pytest tests/ -q
+
+      - name: Backtest das leituras (sobre data/history.json versionado)
+        run: python collector/backtest.py

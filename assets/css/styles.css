@@ -154,6 +154,36 @@ body {
 .insight__trigger { font-size: .76rem; color: var(--ink-soft); border-top: 1px dashed var(--border); padding-top: 8px; }
 .insight__trigger b { color: var(--ink); }
 .insight--empty { color: var(--ink-soft); font-size: .88rem; grid-column: 1 / -1; padding: 10px 2px; }
+
+/* Leituras v2 (Fase 3): cabecalho com estado, gatilhos, metadados e insumos */
+.insight--info .insight__sev { color: var(--accent); }
+.insight--neutro .insight__sev, .insight--muted .insight__sev { color: var(--muted); }
+.insight--positivo { box-shadow: inset 3px 0 0 var(--up); }
+.insight--alerta { box-shadow: inset 3px 0 0 var(--warn); }
+.insight--info { box-shadow: inset 3px 0 0 var(--accent); }
+.insight--muted { box-shadow: inset 3px 0 0 var(--border); opacity: .85; }
+.insight__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.insight__head .insight__sev { margin-bottom: 0; }
+.insight__estado { font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; padding: 2px 9px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); color: var(--ink-soft); white-space: nowrap; }
+.insight__gatilhos { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 5px; font-size: .76rem; color: var(--ink-soft); }
+.insight__gatilhos li { border-left: 2px solid var(--border); padding-left: 9px; }
+.insight__gatilhos b { color: var(--ink); }
+.insight__gatilhos span { color: var(--muted); }
+.insight__meta { font-size: .74rem; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 3px 10px; }
+.insight__insumos { font-size: .7rem; color: var(--muted); margin-top: 4px; }
+
+/* Leituras em destaque (topo da Visao geral) */
+.highlights { margin: 0 0 18px; }
+.highlights:empty { display: none; }
+.highlights__head { font-size: .82rem; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); font-weight: 700; margin: 0 0 8px; }
+.highlights__row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.hl { text-align: left; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 13px; cursor: pointer; font-family: inherit; display: flex; flex-direction: column; gap: 4px; box-shadow: inset 3px 0 0 var(--accent); transition: .15s; }
+.hl:hover { transform: translateY(-2px); border-color: var(--accent); }
+.hl--positivo { box-shadow: inset 3px 0 0 var(--up); }
+.hl--alerta { box-shadow: inset 3px 0 0 var(--warn); }
+.hl--info { box-shadow: inset 3px 0 0 var(--accent); }
+.hl__estado { font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); }
+.hl__title { font-size: .84rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
 .disclaimer { font-size: .76rem; color: var(--ink-soft); margin: 14px 2px 0; font-style: italic; }
 
 /* Grupos e cards */
