@@ -194,9 +194,11 @@ def _insumo(indicators, key, nome, use_usd_asof=False):
 
 
 def _is_stale(ind):
+    # Bloqueia a leitura pela REGRA DE IDADE (fonte_velha): um dado em cache mas ainda
+    # recente (stale=True só para o selo "em cache") continua valendo para a leitura.
     if not ind or ind.get("value") is None:
         return True
-    return bool(ind.get("fonte_velha") or ind.get("stale"))
+    return bool(ind.get("fonte_velha"))
 
 
 def _sem_leitura(sig_id, tema, titulo, motivo, insumos):

@@ -228,46 +228,56 @@ def cdi_annualize(daily_pct):
 
 
 def fetch_commodity(s, cfg, yahoo_symbol, stooq_symbol=None):
-    """Futuros via Yahoo Finance (chart API). Fallback: Stooq CSV.
+    """Futuros via Yahoo Finance (chart API), tentando os dois hosts (query1 e query2):
+    um pode responder 429 a partir de IP de nuvem enquanto o outro serve. Ultimo recurso:
+    Stooq CSV (hoje costuma vir atras de desafio JS; detecta e ignora, sem travar).
     Descarta a barra parcial do dia corrente (pregao em andamento): mantem so fechamentos."""
     hoje = today_brt().isoformat()
-    # 1) Yahoo
-    try:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{yahoo_symbol}"
-        j = get_json(s, url, params={"range": "1y", "interval": "1d"})
-        res = j["chart"]["result"][0]
-        ts = res["timestamp"]
-        q = res["indicators"]["quote"][0]
-        closes = q["close"]
-        out = []
-        for t, c in zip(ts, closes):
-            if c is None:
-                continue
-            dt = datetime.fromtimestamp(int(t), tz=BRT).date().isoformat()
-            if dt >= hoje:
-                continue  # ignora a barra parcial do pregao de hoje
-            out.append({"date": dt, "value": round(float(c), 4)})
-        if out:
-            return out
-    except Exception:
-        pass
-    # 2) Stooq CSV (fallback)
-    if stooq_symbol:
-        txt = get_text(s, "https://stooq.com/q/d/l/", params={"s": stooq_symbol, "i": "d"})
-        out = []
-        for line in txt.strip().splitlines()[1:]:
-            parts = line.split(",")
-            if len(parts) < 5:
-                continue
-            try:
-                if parts[0] >= hoje:
+
+    # 1) Yahoo em dois hosts
+    for host in ("query1", "query2"):
+        try:
+            url = f"https://{host}.finance.yahoo.com/v8/finance/chart/{yahoo_symbol}"
+            j = get_json(s, url, params={"range": "1y", "interval": "1d"})
+            res = j["chart"]["result"][0]
+            ts = res["timestamp"]
+            closes = res["indicators"]["quote"][0]["close"]
+            out = []
+            for t, c in zip(ts, closes):
+                if c is None:
                     continue
-                out.append({"date": parts[0], "value": round(float(parts[4]), 4)})
-            except Exception:
-                continue
-        if out:
-            return out
-    raise ValueError(f"commodity {yahoo_symbol} indisponivel (Yahoo e Stooq)")
+                dt = datetime.fromtimestamp(int(t), tz=BRT).date().isoformat()
+                if dt >= hoje:
+                    continue  # ignora a barra parcial do pregao de hoje
+                out.append({"date": dt, "value": round(float(c), 4)})
+            if out:
+                return out
+        except Exception:
+            continue
+
+    # 2) Stooq CSV (ultimo recurso). Se vier HTML/desafio JS, nao e CSV -> ignora.
+    if stooq_symbol:
+        try:
+            txt = get_text(s, "https://stooq.com/q/d/l/", params={"s": stooq_symbol, "i": "d"})
+            linhas = txt.strip().splitlines() if txt else []
+            if linhas and not txt.lstrip().startswith("<") and linhas[0].lower().startswith("date,"):
+                out = []
+                for line in linhas[1:]:
+                    parts = line.split(",")
+                    if len(parts) < 5:
+                        continue
+                    try:
+                        if parts[0] >= hoje:
+                            continue
+                        out.append({"date": parts[0], "value": round(float(parts[4]), 4)})
+                    except Exception:
+                        continue
+                if out:
+                    return out
+        except Exception:
+            pass
+
+    raise ValueError(f"commodity {yahoo_symbol} indisponivel (Yahoo query1/query2 e Stooq)")
 
 
 def fetch_solar(s, cfg):
@@ -736,11 +746,16 @@ def main():
                 hist = history[key]
                 last = hist[-1]
                 idade = idade_dias(last["date"])
+                # Fonte indisponivel nesta coleta: exibe cache. Marca "fonte_velha" SO se o
+                # cache ja passou da idade maxima (regra por idade). Assim um dado ainda recente
+                # (ex.: fechamento de ontem, mercado fechado no fim de semana) nao apaga a leitura.
+                velha = (idade is not None and idade > max_idade.get(freq, 7))
                 indicators[key] = dict(base, value=last["value"], as_of=last["date"],
-                                       idade_dias=idade, fonte_velha=True,
+                                       idade_dias=idade, fonte_velha=velha,
                                        changes=compute_changes(hist, item["change_type"], freq),
                                        stale=True, manual=False,
-                                       note="Fonte indisponível; exibindo último dado em cache.")
+                                       note=("Fonte indisponível nesta coleta; exibindo cache de "
+                                             + f"{last['date']}" + ("." if not velha else " (desatualizado).")))
             elif ov and isinstance(ov, dict) and "value" in ov:
                 indicators[key] = dict(base, value=ov["value"], as_of=ov.get("as_of"),
                                        idade_dias=idade_dias(ov.get("as_of")), fonte_velha=True,

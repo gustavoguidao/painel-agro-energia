@@ -113,6 +113,19 @@ def test_soja_desatualizada_vira_sem_leitura():
     assert soja is not None and soja["muted"] is True and soja["estado"] == "sem leitura"
 
 
+def test_soja_cache_recente_ainda_gera_leitura():
+    # fonte indisponível, mas cache recente (stale=True é só selo, fonte_velha=False):
+    # a leitura de preço continua valendo (regra por idade, não por falha de fetch).
+    brl = _serie([100 + i for i in range(60)])
+    history = {"soja_brl": brl, "soja": _serie([1000 + i for i in range(60)]), "usd": _serie([5.0] * 60)}
+    indicators = {"soja": {"label": "Soja", "value": 1059, "as_of": brl[-1]["date"], "idade_dias": 1,
+                           "fonte_velha": False, "stale": True,
+                           "alt_brl": {"value": brl[-1]["value"], "usd_as_of": brl[-1]["date"], "stale": False}}}
+    sigs, _ = S.build_signals(indicators, history, _cfg_vende_soja(), _thr())
+    soja = next((s for s in sigs if s["tema"] == "soja_preco"), None)
+    assert soja is not None and soja.get("muted") is not True and soja["estado"] == "patamar alto"
+
+
 def test_um_estado_por_tema():
     # nenhum tema pode aparecer duas vezes na saída (exclusão)
     brl = _serie([100 + i for i in range(60)])
