@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T22:29:29.591026+00:00",
+  "generated_at": "2026-11-14T23:26:40.305016+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -161,7 +161,7 @@
       "value": 1243.0,
       "as_of": "2026-11-13",
       "idade_dias": 1,
-      "fonte_velha": false,
+      "fonte_velha": true,
       "changes": {
         "day": 1.3,
         "week": null,
@@ -169,9 +169,9 @@
         "quarter": 5.9,
         "year": 9.81
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null,
+      "note": "Fonte indisponível; exibindo último dado em cache.",
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
@@ -201,7 +201,7 @@
       "value": 445.5,
       "as_of": "2026-11-13",
       "idade_dias": 1,
-      "fonte_velha": false,
+      "fonte_velha": true,
       "changes": {
         "day": 0.68,
         "week": null,
@@ -209,9 +209,9 @@
         "quarter": -2.94,
         "year": 0.91
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null,
+      "note": "Fonte indisponível; exibindo último dado em cache.",
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
@@ -241,7 +241,7 @@
       "value": 278.65,
       "as_of": "2026-11-13",
       "idade_dias": 1,
-      "fonte_velha": false,
+      "fonte_velha": true,
       "changes": {
         "day": -0.55,
         "week": null,
@@ -249,9 +249,9 @@
         "quarter": -17.58,
         "year": -30.63
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null,
+      "note": "Fonte indisponível; exibindo último dado em cache.",
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
@@ -281,7 +281,7 @@
       "value": 18.41,
       "as_of": "2026-11-13",
       "idade_dias": 1,
-      "fonte_velha": false,
+      "fonte_velha": true,
       "changes": {
         "day": 1.04,
         "week": null,
@@ -289,9 +289,9 @@
         "quarter": 10.9,
         "year": 27.49
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null
+      "note": "Fonte indisponível; exibindo último dado em cache."
     },
     "algodao": {
       "label": "Algodão (futuro ICE)",
@@ -304,7 +304,7 @@
       "value": 78.78,
       "as_of": "2026-11-13",
       "idade_dias": 1,
-      "fonte_velha": false,
+      "fonte_velha": true,
       "changes": {
         "day": 0.14,
         "week": null,
@@ -312,9 +312,9 @@
         "quarter": -5.77,
         "year": 25.25
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null
+      "note": "Fonte indisponível; exibindo último dado em cache."
     },
     "boi_gordo": {
       "label": "Boi gordo",
@@ -496,7 +496,186 @@
       }
     }
   },
+  "signals": [
+    {
+      "id": "chuva_to",
+      "tema": "chuva_to",
+      "estado": "abaixo da normal",
+      "severidade": "alerta",
+      "titulo": "Chuva abaixo da normal — Palmas-TO",
+      "texto": "A chuva acumulada em 30 dias em Palmas-TO está em 57% da normal do período — abaixo do normal (possível veranico). Confira a fase da cultura/pasto antes de decidir manejo, plantio ou suplementação.",
+      "gatilhos": [
+        {
+          "serie": "Chuva 30d — Palmas-TO",
+          "metrica": "% da normal sazonal",
+          "valor": 57,
+          "limiar": "<= 60",
+          "unidade": "%"
+        },
+        {
+          "serie": "Acumulado 30d",
+          "metrica": "observado",
+          "valor": 85.4,
+          "limiar": "normal 149.5",
+          "unidade": "mm"
+        }
+      ],
+      "insumos": [
+        {
+          "nome": "Open-Meteo (observado)",
+          "as_of": "2026-11-14",
+          "idade_dias": 0
+        }
+      ],
+      "ativo_desde": "2026-11-12",
+      "freq_ano": {
+        "pct": 20,
+        "dias": 75,
+        "total": 366
+      },
+      "oscilacoes_ano": 5,
+      "relevancia": 3043
+    },
+    {
+      "id": "juros",
+      "tema": "juros",
+      "estado": "em queda",
+      "severidade": "positivo",
+      "titulo": "Selic em queda (90 dias)",
+      "texto": "A Selic recuou -0,2 p.p. nos últimos 90 dias. O custo de crédito de investimento tende a ceder — vale comparar o custo de financiamento atual com o de meses atrás antes de decidir CAPEX.",
+      "gatilhos": [
+        {
+          "serie": "Selic (meta)",
+          "metrica": "variação 90d",
+          "valor": -0.25,
+          "limiar": "<= -0.25",
+          "unidade": "p.p."
+        }
+      ],
+      "insumos": [
+        {
+          "nome": "Selic (meta)",
+          "as_of": "2026-11-14",
+          "idade_dias": 0
+        }
+      ],
+      "ativo_desde": "2026-03-19",
+      "freq_ano": {
+        "pct": 66,
+        "dias": 241,
+        "total": 366
+      },
+      "oscilacoes_ano": 1,
+      "relevancia": 2025
+    },
+    {
+      "id": "cambio",
+      "tema": "cambio",
+      "estado": "em alta",
+      "severidade": "info",
+      "titulo": "Dólar em alta (90 dias)",
+      "texto": "O dólar (PTAX) subiu nos últimos 90 dias (+8,2% em 90d, +12,1% em 30d). Dois lados: encarece insumos e equipamento solar importado e, ao mesmo tempo, melhora a receita em reais do grão exportado.",
+      "gatilhos": [
+        {
+          "serie": "Dólar PTAX",
+          "metrica": "variação 90d",
+          "valor": 8.2,
+          "limiar": ">= 6",
+          "unidade": "%"
+        },
+        {
+          "serie": "Dólar PTAX",
+          "metrica": "variação 30d",
+          "valor": 12.05,
+          "limiar": "—",
+          "unidade": "%"
+        }
+      ],
+      "insumos": [
+        {
+          "nome": "Dólar PTAX",
+          "as_of": "2026-11-13",
+          "idade_dias": 1
+        }
+      ],
+      "ativo_desde": "2026-11-03",
+      "freq_ano": {
+        "pct": 4,
+        "dias": 9,
+        "total": 250
+      },
+      "oscilacoes_ano": 1,
+      "relevancia": 1008
+    },
+    {
+      "id": "preco_soja",
+      "tema": "soja_preco",
+      "estado": "sem leitura",
+      "severidade": "neutro",
+      "muted": true,
+      "titulo": "Soja (R$/saca)",
+      "texto": "Sem leitura no momento: preço ou dólar desatualizado. Nada é estimado enquanto o insumo não atualiza.",
+      "gatilhos": [],
+      "insumos": [
+        {
+          "nome": "Soja",
+          "as_of": "2026-11-13",
+          "idade_dias": 1
+        },
+        {
+          "nome": "Dólar PTAX",
+          "as_of": "2026-11-13",
+          "idade_dias": 1
+        }
+      ],
+      "ativo_desde": null,
+      "freq_ano": null,
+      "relevancia": 0
+    },
+    {
+      "id": "boi_sem_fonte",
+      "tema": "boi_preco",
+      "estado": "sem fonte",
+      "severidade": "neutro",
+      "muted": true,
+      "titulo": "Boi gordo sem leitura automática",
+      "texto": "Não há fonte automática gratuita para o preço do boi no momento (o scraping do CEPEA foi removido por licença). Uma fonte regional (Conab) está prevista. Enquanto isso, nada é estimado para o boi.",
+      "gatilhos": [],
+      "insumos": [],
+      "ativo_desde": null,
+      "freq_ano": null,
+      "relevancia": 0
+    }
+  ],
   "news": [
+    {
+      "title": "Presidente da FPA contesta Banco do Brasil sobre inadimplência no agronegócio - Vero Notícias",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQjNweV90bDdGNDBLUkdKNHhCcERiUkdfOGYzb0I3MFA3WUpEM0tGSEJyYlRCZTI0dGFBUzBoYk1MWHpqTzRHcmJYb3h4WmMtR3lRVk53RjZad1NrRTBxeWdWdVRQeU1GNEFXMF95TUN0eF9VdmlYbEtaTlM5OHZ5dzQ3Q1p4ek12VGc4YXpWeTYyd255Ni1RaWxhdDhnQlVuYTZ6eGRpeHZnZlRCRUtXOEln?oc=5",
+      "source": "Vero Notícias",
+      "categoria": "Agro",
+      "date": "2026-11-14T20:20:00-03:00"
+    },
+    {
+      "title": "MCI Energia Solar destaca soluções de geração e armazenamento de energia - Grupo A Hora",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPREZmekNfZl84cXRoM0lGWGVYdlZydGdldXNiYVRVX0FDRlYyMGhQQ2FhZzRvQkJlZDM2X0pST0xWRXNVaDd5dkpZVEJ6M3ZUakt2YXh6LXJKU1ZEWUJtRTA5blBBci1nSnlZSlRwMVI4TG1YTjRRaml4QXV6bzFJVGxVYV94UG5lSm5DeFpUNkZMRlVKM2psckdqYkpQRlNWeUVoOVRCRHlFMDNHZUdFVDNyNGhXZTJGblBNWQ?oc=5",
+      "source": "Grupo A Hora",
+      "categoria": "Energia",
+      "date": "2026-11-14T19:47:00-03:00"
+    },
+    {
+      "title": "Petrobras, IPCA e IPO da Anthropic: destaques da semana - Acia Araçatuba",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBtRzFHMjVjalduZkxnYUk5LXkzU2d2N2V6c2d4eFNIUmFtckphb1pHY1ZKeVVRMnkxbzRrZ0RvYWRBUkdUY0s4b3Buel9jZTRvZ0Iyczc2WFRzWUxVWVIyNDcwNEpoelZNS01OeGMtUF9nX0psRDNvejBCVnhOeDQ?oc=5",
+      "source": "Acia Araçatuba",
+      "categoria": "Economia",
+      "date": "2026-11-14T19:33:05-03:00"
+    },
+    {
+      "title": "BB diz que 90% do agro paga em dia após críticas de produtores - Diário da Guanabara",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNYi1RdmwwSVpGVV9nZ2hDSlZRaVZZOUNmeHJYbUFxN1g3bE9qeTVUa2k2UDVXWkk0aDB5bDNlZlZJNjlBUjdNc0R2T2RiTGxqQl9FWTczM3c5ZkNZZmM1VlhQcGloRmZENEdfaWpsa1VFSUx1LWN3NUg2VXBsRW0wYm12dFMxSVBXbTFxSkVRUGV6MWZB?oc=5",
+      "source": "Diário da Guanabara",
+      "categoria": "Agro",
+      "date": "2026-11-14T19:32:42-03:00"
+    },
     {
       "title": "Semana da soja é marcada por recuperação dos contratos em Chicago após relatório do USDA - Canal Rural",
       "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOak9wTFFnSllLUWVsczhiRF93MEdzY19SQWp3TEpSb1lZejVPLXJ4TnVYT3FPSkVjdVBSTmpJQURYdHljTEpWZzJtb21SRzhxc2p6b0YzRmV2QzBZYWZKUlJEeWQ3dmU4WkpqclhudjNQU0V0MmZzV0hOYWpjeE1uUk0zRnRaeU5aY1F0QmdLWXpqajFZMUEyWlpzRUpWb2FWWHNlTmJlREJKcmxwYksyZk02M0pqVzhjemtZYVhfU3R2MjBxVXBRN0xGaw?oc=5",
@@ -510,13 +689,6 @@
       "source": "Rede Peperi",
       "categoria": "Agro",
       "date": "2026-11-14T18:50:30-03:00"
-    },
-    {
-      "title": "Tendência do dólar é ter valorização ainda maior, diz especialista - CNN Brasil",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeXVscUJxeUNmZ0ZZYklrNkp2SV9UNDhhTFJ4UDltUm5MZDFpRjN6clRHZG1fU2h0UVBWT0hFeEpyellzUW4xQmpEOS1jWlcwRTNiTE9qQzNhc3k2MHRaZ2pxUkhoZVVoU3Jpb3dwTndKXzAwbUY5ZHZUU1l2MUVjdEtoNWtVWlZPM3NDODRhazQzelF0TTljeVNqbDluRHA1YllJVWlxR3B3RV9pZWNHd2p5aU13Z01JelE?oc=5",
-      "source": "CNN Brasil",
-      "categoria": "Economia",
-      "date": "2026-11-14T18:40:37-03:00"
     },
     {
       "title": "Produção de soja em Goiás deve cair 1,5% em 2027, aponta IBGE - GYN Noticias",
@@ -601,30 +773,14 @@
       "source": "Brasil Inovador",
       "categoria": "Agro",
       "date": "2026-11-14T13:40:09-03:00"
-    },
-    {
-      "title": "Aliare amplia presença em SP com unidade em Campinas - AgroRevenda",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSnlyWnpKV2FoQ3M5TkxObU1lOTJpOHRFNXozR0x3VmdyUVZYNHJFWU4yMFBrbWpIc1lCUWFDOWtsTjRZRmRYUzhqcTlaOVB4Rm9uTFNiWFJ4N2lkRmZoQnREeWtIZDVESzVrZnlLbTZjLTRneDlNaDJEejAwa2JSdUdSN2tPNGFvemFjOEowdC13SGI2?oc=5",
-      "source": "AgroRevenda",
-      "categoria": "Agro",
-      "date": "2026-11-14T13:32:20-03:00"
-    },
-    {
-      "title": "Vendas de milho avançam em Mato Grosso com queda nos preços - Agronews Brasil",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1xaHlBWnY0c0IzeVI0MjRNZzJWLWpXVE1LMzl5RTRnaElKRFRpTURKOEU2Sm9QMmkwd0tzdDRtZXUzb3Z0bUJCaU1QU21CU2hla2JEU2JyVERiMUtwaHpuMldyNDhnTF9lZ19J?oc=5",
-      "source": "Agronews Brasil",
-      "categoria": "Agro",
-      "date": "2026-11-14T13:30:09-03:00"
-    },
-    {
-      "title": "Gustavo Carmo faz balanço de missão em Brasília, destrava pendências na Saúde e articula PPPs de energia solar - Política ao Ponto",
-      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNckZONVdJb1FhYmxnUlg3WVhKdWF6anVzTDhnZm1SSDBJekVsUGVTQ0NkeVNyRmtPdUdDR21ua1hLT09aaFZEdUVjQ3lQSTh1NDhjbXBXWjN6M1g1Ukpvb1B6eURFckdxSDhzcU9QdzhEVFVGQ3ZKV2pCZVN2c3FQd0ZETVBYQ2JERk0zc05IMWVBTUNHOHEyTk91OEJDekhXeWJXcktqU2o2LUY0WDBaQ1A5elJMOFFzeGpzM2l6ZWV1VGp6SVduaTdXYUNoLWlPLW5SVzE0bTU?oc=5",
-      "source": "Política ao Ponto",
-      "categoria": "Energia",
-      "date": "2026-11-14T12:39:13-03:00"
     }
   ],
   "errors": [
+    "soja: commodity ZS=F indisponivel (Yahoo e Stooq)",
+    "milho: commodity ZC=F indisponivel (Yahoo e Stooq)",
+    "cafe: commodity KC=F indisponivel (Yahoo e Stooq)",
+    "acucar: commodity SB=F indisponivel (Yahoo e Stooq)",
+    "algodao: commodity CT=F indisponivel (Yahoo e Stooq)",
     "boi_gordo: sem fonte automatica"
   ]
 }
