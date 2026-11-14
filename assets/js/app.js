@@ -253,6 +253,26 @@
         <div class="card__src"><span>Fonte: ${esc(ind.source)}</span></div>
       </div>`;
     }
+    // Card de chuva: acumulados observados + previsao de 7 dias + comparacao com a normal.
+    if (ind.chuva) {
+      const r = ind.chuva;
+      const pctCls = r.pct_normal == null ? "" : (r.pct_normal < 60 ? "age-red" : (r.pct_normal < 80 ? "age-amber" : ""));
+      const normalTxt = r.normal_30 != null
+        ? `Normal 30d: ${Fmt.num(r.normal_30, 0)} mm — <b class="${pctCls}">${r.pct_normal}% da normal</b>`
+        : "normal indisponível";
+      return `<div class="card" data-key="${key}" role="button" tabindex="0">
+        <div class="card__top"><span class="card__label">${esc(ind.label)}</span></div>
+        <span class="card__value">${Fmt.num(r.acum_30, 0)}<small> mm · 30d</small></span>
+        <div class="card__rain">
+          <span>7d <b>${Fmt.num(r.acum_7, 0)}</b></span>
+          <span>15d <b>${Fmt.num(r.acum_15, 0)}</b></span>
+          <span>Prev. 7d <b>${Fmt.num(r.prev_7, 0)} mm</b></span>
+        </div>
+        <div class="card__note">${normalTxt}</div>
+        ${sparkSVG((state.history || {})[key])}
+        <div class="card__src"><span>Fonte: ${esc(ind.source)} · ${Fmt.dateBR(ind.as_of)}</span></div>
+      </div>`;
+    }
     const v = cardView(key, ind);
     const pref = state.unitPref[key] || "brl";
     const isCommodity = !!ind.alt_brl;

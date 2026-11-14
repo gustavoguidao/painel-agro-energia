@@ -371,6 +371,86 @@ def fetch_sem_fonte(s, cfg):
     raise ValueError("sem fonte automatica")
 
 
+# Pontos representativos por UF (ate o perfil trazer os municipios reais das fazendas).
+RAIN_POINTS = [
+    {"key": "chuva_go", "label": "Chuva — GO (ponto representativo)", "cidade": "Rio Verde-GO",
+     "lat": -17.7975, "lon": -50.9253},
+    {"key": "chuva_to", "label": "Chuva — TO (ponto representativo)", "cidade": "Palmas-TO",
+     "lat": -10.1849, "lon": -48.3338},
+]
+
+
+def collect_rain(s, cfg, indicators, history, errors):
+    """Chuva por ponto: acumulado observado de 7/15/30 dias, previsao de 7 dias e comparacao
+    com a normal (media do acumulado de 30 dias nos ultimos anos). Open-Meteo (archive + forecast).
+    Separa claramente observado de previsto; nunca grava previsao como realizado."""
+    end = today_brt()
+    start = end - timedelta(days=365 * 5 + 40)
+    for rp in RAIN_POINTS:
+        try:
+            arch = get_json(s, "https://archive-api.open-meteo.com/v1/archive", params={
+                "latitude": rp["lat"], "longitude": rp["lon"],
+                "start_date": start.isoformat(), "end_date": end.isoformat(),
+                "daily": "precipitation_sum", "timezone": "auto",
+            })
+            obs = {t: v for t, v in zip(arch["daily"]["time"], arch["daily"]["precipitation_sum"])
+                   if v is not None}
+            if not obs:
+                raise ValueError("sem precipitacao observada")
+            fc = get_json(s, "https://api.open-meteo.com/v1/forecast", params={
+                "latitude": rp["lat"], "longitude": rp["lon"],
+                "daily": "precipitation_sum", "forecast_days": 14, "timezone": "auto",
+            })
+            fcast = {t: v for t, v in zip(fc["daily"]["time"], fc["daily"]["precipitation_sum"])
+                     if v is not None}
+
+            dates = sorted(obs)
+            vals = [obs[d] for d in dates]
+            last_obs = dates[-1]
+            # acumulado movel de 30 dias (observado) para grafico/sparkline/historico
+            accum30 = [{"date": dates[i], "value": round(sum(vals[max(0, i - 29):i + 1]), 1)}
+                       for i in range(len(dates))]
+            history[rp["key"]] = accum30[-400:]
+
+            acum_7 = round(sum(vals[-7:]), 1)
+            acum_15 = round(sum(vals[-15:]), 1)
+            acum_30 = round(sum(vals[-30:]), 1)
+            fdates = sorted(d for d in fcast if d > last_obs)
+            prev_7 = round(sum(fcast[d] for d in fdates[:7]), 1)
+            # normal: media do acumulado de 30 dias terminando no mesmo dia/mes nos ultimos anos
+            anos = []
+            for y in range(end.year - 5, end.year):
+                try:
+                    ed = date(y, end.month, min(end.day, 28))
+                except Exception:
+                    continue
+                janela = [obs[(ed - timedelta(days=k)).isoformat()]
+                          for k in range(30) if (ed - timedelta(days=k)).isoformat() in obs]
+                if len(janela) >= 20:
+                    anos.append(sum(janela))
+            normal_30 = round(sum(anos) / len(anos), 1) if anos else None
+            pct = round(acum_30 / normal_30 * 100) if normal_30 else None
+
+            idade = idade_dias(last_obs)
+            indicators[rp["key"]] = {
+                "label": rp["label"], "unit": "mm", "group": "clima",
+                "change_type": "pct", "frequency": "daily",
+                "source": "Open-Meteo", "source_url": "https://open-meteo.com",
+                "value": acum_30, "as_of": last_obs, "idade_dias": idade,
+                "fonte_velha": (idade is not None and idade > 7),
+                "changes": compute_changes(history[rp["key"]], "pct", "daily"),
+                "stale": False, "manual": False,
+                "note": f"Ponto representativo: {rp['cidade']} (ajuste no perfil com o município real).",
+                "chuva": {"acum_7": acum_7, "acum_15": acum_15, "acum_30": acum_30,
+                          "prev_7": prev_7, "normal_30": normal_30, "pct_normal": pct,
+                          "cidade": rp["cidade"]},
+            }
+            print(f"  [ok] {rp['key']}: 30d={acum_30}mm prev7={prev_7}mm normal={normal_30}mm ({pct}%)")
+        except Exception as e:
+            errors.append(f"{rp['key']}: {e}")
+            print(f"  [falha] {rp['key']}: {e}")
+
+
 # ----------------------------------------------------------------------------
 # REGISTRO DE INDICADORES  (adicione/remova itens aqui)
 #   frequency: daily | weekly | monthly  (define como as variacoes sao calculadas)
@@ -456,6 +536,7 @@ GROUPS = [
     {"id": "cambio", "label": "Câmbio"},
     {"id": "commodities", "label": "Commodities agro"},
     {"id": "custos", "label": "Custos / logística"},
+    {"id": "clima", "label": "Clima / chuva"},
     {"id": "energia", "label": "Energia"},
 ]
 
@@ -661,6 +742,9 @@ def main():
             "note": (f"Usa dólar PTAX de {usd_asof}." if usd_old and usd_asof else None),
         }
 
+    # Chuva por ponto (UF): acumulados, previsao e normal.
+    collect_rain(session, cfg, indicators, history, errors)
+
     try:
         news = fetch_news(session, feeds_cfg)
     except Exception as e:
@@ -681,7 +765,7 @@ def main():
     save_json(os.path.join(DATA_DIR, "latest.json"), out)
 
     ok = sum(1 for i in indicators.values() if not i.get("stale"))
-    print(f"\nConcluido: {ok}/{len(REGISTRY)} indicadores ao vivo, "
+    print(f"\nConcluido: {ok}/{len(indicators)} indicadores ao vivo, "
           f"{len(news)} noticias, {len(errors)} avisos.")
     if errors:
         print("Avisos:", "; ".join(errors))
