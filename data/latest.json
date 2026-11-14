@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T18:33:57.944997+00:00",
+  "generated_at": "2026-11-14T22:29:29.591026+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -23,6 +23,10 @@
     {
       "id": "custos",
       "label": "Custos / logística"
+    },
+    {
+      "id": "clima",
+      "label": "Clima / chuva"
     },
     {
       "id": "energia",
@@ -366,16 +370,16 @@
       "frequency": "daily",
       "source": "Open-Meteo (observado)",
       "source_url": "https://open-meteo.com",
-      "value": 6.889,
+      "value": 6.761,
       "as_of": "2026-11-14",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 24.69,
+        "day": 22.37,
         "week": null,
-        "month": 136.17,
-        "quarter": 12.93,
-        "year": 9.3
+        "month": 131.78,
+        "quarter": 10.84,
+        "year": 7.27
       },
       "stale": false,
       "manual": false,
@@ -426,9 +430,200 @@
       "stale": false,
       "manual": false,
       "note": null
+    },
+    "chuva_go": {
+      "label": "Chuva — GO (ponto representativo)",
+      "unit": "mm",
+      "group": "clima",
+      "change_type": "pct",
+      "frequency": "daily",
+      "source": "Open-Meteo",
+      "source_url": "https://open-meteo.com",
+      "value": 101.1,
+      "as_of": "2026-11-14",
+      "idade_dias": 0,
+      "fonte_velha": false,
+      "changes": {
+        "day": 0.1,
+        "week": null,
+        "month": 1.92,
+        "quarter": 14342.86,
+        "year": 78.94
+      },
+      "stale": false,
+      "manual": false,
+      "note": "Ponto representativo: Rio Verde-GO (ajuste no perfil com o município real).",
+      "chuva": {
+        "acum_7": 43.7,
+        "acum_15": 66.6,
+        "acum_30": 101.1,
+        "prev_7": 74.1,
+        "normal_30": 88.3,
+        "pct_normal": 114,
+        "cidade": "Rio Verde-GO"
+      }
+    },
+    "chuva_to": {
+      "label": "Chuva — TO (ponto representativo)",
+      "unit": "mm",
+      "group": "clima",
+      "change_type": "pct",
+      "frequency": "daily",
+      "source": "Open-Meteo",
+      "source_url": "https://open-meteo.com",
+      "value": 85.4,
+      "as_of": "2026-11-14",
+      "idade_dias": 0,
+      "fonte_velha": false,
+      "changes": {
+        "day": 2.4,
+        "week": null,
+        "month": 59.63,
+        "quarter": 3613.04,
+        "year": 88.94
+      },
+      "stale": false,
+      "manual": false,
+      "note": "Ponto representativo: Palmas-TO (ajuste no perfil com o município real).",
+      "chuva": {
+        "acum_7": 24.8,
+        "acum_15": 40.1,
+        "acum_30": 85.4,
+        "prev_7": 62.8,
+        "normal_30": 149.5,
+        "pct_normal": 57,
+        "cidade": "Palmas-TO"
+      }
     }
   },
-  "news": [],
+  "news": [
+    {
+      "title": "Semana da soja é marcada por recuperação dos contratos em Chicago após relatório do USDA - Canal Rural",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOak9wTFFnSllLUWVsczhiRF93MEdzY19SQWp3TEpSb1lZejVPLXJ4TnVYT3FPSkVjdVBSTmpJQURYdHljTEpWZzJtb21SRzhxc2p6b0YzRmV2QzBZYWZKUlJEeWQ3dmU4WkpqclhudjNQU0V0MmZzV0hOYWpjeE1uUk0zRnRaeU5aY1F0QmdLWXpqajFZMUEyWlpzRUpWb2FWWHNlTmJlREJKcmxwYksyZk02M0pqVzhjemtZYVhfU3R2MjBxVXBRN0xGaw?oc=5",
+      "source": "Canal Rural",
+      "categoria": "Agro",
+      "date": "2026-11-14T19:10:22-03:00"
+    },
+    {
+      "title": "Motorista fica ferido após caminhão carregado de milho tombar em Descanso - Rede Peperi",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTTUxOTRGMHNHM3FaUWdQclRtOWFtRnNDRmp5YkRfLVBfVzdzRFdiMF9FMjFfdlVZdXh2S013eG1KMnR6V0lXa3pRXzV2QlFuaFZWejQyV2kzS2ZIbFhEMmc3OWYtYVE4SU1yeFVhVUJrNHZLZFJYTUZabi1lSDVUU1ItR01RQThiTnhubzJpalhOWUkyek5Cb1ItSlVPTnNyNTBUOUJoeXctSGZmXzZiX3h3?oc=5",
+      "source": "Rede Peperi",
+      "categoria": "Agro",
+      "date": "2026-11-14T18:50:30-03:00"
+    },
+    {
+      "title": "Tendência do dólar é ter valorização ainda maior, diz especialista - CNN Brasil",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeXVscUJxeUNmZ0ZZYklrNkp2SV9UNDhhTFJ4UDltUm5MZDFpRjN6clRHZG1fU2h0UVBWT0hFeEpyellzUW4xQmpEOS1jWlcwRTNiTE9qQzNhc3k2MHRaZ2pxUkhoZVVoU3Jpb3dwTndKXzAwbUY5ZHZUU1l2MUVjdEtoNWtVWlZPM3NDODRhazQzelF0TTljeVNqbDluRHA1YllJVWlxR3B3RV9pZWNHd2p5aU13Z01JelE?oc=5",
+      "source": "CNN Brasil",
+      "categoria": "Economia",
+      "date": "2026-11-14T18:40:37-03:00"
+    },
+    {
+      "title": "Produção de soja em Goiás deve cair 1,5% em 2027, aponta IBGE - GYN Noticias",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTzJKUGg0X2twcGxZM21yOHdnR3p4eHF4RmJmcmpIVGJvU0h1S3pJYTFWUEEzaDI1THhYUU9ReWJROEMtSDdaWFN2Z0ZhS3gtdzRFZXdMRS1SbDdQSW5reXNPMmFRcS1vTmNaSUEycVh5di1XQ2tESGU0X2dvUGdrZS1GNkpMWG1YbXRocTVxdkJNc3BvaXRSazZCYWd3d25ad0E?oc=5",
+      "source": "GYN Noticias",
+      "categoria": "Agro",
+      "date": "2026-11-14T18:30:00-03:00"
+    },
+    {
+      "title": "Presidente da FPA rebate Banco do Brasil sobre inadimplência no agronegócio - Jornal de Brasília",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOdTIxNjhQZWJ2WHNCbTlWN1paMl9RV3dIc2dIQThQbS1VOHpLUUE2Y282SlNNRDliYjM4b1N0YllEV0FQbnBOcUF2TzI2VVhXWkRxRlpPTFZzWG45TV9uX2U1OVY2Q2VHN051V1kzY2JFYWFEcHV4R2VMSExOc2RyNURHM2NUbmJDWkxsaVBrR2RfOUhjMzljZU15enJtbG1kZktMNVIzM2N3TGZFQVExN2RfZ0FtMXRfeDYwSTc0U3k2WTZk?oc=5",
+      "source": "Jornal de Brasília",
+      "categoria": "Agro",
+      "date": "2026-11-14T18:21:04-03:00"
+    },
+    {
+      "title": "Para financiar a safra, produtor endividado terá de tirar dinheiro do bolso - RepórterMT",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVFRtSkdhWG9sbzU1WVFFNThaSjNsV0VsRElsT0VfZ0dCTDBmbzRxdDdzckc3SVRIempFNVhqMHRRTDFzdWFobmNldnpwaW83QjlmdldUNUx1Vktlb2VRb2VIZk9za2xGWEgzLUFOZGllQk5yR01VZzdHaWZPODdoSkhFN1dLalZiOWQ0THhGb3ZGdFNUVFRuR1MyOWFFOEVvV01tMFp1Wm1XSGdVcXdONHFPNHg2U2li?oc=5",
+      "source": "RepórterMT",
+      "categoria": "Agro",
+      "date": "2026-11-14T18:06:00-03:00"
+    },
+    {
+      "title": "A distopia da Selic a 13,75%, por Ítalo de Aquino - Jornal GGN",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZWlGWlJTUVRQVUtSOENWTElxZjlQcGk0MG1WUGRKZmFEQ0pfR1g0TUdQT0xGbWNuR2Z3OTA1NTZkN043NWV4WVBMTzR3MVJpMVZaM0pKbFBYbFE2SXM4ZmFlSjFuREd0bXdnNkw2ZVhBNURJVXByOFRLbDFsVG5veHE5SC1HVHM?oc=5",
+      "source": "Jornal GGN",
+      "categoria": "Economia",
+      "date": "2026-11-14T15:32:00-03:00"
+    },
+    {
+      "title": "Agronegócio, o inimigo dos brasileiros. Artigo de Luiz Marques - Instituto Humanitas Unisinos - IHU",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNjI5WVg1a0pvZ0tOYnp6RV9WU2hEM1JQUXlOd1h0ZTh3T3pUM0I4aEt6ZkJQZ3JTbXlQUnRWMTYycy1mSVU4TktGMmlHazhNTjhsSkpCSHh0dG80VFZyd29uYmxIYWFXck9NeE5iSURvNUFnRDdScUJWVTNpaDNwa3VlTUJzWkVSUW9CMHV0TkYwREUyMFlIZG81NA?oc=5",
+      "source": "Instituto Humanitas Unisinos - IHU",
+      "categoria": "Agro",
+      "date": "2026-11-14T15:28:25-03:00"
+    },
+    {
+      "title": "Contratos futuros do milho sobem em Chicago com demanda forte dos EUA - CNN Brasil",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9lTW1hZjlOQzh0LURlMVBhODR1cGFWOG1LRlpLa2U1N3RlWFU1eUlzNW9KbUFSc1RhelJOSTlxenk0SmFtVENYSUV6cGtOeUt1eFJSZUtWUm9XTkF5OGx2ODRGTnV6clE?oc=5",
+      "source": "CNN Brasil",
+      "categoria": "Agro",
+      "date": "2026-11-14T15:00:12-03:00"
+    },
+    {
+      "title": "Agronegócio sem limites: agrotóxicos proibidos continuam envenenando as águas do Brasil - Blog do Pedlowski",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMEM4MlVkRGZYd01UQkFWMG1xWFlWREFyUGtYWDVlYWNRMXlmU1VMaVVrQXZ0bXQ4Y0kycXh6bm5zWTFTbFppeXNVZzExbGxSNGNjdzlNbnNteWVacU1NeHV4LVBKM2pYTi1lamV3MmRkR0xncmtVMng3OUVzSDVhQWRrcGl5dm1pb25abWlsRUNaVTBNdThDM0QtOVB1aC1VVDgzQmkyY2ZiX3hmd2Y0Z25Bb0Z2TWRMcnhIQjR6THFKd0lf?oc=5",
+      "source": "Blog do Pedlowski",
+      "categoria": "Agro",
+      "date": "2026-11-14T14:53:41-03:00"
+    },
+    {
+      "title": "Agronegócio em 2027: produzir mais não significa ganhar mais - FOLHAMAX",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxON092WFdIbkhVdWdsTHkzcmZBR2owdGloclAzRHhFcWY0UHZzM096azFJbVNxdTh6bnJYWjVKaWFqcTA1Mk1paXA0ZXpwb01BWjFhWGk0N2FvdkcwXzFydy1obEd1MU5lSkU1Nll6WmR4R3dnd29qUUNybS1QLWVUNFUyRkJRTnB5U2FmTmdLYzBUNFNXMV9kdjVKWHhRVHE2?oc=5",
+      "source": "FOLHAMAX",
+      "categoria": "Agro",
+      "date": "2026-11-14T14:40:00-03:00"
+    },
+    {
+      "title": "Fenagro apresenta força do agronegócio em Erechim - G1",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNc3JCSGM5SGIyZnlQSlpaN3U0TzNlMGtMUmNRdjZibWFLazNsUGNwTlNnX3J1a0tScGM4UGdKdU4xQnI3Y09odFBibERTdUwyNTRmamhfaVJuYzNjTE1YWkowVGpncHV1WTR0djNDQWRSLUREVXUwcGxBRXppTlRCeHNjVUVMLWh3UGJSODVVZGlFa2EyRVFhcDZQVDB6OVp0SjFNX0JobjA1Vlk5d1otT3dHanV3a2UxRnVrQXl5NmZFdERTdUR0eC00TzlfdE5Ed1HSAeABQVVfeXFMUFJsWjBkN01jZ2I2QV82Z20yX1VIZDZvSjBKNmg0RmYyNU1aTUp6RURaWm1IdDg4SXp5OG1mTVJtMDIxb3hEYWlub0dTWXFVT1h5NFNQMFJhOTBHbTc0UTgtUTJ2WGt6MWxFU3lpM1RNczJiZUxqSWVEUFdrekRNamphTmhDU2lLY0NwN2ZiVy1iOUZKdll3V1N5U3lMTWoyckE4RUl6NTllQTlkM2xmSkhNeGhnME1YeENjV0dMbXNxODFsUWFYaDkxZTFyRGl1MmlyOGoxakFib0dVWjAyTTg?oc=5",
+      "source": "G1",
+      "categoria": "Agro",
+      "date": "2026-11-14T14:33:12-03:00"
+    },
+    {
+      "title": "O agronegócio exige respeito, não acusações - FOLHAMAX",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQYVd6U1hPem9Ea3VfZFVZQmM0ckZjdHRCWGRLeEVaN3hPY0FCMlpQU0pZa3J0OXZCVmpnRVlncE1hcVVObFNXZmZIamNkWm5jSDdWR0RybFZmakhMdTU5ckk5ZlAydVBDWnhXRzEyNHZSZzgxNEVnRUxydnJjRy1CZHZtQmM5elV2dmc?oc=5",
+      "source": "FOLHAMAX",
+      "categoria": "Agro",
+      "date": "2026-11-14T14:24:00-03:00"
+    },
+    {
+      "title": "China e EUA avançam em corte de tarifas, e soja do Brasil entra no radar - TV Sim Brasil",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcEhCS09MSGhSY3hyMkgxR1ZLZEZ6VVpXdGlPeHpWTGhOUDBlSlp2Uno1bHFxSG1XeXBvRndCa1BSM2hILVpBMXNkODUwTGlZT3RldFY5WmQ0OEpHWGxQb0M1THhsOW1ZZUZYc3ZNMWE5d042cFNxVVFiazdDbVhpbllCZnhmVTdIRkZyN3NWazdiZTNFS0Y1RkpIbGJMS1FnNi1mWWNTLXA2QXdFR01GeA?oc=5",
+      "source": "TV Sim Brasil",
+      "categoria": "Agro",
+      "date": "2026-11-14T13:51:45-03:00"
+    },
+    {
+      "title": "Projeção de retração na safra de 2027 direciona foco do agronegócio para controle de qualidade e produtividade - Brasil Inovador",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOamZzU0NZTG1aUFE5YWFOcHBVcUlscVBhZ0ZqM2ZTU2tkaFl2OVVFdUNaRVpmTUJidXg1VFhVbVF1OHZWY2pWeGNFQ0YtSFd2UXpGZ0Z2dmRuN25meDk5aUVzLUFBOWc4ZHFvWGVTb0NwS0tSN25ScGF2WXd6QnZFVExBUjFkblUxOXNnQ0t5MHQ4anlYeVUxa095YmdibnI0WHhLUzdram14Uy1zZW1VZ1ltVmRRUF9SM2tVVV80TXViMDJBWE8wejI3UDZJMXYtNHVUVVBUT3o?oc=5",
+      "source": "Brasil Inovador",
+      "categoria": "Agro",
+      "date": "2026-11-14T13:40:09-03:00"
+    },
+    {
+      "title": "Aliare amplia presença em SP com unidade em Campinas - AgroRevenda",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSnlyWnpKV2FoQ3M5TkxObU1lOTJpOHRFNXozR0x3VmdyUVZYNHJFWU4yMFBrbWpIc1lCUWFDOWtsTjRZRmRYUzhqcTlaOVB4Rm9uTFNiWFJ4N2lkRmZoQnREeWtIZDVESzVrZnlLbTZjLTRneDlNaDJEejAwa2JSdUdSN2tPNGFvemFjOEowdC13SGI2?oc=5",
+      "source": "AgroRevenda",
+      "categoria": "Agro",
+      "date": "2026-11-14T13:32:20-03:00"
+    },
+    {
+      "title": "Vendas de milho avançam em Mato Grosso com queda nos preços - Agronews Brasil",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1xaHlBWnY0c0IzeVI0MjRNZzJWLWpXVE1LMzl5RTRnaElKRFRpTURKOEU2Sm9QMmkwd0tzdDRtZXUzb3Z0bUJCaU1QU21CU2hla2JEU2JyVERiMUtwaHpuMldyNDhnTF9lZ19J?oc=5",
+      "source": "Agronews Brasil",
+      "categoria": "Agro",
+      "date": "2026-11-14T13:30:09-03:00"
+    },
+    {
+      "title": "Gustavo Carmo faz balanço de missão em Brasília, destrava pendências na Saúde e articula PPPs de energia solar - Política ao Ponto",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNckZONVdJb1FhYmxnUlg3WVhKdWF6anVzTDhnZm1SSDBJekVsUGVTQ0NkeVNyRmtPdUdDR21ua1hLT09aaFZEdUVjQ3lQSTh1NDhjbXBXWjN6M1g1Ukpvb1B6eURFckdxSDhzcU9QdzhEVFVGQ3ZKV2pCZVN2c3FQd0ZETVBYQ2JERk0zc05IMWVBTUNHOHEyTk91OEJDekhXeWJXcktqU2o2LUY0WDBaQ1A5elJMOFFzeGpzM2l6ZWV1VGp6SVduaTdXYUNoLWlPLW5SVzE0bTU?oc=5",
+      "source": "Política ao Ponto",
+      "categoria": "Energia",
+      "date": "2026-11-14T12:39:13-03:00"
+    }
+  ],
   "errors": [
     "boi_gordo: sem fonte automatica"
   ]
