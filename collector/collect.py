@@ -51,7 +51,8 @@ CONFIG_DIR = os.path.join(ROOT, "config")
 DATA_DIR = os.path.join(ROOT, "data")
 
 BRT = timezone(timedelta(hours=-3))  # horario de Brasilia (sem DST desde 2019)
-HTTP_TIMEOUT = 25
+# (connect, read): derruba conexao morta em 10s e leitura travada em 25s.
+HTTP_TIMEOUT = (10, 25)
 
 # Idade maxima (dias) que um dado pode ter antes de ser "fonte velha" (padrao por frequencia).
 MAX_IDADE_PADRAO = {"daily": 4, "weekly": 10, "monthly": 45}
@@ -66,12 +67,16 @@ def today_brt():
 # ----------------------------------------------------------------------------
 def make_session():
     s = requests.Session()
+    # Retry curto e que NAO obedece Retry-After gigante: uma fonte que responde 429
+    # (ex.: Yahoo a partir de IP de nuvem) com Retry-After de minutos travaria o job
+    # ate o timeout do workflow. Preferimos falhar rapido e cair no cache/"sem dado".
     retry = Retry(
-        total=4,
-        backoff_factor=1.5,
+        total=2,
+        backoff_factor=0.5,
         status_forcelist=[429, 500, 502, 503, 504],
         allowed_methods=["GET"],
         raise_on_status=False,
+        respect_retry_after_header=False,
     )
     s.mount("https://", HTTPAdapter(max_retries=retry))
     s.mount("http://", HTTPAdapter(max_retries=retry))
