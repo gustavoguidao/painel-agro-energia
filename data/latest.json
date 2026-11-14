@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T06:28:55.247807+00:00",
+  "generated_at": "2026-11-14T18:07:36.578125+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -362,16 +362,16 @@
       "frequency": "daily",
       "source": "Open-Meteo (observado)",
       "source_url": "https://open-meteo.com",
-      "value": 6.356,
+      "value": 6.889,
       "as_of": "2026-11-14",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 15.04,
+        "day": 24.69,
         "week": null,
-        "month": 117.9,
-        "quarter": 4.2,
-        "year": 0.84
+        "month": 136.17,
+        "quarter": 12.93,
+        "year": 9.3
       },
       "stale": false,
       "manual": false,
@@ -380,130 +380,130 @@
   },
   "news": [
     {
-      "title": "O dólar fechou praticamente estável nesta sexta-feira (13), cotado a R$ 5,65, mas acumulou alta de 2,63% na semana. Além das incertezas sobre o pacote fiscal do governo, pesou a continuidade das turbulências no mercado internacional. Na bolsa, o Ibove - Instagram",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE96OGVKQWFkVUpEU0FLZjRtOUxKREROMFMzWXFjZDNERTQwSE1ZNEdkQ1pmSUpQTXVza1VLREREajNqek9sbWNvYnZjZEJVTEFTTEE?oc=5",
-      "source": "Instagram",
-      "categoria": "Economia",
-      "date": "2026-11-14T02:45:27-03:00"
-    },
-    {
-      "title": "Bioinsumos avançam no agronegócio e integração de tecnologias redefine manejo fitossanitário no Brasil - Brasil Inovador",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYzdqZEZfbWZZVHVGYlBMdTNOcVdXUXVCZXdDU0pjRFVsVWNOa3AydEhubVhRVTk0SmdFX3lucWF5dzdYWnFaOGdKT2xjbkxQZnRjbWRjeEt3T2g3dFBGczZIQjhWckt3UWxNeTduMWJvQXdWX1AzSXdvQ0VKTlFReEFqSzg3czRyRDBZbXE0NzRzZm1BSE8zV3lsa1RHVkZHdFg5TGl3eUhiWll6bnBvM1RNYTlXWXlZVFBHS3RreEtsQWlLRVlJRTdjcFpGUQ?oc=5",
-      "source": "Brasil Inovador",
+      "title": "Agronegócio sem limites: agrotóxicos proibidos continuam envenenando as águas do Brasil - Blog do Pedlowski",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMEM4MlVkRGZYd01UQkFWMG1xWFlWREFyUGtYWDVlYWNRMXlmU1VMaVVrQXZ0bXQ4Y0kycXh6bm5zWTFTbFppeXNVZzExbGxSNGNjdzlNbnNteWVacU1NeHV4LVBKM2pYTi1lamV3MmRkR0xncmtVMng3OUVzSDVhQWRrcGl5dm1pb25abWlsRUNaVTBNdThDM0QtOVB1aC1VVDgzQmkyY2ZiX3hmd2Y0Z25Bb0Z2TWRMcnhIQjR6THFKd0lf?oc=5",
+      "source": "Blog do Pedlowski",
       "categoria": "Agro",
-      "date": "2026-11-14T02:15:05-03:00"
+      "date": "2026-11-14T14:53:41-03:00"
     },
     {
-      "title": "“Produtor rural não é caloteiro”: setor de soja rebate presidente do Banco do Brasil sobre dívidas do agronegócio - Jornal O Sul",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONzRSdXNJdmFlMHNhQ2NiaWI3bTgtUkZ0eUxreklTYkthRE5PNXY1ODF5cHdjYTBfNGtDVWFndlB6NHVkazBKbTQ5Z2hsX3lpcVh0aE41NndodDZkUnRCZ2dQU2padEZlLXZuUnlvZWlfSURXMWh0LVZQbG03clpTcDNXZkRMUFp0Skd6bUhBYjZPQjZmWXZIcGRLUzRhbzh1endHTXUxbnN2ejBtMjZaQnc0X1F6MVFkcDNjUmV5SFdkYUpVRXlvVGdHOVpxNmw50gHWAUFVX3lxTFAtWEs3MWhUMGE5aVF1MHJzSkNSQ296QURTQUxIVFM2OE5vTzliUDJTaGE0bVZnc25wb1JXd0hhX3FXQjdSZmZ4VjdjUExPc25oOTVjMDlPOHVESmxYVklMR3BKc0lJcTVqS0UteXJVdkh4akE1dkJndE1GS05GQXppb2lfUVNKYmdKOWpISDI5S0VXU0EzUHFWSG81VW5TWjFPd0hDa0FKa2lDUW1yRDFQY2w1b0NDMllyc3Vpc3JXdjhYU2ZDdnhHZTdhQVlqc25FZC1RMkE?oc=5",
-      "source": "Jornal O Sul",
-      "categoria": "Agro",
-      "date": "2026-11-14T01:45:53-03:00"
-    },
-    {
-      "title": "Altas generalizadas entre os elos da cadeia da carne, com destaque para o boi gordo - Portal DBO",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRmN2bGxJcGgyWTg0VG1QVEdvTUctV1F2NnhPNGNoVUY2NWR3RDIyYkhLSUZlMjMyV0dpbGtGV1FHeWJmOXlXUXNub0dlMlVpWUVacUoxYkc2YXhMTzI4cHRVZlU2LXJ1Z2tZdzJRRm9ZWWxydU15Uk5EOFFiQjVHdjU2cnZZZXhHWkthWTJCQ1pmaXpDdzhsQ1dyNEkxRlFCV0kwUFItbUZtc2E0?oc=5",
-      "source": "Portal DBO",
-      "categoria": "Agro",
-      "date": "2026-11-14T01:30:00-03:00"
-    },
-    {
-      "title": "Boi gordo e lotes-China sobem R$ 5/@ e R$ 8/@ nesta 1º quinzena de novembro - Portal DBO",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQUpKdjZWQjcyODhrMnI0WTB2Zi1mb2EwU0huZTJBTVJkM1BFNlJKNmhaaGZTQVhYR1oxOVZJbFRaYndGZDNVQlFIM3J1TWs2NlZYUTlsWERFT3RfN0ZzMXpQaVZuUnotZXlRYzJnMF96MG00OTVpTGVVN1ZFY09aSHBvMHpGWkpEOFVNeWZnY3J6dGdxWE9WZ2NDVQ?oc=5",
-      "source": "Portal DBO",
-      "categoria": "Agro",
-      "date": "2026-11-14T01:02:59-03:00"
-    },
-    {
-      "title": "Mercado financeiro prevê juros de dois dígitos até 2030, ao longo dos dois mandatos de Lula - G1",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPQ0dkZE5WTm5CTGtUWnJwVnAyb21LYXZHX2ZjVGlBcmNRUkZTU1dEMWc4SFFmRDBVTjZlUndobjNLYmJBQ0JKNXJTdlZyVTlJNjRNRDU1NE90bHZKdGR3V0NxZGxLWFdUM0lqV01kU000WU9VbUdINF9wbGd2dVdrUmxLdndvcklWbkdSYTdDWV9JVTZRUUNrUmdMNFV4UG1KTVFJc0NqWlZ0VW5rUGtNSkdiNmd0WU1RR3FZRU9sSVlvVFFCWXg3cjFsTkZtOC1tYVo3TkU0NDVfcmc3VmfSAewBQVVfeXFMTW5fN0NZcUh1STVaUzE0ZWQwWHgtdnVvb1AzVGhYMlV1SEhuQnNKV1BBNTJESWgtVFFwSWdpcDhaVHpOeWI4WlRyTEp0M3M2TDctQ3FVYkd5WWExTUlfeVA1Zm5nelBMdGZIdzZIdkhpQkNBWWNGNXhLWGREd0RoeXN1RFRwSVFSYjFmeDFJeWdzQTNIZTZ0SmdybG4zVjgwaF9WZ3RMaVJsVDBMRUFyLUtna1BJVkRNMm16eFhTVkJfaTl5VnV0ZW9pZE1YYlVyMUZjRFNOa1lrelU2SjdTOTAtWlpOd0F0UjV2ZkI?oc=5",
-      "source": "G1",
-      "categoria": "Economia",
-      "date": "2026-11-14T00:00:00-03:00"
-    },
-    {
-      "title": "TJ condena empresa de energia solar por cobrança após cancelamento em MT - FOLHAMAX",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNV2JTTlF2Z0RmNlBENzk5d25Zeko1em44NFNRQ1Qtbmd5VE9IeGNycHpyeUdpQ0YwYXo2dzBidlh2OHllNDFjQ1pzTFV4aDA5ZkF1ZjJTekxPZWpzMUpSbm9EMnp0bzl6U2dTSnJuVFc2WXhfcmVhS0c5SDNWU1Naa1Rhdks3RVotZjBQOUdVblRxSU1SeVlYaTNpZVkxSkZDUHpRaEs2aXNMQUhDY1VqMFVvSQ?oc=5",
+      "title": "Agronegócio em 2027: produzir mais não significa ganhar mais - FOLHAMAX",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxON092WFdIbkhVdWdsTHkzcmZBR2owdGloclAzRHhFcWY0UHZzM096azFJbVNxdTh6bnJYWjVKaWFqcTA1Mk1paXA0ZXpwb01BWjFhWGk0N2FvdkcwXzFydy1obEd1MU5lSkU1Nll6WmR4R3dnd29qUUNybS1QLWVUNFUyRkJRTnB5U2FmTmdLYzBUNFNXMV9kdjVKWHhRVHE2?oc=5",
       "source": "FOLHAMAX",
-      "categoria": "Energia",
-      "date": "2026-11-13T23:53:00-03:00"
+      "categoria": "Agro",
+      "date": "2026-11-14T14:40:00-03:00"
     },
     {
-      "title": "Bolsa sobe 0,66% e dólar segue em R$ 5,65 com ajuste fiscal em vista - Poder360",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQMWxJQTNEeUVIVU5meUx6NzExRmNzdDgwMWRZQ3dfcXdJdGVObzVubkxVSlNjcVJfS1QwMHdMa2dneDJhMjcwQ2RLOGppdmFzajd6Ul9KRTJibmtBc2w0Ym9nY0FZWjh0bFpvT0JsemhvcnRwWDBLSl84YTAxWUdQQzg4Ymtsc0NRYWw5emhaMUNjejh5NkZfQVNORm1CaS1BaG8zX1VlX1N3QnJC?oc=5",
-      "source": "Poder360",
-      "categoria": "Economia",
-      "date": "2026-11-13T23:50:24-03:00"
+      "title": "Fenagro apresenta força do agronegócio em Erechim - G1",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNc3JCSGM5SGIyZnlQSlpaN3U0TzNlMGtMUmNRdjZibWFLazNsUGNwTlNnX3J1a0tScGM4UGdKdU4xQnI3Y09odFBibERTdUwyNTRmamhfaVJuYzNjTE1YWkowVGpncHV1WTR0djNDQWRSLUREVXUwcGxBRXppTlRCeHNjVUVMLWh3UGJSODVVZGlFa2EyRVFhcDZQVDB6OVp0SjFNX0JobjA1Vlk5d1otT3dHanV3a2UxRnVrQXl5NmZFdERTdUR0eC00TzlfdE5Ed1HSAeABQVVfeXFMUFJsWjBkN01jZ2I2QV82Z20yX1VIZDZvSjBKNmg0RmYyNU1aTUp6RURaWm1IdDg4SXp5OG1mTVJtMDIxb3hEYWlub0dTWXFVT1h5NFNQMFJhOTBHbTc0UTgtUTJ2WGt6MWxFU3lpM1RNczJiZUxqSWVEUFdrekRNamphTmhDU2lLY0NwN2ZiVy1iOUZKdll3V1N5U3lMTWoyckE4RUl6NTllQTlkM2xmSkhNeGhnME1YeENjV0dMbXNxODFsUWFYaDkxZTFyRGl1MmlyOGoxakFib0dVWjAyTTg?oc=5",
+      "source": "G1",
+      "categoria": "Agro",
+      "date": "2026-11-14T14:33:12-03:00"
     },
     {
-      "title": "Ibovespa avança 0,66% e dólar acumula alta de 2,63% na semana - Vero Notícias",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQa3R0SHhmdkFxME9JR1Rxa29TV1JIQ2Rud2Z6TzlJdnFXbXc3VkNjME9RLWtySGRaNHl6bXVWWnNxcXRpbTlwdWR0UWllSmRSVVgwbC1kNXUwcTM1TUJvOHFGWHhFaEVkeWYwZFBpTUlhQk15MHJ4bmdxSThBdGJxNkJiN1J6amdERDBoTzFRV1VBRUdsbnJJ?oc=5",
-      "source": "Vero Notícias",
-      "categoria": "Economia",
-      "date": "2026-11-13T23:00:00-03:00"
+      "title": "China e EUA avançam em corte de tarifas, e soja do Brasil entra no radar - TV Sim Brasil",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcEhCS09MSGhSY3hyMkgxR1ZLZEZ6VVpXdGlPeHpWTGhOUDBlSlp2Uno1bHFxSG1XeXBvRndCa1BSM2hILVpBMXNkODUwTGlZT3RldFY5WmQ0OEpHWGxQb0M1THhsOW1ZZUZYc3ZNMWE5d042cFNxVVFiazdDbVhpbllCZnhmVTdIRkZyN3NWazdiZTNFS0Y1RkpIbGJMS1FnNi1mWWNTLXA2QXdFR01GeA?oc=5",
+      "source": "TV Sim Brasil",
+      "categoria": "Agro",
+      "date": "2026-11-14T13:51:45-03:00"
     },
     {
-      "title": "Kepler Weber amplia receita em agroindústrias com avanço do etanol de milho no terceiro trimestre de 2026 - Brasil Inovador",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQRmZ5RHItU2tMbVN1VlhHY25GWVFIR0FUREliWGd6UmxfRURkY0FvVTJOTE1odS1hU0ZSaHFVVWY0SktiTm02WUZGTFp4b1VxRVdPVG1ia2tCYkNKcENFdG84WFJKbHQtMkFBREc0VjZHakxZWERjekdTSlhiV0FNRUNQQnA0Q1ltaHUzYUJXVXN2TWhUNTlTbUo4ai1FMmY4RUwtc212dTNfWm1hcXUtbW9BVUs3U2ZSRGhzNVplZFhGS1dETUhOUmhvX2hGYmtqZkE?oc=5",
+      "title": "Projeção de retração na safra de 2027 direciona foco do agronegócio para controle de qualidade e produtividade - Brasil Inovador",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOamZzU0NZTG1aUFE5YWFOcHBVcUlscVBhZ0ZqM2ZTU2tkaFl2OVVFdUNaRVpmTUJidXg1VFhVbVF1OHZWY2pWeGNFQ0YtSFd2UXpGZ0Z2dmRuN25meDk5aUVzLUFBOWc4ZHFvWGVTb0NwS0tSN25ScGF2WXd6QnZFVExBUjFkblUxOXNnQ0t5MHQ4anlYeVUxa095YmdibnI0WHhLUzdram14Uy1zZW1VZ1ltVmRRUF9SM2tVVV80TXViMDJBWE8wejI3UDZJMXYtNHVUVVBUT3o?oc=5",
       "source": "Brasil Inovador",
       "categoria": "Agro",
-      "date": "2026-11-13T22:10:04-03:00"
+      "date": "2026-11-14T13:40:09-03:00"
     },
     {
-      "title": "Milho floculado nacional já está em estudo; ouça - Portal DBO",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9WM0dfYnZ4a2xNX3BoT3F6VzQ0bnlZZnlHRVVRVC11Y2tNWWw3dnZwbzV4Wm1tX2FCRk5uRzQtdWd1WURDTHVFaTVQS1I5Y0Zadzd0YVFycWlNc1JqV2x1MHFwcklfcURNTUxjTUp4ajNiRDJXVFJlYTYwdldSdw?oc=5",
-      "source": "Portal DBO",
+      "title": "Aliare amplia presença em SP com unidade em Campinas - AgroRevenda",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSnlyWnpKV2FoQ3M5TkxObU1lOTJpOHRFNXozR0x3VmdyUVZYNHJFWU4yMFBrbWpIc1lCUWFDOWtsTjRZRmRYUzhqcTlaOVB4Rm9uTFNiWFJ4N2lkRmZoQnREeWtIZDVESzVrZnlLbTZjLTRneDlNaDJEejAwa2JSdUdSN2tPNGFvemFjOEowdC13SGI2?oc=5",
+      "source": "AgroRevenda",
       "categoria": "Agro",
-      "date": "2026-11-13T21:56:15-03:00"
+      "date": "2026-11-14T13:32:20-03:00"
     },
     {
-      "title": "ExpoFrísia 2026 abre programação com palestra sobre cenário econômico e perspectivas para o agronegócio - O Presente Rural",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQeWdhdW1RbnE0Q2EzOHgwSzV4bnNsUUpLTkVtby1ueDdqVklDa2QwcmNOZ0lQYnZ4RjkwYXZfbW54dWRrMlh1T1RyMGtXdHVzbHJ6T3ZmTkU2dFE1SnZRNnU5NnBxOGZtZldxYm9TU1h2Ukh5S0E2RTJVQmdIZWpiUlkzMF92MnNLeWVYS2Z6a2xEOWtucHoxM1hoMElJbFJxeE5ZdWtQYzZZZ3AyVXBTRXotQ0VSSUJOM1l2WlVBTXoyUkJqNlRxb2JheWNwdms?oc=5",
-      "source": "O Presente Rural",
+      "title": "Vendas de milho avançam em Mato Grosso com queda nos preços - Agronews Brasil",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1xaHlBWnY0c0IzeVI0MjRNZzJWLWpXVE1LMzl5RTRnaElKRFRpTURKOEU2Sm9QMmkwd0tzdDRtZXUzb3Z0bUJCaU1QU21CU2hla2JEU2JyVERiMUtwaHpuMldyNDhnTF9lZ19J?oc=5",
+      "source": "Agronews Brasil",
       "categoria": "Agro",
-      "date": "2026-11-13T21:14:38-03:00"
+      "date": "2026-11-14T13:30:09-03:00"
     },
     {
-      "title": "Boi gordo registra leve alta e arroba chega a R$ 394,30 em São Paulo - Região em Destake",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZGNJRE9nVkRKejhSNmZuRzVXa1h4czkyVGpjcnNkLUp3ZngyeFZaQWxJM0xZU05HWmZXNkl1Y05pSWthczZXM1d6Q1RPR2hYZVpKUkZHaTFoSm5tUTJfQzF0VjRMZk8tMEFNZXBiN0RDdllJUEhMZE5fLW5uRUNlUGJRWW1KV0hxTUtZQTVZcXRQM2pIT2dzVGFST2xzNmM?oc=5",
-      "source": "Região em Destake",
+      "title": "Brasil e Filipinas Estreitam Laços em Acordo Abrangente para Agronegócio e Transição Energética - Jornal Digital da Região Oeste",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWnV0RFI0cUd5aHBpd2oweDFSTnUwTVppa1p1dEMyMjBnMUoxa1dFVXdqZERxNjZ0dDdSTlV2X1IwV1ktOW5nZ2pBY1NSZ3BQSnk4V09OakF2NVVqVWhZcXZ1bmJjV2ZLdGo3MWlyOHBlM002WWNBYzBJTlBNZEJtMzRwNlBLWF9SUC1rNVNNcTVDSzA2TG5fVWh2ajJlX0t5WHJtaDhSZzk0TFBBTndEVWd1QTVOMW0zWmpUdXdGb1d1UGZaTkhrQ3RSbkxVMXpMdXl3Rg?oc=5",
+      "source": "Jornal Digital da Região Oeste",
       "categoria": "Agro",
-      "date": "2026-11-13T21:13:38-03:00"
+      "date": "2026-11-14T13:06:30-03:00"
     },
     {
-      "title": "Dólar: estável a R$ 5,65, mas sobe 2,63% na semana - Monitor Mercantil",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQczVPc1lob1c5VUNkT2Vtd0s1Y2ZKa3lHMXl5dGZfdzBiVFpwSW5mTEFwNmxmWWcwNGxxLUgwdklvS2FoTC0tSnEtbW1KV19YS3pmdm9xbjBNeVFhSXRrdzQyUU9tWGhicTNlMGJqNkp4Ujk1YnoxRHRlQjFOeXowMWZGZw?oc=5",
-      "source": "Monitor Mercantil",
+      "title": "Gustavo Carmo faz balanço de missão em Brasília, destrava pendências na Saúde e articula PPPs de energia solar - Política ao Ponto",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNckZONVdJb1FhYmxnUlg3WVhKdWF6anVzTDhnZm1SSDBJekVsUGVTQ0NkeVNyRmtPdUdDR21ua1hLT09aaFZEdUVjQ3lQSTh1NDhjbXBXWjN6M1g1Ukpvb1B6eURFckdxSDhzcU9QdzhEVFVGQ3ZKV2pCZVN2c3FQd0ZETVBYQ2JERk0zc05IMWVBTUNHOHEyTk91OEJDekhXeWJXcktqU2o2LUY0WDBaQ1A5elJMOFFzeGpzM2l6ZWV1VGp6SVduaTdXYUNoLWlPLW5SVzE0bTU?oc=5",
+      "source": "Política ao Ponto",
+      "categoria": "Energia",
+      "date": "2026-11-14T12:39:13-03:00"
+    },
+    {
+      "title": "Indústria de Dourados planeja triplicar refino de soja até 2028 - Capital News",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPaUc4d3NaYWw4VHk4QUU2N2NkTDFfTzhmc1NjeTlJZnB5VVctekRCTmRzdi12SmtqZEdTTWt3WUVpcW5rd0RfdnZkdUxxa1VzM0ZTNDJreDVMMDBlQnpZVERJTHowMW1iU1pPZG5GaXlocThhOFJSMERKblE1TUxiY00xbktmSTBaQTctNlJaNzJjZU1aSTdXR3FTZHVpYzB4ZzJhOXA3QW9NMjN3S2R4RWxKMEVVa1V6YzVkeGtZRmphemNjc2txSFpfYVNJSmJiQ0E?oc=5",
+      "source": "Capital News",
+      "categoria": "Agro",
+      "date": "2026-11-14T12:26:00-03:00"
+    },
+    {
+      "title": "Nexus lança 16 desafios de inovação para o agronegócio com R$ 20 milhões em recursos estaduais - CBN Curitiba",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOekdwQ1BEOEhmc1lpS25rd3UtdVlnZVdTblZfaUhQcllJellTUkt3WTNodjJ1VE4xQUdvdzNhVjNWTTN3dGpNdVlIUjg5LWZqckhzUEZGbTJVdWwxWllqMjUwSThBaDdPN3licVV5TDRKUUpiMnRkNks3VUZRRXFBVTlJYjNkaDdLZW96Rlg3ZlpjMTNLM3E1R1VIeWdnTmlwWFJrTjdkc0ZVVkdORV8wY3p1b0hrclI4ODhhMlZ1VTFkLUVfRXpHeTdR?oc=5",
+      "source": "CBN Curitiba",
+      "categoria": "Agro",
+      "date": "2026-11-14T12:20:05-03:00"
+    },
+    {
+      "title": "Dólar fecha estável, mas acumula alta de 2,63% na semana - Jovem Pan News Campinas 100.3",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTEx3MTNjVmhQNmp5Z3FLemZVZEtrTWFKQllCMXdvZnhLYkdQb20wVVhELTFCN2Y0Y0NaLWpNUlF4ZGxMUlZLaUI0b05XRzlkRzQ5QWdnTEVENzhrSm0wcnl2QkhkYUxZTXdVeGhIYmt4M3ljM0Y3WVc5UmZVRDlTdjROcHlSWkh6bmlWdlZMY08wOFBXTXhMeDRyMXFfNmFtMUd1RFVjdkNvRkR1UjZZTEJB?oc=5",
+      "source": "Jovem Pan News Campinas 100.3",
       "categoria": "Economia",
-      "date": "2026-11-13T21:13:31-03:00"
+      "date": "2026-11-14T12:16:28-03:00"
     },
     {
-      "title": "Mercado reage a ajuste fiscal e balanços; Ibovespa em dólar sobe - Acia Araçatuba",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNYUVXOS1oQ3JSRHVxS3EzNTREdjVFbGdNaWVtV3owcy1TU1hjT0p1TFdZaENuSkRxd08tN2h3Z2lGQTN0dUY3TDY3eVRBTzBCd19PaXkxNm8tSW96R2ZWN0xXRDRySmxHNklvQno0VFVCY19IaGVFYUJiS2E4aS1lWTlwSXkwclNBNEE?oc=5",
-      "source": "Acia Araçatuba",
-      "categoria": "Economia",
-      "date": "2026-11-13T21:07:23-03:00"
-    },
-    {
-      "title": "Soja em alta em Chicago impulsiona farelo e óleo - Acia Araçatuba",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBtOXRoUkVRRVNWLXgxWEtfb0JjbHJ0RHducVJKWTRpeFZGN0FkRVUwa2p2b0lpdUI2ODNBUGdhRER6M2tZODhYTkllRzhNbTJ3SWlqYkVqSVNxdXRiRk9xWEJNbzBLWnMwVkJmNm9vQmxZRmR5Yzk4QQ?oc=5",
-      "source": "Acia Araçatuba",
+      "title": "PIB da soja e do biodiesel pode crescer 7,21%, mas renda deve cair - Feed&Food",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbDZQYmJmMWUzYXhPaWkxQ19MaGlzMHAwT1Z0aGZXVkt5YXViX3ozUF8zQmdxdFhaYnplVkFwZ2xvZHFXcTRTZTdHcENJRHZsNDBuYlp1VkNSSHQwb0lIUmZmRDBRY2VYaXA4V2FrcEtnYUVESVlxUTdXOWczd0ZGVnh0WHhoSkV3eFdBUWpibndvdw?oc=5",
+      "source": "Feed&Food",
       "categoria": "Agro",
-      "date": "2026-11-13T21:05:05-03:00"
+      "date": "2026-11-14T12:01:00-03:00"
     },
     {
-      "title": "Dólar recua com pacote fiscal e varejo; Ibovespa avança - Acia Araçatuba",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZXlwaTRTSXhOallKaEZUeUFyRFNqLUNxNTd1YWF4Z1MtbVFFTEJSWjF2NmtIckg5djFmcnNqSWd0T2dpYVVlOEE4V3psaXJrY0JPeC1ZU05XWExUdktyTHpRMWx4Nmx6d0NDU204QWJDVEZoVUFzQWtKalRkUEprTA?oc=5",
-      "source": "Acia Araçatuba",
-      "categoria": "Economia",
-      "date": "2026-11-13T21:02:22-03:00"
-    },
-    {
-      "title": "Boi gordo se despede da semana em alta: veja as cotações em 10 estados - Canal Rural",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPYWJkNFpfbnF0TktIazdJVmFicEZCVG9KSFVTcmtnR1hMNFdiVGQ3SEp1aHRVNkQzRHhUcW5BRlBCMFRPeGJmVUp3ODBwbGpkTFBmOEJ3ZUEzWjIxLVJRZkZ6bFJHd0pWczVRdEFZS0h2Vk5yWHZ0TGxPRHVWTHJyZlFKZjVFY0l2MktxZ0NOdnQ3UUhpRFVYSzBraUdVRGJuYnc1TXpteDIxRGF3dGc?oc=5",
-      "source": "Canal Rural",
+      "title": "Calor ameaça produtividade da soja mesmo em áreas irrigadas no sudeste de MT - Olhar Direto",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUjFnd096OVJ4TXVZZ2k3VDVDLXlCZGotUENyNEdhV3NzNndhMjQzRVdBR0Q2YkdzVTc0SFAzcEhEQWdYREhCcml6Z1JnbE42dXZVdlBsaWYxWmZtd0JZNzVCMlZYVjExVWlfWFpuX1loa1BfS3FtNTZVdGlGUXdaYldGRTU3ZGYzMzJDU1NpdGsxRWF0ZXRrcU9pdVBCb2U2LXMzYUZSR3dNSlMwdkhucFNPRTJNQ0ZlQi12X0NOTEFKYVJ4dFhFcDlvNmM?oc=5",
+      "source": "Olhar Direto",
       "categoria": "Agro",
-      "date": "2026-11-13T20:45:58-03:00"
+      "date": "2026-11-14T11:44:00-03:00"
+    },
+    {
+      "title": "Agronegócio, energia e tecnologia: parceria entre Brasil e Filipinas ganha força e mira o Sudeste Asiático - O Mundo Diplomático",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPdjVmbXktcU1NRG1BRG9VMndwajFsd21aZmdraGZuaEdMNEJJM0F5ODU2YTMyTXVoS2dZZnl6UVM5M1lubm9jemtWRXQ1MmRaVUN0ci1LcHNuNjVYY1JzNFh0Tzk5M0VyUFVHSnNTV2UwTGg0eHRvMTg3R25OY1NiTnRmNVNIMmhtZ2daXzBsWm1CdmZtMng1TXFxbVNRWk9TbHlCeWVaUVJKS0h3Ukd1c3p4UFBvMVhqeEtVeEc4Z0l4Z1MwNDZxbHVPV3NRNzYzbjMwTVpwSTEzb295R2JrMzBqVQ?oc=5",
+      "source": "O Mundo Diplomático",
+      "categoria": "Agro",
+      "date": "2026-11-14T11:10:05-03:00"
+    },
+    {
+      "title": "A BYD lança uma estação de carregamento com energia solar integrada, carregamento super-rápido de 5 minutos e um braço robótico automatizado para conectar o carregador. - Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQN28taElQR3cwU3RYaHMwcTFTSnlBVURJOTA2V2c5TlZvblZwV3o3MmZPTzlQVW5lb21UNEYtVnVYTi10MmRySlc5aS1OeG5qTDBvUVpYZXRuQVZXeENCcDl3RzdqRmtsOUpGSExHbDZBMmxDZ2dFZmFITDdTamdMQVRqX0FpYlR1aGdmc3RydFhLRXF0cGN5aWNpQmFGVndvaWlJRkY1WjBVLU5QNTlRY2MwZHNPZ3hLSk1pbmcwYw?oc=5",
+      "source": "Vietnam.vn",
+      "categoria": "Energia",
+      "date": "2026-11-14T10:59:27-03:00"
+    },
+    {
+      "title": "Preço menor desacelera venda da soja 26/27 em MT - Midia Jur",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNUl9LRHFnRVhpX3U3QkJvNHI5YlUweVFOT25zcDFTUFV4ZVJrNUJDQWxtdTUtb2VmbWNIOWdLYmpOT05qSHJjVjV0M0JvR215VENjMGJMRFZ6d19zbG9LaS03UXUwYVVXNFowY0lwTkNVVVUyOTVERllWRER0LXUyRlp2WUFoNGdOdzFET2J3ZGdXa2VXdFFYWVVn?oc=5",
+      "source": "Midia Jur",
+      "categoria": "Agro",
+      "date": "2026-11-14T10:38:00-03:00"
+    },
+    {
+      "title": "Energia solar na fazenda: quanto custa, quantas placas precisa e como instalar em 2026 - CompreRural",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaXJyMnV5TVJXdmY1QkhyZG9wYjU2V3ZkcGx3YkVHaUFnSjMwZVZ0dDQzVERfN1ZtTGRyOUlHanVmVVJrdGVPZnZiZ01RUUdXRzMtZVZzbXdwdDFrNDlJVlA4RVJmRmFUaktoMWFNUC1fVWtPMUxVTzNYS1VTQ19EaTd3TW55YkFuV3YzT3FMeW5fekdSa0dZaFVVS1VsVFR2TEgxMHN1U3F0QWtNQnNXR0JfMA?oc=5",
+      "source": "CompreRural",
+      "categoria": "Energia",
+      "date": "2026-11-14T10:38:00-03:00"
     }
   ],
   "errors": [
