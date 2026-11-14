@@ -417,12 +417,18 @@ def collect_rain(s, cfg, indicators, history, errors):
                    if v is not None}
             if not obs:
                 raise ValueError("sem precipitacao observada")
-            fc = get_json(s, "https://api.open-meteo.com/v1/forecast", params={
-                "latitude": rp["lat"], "longitude": rp["lon"],
-                "daily": "precipitation_sum", "forecast_days": 14, "timezone": "auto",
-            })
-            fcast = {t: v for t, v in zip(fc["daily"]["time"], fc["daily"]["precipitation_sum"])
-                     if v is not None}
+            # Previsao e OPCIONAL: se o Open-Meteo responder 429/erro, o card e a leitura
+            # seguem so com o observado (nunca mistura previsto com realizado).
+            fcast = {}
+            try:
+                fc = get_json(s, "https://api.open-meteo.com/v1/forecast", params={
+                    "latitude": rp["lat"], "longitude": rp["lon"],
+                    "daily": "precipitation_sum", "forecast_days": 14, "timezone": "auto",
+                })
+                fcast = {t: v for t, v in zip(fc["daily"]["time"], fc["daily"]["precipitation_sum"])
+                         if v is not None}
+            except Exception as fe:
+                errors.append(f"{rp['key']} (previsao indisponivel): {fe}")
 
             dates = sorted(obs)
             vals = [obs[d] for d in dates]
@@ -436,7 +442,7 @@ def collect_rain(s, cfg, indicators, history, errors):
             acum_15 = round(sum(vals[-15:]), 1)
             acum_30 = round(sum(vals[-30:]), 1)
             fdates = sorted(d for d in fcast if d > last_obs)
-            prev_7 = round(sum(fcast[d] for d in fdates[:7]), 1)
+            prev_7 = round(sum(fcast[d] for d in fdates[:7]), 1) if fdates else None
             # normal: media do acumulado de 30 dias terminando no mesmo dia/mes nos ultimos anos
             anos = []
             for y in range(end.year - 5, end.year):

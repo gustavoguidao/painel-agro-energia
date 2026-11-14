@@ -329,7 +329,7 @@
         <div class="card__rain">
           <span>7d <b>${Fmt.num(r.acum_7, 0)}</b></span>
           <span>15d <b>${Fmt.num(r.acum_15, 0)}</b></span>
-          <span>Prev. 7d <b>${Fmt.num(r.prev_7, 0)} mm</b></span>
+          ${r.prev_7 != null ? `<span>Prev. 7d <b>${Fmt.num(r.prev_7, 0)} mm</b></span>` : ""}
         </div>
         <div class="card__note">${normalTxt}</div>
         ${sparkSVG((state.history || {})[key])}
