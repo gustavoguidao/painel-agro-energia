@@ -4,17 +4,54 @@
     "name": "Sorriso-MT",
     "lat": -12.545,
     "lon": -55.711,
-    "_comentario": "Ponto usado para irradiacao solar. Na Fase 2 passa a vir do perfil (fazendas/cidades)."
+    "_comentario": "Ponto usado para irradiacao solar enquanto o perfil nao define as cidades."
   },
   "history_days": 400,
   "timezone": "America/Sao_Paulo",
   "max_idade_dias": {
     "_comentario": "Idade maxima (dias) antes de um dado virar 'fonte velha'. Regra nao dispara com insumo vencido.",
     "daily": 4,
-    "weekly": 10,
+    "weekly": 12,
     "monthly": 45
   },
+  "faixas": {
+    "_comentario": "Validacao de faixa: valores fora de [min,max] sao descartados (mantem cache). Ajuste se necessario.",
+    "selic": { "min": 0, "max": 30 },
+    "cdi": { "min": 0, "max": 30 },
+    "ipca": { "min": -2, "max": 5 },
+    "usd": { "min": 1, "max": 12 },
+    "eur": { "min": 1, "max": 14 },
+    "soja": { "min": 500, "max": 2500 },
+    "milho": { "min": 200, "max": 1200 },
+    "cafe": { "min": 50, "max": 600 },
+    "acucar": { "min": 5, "max": 60 },
+    "algodao": { "min": 30, "max": 200 },
+    "cmo": { "min": 0, "max": 2000 },
+    "solar": { "min": 0, "max": 12 },
+    "diesel_go": { "min": 3, "max": 12 },
+    "diesel_to": { "min": 3, "max": 12 }
+  },
+  "perfil": {
+    "_comentario": "Perfil do dono: decide quais cards/leituras aparecem. PREENCHA o que estiver em branco (municipios, lat/lon, cidades solares, base da praca).",
+    "fazendas": [
+      { "nome": "Fazenda 1 (soja)", "municipio": "PREENCHER", "uf": "GO", "lat": null, "lon": null, "atividade": ["soja"], "papel": "vende", "obs": "em preparo de terra" },
+      { "nome": "Fazenda 2 (gado)", "municipio": "PREENCHER", "uf": "GO", "lat": null, "lon": null, "atividade": ["gado"], "papel": "compra_vende" },
+      { "nome": "Fazenda 3 (gado)", "municipio": "PREENCHER", "uf": "TO", "lat": null, "lon": null, "atividade": ["gado"], "papel": "compra_vende" }
+    ],
+    "solar": {
+      "papel": ["integradora", "usinas_gd"],
+      "estados": ["RR", "RO", "ES", "GO"],
+      "cidades": ["PREENCHER"],
+      "distribuidoras": { "RR": "Roraima Energia (palpite)", "RO": "Energisa RO (palpite)", "ES": "EDP ES (palpite)", "GO": "Equatorial GO (palpite)" },
+      "_comentario": "Distribuidoras sao palpite — confirme/corrija. Cidades-foco definem a irradiacao solar."
+    },
+    "base_praca": {
+      "_comentario": "Base da praca em R$/saca (preco local estimado = paridade de Chicago + base). Preencha valor e data; vazio = nao exibe. Conab nao tem fonte automatica gratuita.",
+      "soja": { "valor": null, "data": null, "praca": "PREENCHER" },
+      "milho": { "valor": null, "data": null, "praca": "PREENCHER" }
+    }
+  },
   "manual_overrides": {
-    "_comentario": "Valores configurados manualmente (sempre com data), usados quando nao ha fonte automatica. Ex.: boi_gordo quando nao houver fonte regional. Deixe vazio para mostrar 'sem dado' honesto."
+    "_comentario": "Valores configurados manualmente (sempre com data), usados quando nao ha fonte automatica. Ex.: boi_gordo. Deixe vazio para mostrar 'sem dado' honesto."
   }
 }

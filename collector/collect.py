@@ -24,6 +24,7 @@ entao usamos today_brt() em vez de date.today().
 
 import json
 import os
+import statistics
 import sys
 import traceback
 from datetime import date, datetime, timedelta, timezone
@@ -317,6 +318,54 @@ def fetch_ons_cmo(s, cfg, submercado="SE"):
     return [{"date": d, "value": round(pts[d], 2)} for d in sorted(pts)]
 
 
+def fetch_anp_diesel(s, cfg, uf):
+    """Diesel S10 medio por UF via ANP - Levantamento de Precos de Combustiveis (LPC).
+    Usa o arquivo rolante 'ultimas 4 semanas' (CSV ';', preco por posto). Agrega a mediana
+    por semana ISO para a UF. R$/litro. (HEAD responde 403; GET funciona.)"""
+    url = ("https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/"
+           "arquivos/shpc/qus/ultimas-4-semanas-diesel-gnv.csv")
+    txt = get_text(s, url)
+    lines = txt.splitlines()
+    if not lines:
+        raise ValueError("ANP diesel vazio")
+    header = [h.strip() for h in lines[0].lstrip("﻿").split(";")]
+    try:
+        i_uf = header.index("Estado - Sigla")
+        i_prod = header.index("Produto")
+        i_date = header.index("Data da Coleta")
+        i_val = header.index("Valor de Venda")
+    except ValueError:
+        raise ValueError("cabecalho ANP inesperado")
+    semanas = {}  # chave ISO-week -> {"prices":[], "dates":[]}
+    for ln in lines[1:]:
+        cols = ln.split(";")
+        if len(cols) <= i_val:
+            continue
+        if cols[i_uf].strip() != uf:
+            continue
+        if cols[i_prod].strip().upper() != "DIESEL S10":
+            continue
+        try:
+            dd, mm, yyyy = cols[i_date].strip().split("/")
+            dt = date(int(yyyy), int(mm), int(dd))
+            v = float(cols[i_val].strip().replace(",", "."))
+        except Exception:
+            continue
+        iso = dt.isocalendar()
+        key = f"{iso[0]}-W{iso[1]:02d}"
+        b = semanas.setdefault(key, {"prices": [], "dates": []})
+        b["prices"].append(v)
+        b["dates"].append(dt.isoformat())
+    out = []
+    for b in semanas.values():
+        if b["prices"]:
+            out.append({"date": max(b["dates"]), "value": round(statistics.median(b["prices"]), 3)})
+    out.sort(key=lambda p: p["date"])
+    if not out:
+        raise ValueError(f"sem diesel S10 para {uf} no periodo")
+    return out
+
+
 def fetch_sem_fonte(s, cfg):
     """Placeholder honesto: indicador sem fonte automatica gratuita no momento."""
     raise ValueError("sem fonte automatica")
@@ -390,12 +439,23 @@ REGISTRY = [
      "change_type": "pct", "frequency": "daily", "source": "Open-Meteo (observado)",
      "source_url": "https://open-meteo.com",
      "fetch": lambda s, c: fetch_solar(s, c)},
+
+    # --- Custos / logística (diesel por UF das fazendas do perfil) ---
+    {"key": "diesel_go", "label": "Diesel S10 — GO", "unit": "R$/L", "group": "custos",
+     "change_type": "pct", "frequency": "weekly", "source": "ANP — LPC (mediana GO)",
+     "source_url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis",
+     "fetch": lambda s, c: fetch_anp_diesel(s, c, "GO")},
+    {"key": "diesel_to", "label": "Diesel S10 — TO", "unit": "R$/L", "group": "custos",
+     "change_type": "pct", "frequency": "weekly", "source": "ANP — LPC (mediana TO)",
+     "source_url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis",
+     "fetch": lambda s, c: fetch_anp_diesel(s, c, "TO")},
 ]
 
 GROUPS = [
     {"id": "macro", "label": "Macro e juros"},
     {"id": "cambio", "label": "Câmbio"},
     {"id": "commodities", "label": "Commodities agro"},
+    {"id": "custos", "label": "Custos / logística"},
     {"id": "energia", "label": "Energia"},
 ]
 
@@ -513,6 +573,15 @@ def main():
         try:
             series = item["fetch"](session, cfg)
             series = [p for p in series if p.get("value") is not None]
+            # Validacao de faixa: descarta valores implausiveis (ex.: lixo de parsing).
+            faixa = (cfg.get("faixas") or {}).get(key)
+            if faixa:
+                lo, hi = faixa.get("min"), faixa.get("max")
+                antes = len(series)
+                series = [p for p in series
+                          if (lo is None or p["value"] >= lo) and (hi is None or p["value"] <= hi)]
+                if len(series) < antes:
+                    errors.append(f"{key}: {antes - len(series)} valor(es) fora da faixa descartado(s)")
             if not series:
                 raise ValueError("serie vazia")
             if item.get("rebuild"):
