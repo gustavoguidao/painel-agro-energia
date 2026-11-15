@@ -6,7 +6,7 @@
   <title>Painel Agro + Energia Solar</title>
   <meta name="description" content="Indicadores de agronegocio e energia solar no Brasil, com atualizacao automatica e fontes gratuitas." />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=9" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -66,32 +66,48 @@
       <div id="highlights" class="highlights"></div>
       <div id="groups"></div>
 
-      <!-- Calculadora de payback solar -->
+      <!-- Calculadora solar (módulo de avaliação de projeto) -->
       <div class="section__head" style="margin-top:28px">
-        <h2 class="section__title">Calculadora de payback solar</h2>
-        <span class="section__hint">Estimativa de retorno do investimento</span>
+        <h2 class="section__title">Calculadora solar</h2>
+        <span class="section__hint">Dimensionamento, Fio B (Lei 14.300), VPL/TIR e payback</span>
       </div>
       <div class="calc">
         <div class="calc__inputs">
-          <label class="field">
-            <span>Consumo mensal (kWh)</span>
-            <input id="calcConsumo" type="number" min="0" step="10" value="1000" inputmode="decimal" />
-          </label>
-          <label class="field">
-            <span>Tarifa de energia (R$/kWh)</span>
-            <input id="calcTarifa" type="number" min="0" step="0.01" value="0.95" inputmode="decimal" />
-          </label>
-          <label class="field">
-            <span>Custo do sistema (R$)</span>
-            <input id="calcCusto" type="number" min="0" step="500" value="18000" inputmode="decimal" />
-          </label>
-          <label class="field">
-            <span>% da conta compensada</span>
-            <input id="calcCompensacao" type="number" min="0" max="100" step="5" value="90" inputmode="decimal" />
-          </label>
+          <label class="field"><span>Consumo a compensar (kWh/mês)</span>
+            <input id="calcConsumo" type="number" min="0" step="10" value="1000" inputmode="decimal" /></label>
+          <label class="field"><span>Tarifa cheia (R$/kWh)</span>
+            <input id="calcTarifa" type="number" min="0" step="0.01" value="0.95" inputmode="decimal" /></label>
+          <label class="field"><span>Custo do sistema (R$/Wp)</span>
+            <input id="calcRsWp" type="number" min="0" step="0.1" value="3.80" inputmode="decimal" /></label>
+          <label class="field"><span>% compensada (simultaneidade)</span>
+            <input id="calcCompensacao" type="number" min="0" max="100" step="5" value="90" inputmode="decimal" /></label>
         </div>
-        <div class="calc__results" id="calcResults"></div>
-        <p class="calc__note">⚠️ Estimativa simplificada: mostra apenas o <strong>payback simples</strong>, sem desconto (valor do dinheiro no tempo), inflação da tarifa, degradação dos painéis, Fio B nem custo de disponibilidade. A versão completa (VPL, TIR e payback descontado pela Selic) virá no módulo solar.</p>
+        <details class="calc__adv">
+          <summary>Premissas avançadas (padrões conservadores)</summary>
+          <div class="calc__inputs">
+            <label class="field"><span>Irradiação (kWh/m²/dia)</span>
+              <input id="calcIrr" type="number" min="0" step="0.1" value="5.5" inputmode="decimal" /></label>
+            <label class="field"><span>Performance ratio</span>
+              <input id="calcPR" type="number" min="0" max="1" step="0.01" value="0.78" inputmode="decimal" /></label>
+            <label class="field"><span>Fio B — TUSD (R$/kWh)</span>
+              <input id="calcFioB" type="number" min="0" step="0.05" value="0.30" inputmode="decimal" /></label>
+            <label class="field"><span>Reajuste tarifa (%/ano)</span>
+              <input id="calcReajuste" type="number" step="0.5" value="5" inputmode="decimal" /></label>
+            <label class="field"><span>Degradação (%/ano)</span>
+              <input id="calcDegr" type="number" step="0.1" value="0.5" inputmode="decimal" /></label>
+            <label class="field"><span>O&amp;M (% do custo/ano)</span>
+              <input id="calcOM" type="number" step="0.5" value="1" inputmode="decimal" /></label>
+            <label class="field"><span>Disponibilidade (kWh/mês)</span>
+              <input id="calcDisp" type="number" step="10" value="50" inputmode="decimal" /></label>
+            <label class="field"><span>Taxa de desconto (%/ano)</span>
+              <input id="calcDesconto" type="number" step="0.25" value="13.75" inputmode="decimal" /></label>
+            <label class="field"><span>Vida útil (anos)</span>
+              <input id="calcVida" type="number" step="1" value="25" inputmode="decimal" /></label>
+          </div>
+        </details>
+        <div class="calc__dim" id="calcDim"></div>
+        <div class="calc__scenarios" id="calcResults"></div>
+        <p class="calc__note" id="calcPremissas"></p>
       </div>
     </section>
 
@@ -139,8 +155,8 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
-  <script src="assets/js/format.js?v=9" defer></script>
-  <script src="assets/js/recommendations.js?v=9" defer></script>
-  <script src="assets/js/app.js?v=9" defer></script>
+  <script src="assets/js/format.js?v=10" defer></script>
+  <script src="assets/js/recommendations.js?v=10" defer></script>
+  <script src="assets/js/app.js?v=10" defer></script>
 </body>
 </html>

@@ -135,6 +135,7 @@
     renderHighlights();
     renderGroups();
     renderNews();
+    fillCalcDefaults();
     computeCalc();
   }
 
@@ -417,32 +418,117 @@
     }).join("");
   }
 
-  /* ---------- Calculadora de payback solar ---------- */
+  /* ---------- Calculadora solar v2 ---------- */
+  const CALC_IDS = ["calcConsumo", "calcTarifa", "calcRsWp", "calcCompensacao", "calcIrr", "calcPR",
+    "calcFioB", "calcReajuste", "calcDegr", "calcOM", "calcDisp", "calcDesconto", "calcVida"];
+
   function bindCalc() {
-    ["calcConsumo", "calcTarifa", "calcCusto", "calcCompensacao"].forEach((id) => {
+    CALC_IDS.forEach((id) => {
       const el = document.getElementById(id);
       if (el) el.addEventListener("input", computeCalc);
     });
   }
+
+  // Pré-preenche irradiação (média do histórico) e desconto (Selic) a partir do painel.
+  function fillCalcDefaults() {
+    try {
+      const sh = ((state.history || {}).solar) || [];
+      if (sh.length) {
+        const ult = sh.slice(-365);
+        const avg = ult.reduce((a, p) => a + p.value, 0) / ult.length;
+        const el = document.getElementById("calcIrr");
+        if (el) el.value = Math.round(avg * 10) / 10;
+      }
+      const selic = (state.latest.indicators.selic || {}).value;
+      const ed = document.getElementById("calcDesconto");
+      if (selic && ed) ed.value = selic;
+    } catch (e) {}
+  }
+
+  // Parcela do Fio B paga sobre a energia compensada (cronograma da Lei 14.300).
+  function fioBPct(ano) {
+    const tab = { 2023: 0.15, 2024: 0.30, 2025: 0.45, 2026: 0.60, 2027: 0.75, 2028: 0.90 };
+    if (ano <= 2022) return 0;
+    return tab[ano] != null ? tab[ano] : 0.90; // 2029+ é definido pela ANEEL
+  }
+
+  function cashflow(p) {
+    const gKWpMes = p.irr * 30 * p.pr;                 // kWh por kWp por mês
+    const kWp = gKWpMes > 0 ? p.consumoComp / gKWpMes : 0;
+    const custo = kWp * 1000 * p.rsWp;
+    const fluxos = [];
+    for (let t = 1; t <= p.anos; t++) {
+      const degFac = Math.pow(1 - p.degr / 100, t - 1);
+      const reajFac = Math.pow(1 + p.reaj / 100, t - 1);
+      const tarifaT = p.tarifa * reajFac;
+      const geracaoMes = kWp * gKWpMes * degFac;
+      const compMes = Math.min(geracaoMes, p.consumoComp);
+      const economia = compMes * 12 * tarifaT;
+      const anoCal = p.anoBase + t - 1;
+      const pct = anoCal >= 2029 ? p.fioB2029 : fioBPct(anoCal);
+      const fioB = compMes * 12 * p.fioB * reajFac * pct;
+      const disp = p.disp * 12 * tarifaT;
+      const om = custo * (p.om / 100);
+      fluxos.push(economia - fioB - disp - om);
+    }
+    const npv = (r) => { let v = -custo; for (let t = 1; t <= p.anos; t++) v += fluxos[t - 1] / Math.pow(1 + r, t); return v; };
+    const vpl = npv(p.desc / 100);
+    let acc = -custo, paySimp = null;
+    for (let t = 1; t <= p.anos; t++) { const prev = acc; acc += fluxos[t - 1]; if (paySimp == null && acc >= 0 && fluxos[t - 1] > 0) paySimp = (t - 1) + (-prev) / fluxos[t - 1]; }
+    let accD = -custo, payDesc = null;
+    for (let t = 1; t <= p.anos; t++) { const d = fluxos[t - 1] / Math.pow(1 + p.desc / 100, t); const prev = accD; accD += d; if (payDesc == null && accD >= 0 && d > 0) payDesc = (t - 1) + (-prev) / d; }
+    let tir = null;
+    if (npv(-0.9) > 0 && npv(3) > 0) tir = 999;
+    else if (npv(-0.9) < 0 && npv(3) < 0) tir = null;
+    else { let lo = -0.9, hi = 3; for (let i = 0; i < 100; i++) { const m = (lo + hi) / 2; if (npv(m) > 0) lo = m; else hi = m; } tir = (lo + hi) / 2; }
+    return { kWp: kWp, custo: custo, geracaoMes: kWp * gKWpMes, vpl: vpl, paySimp: paySimp, payDesc: payDesc, tir: tir };
+  }
+
   function computeCalc() {
     const num = (id) => parseFloat((document.getElementById(id) || {}).value);
-    const consumo = num("calcConsumo"), tarifa = num("calcTarifa"),
-          custo = num("calcCusto"), comp = num("calcCompensacao");
-    const host = document.getElementById("calcResults");
+    const consumo = num("calcConsumo"), tarifa = num("calcTarifa"), rsWp = num("calcRsWp"), comp = num("calcCompensacao");
+    const irr = num("calcIrr"), pr = num("calcPR");
+    const dimHost = document.getElementById("calcDim"), host = document.getElementById("calcResults"), prem = document.getElementById("calcPremissas");
     if (!host) return;
-    const brl = (v) => "R$ " + Fmt.num(v, 2);
-    if (![consumo, tarifa, custo, comp].every((x) => !isNaN(x))) {
-      host.innerHTML = '<div class="result"><div class="result__label">Preencha os campos</div></div>';
+    if (![consumo, tarifa, rsWp, comp, irr, pr].every((x) => !isNaN(x) && x > 0)) {
+      if (dimHost) dimHost.innerHTML = "";
+      host.innerHTML = '<div class="result"><div class="result__label">Preencha os campos essenciais</div></div>';
+      if (prem) prem.textContent = "";
       return;
     }
-    const economiaMes = consumo * tarifa * (comp / 100);
-    const economiaAno = economiaMes * 12;
-    const payback = economiaAno > 0 ? custo / economiaAno : null;
-    // NAO exibimos "economia em 25 anos" sem desconto (VPL/TIR descontado pela Selic virao na Fase 4).
-    host.innerHTML =
-      `<div class="result"><div class="result__label">Economia mensal</div><div class="result__value">${brl(economiaMes)}</div></div>` +
-      `<div class="result"><div class="result__label">Economia anual</div><div class="result__value">${brl(economiaAno)}</div></div>` +
-      `<div class="result result--hero"><div class="result__label">Payback simples</div><div class="result__value">${payback == null ? "—" : Fmt.num(payback, 1) + " anos"}</div></div>`;
+    const nz = (v, d) => (isNaN(v) ? d : v);
+    const base = {
+      consumoComp: consumo * (comp / 100), tarifa: tarifa, rsWp: rsWp, irr: irr, pr: pr,
+      fioB: nz(num("calcFioB"), 0.30), reaj: nz(num("calcReajuste"), 5), degr: nz(num("calcDegr"), 0.5),
+      om: nz(num("calcOM"), 1), disp: nz(num("calcDisp"), 50), desc: nz(num("calcDesconto"), 13.75),
+      anos: Math.round(nz(num("calcVida"), 25)), anoBase: new Date().getFullYear(), fioB2029: 0.90,
+    };
+    const conserv = Object.assign({}, base, { reaj: base.reaj - 2, degr: base.degr + 0.3, pr: Math.max(0.5, base.pr - 0.03), fioB2029: 1.00 });
+    const otim = Object.assign({}, base, { reaj: base.reaj + 1, degr: Math.max(0, base.degr - 0.1), fioB2029: 0.90 });
+    const dim = cashflow(base), rc = cashflow(conserv), ro = cashflow(otim);
+    const brl = (v) => "R$ " + Fmt.num(v, 2);
+    const anosTxt = (v) => v == null ? "> " + base.anos + " anos" : Fmt.num(v, 1) + " anos";
+    const tirTxt = (v) => v == null ? "não paga" : (v === 999 ? "> 100%" : Fmt.num(v * 100, 1) + "%");
+
+    dimHost.innerHTML =
+      `<div class="result"><div class="result__label">Sistema dimensionado</div><div class="result__value">${Fmt.num(dim.kWp, 2)}<small> kWp</small></div></div>` +
+      `<div class="result"><div class="result__label">Custo estimado</div><div class="result__value">${brl(dim.custo)}</div></div>` +
+      `<div class="result"><div class="result__label">Geração média</div><div class="result__value">${Fmt.num(dim.geracaoMes, 0)}<small> kWh/mês</small></div></div>`;
+
+    const col = (nome, r, cls) => `<div class="scenario ${cls}">
+      <div class="scenario__name">${nome}</div>
+      <div class="scenario__row"><span>Payback descontado</span><b>${anosTxt(r.payDesc)}</b></div>
+      <div class="scenario__row"><span>Payback simples</span><b>${anosTxt(r.paySimp)}</b></div>
+      <div class="scenario__row"><span>VPL (${base.anos} anos)</span><b>${brl(r.vpl)}</b></div>
+      <div class="scenario__row"><span>TIR</span><b>${tirTxt(r.tir)}</b></div>
+    </div>`;
+    host.innerHTML = col("Conservador", rc, "scenario--cons") + col("Otimista", ro, "scenario--otim");
+
+    prem.innerHTML = "⚠️ Estimativa — não é proposta nem recomendação. Premissas: irradiação " +
+      Fmt.num(irr, 1) + " kWh/m²/dia, PR " + Fmt.num(pr, 2) + ", desconto " + Fmt.num(base.desc, 2) +
+      "% a.a. (Selic do painel), reajuste " + Fmt.num(base.reaj, 1) + "%/ano, degradação " + Fmt.num(base.degr, 1) +
+      "%/ano, Fio B " + brl(base.fioB) + "/kWh pelo cronograma da Lei 14.300 (15/30/45/60/75/90% de 2023 a 2028; " +
+      "de 2029 em diante é definido pela ANEEL — o cenário conservador assume 100% e o otimista 90%). VPL e TIR descontados; valores nominais.";
   }
 
   /* ---------- Modal + gráfico ---------- */
