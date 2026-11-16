@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T18:54:36.467609+00:00",
+  "generated_at": "2026-11-16T06:36:09.963158+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -43,7 +43,7 @@
       "source": "BCB SGS 432",
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json",
       "value": 13.75,
-      "as_of": "2026-11-15",
+      "as_of": "2026-11-16",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
@@ -67,7 +67,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?formato=json",
       "value": 13.65,
       "as_of": "2026-11-12",
-      "idade_dias": 3,
+      "idade_dias": 4,
       "fonte_velha": false,
       "changes": {
         "day": 0.0,
@@ -90,8 +90,8 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json",
       "value": 0.14,
       "as_of": "2026-10-01",
-      "idade_dias": 45,
-      "fonte_velha": false,
+      "idade_dias": 46,
+      "fonte_velha": true,
       "changes": {
         "day": null,
         "week": null,
@@ -114,7 +114,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json",
       "value": 5.6518,
       "as_of": "2026-11-13",
-      "idade_dias": 2,
+      "idade_dias": 3,
       "fonte_velha": false,
       "changes": {
         "day": 0.67,
@@ -137,7 +137,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21619/dados?formato=json",
       "value": 6.2334,
       "as_of": "2026-11-13",
-      "idade_dias": 2,
+      "idade_dias": 3,
       "fonte_velha": false,
       "changes": {
         "day": 0.32,
@@ -158,16 +158,16 @@
       "frequency": "daily",
       "source": "Yahoo Finance ZS=F",
       "source_url": "https://finance.yahoo.com/quote/ZS=F",
-      "value": 1231.5,
+      "value": 1243.0,
       "as_of": "2026-11-13",
-      "idade_dias": 2,
+      "idade_dias": 3,
       "fonte_velha": false,
       "changes": {
-        "day": 0.37,
+        "day": 1.3,
         "week": null,
-        "month": -3.58,
-        "quarter": 4.92,
-        "year": 8.79
+        "month": -2.68,
+        "quarter": 5.9,
+        "year": 9.81
       },
       "stale": false,
       "manual": false,
@@ -175,14 +175,14 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 153.45,
+        "value": 154.88,
         "as_of": "2026-11-13",
         "changes": {
-          "day": 1.04,
+          "day": 1.98,
           "week": null,
-          "month": 8.04,
-          "quarter": 13.52,
-          "year": 16.41
+          "month": 9.05,
+          "quarter": 14.58,
+          "year": 17.49
         },
         "history_key": "soja_brl",
         "usd_as_of": "2026-11-13",
@@ -200,7 +200,7 @@
       "source_url": "https://finance.yahoo.com/quote/ZC=F",
       "value": 445.5,
       "as_of": "2026-11-13",
-      "idade_dias": 2,
+      "idade_dias": 3,
       "fonte_velha": false,
       "changes": {
         "day": 0.68,
@@ -238,16 +238,16 @@
       "frequency": "daily",
       "source": "Yahoo Finance KC=F",
       "source_url": "https://finance.yahoo.com/quote/KC=F",
-      "value": 279.25,
+      "value": 278.65,
       "as_of": "2026-11-13",
-      "idade_dias": 2,
+      "idade_dias": 3,
       "fonte_velha": false,
       "changes": {
-        "day": -0.34,
+        "day": -0.55,
         "week": null,
-        "month": -6.31,
-        "quarter": -17.41,
-        "year": -30.48
+        "month": -6.51,
+        "quarter": -17.58,
+        "year": -30.63
       },
       "stale": false,
       "manual": false,
@@ -255,14 +255,14 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 2087.69,
+        "value": 2083.2,
         "as_of": "2026-11-13",
         "changes": {
-          "day": 0.33,
+          "day": 0.11,
           "week": null,
-          "month": 4.98,
-          "quarter": -10.64,
-          "year": -25.62
+          "month": 4.75,
+          "quarter": -10.83,
+          "year": -25.78
         },
         "history_key": "cafe_brl",
         "usd_as_of": "2026-11-13",
@@ -280,7 +280,7 @@
       "source_url": "https://finance.yahoo.com/quote/SB=F",
       "value": 18.41,
       "as_of": "2026-11-13",
-      "idade_dias": 2,
+      "idade_dias": 3,
       "fonte_velha": false,
       "changes": {
         "day": 1.04,
@@ -303,7 +303,7 @@
       "source_url": "https://finance.yahoo.com/quote/CT=F",
       "value": 78.78,
       "as_of": "2026-11-13",
-      "idade_dias": 2,
+      "idade_dias": 3,
       "fonte_velha": false,
       "changes": {
         "day": 0.14,
@@ -349,7 +349,7 @@
       "source_url": "https://dados.ons.org.br/dataset/cmo-semanal",
       "value": 11.64,
       "as_of": "2026-11-20",
-      "idade_dias": -5,
+      "idade_dias": -4,
       "fonte_velha": false,
       "changes": {
         "day": null,
@@ -370,16 +370,16 @@
       "frequency": "daily",
       "source": "Open-Meteo (observado)",
       "source_url": "https://open-meteo.com",
-      "value": 6.389,
-      "as_of": "2026-11-15",
+      "value": 3.792,
+      "as_of": "2026-11-16",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": -4.95,
+        "day": -41.98,
         "week": null,
-        "month": -1.75,
-        "quarter": 3.89,
-        "year": -7.89
+        "month": -43.55,
+        "quarter": -38.76,
+        "year": -41.04
       },
       "stale": false,
       "manual": false,
@@ -395,7 +395,7 @@
       "source_url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis",
       "value": 7.19,
       "as_of": "2026-11-13",
-      "idade_dias": 2,
+      "idade_dias": 3,
       "fonte_velha": false,
       "changes": {
         "day": null,
@@ -418,7 +418,7 @@
       "source_url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis",
       "value": 7.295,
       "as_of": "2026-11-12",
-      "idade_dias": 3,
+      "idade_dias": 4,
       "fonte_velha": false,
       "changes": {
         "day": null,
@@ -439,27 +439,27 @@
       "frequency": "daily",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 108.1,
-      "as_of": "2026-11-15",
+      "value": 111.6,
+      "as_of": "2026-11-16",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 5.77,
+        "day": 2.95,
         "week": null,
-        "month": 7.03,
-        "quarter": 15342.86,
-        "year": 91.33
+        "month": 8.03,
+        "quarter": 15842.86,
+        "year": 88.83
       },
       "stale": false,
       "manual": false,
       "note": "Ponto representativo: Rio Verde-GO (ajuste no perfil com o município real).",
       "chuva": {
-        "acum_7": 31.4,
-        "acum_15": 70.7,
-        "acum_30": 108.1,
-        "prev_7": 65.8,
-        "normal_30": 91.1,
-        "pct_normal": 119,
+        "acum_7": 32.0,
+        "acum_15": 75.9,
+        "acum_30": 111.6,
+        "prev_7": 37.2,
+        "normal_30": 93.2,
+        "pct_normal": 120,
         "cidade": "Rio Verde-GO"
       }
     },
@@ -471,78 +471,39 @@
       "frequency": "daily",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 91.9,
-      "as_of": "2026-11-15",
+      "value": 127.3,
+      "as_of": "2026-11-16",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 7.49,
+        "day": 35.43,
         "week": null,
-        "month": 71.78,
-        "quarter": 3895.65,
-        "year": 103.32
+        "month": 137.94,
+        "quarter": 5434.78,
+        "year": 181.64
       },
       "stale": false,
       "manual": false,
       "note": "Ponto representativo: Palmas-TO (ajuste no perfil com o município real).",
       "chuva": {
-        "acum_7": 27.6,
-        "acum_15": 44.2,
-        "acum_30": 91.9,
-        "prev_7": 62.6,
-        "normal_30": 152.3,
-        "pct_normal": 60,
+        "acum_7": 62.1,
+        "acum_15": 79.6,
+        "acum_30": 127.3,
+        "prev_7": 73.0,
+        "normal_30": 152.0,
+        "pct_normal": 84,
         "cidade": "Palmas-TO"
       }
     }
   },
   "signals": [
     {
-      "id": "chuva_to",
-      "tema": "chuva_to",
-      "estado": "abaixo da normal",
-      "severidade": "alerta",
-      "titulo": "Chuva abaixo da normal — Palmas-TO",
-      "texto": "A chuva acumulada em 30 dias em Palmas-TO está em 60% da normal do período — abaixo do normal (possível veranico). Confira a fase da cultura/pasto antes de decidir manejo, plantio ou suplementação.",
-      "gatilhos": [
-        {
-          "serie": "Chuva 30d — Palmas-TO",
-          "metrica": "% da normal sazonal",
-          "valor": 60,
-          "limiar": "<= 60",
-          "unidade": "%"
-        },
-        {
-          "serie": "Acumulado 30d",
-          "metrica": "observado",
-          "valor": 91.9,
-          "limiar": "normal 152.3",
-          "unidade": "mm"
-        }
-      ],
-      "insumos": [
-        {
-          "nome": "Open-Meteo (observado)",
-          "as_of": "2026-11-15",
-          "idade_dias": 0
-        }
-      ],
-      "ativo_desde": "2026-11-12",
-      "freq_ano": {
-        "pct": 20,
-        "dias": 75,
-        "total": 366
-      },
-      "oscilacoes_ano": 5,
-      "relevancia": 3040
-    },
-    {
       "id": "preco_soja",
       "tema": "soja_preco",
       "estado": "patamar alto",
       "severidade": "positivo",
       "titulo": "Soja em patamar alto (R$/saca)",
-      "texto": "A paridade de soja em R$/saca está no patamar alto dos últimos 12 meses (percentil 100). Em 90 dias: +13,5% em R$ (Chicago +4,9%, dólar +8,2%) — o movimento vem mais do câmbio. Para quem vende soja, é um patamar de receita mais favorável — compare com a base da sua praça antes de qualquer decisão.",
+      "texto": "A paridade de soja em R$/saca está no patamar alto dos últimos 12 meses (percentil 100). Em 90 dias: +14,6% em R$ (Chicago +5,9%, dólar +8,2%) — o movimento vem mais do câmbio. Para quem vende soja, é um patamar de receita mais favorável — compare com a base da sua praça antes de qualquer decisão.",
       "gatilhos": [
         {
           "serie": "Soja — paridade R$/saca",
@@ -554,8 +515,8 @@
         {
           "serie": "Variação 90d em R$",
           "metrica": "decomposição",
-          "valor": 13.52,
-          "limiar": "Chicago +4,9% · dólar +8,2%",
+          "valor": 14.58,
+          "limiar": "Chicago +5,9% · dólar +8,2%",
           "unidade": "%"
         }
       ],
@@ -563,12 +524,12 @@
         {
           "nome": "Soja (futuro)",
           "as_of": "2026-11-13",
-          "idade_dias": 2
+          "idade_dias": 3
         },
         {
           "nome": "Dólar PTAX",
           "as_of": "2026-11-13",
-          "idade_dias": 2
+          "idade_dias": 3
         }
       ],
       "ativo_desde": "2026-11-11",
@@ -599,14 +560,14 @@
       "insumos": [
         {
           "nome": "Selic (meta)",
-          "as_of": "2026-11-15",
+          "as_of": "2026-11-16",
           "idade_dias": 0
         }
       ],
       "ativo_desde": "2026-03-19",
       "freq_ano": {
         "pct": 66,
-        "dias": 242,
+        "dias": 243,
         "total": 366
       },
       "oscilacoes_ano": 1,
@@ -639,7 +600,7 @@
         {
           "nome": "Dólar PTAX",
           "as_of": "2026-11-13",
-          "idade_dias": 2
+          "idade_dias": 3
         }
       ],
       "ativo_desde": "2026-11-03",
@@ -666,134 +627,7 @@
       "relevancia": 0
     }
   ],
-  "news": [
-    {
-      "title": "Selic a 13,75% veio para ficar? JP Morgan vê riscos de o ajuste fiscal não surtir efeito e pressionar os juros - Seu Dinheiro",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNYl80Q19pZmpOTks1enFRQWxrajd1NTRKd0hoS283eW1tOTJfYW50MGFuaVg0cUMyUHg3X3lJZmZ2VUVJV01ZVUp3R2xIbDdCMzJoczRIdjhzTEIyTFlmWl9vSGxsVVQ2ZFZCZFBVX1V3NWJyd18tb251TUFtT0ozeTUtUzVZVHlGUWNNbTJfV0pQc3NHR3ZRaXB1R1dFTzJhUm4ybzZqeW84WUJTMV9kQnVKcWVhalZ0dlJ2bjZJLUN4Rk1kZE1SOGZEamxnMUtDenEtd09FN0tObGFteFYtVlVIa3htcXc0RGtJ?oc=5",
-      "source": "Seu Dinheiro",
-      "categoria": "Economia",
-      "date": "2026-11-15T15:07:00-03:00"
-    },
-    {
-      "title": "Expectativas sobre impacto mais forte do El Niño no IPCA estão se deslocando para 2027 - Jovem Pan",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNYVpVZDdmbWIyRlRXRkRSZ2hmYk9OYVNGTzB0VlJfVXhuQk5YcXRSQU00X1FqQm1OS2NDNDl2VlVtQmZScDdtUm1WcXpLQThfdDN4bDNLTnJTcGhEYXVlQzJZd1BvY2YxdkNDMjExdHNQXzdPdWxtUy1tX1YzUXFaZjFHMTZ4UUhYSHhibG5VOXZKeG9QemJrMURLc0Q1SlM0anMxNW9kY21ITHQ1WmVOanZ6UWdZRERwQ3pKbg?oc=5",
-      "source": "Jovem Pan",
-      "categoria": "Economia",
-      "date": "2026-11-15T13:46:15-03:00"
-    },
-    {
-      "title": "Bitcoin cai com decisões iminentes do Federal Reserve e dólar mais forte pressionando a demanda - Traders Union",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUE5YRXJpcklOZDE5ZVBkajZNMXZweXU0aHlVLXgweUxfdi1lM1lqZmpNaVdJdUhxcDYyYW9FM2ZkMU5LNmlzOFJwVl95MkNYWTZDM3I1RWx4UVFXa0U3MzhiWDBUSTNYelhWZklGRlF5SVBNUklNNVFldGpQdUU4ZDhjNERWWWg1MzB0VkxzVk1JNWttQlNlaUlIbG8zdS0tYlE?oc=5",
-      "source": "Traders Union",
-      "categoria": "Economia",
-      "date": "2026-11-15T13:32:31-03:00"
-    },
-    {
-      "title": "Atualização e juros na nova interpretação do STJ: impactos sobre créditos e dívidas - Consultor Jurídico",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZi1ScGpMQlVTWHBsbWYzUGNOdUpmam4tUHBjeTFrQ2tRbDctSDRZQk41RmxPQUZmQVJNeV9HbFI3OTRFaS1VcUxXQ091Z1RxME4xSFZ6M0dPV01xYm5GYy1pOW1jTXFPOHhjX2Z5N29lQTQxVk1UZkNYa2t4Nmd5NGpNbVNnMmlJZDdpN29pY0FFMXFDSkU3bnVhTGItQUJBbG0wT1JJSmJ5RnFkWThLRVVZSHVHRTVD?oc=5",
-      "source": "Consultor Jurídico",
-      "categoria": "Economia",
-      "date": "2026-11-15T13:23:15-03:00"
-    },
-    {
-      "title": "Algodão volta a ganhar espaço no Paraná com promessa de lucro maior que a soja - Tribuna do Paraná",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNTE04dDFreTR4M0xmWk45NmpfVUhWTTBaa3JrbGJ4YVhUWkM0V1d1NVJOWXFkQnVMVHhsZmZEWEx1enU4MmliQVphNlhlY3ZObVMxdHhfTC1CeHVhLUJsMFRUc1hzaWNYQkp0czdCMnJmWklzVGd5dHJPdkRRd2NjQlNDQWVyUXlTeVJxdFRxb3F0RjI2SWR2ZDZsaUdZZ29ZbGRhd19LOHhYSzJycUJmS3dvOEvSAboBQVVfeXFMTkVhU1VHOUFrb2J6eEpsbEIzT1kwMXhDM2puVm4yYVlQNjlmR2ZiWUM1YXk0dU43QlJZMW1ZUmxjdE9HU3lUY2hMUEFFQUR6bHI3WUZpV2FWSUZzWTZaZnpKYzJuV0xiVDRfX3RzVGdacTY2YUFsVkpHZW45X0tlNGNveWVRM244enV2WnZIcVlkZFppSFNTVTRoQ19zWFFWVzRib1BvYXQ2UENhalhQY2FISmFGcW1nZnRn?oc=5",
-      "source": "Tribuna do Paraná",
-      "categoria": "Agro",
-      "date": "2026-11-15T13:05:00-03:00"
-    },
-    {
-      "title": "Expectativas sobre impacto mais forte do El Niño no IPCA se deslocam para 2027 - Tribuna do Sertão",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQOGFxbTBnZmp5U3VRMHhxMGkweWdpRjNManVJM21zRFQ3TmNuNEZhYVZCRkZFUTdEM0xDS00xTTNhWUhqZGFzazdvYVFPZWtqOTFzbnRodjZQbXpuYjF0RVFVRTl6OVlmZGljWjlmZlNwRGVRS0g5SHk5OTBrTnZueFNaR1U4QUZXbHdTRzBaVzNfbTBrR09wamsxbVJEQ0w5WDlsZ3hLQXAxTE1LcWR0UXpERDhia2ttblo4VzFMXzR0ZUVSdlpJV2cxbzExRzRDQ1M4Uw?oc=5",
-      "source": "Tribuna do Sertão",
-      "categoria": "Economia",
-      "date": "2026-11-15T13:01:00-03:00"
-    },
-    {
-      "title": "Youdera expande central fotovoltaica da Browning e duplica capacidade instalada - welectric.pt",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbDBES3ZRQzVuRURDU1NBYmJJb0NHWDM5ME14WFM3LTE2RlVVcF9pTVhFaVduQ2dqSDc3eXhCWGZVMkJWbkNQQjdvMU82M1gtbkR5UTF6RldnWUZtNkp0SXdpUTRrTEpFOEY2enhyS1RwT2J5WklJR3cxbmNUUm9lN0x1WWtrODBTdFA1NEFFWmZHSkQ1Z3o4LVBrdFVYQmIwMXU1LWd2eFN5RnN5NW9NRHF3?oc=5",
-      "source": "welectric.pt",
-      "categoria": "Energia",
-      "date": "2026-11-15T13:00:00-03:00"
-    },
-    {
-      "title": "Ciclone, ventos de 100 km/h e chuva intensa: veja onde o tempo vai virar na semana - Canal Rural",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNemtuTDBZbVp2MlNOcTBIajJ6MWVWRk1adG50alI3NHc1RUJFU2RfMFFLUkVvejNiT1F4WWR5eDVLUVZZUTdtZWRMbFRpb2hkWXo2UFJRY1NYeWN4TDBKRnFKeGczNGQ3YmE3M3FKNE1BRWIycEI2d0R2Sm4tR0ZkQnoyU0xHcEdnT0pWTjk5RjhVM29FVl9mcHR3UWoxZUZOS2J1UDV0Ml9XSFZTZllvRHViRFBaLUlxQktKUXN0LXVZVjVyT2ZOUA?oc=5",
-      "source": "Canal Rural",
-      "categoria": "Agro",
-      "date": "2026-11-15T12:58:10-03:00"
-    },
-    {
-      "title": "Youdera expande central fotovoltaica da Browning e duplica capacidade instalada - SAPO",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVWJQTjhnQUltNVUwSGhTQkNNalI0OVY4REpyUUVyZjY3TDdlRlE0aWI5cHN6QnBBcS1sZE1zMTA5djYwWU5kb2NUV3YzTEgyUnhGclM4ZUxRMjMxTGFNM2xCdmdNTktwQ3dvQnpPN2MzRjlwb1VBSmhPcy1RUmxDVDlRMkNrVTE2YndhT1dVTFVzMjBHUFVBMFpZWU9MU0tZMXJaSnJJV2s0Rmg1TkpES0JaSnZMQ3hjMExKQ3hqbUhBSEY3dWc?oc=5",
-      "source": "SAPO",
-      "categoria": "Energia",
-      "date": "2026-11-15T12:00:00-03:00"
-    },
-    {
-      "title": "Baterias e energia solar prometem eletricidade mais barata, mas um erro pode elevar os custos em 35% - Gizmodo Brasil",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMlNxSzhEcTk0S3FYcTF3ZXhBU2c3THVoT0ppdndYQlN2V1ZTb0NtcXhEa1pOVGdaQzQwWS0zc0JSVkp0TGNEd0sxdFY2enVHVWxjUlBXTUVNYWhqZjdfY0tzVHZUZTR2N0dXRkdLSGNsMnNVN0hRMVhGUWVzWm1fUi1CU2VmQ2lMcjJBeUFfOTJNczZCcmNYRlN6WC1ZUFV4U1FrN05kNkJsSHVZR2JESUo5ZU1TOGRkTHhpa0FGY3FsdzduLTJEcTZGcw?oc=5",
-      "source": "Gizmodo Brasil",
-      "categoria": "Energia",
-      "date": "2026-11-15T11:49:23-03:00"
-    },
-    {
-      "title": "A saga dos 'gigantes Panarás': povo quase dizimado pela BR-163 resiste ao cerco da soja e do garimpo na Amazônia - O GLOBO",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPazd5alg0SHY5Vmg1UUd2S0dSQm5jbG5HOXlJZVVMbjk1ZnV1dGZhamVhaGU5UjFrcVBPRWN3cGo3elVfS3FXTlZjcHFpS0ZyaGdPTmpMei01LWRsZl9DdWJSb2VSTmN5Z1Qxb1JkTUU5ODNZRVhEaTBGUlBPNEotQjNnNzR3Q040SEc3aUVkU2ZqTFNjcTNuN2c1TlIzQ1JCbWdlSzZvQWlaTGkzZkJQcHlQTWtRWExDMXF5S25wWHVwRkRWbFNuT0FwSXJ6SmtTOTBadFJkLXZPSUVqVmxsMlpfaVNjdS0wUzZQYdIB-wFBVV95cUxQSkJzRTExbEJraWM3NFlkSEFLUThRRWJXM1FveWJ5SFByQUxLaTgxZnloeURLQXF6cEtmNkxxYWI2VmtVbWlmU29VN1lYM1pvQkp6NHN3YlpuczIxcmx6ZUxpOEkxVmVPd3pMdWdSRDBFWE10ZTlacU9ZVnNERjNPQ01SMURkcjB1dHBEMGFaa0E0ZzczWWo4N2FxUHd6OHpPcEZob3M0M2tjR3VUa05CY3JJUUE2bU9ELWxRTmRoRXhyYUt1Qmh0VUZpU2lYb3I2eHFUai1SNlZ5cFJoZGxIOVN2SHVhc0hxc1VseUlFMFh5WGYybUVNbWZ1Yw?oc=5",
-      "source": "O GLOBO",
-      "categoria": "Agro",
-      "date": "2026-11-15T11:36:57-03:00"
-    },
-    {
-      "title": "Pará decreta emergência Nível II por incêndios e coloca agronegócio em alerta por 180 dias - Agronews Brasil",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZGpqOGdFWDZJTDFKMjIyMlN3REw0anUya1lVTE94TGpGMDZYQnViRnB2UkRzcDlhOEY2QzZfa3FkWTVxY3Jsd1dtRmhERVBNb25NWWIwTU56cnh3Y1pFVWVhVm9VcGNJZ1RmYVNheGpGcmNzN1hxcTdyazl4V1hWQjNDWmVFR05UVjExVWgxcmVzV3RIV2J4MklwcV9MTFFBX1FhVWdCWWZOMUVQbE4zdzZXc1JvUjFF?oc=5",
-      "source": "Agronews Brasil",
-      "categoria": "Agro",
-      "date": "2026-11-15T11:33:34-03:00"
-    },
-    {
-      "title": "Relatório do governo dos EUA anima mercado de soja no Brasil nesta semana - bra1.com.br",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVEVvZGZ2djNRcC1uMW9YbkdqTWVmamNmcW4tQ1drcFVoSHl2SV82ZUdOcnlCb0FwTVNwdDJtTVVWWG1PSWZCUXJ4MmpIRVRkZlRYOEtlckhWYjZueEpnWmkyTTJjR2Z2dmdNcml5bXBOXzJoZDNacjhYUGxlb24yd1lEaU9jNnpPYW9STWE1N3FVV2liaVFUM1o1dUoxSXExQWRaZ2lnVERHT0doNk9YbDJROHpoQndrQ2h3?oc=5",
-      "source": "bra1.com.br",
-      "categoria": "Agro",
-      "date": "2026-11-15T11:15:00-03:00"
-    },
-    {
-      "title": "Mato Grosso terá indicador próprio para monitorar oferta e consumo de biomassa - Canal Rural",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOYmlueWJVMDZILUZGTm45ZkVoYVF4WmdGSFpTTWZ4UGNkYktXYXI0Yy1iOFlWRVUta3FnUXh5cktyRjFUMjVUc0Joa1k0a1pNZHFBdWhKT3JOSTlwUlFrekZkSWRQUmZSZEloNVBObWZRaUFUSnowdmFJbmRSU095Z0ZzaUVjWS1ucmJOS0VnemYyNTZQZGNRbFREQ2VrMGxfR3pkc3FRNkJfellKRHJFVEQ3bGx4X0tzZ1JfUkl3?oc=5",
-      "source": "Canal Rural",
-      "categoria": "Agro",
-      "date": "2026-11-15T11:06:08-03:00"
-    },
-    {
-      "title": "EDM avança na recuperação da Central Fotovoltaica de Metoro em Cabo Delgado - Правда.Ру",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE41RjhybEpieXRBc1d3N3NGZkNJUWpHbWpLTGotVFFJQk5iR0N3YjB3eWZDcFFfVzBneTdCdkg4ZEVtdm9MQUNEODctVWhuZ053aDJWc3hFX2ViTElIa1RGOHBySW81OWdiZ044TmdGZjZrWTA?oc=5",
-      "source": "Правда.Ру",
-      "categoria": "Energia",
-      "date": "2026-11-15T10:57:00-03:00"
-    },
-    {
-      "title": "Plantio de soja atinge 98% da área de MT; Médio-Norte encerra trabalhos, di - CNN Brasil",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE82UWJuTUEzSnFWekFrTHVZV3RtQmp2alh5aGViZlg5T3Z1TFFNM2NJVURzdm51RnN6YmliWVZOQWNmLVdfb0FzUTA2cjA5NTVRU2M3MElDR0xva0x4S0VLZjQ0RFE5a0NLVjA0?oc=5",
-      "source": "CNN Brasil",
-      "categoria": "Agro",
-      "date": "2026-11-15T10:30:16-03:00"
-    },
-    {
-      "title": "Mirante Rural mostra operação de distribuição de milho, piscicultura e alerta para queimadas no MA - Globo",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOV0NRaWM0ZEVDcGFpYU53S0Vvcjl0dkUxd29NTjdJU3ZzWk50aVZJZFBtLXliOGhOU2FJQXlyQkUtXzB6bHRNREVQQlNOaGU3MDJNMExzMEppZHFBRWVDcDlhZ3FiZVc3dnVGMFpHUS11aE5URGFNeGdwMlVUWFVBcHc0aVB1VmhVaHlLY3JPRTU1ZFdOM3cwdWttNWtZaTdTSGs2NS1uZm85WWxGcjVySmtDUHZ0ZWk4eGdBOVprRFUtS2c2d05PcFJJWFVMN3BVMVd3SWQxYUNWaGdJZUZkd2pXQVUxZEHSAfYBQVVfeXFMT1QxaDJpMzdvYnFGWGFiUWl5ZDBGdTFkQ09xZm1ZVlYyUmJPS3B3c09DQWE5TkQtNUNlQy1SRU42bUhQbTBNRmJQT0s1TDVrbGkwcVEzMmJiZ0N0Y2dLWUNkVENEZk5BekxuZlFnZTA2akdzQzc3VnJrbXJEb3lMV3dDcVNmYnhaNkVVcVlqbmJIQ3kxYWZkQzdTVFRNNG1yUE5oZ0gtWFpvaHlmTF9lODgycmQ1a2J0MzlKTlAtWklKX0haTldjUm5xcWJobUsxQTU0UEhxQVlkREVqNFM2bnhTTHJoc3laQVo1NDhrQkZHSV9TbDFn?oc=5",
-      "source": "Globo",
-      "categoria": "Agro",
-      "date": "2026-11-15T10:06:33-03:00"
-    },
-    {
-      "title": "\"O freio na queda da Selic: quando as expectativas de juros baixos cedem espaço à cautela\" - Por Fabiano Mapurunga - Blog do Eliomar",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUTlKb2xPWjJjNTJpVzh5LVd1ZjBBQlZ2ZUFnNFZqMjhnS1pIa0szUU1qRE9ROFZFQUY1cEN2TkMxUHZyUHhBQkstMnFaSTVseElIRVVuUFYxcEVGV0hscmptN1M4X3VKR3d3T3VZMi1veGRWYURnLXBmOF9xbms5ZUl0YWE2Skw4aXJndXlRLWNWc241eUZFeW1TUjNBbFNSTl82Z3ROSHpmbXZjWmQ5RkhEMnR6WlNyOS15SWt6Z1FDaHREQmZCclVMeS1lY29sLWc?oc=5",
-      "source": "Blog do Eliomar",
-      "categoria": "Economia",
-      "date": "2026-11-15T10:00:29-03:00"
-    }
-  ],
+  "news": [],
   "errors": [
     "boi_gordo: sem fonte automatica"
   ]
