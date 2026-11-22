@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T06:56:37.290639+00:00",
+  "generated_at": "2026-11-22T19:45:56.412787+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -370,16 +370,16 @@
       "frequency": "daily",
       "source": "Open-Meteo (observado)",
       "source_url": "https://open-meteo.com",
-      "value": 6.942,
+      "value": 6.708,
       "as_of": "2026-11-22",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 11.37,
+        "day": 7.62,
         "week": null,
-        "month": 0.49,
-        "quarter": 28.1,
-        "year": 77.36
+        "month": -2.9,
+        "quarter": 23.79,
+        "year": 71.38
       },
       "stale": false,
       "manual": false,
@@ -439,27 +439,27 @@
       "frequency": "daily",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 126.8,
+      "value": 125.4,
       "as_of": "2026-11-22",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 2.42,
+        "day": 1.29,
         "week": null,
-        "month": 38.58,
-        "quarter": 63300.0,
-        "year": 140.15
+        "month": 37.05,
+        "quarter": 62600.0,
+        "year": 137.5
       },
       "stale": false,
       "manual": false,
       "note": "Ponto representativo: Rio Verde-GO (ajuste no perfil com o município real).",
       "chuva": {
-        "acum_7": 26.1,
-        "acum_15": 78.9,
-        "acum_30": 126.8,
+        "acum_7": 24.7,
+        "acum_15": 77.5,
+        "acum_30": 125.4,
         "prev_7": null,
         "normal_30": 108.3,
-        "pct_normal": 117,
+        "pct_normal": 116,
         "cidade": "Rio Verde-GO"
       }
     },
@@ -471,27 +471,27 @@
       "frequency": "daily",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 138.3,
+      "value": 131.1,
       "as_of": "2026-11-22",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 6.71,
+        "day": 1.16,
         "week": null,
-        "month": 92.08,
-        "quarter": 6186.36,
-        "year": 39.7
+        "month": 82.08,
+        "quarter": 5859.09,
+        "year": 32.42
       },
       "stale": false,
       "manual": false,
       "note": "Ponto representativo: Palmas-TO (ajuste no perfil com o município real).",
       "chuva": {
-        "acum_7": 62.8,
-        "acum_15": 96.2,
-        "acum_30": 138.3,
+        "acum_7": 55.6,
+        "acum_15": 89.0,
+        "acum_30": 131.1,
         "prev_7": null,
         "normal_30": 167.5,
-        "pct_normal": 83,
+        "pct_normal": 78,
         "cidade": "Palmas-TO"
       }
     }
@@ -610,130 +610,130 @@
   ],
   "news": [
     {
-      "title": "Orçamento de 2027: setor agropecuário defende aumento de recursos para o ano que vem - Brasil 61",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOemhIU2ZsaHpYMC1Oc3h4Zm5kTWQ5TGJEQ28tZzRuS1ZmdmdqLXhXU01PUnpfVkoxRk42UzVwSkQ1YU1ESHJuQ3BZMzV5Mnk1STJqeHZPb0dHMWVGYnAyRkJ4MklPeWdGMzdldDEtcVBrM2plVGJBUW5jQnJPcEtGTGJBM0FzcUk1eW5NZERlb0hlTmFfOGVEMEpuWk9zcnN0eWtzYTBkRnl0b2NxMFo3THlSV3JYdlVpUkHSAb8BQVVfeXFMT1RGQkt2WTFiQjFfX0RyVzBrS1RVZDVqMlliQkZRbzlzbzgyNk1MV1RYdVpEYmVmV2xXTXNNelBkRGlWZDFGcEpOLXA5SmNkUWFZUVZBTV9ncS1EeTV5UEk5dExFdW1jeHhSV1pnSmpGb2FUN3hmMGNRUnJkOWxlZEhvTU9hN3YtdjlpZGkxbXhJaUZiZjdlV0VwUkJscjNRbFdHdzgxWVpIR1RDNlJkWFZUWHQ2RERoM0lLWWRqbFk?oc=5",
-      "source": "Brasil 61",
+      "title": "Brasil vai plantar mais milho na safra 26/27, mas produzir menos por hectare - Midia Jur",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQckJUZ1lVeWJGWE9NY0Rta04tUmh5OXdERjZUT05aMWtpOEFYaGxPQmtUUGlpMm1iLXRlamx3WTVVd19FVDJId19VMTJxVTM3SVVyYUNjU0FxVll5d3RRSUlJOW5rcDQ0dDM3T0ctSUZuTjFrOGdfOUZ0OFBLQUwtQzBaWElCQWMzdW9WN2FBMTc5TzJYaGNHc0VBZEk4eDFOR2d1eHRILWNpazdKSm1Hamc1ME1OcEdpWk9oQnJR?oc=5",
+      "source": "Midia Jur",
       "categoria": "Agro",
-      "date": "2026-11-22T03:00:00-03:00"
-    },
-    {
-      "title": "Mato Grosso do Sul tem déficit de armazenagem de grãos - TV Sim Brasil",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeks5djJMcW5yVVBRTVNYYVQwZU14aktQOEJOdXBqRHQ5NjJiWHFZT3dvRmZCdE5fbDFqTE1nNUE1NVR2cENLWGxweXFaMEQ0M0VpSHZfcFQtemNwaWNidVpMd1ZGX1FJajJLWnBQR0JmMF9IcjZuVEZwaFZlaV8zQ2MtZER0UFYwdTk5dGFQVFBEUlNxY2F0TUJaZV9IUnlLaTVETkRiT3lqOEt4REU2LUZkc2FnOE13?oc=5",
-      "source": "TV Sim Brasil",
-      "categoria": "Agro",
-      "date": "2026-11-22T01:43:03-03:00"
+      "date": "2026-11-22T16:37:38-03:00"
     },
     {
       "title": "Por que o dólar passou de R$ 5,90 hoje? - Estadão",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRS12V2E5S3cyVXRLVmk0UXpyUkRHM0pyM01Pc1JwcVVvaEFFVE1HQjRCZEx0TGFSVEl4Zkd3UWtRQ042VTRhazFrQzMyN19ZNzl1ODJ6a091anNvbm9pb05ZemhmcERpU0R5cUhFN2pDazlVUjEyWnVPNGNWRDl0cXdqeldtbmdncnl4b2Zhc3pBSWN3cVcyWmZPVTNOZmFOWEt4bDBn?oc=5",
       "source": "Estadão",
       "categoria": "Economia",
-      "date": "2026-11-22T00:54:07-03:00"
+      "date": "2026-11-22T16:26:09-03:00"
     },
     {
-      "title": "El Niño põe manejo nutricional da soja em evidência na safra 2026/2027 - Blog do Amarildo",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQalBWVlY2OUY0SGRUQkVpU29DM3hZOGIyZ1BoZTljUWxvRG5vd0NYX3RtS1ZobnRQR201NWQwcmQ5V3VJOWpLaDVIcnBVTkhFSlVkdkVDSXkzYlNwdWNXWmVpS3JEX1pBTGFrRmVlb2lNTmc3NFh1ZjJhUFhFTkt4cnZweFBjRVV6Qk5VM01WOWFRdks4dTkwN3NPZld2Njc4U0Fj?oc=5",
-      "source": "Blog do Amarildo",
+      "title": "EUA encerram produção da moeda de 1 centavo de dólar - SBT News",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcUdWbVdxeUdoWmIxYjFhekQ0eE5vaFYybV9jSW52MTA4eUFKOXJpZlBqSkl0dXN5Z3FjQVFLNHljT2VWT0hXRzA0RVpaZ2t0UGVGMlRzY1d1Um52dV80N1dkTFdMY3JraFc1dmtjZnRTcFlrQXhZRUZMeTMyWmg5R2owaFFXbHc2SDQ0VGZPUEVNRUVRYURsRA?oc=5",
+      "source": "SBT News",
+      "categoria": "Economia",
+      "date": "2026-11-22T16:10:50-03:00"
+    },
+    {
+      "title": "Etanol de milho redesenha mercado interno do grão e pressiona exportações no Brasil - BPMoney",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNMElyY2NITk5uemJwMWFueXQ3eFhXOENGQmZxTC1IWTRJZnNQU0RkZ0o3cWJ5TXpIM3I2THdUYzRXVk9IUTlxVjJyeTdvZk4tWEtwMEd5VU0tcTVWSWFDNWFteGlqMC15TDVVc0VWLTVRX3M0REd5bzZUUk5tdjRtS3VydkNNekFabzhJRFdkNFAtUQ?oc=5",
+      "source": "BPMoney",
       "categoria": "Agro",
-      "date": "2026-11-21T23:56:57-03:00"
+      "date": "2026-11-22T16:01:00-03:00"
     },
     {
-      "title": "Energia solar garante economia para contas a partir de R$ 300 - Grupo A Hora",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNYUxIWmtCckY1QzNJbVl1MWp6QlAtWHIzOTZuTzRoTnFsakI2YjloSVl1c0E1X1Y1dkZjNnZMODRaUGQydzRqQUd1ZEduR0diMmlSSEZoTGpucnU5dUhkUjNrbmJuVmxPUm1PSnJrMFJrNVdERTRXbjdqQS1QTk1uMWdtSVFVMHdyUGZkVElJZEZDZU9SUVZmNExVNndVeG9SUFFtSGRGRVQtbF93?oc=5",
-      "source": "Grupo A Hora",
+      "title": "Soja de alta produtividade começa no plantio - A Bronca Popular",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOdnhQRnJHV05rNHU1RWRoeDNZYnFKUXFqcjhMWEZ5Y25oeGFmeHlhQlNDdHctQ19tVV9SaHByTUx0V2dnU0hVYk5mN1hMdElwUDloOHhXLWJnU1liNEp0Q0FVQ1MxRlRPSEJPRVJVZHJLWnhMWWFnRXdUSndTemJPMUVqU0NTNVZhSnZLNjQxaUxTbnRQ?oc=5",
+      "source": "A Bronca Popular",
+      "categoria": "Agro",
+      "date": "2026-11-22T15:57:00-03:00"
+    },
+    {
+      "title": "Dólar, ouro e até o real entram no jogo: onde o UBS vê oportunidades para ganhar dinheiro — e se proteger — em 2027 - Seu Dinheiro",
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNaDd3dnRBeWVySFFxWTRMRjdMUXlxNVR2RWJ2SF9YczRid1lhZE9XMW13NHhrdkxuWk05UzF1dWNkTTh5MW1MUDN4Mm9rR1BmczZ5SjI5ZzFOMFBzbmJmNzNXN3NIeC1zVDkzSVBJcXk2T1ZDTEJxQV9wWkJxYlJ4TXNrNTZVdWw4ZDZSVjZ1cXZnU2p6VW5fRUhRYlFMeDh6MGN6NVdIRnNIUUdhM1A2b0JDMlpMSWM0Mkx6eGxCbmNaVmZQd2VmQlF4UUlFaDcyTHhQQkI5cFVoaFM4OFljOEIyWDRtY2hYSVhzZ2l4MHpmdw?oc=5",
+      "source": "Seu Dinheiro",
+      "categoria": "Economia",
+      "date": "2026-11-22T15:14:00-03:00"
+    },
+    {
+      "title": "Soja avança no Paraná e preço supera R$ 140 por saca, aponta Deral - Gazeta do Paraná",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQUtaNVlOa2o1QzFqRU9EVHF4WjRCYkV3Zm9jVmpPY2RMQXltUE5teUlzTzdUaTJyd3RNaVd3ZkRBUGVVR2VLUl9lWVlhWUpNb1hCRG9wMjVuTUlEd05WVHUwbEZzQlZuMVJ1akZlQ0daMG5uWWxCQnlPbXVZdU1fdE1hdkdwRU13dHo3NlJ5NUpvRXRLcUZxSzFNLUlrbUN3?oc=5",
+      "source": "Gazeta do Paraná",
+      "categoria": "Agro",
+      "date": "2026-11-22T14:30:00-03:00"
+    },
+    {
+      "title": "Agronegócio brasileiro soma 700 novos mercados internacionais desde 2023 - sentidohorario.com.br",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNHJweGsyUVNqRmlnUm54ZGR5OHFsUkNZa1g0OFhMWmRfYmpEbFluTHV3c2hiMTVIUXd0ZmE0c1BCOWViam1YbnJ6SVJrd3luZHc3aWRDekRXTjBzY01HSnJuUmFDRjNib1F1a1BxTUFrUGtjWlBCV0pNaU5KeThnM2Zub05SZlFEN2FzWXprd3A3cEpQODRkUGdxdnU5cTJrUWIxN2l3?oc=5",
+      "source": "sentidohorario.com.br",
+      "categoria": "Agro",
+      "date": "2026-11-22T14:24:35-03:00"
+    },
+    {
+      "title": "Modelo agrivoltaico amplia renda rural e eficiência da energia solar - Repórter PB",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxON2ZIaTJCRW9VUXhYQU9SbkxqaXlZYzFaUXJ3a3RYOTlJNkkwTzl5OFlaUVlFMjFPcFlaemFGak9jNFVvOVlBX0ltc0hPLTlweEdLYTNVZzFXWkQxcnFkWTV1ejlOTGZwSEZIWWpjNzI1dy01MkhkUXh1S2lMRW40SU11bzNWQk1yQUhSYUUyd1VZVkVlS1lNUlo0ejZiY0swMlp6a1dTYVhFV1BLdTV2U011QTFieURYazhlYzlkekdwMHpUNnEzMUo3N1Z6eFJm?oc=5",
+      "source": "Repórter PB",
       "categoria": "Energia",
-      "date": "2026-11-21T22:09:00-03:00"
+      "date": "2026-11-22T14:02:00-03:00"
     },
     {
-      "title": "Máximas devem chegar a 39 °C em quatro municípios de Roraima - Canal Rural",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWUZnWGVBbk5IWW5iQTRvVy1KV0wxUVhpTXlYTWJfaDcwN0R2REE4bkpsc1RxWHFoc2JnS2Ztd3pyU0VXYnJwb044QXk2cVE2QU9RM0JFeDJCeUcxRW9GR0xWZTM5RmE3OENRc0lHY3VPSWFqRUJQeDE2b3FwSko3a3Btcy03Q2FDdTdUMlBIWG9PYms2VjA4bWNzZmxqZjBMRUlPZWhKbHUwYkQ5cDcyNg?oc=5",
-      "source": "Canal Rural",
+      "title": "Onça-preta dá saltos em plantação de soja e surpreende fazendeiros em MT - Primeira Página",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTXpyZWdMQURqdDZvX3g1cHIzR2JhWWs4dmI0UXlwM3VGei14dzJPcEc2OWIwR19wa0U0SWFsbjB1WDFhR0hPbEppWTdMbjVJd0NzNzdOUzBYNV9vbUdrazhOVTdIRF95LTJRVTU5aXk1SWFoTnRWVTBvTkVEUlNIZ1ZiT05hbG5zV0RkYkVnN2tZZm02ekpuOHBMSTNCYm5acV9YaHRNbG9Za0I3TExHaXdPQnZ6bVBYUklzMy1ETQ?oc=5",
+      "source": "Primeira Página",
       "categoria": "Agro",
-      "date": "2026-11-21T21:36:14-03:00"
+      "date": "2026-11-22T13:43:59-03:00"
     },
     {
-      "title": "Queda do desmatamento amplia pressão sobre agronegócio para reduzir emissões de metano - Vero Notícias",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOTk44QnpCSmF3ZGc3bExrU2ZXMTRweHRzUjBLNjQybUh0UklwTElrUzRNalV3TFlzYXlqNU9wNGRjTXNHLUJlUVBBMmI2Zl90YTNuaW5BTW5XMkJOeGxhRmlHOEs1UE9SMmo5WmtBMEtVNU9jaXB3aThaZVU2ZW9saTktWV9idmpvLTVlVkpOQ3JIN0RsbEpqSUFGd2dUVHFGemFJd0dGcEc0TGFlMFNrcVN4NTkzUlRwbFpicFh3?oc=5",
-      "source": "Vero Notícias",
+      "title": "Mercado de cannabis medicinal chega a R$ 1,14 bilhão e abre caminho para produção nacional - GZH",
+      "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQTExYd19ITl8wSXZVYjdhdXBPZlpqcUJPZHVMdGREc2xlR1BqWFVQX0FsQWQwQXlhdGlESEc5NHpZWlRnbHdXeGR4ampwbzBIZjhSeDlpaENBYUdFUk8yS1BKVzhRQnpKcElxcXNMSmZ1bEFlYk1zZDFvd2JTQ1B3YkdXeWdPMVB4ajlqZ3hldlRwVmgxQmxzcG9GVy1rWmZiY1dYaE1JUDVadXpCcjNtLWpzYlZtR2FtelJjUzZRazlJZEZzNkRmNnBwemJOalAwTlZoTVk2czBKWndmWld2Vm5WRGZrYVFZQlUzdFo3R1QtRG9UZFY3dk1YYV9FZXB3Z3lTWmd2d1VYTzFEcmJBMURkVXI1S2xy?oc=5",
+      "source": "GZH",
       "categoria": "Agro",
-      "date": "2026-11-21T21:30:00-03:00"
+      "date": "2026-11-22T13:04:45-03:00"
     },
     {
-      "title": "Sede circular da Apple tem 260 mil m², painéis solares com capacidade de 17 megawatts e células de combustível abastecidas com biogás - Midiamax",
-      "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQLTNXdXdwZW1FQ0Z6Y3REQjc0MzVsZGVfOWNscWtCallESFREX1kyNTRmUWV0Q0Z5WXo2S29WRktFYXFpNi1mSFpyTkp5N2ZBVjE4MjhBeExtMjN0a3hPTDJ3TGhncThBWWJvZGxob1VPdHQ3R0hCZ3p4Nk1TblVqSkV2RXJSUWIybHQ0cElXYXVJeTdlMkxVeFpRSHZWdzU2R21rb09oV2EwbUVzX19GS0NJTFp6a2llOHlEbnNua05TT3ZvX1N2dmlxenFBUzhOMXNXWG5zT2podGMtd3FTeFdkY3IwX19nS0otSkhDX1lZM1QwMVMycHQ5OGlJUGVpNWd2VWpUbWRTc2xG?oc=5",
-      "source": "Midiamax",
-      "categoria": "Energia",
-      "date": "2026-11-21T20:15:00-03:00"
-    },
-    {
-      "title": "China conecta à rede usina de 600 MWh que transforma ar em líquido a −194 °C para guardar energia solar e eólica e gerar por 10 horas - CPG Click Petróleo e Gás",
-      "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPMVc0WlVyTlNlNmptRVY1LWVFOXBkRzZtWG9xUzZsTExSOUJ6TFJscXF2OHIxRWkzTGYybkRYMnFuS1VvbGg0YS13ZHFTUE51a1NFbUdodWxYd1J1Ql8zdHpjZGlfaTlMODZGcTdRNXdkZEhtTHBoenk0TmZGaElOYmo2LThQQVlfNU10WHVLU2xrblVZZk1yRmNpeXNISk01NE5uT3FzSnpua1ZmUEVLWGZTb0xpNDBvemg4ZHhqLV9UaHpqLVdZOTI2R2FXXzNOQnp1cU5HWDN3T3RqNHRienk2X3lZR0NnMWxGc1pwSkl0amxlOXlIUGI3aEl3YjVUUzQtWmtIYmVjaDgwd2c?oc=5",
-      "source": "CPG Click Petróleo e Gás",
-      "categoria": "Energia",
-      "date": "2026-11-21T19:36:00-03:00"
-    },
-    {
-      "title": "Palmas (TO) sedia lançamento regional de inseticida com ação rápida contra pragas agrícolas - Correio dos Municípios",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNUzN4OEdtc2VnTVlHUHRaZUpWVXMyMktEaUVNcmJGV2RCd01YTFpWVG5lZ0ZhU2ZfWjJzVFM5X25UdUk5ZmpzUFdibDhva0hDLWVmSHM1Z09Dc3NfTjAtR2t5clBMd1JiUmI5Rzd4c1JWbGZNcnNNWFVJVkdHMF9JbFQ1LXBDUkJXTzBzdWptQWl3V1FJeEVJTUtQcnNZQnozNHdNeEdkeWE3aXdtazJMMmFZeFVNeHYzWTQ0bXhIc3ZxaE1Ndi1hNnJ0MVB5VFJaa2lpZzRWQkk1NWdNa3dmUFRUZzdNcVE?oc=5",
-      "source": "Correio dos Municípios",
+      "title": "Fortuna de Chitãozinho e Xororó: música e agronegócio - Times Brasil | CNBC",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWjZoUWJNQzg1UjVPOTVOaUZYVkVab3ZOelFiekJlRXI5cEpnUnN2b0NMeVdRbWxWdTAtVlhoRlFfRW81MDNnRjllN05YOW5SRDhJcXMyNTA3V1Y1Z0k5eFhyQXlwWmV0YWhvNmFJbE5RRWRxUE5YVTF0bUktc3RWdm0xcWhMZzJvWi1JRHVMRHJUdw?oc=5",
+      "source": "Times Brasil | CNBC",
       "categoria": "Agro",
-      "date": "2026-11-21T19:10:04-03:00"
+      "date": "2026-11-22T12:56:00-03:00"
     },
     {
-      "title": "Neoenergia abre edital de R$ 60 milhões para financiar projetos de energia solar, baterias e modernização elétrica na Bahia - CPG Click Petróleo e Gás",
-      "link": "https://news.google.com/rss/articles/CBMi2gNBVV95cUxQay02a3NrYkVFbFJNQXNLR0YwUy1FYkM5RFlVcE0zT2pteVFaaU8xTW5pUGdWcV9NNUdjeTdGX2VXQVE5c0s3d0N1SS1sSzFuNktka1lzNG5WMmx6YUlfUnRRMUU4SWZBNUNIc2FtdVJ6bWdxTGV2N083bS1Sc0FTX2hSNlBwYm5lUUxzOGl0dlJLRzBxX1I3VkhyN1hvSldsREo0ZGZzQ2MxbFJuTEJmYUFVbGd2MDIwb3FnSmNpXzV1eTVfenhWTHc4NUliVzlpUkViVFBreTJZRjFGZ0c5WEl0TGg1VVp5NEU2TWw1MEhzaFVsRHk2Q3Z1UTB6ZDJBek9zSklSb2FVUnlYVnFDWHJXT1RlM1RPdHJqQWxoSUFIcVdJQ3VFblJFVkEyU2t3dHlWRHNDalpQai1HcTBfcUlERzBLdTF5ZjNHMHBkZG9UV1QwUWNfVDAxZk1qT0MzRkhsT19ycGhOWDJtQkhQOHIyZGVBRHNVTFBHQVNOY0tmZG94T1EwUkFYQTlQdm8tV3pUcjQwR1U2eElKWUVaRjEwanBTMExUYmJrRTVOMUZTOUhoSDN4bmI4V01FRmRiZGRGRTRWZGlOcTg1d2tSQTYzaXVsM2NPb3c?oc=5",
-      "source": "CPG Click Petróleo e Gás",
-      "categoria": "Energia",
-      "date": "2026-11-21T19:03:00-03:00"
+      "title": "Trump sanciona lei que encerra oficialmente produção de moeda de um centavo de dólar - Estadão",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNks5bFBmTEluM2hQT0wzNm5NN3ZzQmdnSWt0MWRJTzQtRjhtaDh4N2x2Qkdjc3BtdEdudjlrVW9HOWo1eG44bXB2LWxFYlBrWlk2Q25PRmxDY3pZeHZJS2g3UmJHdkZIeFpVTjQ2WVBXSGJYRG9oQzZKdWJ1WkdSczhaUVBIRFVwb0Z5XzNOMGNza0dzOE4zQV9RLXN4cUN20gGmAUFVX3lxTE4xVHg3Y2pTUHM5eldYc25zd2I3emJpY190aGxfN3BKdGItSXdvV2RNTlNhbl85VkxGVlNnbFlvdHlIZDBBeW5NSW40bWgzcEpIS0VFQ05MVV8wNlVoWkE4bV85MkJrZEhJOGhQSVl4aU5tMElmeU1oQWEyMlk4Z3h5MnpNSGstcW1TTlgzU1JpM2NQdjQ5VkNKcGNVZnFMNER1SHpvZ2c?oc=5",
+      "source": "Estadão",
+      "categoria": "Economia",
+      "date": "2026-11-22T12:41:00-03:00"
     },
     {
-      "title": "Brasil deixa de aproveitar mais de 36 bilhões de kWh de energia solar e eólica em 2026, mesmo com bilhões investidos em usinas renováveis - CPG Click Petróleo e Gás",
-      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPNXgyUTJmQlhaZlFLVWxNVWVnTW9TMnp3a2twOFVNS2o3QVJ4b0NWa01tVmtvd3B2RktqZkJ3UTc1aFNZSGlkVVlYTEctU1Q4aVlPVUQ2clpneUpSSmwtUGxXRE9zSFNZejROWl9DN0t1Vl83ZWhYWEJKaXI2RkYyRGtvNHk1Vlh6T01NZ1A3NEdjczJnVE9DYmQ5NldfR2F0UVRuOWZ2UGdiSFNtWkRwOU9UMlVxZ0hkV09EMHVwUTV2djkyTWJvVXBXR1B0cHdBNFN6cXdJWVRrck81bWJwLUQtam1vTmdrZWZoNTdfcWc5OThUVzF4U19EVGQtQ2hCYzZXdndiSjg?oc=5",
-      "source": "CPG Click Petróleo e Gás",
-      "categoria": "Energia",
-      "date": "2026-11-21T18:33:00-03:00"
-    },
-    {
-      "title": "Chuva para a soja pode variar de 9 a 89 mm em áreas produtoras de quatro estados até o fim de novembro - www.meteored.com.br",
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNdWJpQmIxekNRRENIdjY0TTFTQmhsYllNMDZCR1NlQlloaGhTQlVjUjJuMnZ6NC10Y25KYUp5M085Um55akM2bHc5RTVHUHV4bnpudEt1V0VuaWhtQW5WUDdGX09GZlY2eURUVWZraEtRR0d3WWV3ZVBtRUNoU2dmTDN2b2ZlRUtfYWZHQ3pNOU1EZ3BGR3NFXzd4eVhRenJfMkkyT0NVQTA3WjZxRVN1SU5qdkxIMHFzV0lUX0JOR09aeWZzQ1RNY2I2UkFqbkt6NElGSE13U3poc0lYVkhoVEoxWkZLVlE0?oc=5",
-      "source": "www.meteored.com.br",
+      "title": "Senar abre 694 vagas em curso técnico EaD de Agronegócio - PEBSP",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQU1J2dGlBN1RhenhxVm1wM2RENlJXMU9iaFVzRjZuYzJhcW80OFJ1V0hxZmIxMXdLb0RBTFZRUlBCM0lDT2Jwb2lzWmhaeHd5OHVObWJ4clJlcXZMdk5Ucld5YVFaWGlXTU8wd19iVmpibl9tOXB0ZGY0V3FGWG5xSUlFdzM0dw?oc=5",
+      "source": "PEBSP",
       "categoria": "Agro",
-      "date": "2026-11-21T18:03:00-03:00"
+      "date": "2026-11-22T12:37:56-03:00"
     },
     {
-      "title": "Suinocultor ganha poder de compra frente ao farelo de soja, mas perde para o milho - Capital News",
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOaGpydUR1X0t6MjZOQjdrc0I1MTNGaDBJYmtadkdpbkNnbWNpZ3pOaTREUWhLcDZjdENtelg0c1ZLejBnYTY1Rk1QNXlSR0ZLTjZyNGVNV2FOOTUyZzczU2FBU01ESTA4XzNCV0RjTk5EUjFTNEJLQTZ3cURPdjUzaTlRdVlDQnlPXy1CbHc3YzlodEJZam1MZ1lDSXFDeEMzUF81aGMwLS1HeTRrdE05T0NWd2dLY1ZiekNUeFZDekhDUEROSGxvWWN4RkI2T2RHMTVqbmREUFRKakRNRDBTTzBBWnZBd0xTZEE?oc=5",
-      "source": "Capital News",
+      "title": "Adapec descarta prorrogar prazo do plantio da soja no Tocantins apesar do atraso das chuvas - Jornal do Tocantins",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNd1VWZWs0eHJoQlBqZTdBMk15Y1U1b0ZvcUpMV2VQR0p2c2Rldkc3ZEFhekQtcktxdFY0OVg4ZmN6aDQtZ1hueG1ZTjYwYW4xbC03TV9Xd0g0R2l3N3pLV3g3YlVib1BVaE84am9uUDd4c05wcjZxUXZVUUpBRjROOTg4U0FaaHJsYlZqa1o0MXYtU1IzQ05XNEMyR09XOWJJYUNQQWNmbXdRekdRdEhtRnJrRHliRTBiUlQ4MVVrOHZSM1kzYk9aeDl3Z3BXYzVrRml1bVZaR2plTm9zUWpSbQ?oc=5",
+      "source": "Jornal do Tocantins",
       "categoria": "Agro",
-      "date": "2026-11-21T17:41:00-03:00"
+      "date": "2026-11-22T12:10:07-03:00"
     },
     {
-      "title": "Preço futuro do boi gordo: expectativa para dezembro segue em destaque! - Farmnews",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNYjROQ1laMWNzalRCMG55Mm9pMVNRUndvc2ZpMERFaHlMVEdMZkpJWGdWUTltUjZHN05FeTFrNGh5b3hhMVozMHhOeHJ0NmZoWG1qc0RMMnkwSTByNVo0Q0ktTTAxdG9QV0dPSXVpcTZBRDVaYU9uU29HZGIzWmJyaUpNX1lSYUEzLW8ySTdNMTM4cEt6VlBBWGNaUWFEcnd5WTlYbg?oc=5",
-      "source": "Farmnews",
+      "title": "El Niño coloca milho safrinha de 2027 em alerta apesar do avanço da soja - Dinheiro Rural",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMnlWX2I5ZlRyeWlFdk5mVU9JOUItM1lEb2pBcldfUHRkVVR0d19pM29KUC1BWk5rNGdFMlI5UmJYcHdYaTJiNEdKdXdsMGFqeDFBaGw3RlM5TVpaeUctRlBSYi1qWURyLTVZRkhvOG9kVHZmRklqcWNjTkdxSzR3MG1n?oc=5",
+      "source": "Dinheiro Rural",
       "categoria": "Agro",
-      "date": "2026-11-21T17:34:47-03:00"
+      "date": "2026-11-22T12:05:21-03:00"
     },
     {
-      "title": "Soja sobe mais de 2% na semana; milho e boi têm altas moderadas - Canal Rural",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUi1qTHBhSHVYVG1naTFiV0h1TmlTa2xqMDhiR3B5cDlTMUtEdV9ZTTFqem1DM0pGeEI4NXViaU90a1N4eTFMQW12VnVQUUJrN0Q3UmNHeEZPcnh4WmI4R3RyQTlnY3UtbWE1QTByZXhHcUVIYnVETjc4cHdybWRMSzhwUW9HbzA5WFVkNmdqOW1yWmFybGFCcjNnMmNEbTJGZ21PYmpxZGt2NzVONmRSdnlmWFo2emc?oc=5",
-      "source": "Canal Rural",
+      "title": "Etanol de milho impulsiona o confinamento de gado em MT - Diario de Cuiabá",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQMWctd0JGN2Q3aDlVWnQ2cEFpay1Lb2ktbUdpQW55YWZJMktwYlprY3hUcmpBb0hrYmNCUENIQXhNMGhvYWtTXzBGRXRVYkl5Z2lHWDlvNVlMWW9obUp2cXV6Sm1kWFlWb3RGODFsbWF2LXUwVVlDLTJla3BJQlRiREt0UXdNbzNJdnM0aTNxY3RKdzV5ckZoY0tHU2VIODZEelJwMWs2SDQ?oc=5",
+      "source": "Diario de Cuiabá",
       "categoria": "Agro",
-      "date": "2026-11-21T17:30:00-03:00"
+      "date": "2026-11-22T12:00:00-03:00"
     },
     {
-      "title": "Taxa de iluminação pública sobe até 700% para casas com energia solar em Salvador - Farol da Bahia",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQVJ0dXdueTl0SjAyZjNwdm9xQkh1NG9LN01fcnZ4eHlodFNwdGRnNXFtcWFKdlBCbm9aUmM1dE5MQ1gwN0UwalBxLTFxQnhYZXBWaVJpb3d1TXN6Yk9NVm53bzRFckkwLUNHV1Rnby1YLTZGcjdKRkhGYlJZVXZuM0tOWG9ieWNyV1M1MVBJa2ZHaVpkQUtqVGJ1WFVHVnNUMmxldzNjcmpCdzFXVGdUNWdtQURxSkJxSEFYZQ?oc=5",
-      "source": "Farol da Bahia",
-      "categoria": "Energia",
-      "date": "2026-11-21T16:31:41-03:00"
-    },
-    {
-      "title": "Plantio da soja em MT é um dos mais adiantados dos últimos 5 anos - Midia Jur",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeU9tZHRkVkZPODUwamV1RWNSZndKa1JSN29jUlM4OFVENWVSdWU1Q0xkOW13X1Nfc0djcXQxbzM4WXlGaW9XemFVd05GVTJlaU9KcnRXalNTUGp1UFJqUnAxZ1NDVEdBbkJKbElzTVVxMUJNQlZMQlZhdUJ4LUM1OHI0dHFobmVqX3ctdmZPNVBEZlVvX2FVV2dLS3N1OEtlWEFhcy10eW1ZaDhod3JGRzJ3?oc=5",
-      "source": "Midia Jur",
+      "title": "Manejo de pragas reduz custos e protege lavouras de soja em MT - Diario de Cuiabá",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOakVYQXlVQmJJMHJXMG1GVUtyRzV3dXM3RkppUEFrTVZ1Ymg1OXZxWmNQam9zUnpIWnp4SlUyTldwTE9oT1BwbkNjZl9QYVpUelhicHdIT1RkaG5UWmMtZmJ6MjB0V2ZOdXYtRzdpeEVGWFFJTWpWdzhzTHZzd280Ti1HU3d2VW9ySkVhWVc1WXpjb0VuWTRtZzhlXzN1aHFKLURESE95QUhJcGs4SXZ5MF9FUTdqNDg?oc=5",
+      "source": "Diario de Cuiabá",
       "categoria": "Agro",
-      "date": "2026-11-21T16:13:00-03:00"
+      "date": "2026-11-22T12:00:00-03:00"
     }
   ],
   "errors": [
