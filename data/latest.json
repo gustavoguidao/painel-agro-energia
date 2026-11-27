@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T21:38:02.459478+00:00",
+  "generated_at": "2026-11-27T08:40:22.224655+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -43,7 +43,7 @@
       "source": "BCB SGS 432",
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json",
       "value": 13.75,
-      "as_of": "2026-11-26",
+      "as_of": "2026-11-27",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
@@ -67,7 +67,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?formato=json",
       "value": 13.65,
       "as_of": "2026-11-25",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": 0.0,
@@ -90,7 +90,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json",
       "value": 0.14,
       "as_of": "2026-10-01",
-      "idade_dias": 56,
+      "idade_dias": 57,
       "fonte_velha": true,
       "changes": {
         "day": null,
@@ -114,7 +114,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json",
       "value": 5.7446,
       "as_of": "2026-11-26",
-      "idade_dias": 0,
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
         "day": -2.34,
@@ -137,7 +137,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21619/dados?formato=json",
       "value": 6.3041,
       "as_of": "2026-11-26",
-      "idade_dias": 0,
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
         "day": -2.13,
@@ -160,7 +160,7 @@
       "source_url": "https://finance.yahoo.com/quote/ZS=F",
       "value": 1244.0,
       "as_of": "2026-11-25",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": 0.81,
@@ -200,7 +200,7 @@
       "source_url": "https://finance.yahoo.com/quote/ZC=F",
       "value": 439.75,
       "as_of": "2026-11-25",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": 1.32,
@@ -240,7 +240,7 @@
       "source_url": "https://finance.yahoo.com/quote/KC=F",
       "value": 275.65,
       "as_of": "2026-11-25",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": 2.64,
@@ -280,7 +280,7 @@
       "source_url": "https://finance.yahoo.com/quote/SB=F",
       "value": 18.34,
       "as_of": "2026-11-25",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": 3.85,
@@ -303,7 +303,7 @@
       "source_url": "https://finance.yahoo.com/quote/CT=F",
       "value": 79.65,
       "as_of": "2026-11-25",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": 0.67,
@@ -349,7 +349,7 @@
       "source_url": "https://dados.ons.org.br/dataset/cmo-semanal",
       "value": 9.2,
       "as_of": "2026-11-27",
-      "idade_dias": -1,
+      "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
         "day": null,
@@ -370,16 +370,16 @@
       "frequency": "daily",
       "source": "Open-Meteo (observado)",
       "source_url": "https://open-meteo.com",
-      "value": 5.064,
-      "as_of": "2026-11-26",
+      "value": 7.178,
+      "as_of": "2026-11-27",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": -24.67,
+        "day": 45.84,
         "week": null,
-        "month": -12.81,
-        "quarter": -9.12,
-        "year": -16.68
+        "month": 48.58,
+        "quarter": 30.77,
+        "year": 13.74
       },
       "stale": false,
       "manual": false,
@@ -395,7 +395,7 @@
       "source_url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis",
       "value": 7.19,
       "as_of": "2026-11-13",
-      "idade_dias": 13,
+      "idade_dias": 14,
       "fonte_velha": true,
       "changes": {
         "day": null,
@@ -418,7 +418,7 @@
       "source_url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis",
       "value": 7.295,
       "as_of": "2026-11-12",
-      "idade_dias": 14,
+      "idade_dias": 15,
       "fonte_velha": true,
       "changes": {
         "day": null,
@@ -439,27 +439,27 @@
       "frequency": "daily",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 160.8,
-      "as_of": "2026-11-26",
+      "value": 154.0,
+      "as_of": "2026-11-27",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 5.58,
+        "day": -0.06,
         "week": null,
-        "month": 73.84,
-        "quarter": 22871.43,
-        "year": 215.91
+        "month": 47.79,
+        "quarter": 21900.0,
+        "year": 214.29
       },
       "stale": false,
       "manual": false,
       "note": "Ponto representativo: Rio Verde-GO (ajuste no perfil com o município real).",
       "chuva": {
-        "acum_7": 46.5,
-        "acum_15": 78.6,
-        "acum_30": 160.8,
-        "prev_7": 53.0,
-        "normal_30": 103.1,
-        "pct_normal": 156,
+        "acum_7": 50.0,
+        "acum_15": 78.7,
+        "acum_30": 154.0,
+        "prev_7": 53.6,
+        "normal_30": 103.6,
+        "pct_normal": 149,
         "cidade": "Rio Verde-GO"
       }
     },
@@ -471,27 +471,27 @@
       "frequency": "daily",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 129.8,
-      "as_of": "2026-11-26",
+      "value": 129.5,
+      "as_of": "2026-11-27",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": -1.96,
+        "day": -0.23,
         "week": null,
-        "month": 47.67,
-        "quarter": 6731.58,
-        "year": 1.72
+        "month": 46.49,
+        "quarter": 6375.0,
+        "year": -3.29
       },
       "stale": false,
       "manual": false,
       "note": "Ponto representativo: Palmas-TO (ajuste no perfil com o município real).",
       "chuva": {
-        "acum_7": 39.0,
-        "acum_15": 98.0,
-        "acum_30": 129.8,
-        "prev_7": 6.8,
-        "normal_30": 187.3,
-        "pct_normal": 69,
+        "acum_7": 34.7,
+        "acum_15": 96.1,
+        "acum_30": 129.5,
+        "prev_7": 30.3,
+        "normal_30": 192.7,
+        "pct_normal": 67,
         "cidade": "Palmas-TO"
       }
     }
@@ -524,12 +524,12 @@
         {
           "nome": "Soja (futuro)",
           "as_of": "2026-11-25",
-          "idade_dias": 1
+          "idade_dias": 2
         },
         {
           "nome": "Dólar PTAX",
           "as_of": "2026-11-26",
-          "idade_dias": 1
+          "idade_dias": 2
         }
       ],
       "ativo_desde": "2026-11-11",
@@ -560,14 +560,14 @@
       "insumos": [
         {
           "nome": "Selic (meta)",
-          "as_of": "2026-11-26",
+          "as_of": "2026-11-27",
           "idade_dias": 0
         }
       ],
       "ativo_desde": "2026-03-19",
       "freq_ano": {
         "pct": 69,
-        "dias": 253,
+        "dias": 254,
         "total": 366
       },
       "oscilacoes_ano": 1,
@@ -600,7 +600,7 @@
         {
           "nome": "Dólar PTAX",
           "as_of": "2026-11-26",
-          "idade_dias": 0
+          "idade_dias": 1
         }
       ],
       "ativo_desde": "2026-11-03",
@@ -629,130 +629,130 @@
   ],
   "news": [
     {
-      "title": "Boi gordo mantém preços estáveis em São Paulo e no Paraná - Agrolink",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPYy1peXVTNEE4UkpjT2pLWXlpNGNKRzNFRGtYNy16TUp6Ynh2Z1FwWjNYMm5WU09ub29lZ0tyUHZWWlAtMjdPSFhkeTljR2xiY2NId2FqdE56MFRoU1JiVWdVbHM1VUx3a3VOZVoyZkxRTGNzTFFYejFocVN1Mk16STdYQzk4S1VFWWx5WWdlUXFEZjdPX3o2bHJjNUt0RHRGX09MVnl2M09MQQ?oc=5",
-      "source": "Agrolink",
-      "categoria": "Agro",
-      "date": "2026-11-26T18:24:00-03:00"
-    },
-    {
-      "title": "Ibovespa Salta 6% e Dólar Cai com Possibilidade de Trabuco na Fazenda - Forbes Brasil",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaGNNT3VYeHhFbXM1VzZRUkwtYWJtekt0c2Zmd19KZ2UtNlhsVG54Y0NucTZNS2NVbU1PT1Z6eGN1Ym84cjdnaFN2NW11aXB2YVUzQk5vMW5haDdOdzlDUjF2VC1Za0pEZVBKd1VyeDRJNzEwOElmeTFINENlWlJHTUplU1BwRmZ3MUdsTmR0LVBMVTd5cktONEkzblNfZkd3anhaZWVVUVZDTmg0NGpEWWlB?oc=5",
-      "source": "Forbes Brasil",
+      "title": "IPCA-15 tem alívio, mas deve ser temporário - Valor Econômico",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPV0xtM2pIUWM5cDdIVDd0aXBOejBUT2dFeko0bzBTSDFYWHJkNDRKTE9lU2JOUEtzYUlTLTIwMGhaSEFNeGFtRUpqWHN3M0lmclZ6NFRUb0hlVVBmOXBQbVFUNTZZOUZjaEt1b0pxdnFtdWlHVFFYX0Fpb1J4ZkkwRnhYUHFJX0R1RnJ6cnBOZUF4U1NXaGM2LU5GNkZtaUU?oc=5",
+      "source": "Valor Econômico",
       "categoria": "Economia",
-      "date": "2026-11-26T18:17:29-03:00"
+      "date": "2026-11-27T05:06:06-03:00"
     },
     {
-      "title": "FECHAMENTO DE MERCADO - Grãos sem referência com feriado nos EUA; arroba estável em todo o Brasil - Notícias Agrícolas",
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNX1pjd1B2T1hfYzZSa3B4aGZLRGlRTDV6ZGxkaG0xTmlDNmQwUVJzbVlUMFY1Vk9JWWxCLUxiYTFiUTJwRlBaSlhCRlhRY1VLaGJGWjNWX1JJMWZEbHUyNzF1UzAwWnpFeE9wZ21kY2dBS1pBY1RwaVRxel9QVnJGZ25DNDZhOXBWYjZkb2VWSmVfcjJQaVlWa24zTFhHb1hMbEo5RHlGSXl2ZXVwZzNmenp3UUczRVJnZlBwMG5wM0d0MmJJaWpyRDdiNkdXeUJZZHVKek5scWtRRVFsUlcyTTNWbzNpLWFncHNvd2NCSFZqdDFLVTB0T1dRc0xERkw0aWfSAYcCQVVfeXFMT09tMnU3T3M3dUI5dlRxX01IZ2ZlM0lreThKUVB3d243UmNRSldaN01GamQzb29uTE1HQUhxTHdkSnFRX0k4RDNwZEZqbEJfbF9TSmxVM3NPcDJQX1hhNlJIVi1sOTBqR2xaN0VHOUxEZEcxS0VwbDhpQWdyWXYybFpmQ1pBRnlTaHgybjNmTFNMMUE1OWZveXRBLXNFRE5PSGF6RS1WVHNYbFZEWUFLTW9ZQjRVVDJ1bFpmRDZFcHBKNFRXdGI5d0ZMbEVpUVNTRlczTEotZDhmR1d2NlpIQWhoMGEtY3d1ZkRXZEVCWWV0SDZHTFRzdWpPWnNxSFF6cGxqd21CVms?oc=5",
-      "source": "Notícias Agrícolas",
-      "categoria": "Agro",
-      "date": "2026-11-26T18:11:12-03:00"
-    },
-    {
-      "title": "Exportações de soja rendem 6,8% mais por dia em novembro, mesmo com queda nos embarques - Portal do Agronegócio",
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPcV9JUW8ySjhfVlN4NHkwVE9YenJnV01URnpYcks0WTdnbG9pc3A5NTJTSkVwcmpmU2pXVlRrTDdGWHRfRXg2Y1h3QVhRMGRFQldhbHNUQV9wMzJMSVVMT3hyRGEwVkxQOTlCVTRmdlJQWG9wQ1pmelI0RTNhY2FJUGtTOEIwVzdSN0k0NzdFUjR6SFYxMTJwY0o3Ynk1VHkydUduY2Fnc21MOHZQa0dJOEQtaGc0VlNLU1FwSlgzOUxSM3djLXVWdzh2ak1WX09pLUZKcllTcnIyVWR0a3V1SkpvaDA?oc=5",
-      "source": "Portal do Agronegócio",
-      "categoria": "Agro",
-      "date": "2026-11-26T18:00:00-03:00"
-    },
-    {
-      "title": "Ibovespa dispara 5% com ‘efeito Trabuco’ e recupera os 175 mil pontos; dólar cai a R$ 5,74 - Estadão",
-      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPLUFiVGVBdHQ3S1pYQlA5R21CWjVpV3hhMU84MDhCQjlrVjdkTEVod09TbVMtdFVpakR1bTBabExkcnBEcFNGRjlHU2JDR0o2M0NRQm0yZGJ2bTNrOU55QlkzNFczcW9VdW1BYWtwSkNld28xcnZqRU1VQ3Nxb2FUN3FSWTkwTkZrS1dXS3FqX2R4ZVppWUp0MGM0V2hwb2FxX1J0ZFNjZGQ1OEtEQmZCUWUybjVSVUN3cTRzajFhRlRmS0lXQlgwYlhhalVUYmxYWFh5OE5aWUVxcTNpZ1dKOG90YXVtUdIB6wFBVV95cUxPRFotOEpTcVNVMUVudTk1S1htZm9rbVJ2bzU5WGNvVkVGMGE2bFFYRWNnQ3dYUUo4OXE0WGVvSmlGNjF0RUowbGtjamNJT2lSWXpjV1ROTlJNaHJLejF1Mm5mRTJncVJYVmY2UlBlVW9YLWNhZVV4cUtnNjVfMTdFUW5XSnA5Z282VEFTeVJoOVNQbWxoZWFuUDZYNzNyM3JQRHByanIxZVlQUElQWE9JWlVsczVja2JZeTlFNDB6VVVqVmVQREFrN3ZObmR1WjNZNFZUYjVWQXprRW5Yazd2V3VYNHN3WWNBNWxZ?oc=5",
-      "source": "Estadão",
-      "categoria": "Economia",
-      "date": "2026-11-26T17:59:00-03:00"
-    },
-    {
-      "title": "Dólar cai pela quarta vez consecutiva e Ibovespa dispara mais de 5% - Agrolink",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNaXNDY2NuQ2RvTkdPeE0xVWdvYWtqbVN5c2RiTTNlLUhOdTFEWnROQjROMzNCNlNBTVZ0SDJvWGEweTZsVnY4Rmd2N3RaZ1FKOFFFVzRmWHI2RGk5NmVHZTVNMzBKaTczQUJwX0FwVVo1VGJhVHFSMkhDWl85R0xQTE5Ma2JBckNac0xLamI4THp6U1FKWjhsMlRFbkppd0V0U2JSaVBIenMtOTU3dEVSUWtOUmxQZW8?oc=5",
-      "source": "Agrolink",
-      "categoria": "Economia",
-      "date": "2026-11-26T17:57:00-03:00"
-    },
-    {
-      "title": "Preço do milho fica estável em Chicago - Agrolink",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZDFfVW42VzNIVUdTSW5pS2NnOUt6WThvRS1MRzVLTTgyNl9ab1k5c1hwcUVHR3U0NE5RTUswNVZHU2lUcVFzaW5yZmhDc1llM2NScjllV21zRXF4c3dSbWJVMmt0V2Qyc180OFJVVVlyU3FMSzBUWHRTNGN1bTcxMGt1M2R2SThkeFRIcHAwUEs?oc=5",
-      "source": "Agrolink",
-      "categoria": "Agro",
-      "date": "2026-11-26T17:45:00-03:00"
-    },
-    {
-      "title": "Com dólar em queda, soja recua no Brasil apesar da alta em Chicago - VG Notícias",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPb05VWjBvWWJSVzE2Uk03NFRvdWJEOGlPY09CbWRpbWVMOS1pX3JzakNkQWpEZjVXTnJISHpqUnVQcFRJbTVRRldTU1JlY3RULUlRZU5FOXFad0Q4WW05ZTdjYnlsei1TdE9waHF6U2JxM01JY252V1ppRFZDSDRXLTlna2F2YVVNdFdsQ2Y2YXpDSm9MQ3lzMXdXekRvVzA5MExRdTdKMVdDazhweUJoRg?oc=5",
-      "source": "VG Notícias",
-      "categoria": "Agro",
-      "date": "2026-11-26T17:39:00-03:00"
-    },
-    {
-      "title": "Dólar fecha a R$ 5,74 e Ibovespa dispara com Trabuco e novas medidas fiscais - Valor Investe",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVFFpYTJWeW12NGdpdGxKNW1FU29LNV8zYUVxMndKdXNSa2xGV0UxUDJjemltVTZWT3ZSbkZsUnFHV3VfV1R3cklJOEpKWVBIbVZJZ0ZoOGtkWWJKbVFTQjVWVHZxT1BuRHhzTmk3ZERiR21TeDNfOS1ld2EtNzJBU0pUdFlFaER4ZzhwYTJMdTdQbzA4cVdLV1VaaHlYanV4bHFCR3VqeE1QOGsxMXRRMjZhVUUxdFI0MHNRZlBmZTh5UjU4MFhSZ0pYY1BKZThBRXZXZGE5UjhKZ9IB6AFBVV95cUxPTlNWLW9SeVluX2V5SWhWYmUtNDBrV0xVY2lvaVVVQmxvSFNoeVRHOTdCTXBhWmh1T0l6VHU4OGI3QjRzeGxNeEE2RGU5eEsyZUVjQmprYTlTOEtFUTV1MGg5eEJTWG1nZ0NyeDkwbVJpaW5lVmVPZjkwcFl3eFlvSE5DejJ5SkV2U0dkODY0ZU1OOHhYV0g4amZqdnAzWGdESUM0UW9hOVZTSElrdW8wU0FmR2k5b1FQOFk4dUJ2RVNiWTZXcXIwUmpOR3J4WkRtdGYyN0FaU3F1YTNhbkw4TDlrcHAyS2FG?oc=5",
-      "source": "Valor Investe",
-      "categoria": "Economia",
-      "date": "2026-11-26T17:36:16-03:00"
-    },
-    {
-      "title": "Soja sobe para US$ 12,44 por bushel em Chicago - Agrolink",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbGlmOHVVT0NYUF8xZUo2OVFfU1NRR3JaX0tuX2lsYzliV2t0SDl0akoxci1SSlI5U0pvU2x2TmhtQzhhcDF6MGp5N2FlX1FZNHJiZjBCUjhWQ1I3NUJJUS1NYlI4UEFRaXQ1UTlqT0d0eVdVME43NzE1eDFWUlN3dkFYcFRsWVhGRmdvRngyNXRYVi1yWDVyMDJETQ?oc=5",
-      "source": "Agrolink",
-      "categoria": "Agro",
-      "date": "2026-11-26T17:35:00-03:00"
-    },
-    {
-      "title": "RS Safra 2026/27: chuvas favorecem avanço do plantio da soja - Revista Cultivar",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQYVhqVmJweE1YQUZoeTF2Szl3aWFfRWkydUZuVFlBVjh4X2d1T1dDMUd5WFFLX01rN2s3Q043TnhyMkNlR2NhYkZmR1YtOFVOa0taUk5NdElHZmtRT1hWcDdROXhVWHd5dDFWN1NhMXNvTGstOFNNVVI4TkRiaE1IWjY2XzJ1dW5MeGZTbGg5OFJSRXhiUHV2akhScUtNMVBy?oc=5",
-      "source": "Revista Cultivar",
-      "categoria": "Agro",
-      "date": "2026-11-26T17:32:39-03:00"
-    },
-    {
-      "title": "Affinity Seguro Viagem oferece dólar a R$ 4,99 e dobra cobertura na Black Friday - Mercado e Eventos",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPaHZxLWp5Y0c5Q3F5OU9Hc01QdmwzSWloUTRlV2I1RllpT05ONlZqbW5WUk5HZVNINkU2NGtkTFVxWklKSlhXUlAzOEhFZTNIVzFrYklfZVNrcEpyTnY1M1UwQnVYWEFZYlhpRTd1b0FlTjNTdW1HZTdqUllmdmRGWGFoNjVMQ3lNeU53WFdGU211MG5PS0FoUGtDbnF6Tk82aExhbnotSU1BSHJTR2JvN3hfZk01b0M1TkFGUGRCT3lqOGZLblhwVloteUJpTm5PcDhEcVl1aEhxYmFjVXBn?oc=5",
-      "source": "Mercado e Eventos",
-      "categoria": "Economia",
-      "date": "2026-11-26T17:30:08-03:00"
-    },
-    {
-      "title": "Vaivém: Alta do preço da soja irriga o campo com mais receitas na reta final do ano - Folha de S.Paulo",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNWTB2Wl9CWDNlMEtOUkJrOW9HcWZPVUtfWHVIUkdJZHRDck1wM3VCYWM2V3pNYkhPREZZNml4Z3ZqYWJlQWZYRU5OamlLdmNEZmVRWVVscUlkbWdES1QzQjAzWlA0ZGY0Zmh0b3A5aWRGb292Qi1hakduaTl2cWdPMk1UZ0hzVDFZRTk4UlVEMXpFYTN0WmZhUWtsdGFvbE5ZODZDQVZnN3YxLUZHUldFVDZFVGFNNEd3VVNGM05GU2JPbm1BRHZkWDkzSmN3MDA?oc=5",
-      "source": "Folha de S.Paulo",
-      "categoria": "Agro",
-      "date": "2026-11-26T17:30:00-03:00"
-    },
-    {
-      "title": "Mercado futuro do boi gordo aponta arroba acima dos R$ 410 para os próximos meses - Acrissul",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbHRnMUhPeWVKZjZzak5FVG5rbHlOZ3doVXROZWRDNFlfSnlCVG9KenFLWE9sOUhJWEhxUEkzNUVjQlU5WTl3bkNoX19GelA1Sl9ENWVOUGpHZjk1aE5TU3BVdXRuTHNWc29USzY3U0VFb2xUMnZZY1BXYV93djg3ejBRam5SamZZVmJhYnJQNEtsTjIxdmQzM3NTUHJsSUlZTzY1MnFBbVFISmJadm9sMnVxUzVSOS1IcXIwNVlTYjlvZw?oc=5",
-      "source": "Acrissul",
-      "categoria": "Agro",
-      "date": "2026-11-26T17:30:00-03:00"
-    },
-    {
-      "title": "Milho no RS: plantio chega a 86% e calor aumenta risco de estresse na floração - Portal do Agronegócio",
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNaEZncGdkc3I3T3Y3WTRrWFZhV0JuYkdtRmdHMG9WdHJFV2FKWXp2YWtNSElMRXMwQ19VcDNyQ2t5M2RkNHYzUnB2ZF9NMnllQXNRd0txazlCZDBDTktKaUgwRHlEbDhsaUVHb3BpUkJxb3FtT3VPZFVQSTZZYTNQSVdtUHlyb2RmOUV4Q3NKc3ZkWGtVRjI4ajNBdjRsV3lEY1FEYWcyZUZEallYcG9CbjJDN3k1MmlTQ3hqOGlwNllfb3M2TkM4ZmhMLTVjX1FxSkFaOEpNWlVValp4S0JwNVZzVmk?oc=5",
-      "source": "Portal do Agronegócio",
-      "categoria": "Agro",
-      "date": "2026-11-26T17:30:00-03:00"
-    },
-    {
-      "title": "Taxas caem com expectativa de Trabuco na Fazenda e IPCA-15 abaixo do esperado - InfoMoney",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT2tleWFjdm9UbkliZWZ5NmVLNzRaaEdPSUM0a2kyWnplZVg0Q1NleHp5UlpDTWdDQTc2UlBKSGd6bTN4aEthVXNWX01HSFBUWFNUMFhBWTN1dDRTRGVkaU1ydzJNZUg5SEt0bDFXa0JNUmlfSUp0ZnY0Nzdkdm5fcHlRX04xYk9RenpGWmRRdmJIbkxWekNvRUJ5dkxybW5uZEh6N3dlVExsT0s3ZDVVOElzdEEzY1HSAbwBQVVfeXFMTng1cnVjbmVDelFqRWJEMTNJdE1WYkcxNjIxWTFoamtoVnVrVzVSWWVWcWtfY2RwUXU2RU9BcDliVXM4OVpPcjJlcEtSSU11RFFzeG9yWjhHQUJLLTVzQzJFZDZIVDdSTURYYjIyWV9hVUFWSmt3a1kwQ3NadG1rRi1JOGZrR2t3YjhBcFBFY2pieTA2QkVKa1ZMMEV1a3NtWFo5TlBPWi1Ycks5RzBFdGc4ZkZIMTFvTzJzNGM?oc=5",
+      "title": "Dois anos após pacote de Haddad, o que aconteceu com quem comprou IPCA+ na alta? - InfoMoney",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPeEhPc2p3SW83OG5XNkNjd0laclQzS3puMC10azR0M0pOZVE2Uy1pRmdSOXdzc25YSVBMbUwxbk01Z3N3ZWdBdWktWE9aZUVUcDVRajZmLWQyU1lvTkQ0a0ptempzOGNSOUUxNkJnZWh2SndwLXVwSXJ2dk10dEViZW9YMlduYkx0Rlp3S0J0VHFJUk5qR19vQUhicmFJSnZUQmJ4bm14cmZOV2xSNGlpUFBuSGNhZTdnTFJBRGd30gHDAUFVX3lxTE85Y05NcGR5T1RxSU5uQ1NYWnZLWUsxUVlSdkhLdk9RTldLMzFVbXg3d0gwU1FFUmJJLUl4aGR5SWEtR0ZjX2xUWHNkTDZBWE5sbDF3UXBhVFBVYmdJdEZJR00zeWZtOVBpM1BLcTNFZWV5YmNBMElITkJMZFBadFhoZVhSaEdQcWdDbXpMdUhtZzl6RC1xVEZRWm5LMzJha2ExVGcyWHJDTjJ6RzFzUHVqc3JPenVld0pXUFZjcGRLM0lXVQ?oc=5",
       "source": "InfoMoney",
       "categoria": "Economia",
-      "date": "2026-11-26T17:25:47-03:00"
+      "date": "2026-11-27T05:00:00-03:00"
     },
     {
-      "title": "Lavouras douradas de trigo e soja, praças tranquilas e a herança dos imigrantes alemães definem o acolhimento do planalto médio - Midiamax",
-      "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNX2FvcDhoWC1CTnA0WUk0SW9rQUJDMVc5YkQ4WkxEWGhqbm5ZM0NhekxvMDVZU1N5dk00bVNfR0VMbVdtenJ4QUozcWRQOXdKQzJSWGZyYmJKbVlLMy1pOVUwc2FRU25ZZkRPZzlnQ3Z0WDhia2pTazJqSUp0ZFVzMDdFNDhiOHFhTGo0dzVUdFdJNm5LR2Y1WVhSWWRVOE9lYXdUbFgxNVZGZERaNk1CR2lLSkJERTJpQ2RGTjF4YnJUU0JUR3RLR0gwVHBXX1RvQWV5a0VNc3Yzdi1ITzlNZmQ0SC01aEMydzRvSVA3SWVUZkFNTV84THVFaERkdw?oc=5",
-      "source": "Midiamax",
-      "categoria": "Agro",
-      "date": "2026-11-26T17:25:00-03:00"
-    },
-    {
-      "title": "Trabuco acalma o mercado: dólar cai 1,25% e Bolsa dispara - Poder360",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOHVrd2Y3X1p2d2hxX01yZ2VBd2FmRFhPNDNSb19kX1VWeFJrMmc5SUstOWtseHdmdkpKdGpsOVZSeHcxQ0ltdmJFMTdzT3Vjc0ZHZXZmQ2pfN0FNYVBJUUJ6a3l2TFNxbnZaVG9rcE1DUlA2aUJoS0JqUEE2Q1RadmtoT1hINEt5R0lJQk5iQVRfZWl5V1B2R1U0ejF0ZjQ?oc=5",
-      "source": "Poder360",
+      "title": "Ibovespa dispara 6% e dólar cai a R$ 5,74 - brasilagro.com.br",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSVk4ZWFpVm80TW9vYnROVXVhQkZGTUZKSm5JSlFwcE5pOVB5bUdkbHhKaDlFUzdNTHl1UVl4R3B3Y3N2QmNnT01ieWZ3di1va2JjZWZ6Zmx0NXVtNWhTaEpvTUdVZ2M0Y1JpNVllUGlTTVVlX3NQUUstTDRLMkR1TXhabVdlYTZtd2c?oc=5",
+      "source": "brasilagro.com.br",
       "categoria": "Economia",
-      "date": "2026-11-26T17:23:05-03:00"
+      "date": "2026-11-27T04:25:48-03:00"
+    },
+    {
+      "title": "Black Friday com Selic a 13,75%: como não cair em ciladas e evitar dívidas - Exame",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNDdyOHM1VzFOZi1wWlZJQUxaRDE1NkUzbkMyZnV5dHBZN2F2aFVfYkQ0RnowTjNCNl8xd0pseGtTOFJ0LTY4VVh0bjExdGFHczVBaWpkaDBVVXpQQkU4NU1vX0wtTG5fbkIwazlvUjlxWnlibjE3S3pVNWM3RVR2RU5LUzdOWVloY1VidXpLWnJ5SURMa2x6QXIxWWRmS2EwdzhVNElTWUx4WW96bFE0LVVQTQ?oc=5",
+      "source": "Exame",
+      "categoria": "Economia",
+      "date": "2026-11-27T04:06:25-03:00"
+    },
+    {
+      "title": "A VinEnergo inicia a construção de uma usina de energia solar de 126 MWp nas Filipinas. - Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNkphZTVsWUdKRXd6VUFaTEJRQTZVRHNiSTJqYXRRZEEtTGRybzRDNzdfS3BiNE9PUWFWeHJQOUJDYVlueVIzYjBwRzNQcmU1WTBoV1ByV21WdkQzbUMzeW13ZGVmbnlqbmtiX01ZLURUM1lWRnJPMHh0Y0ZUOUlMQ0pLWkwxU3lXVE5uM0RJbFFFa3lx?oc=5",
+      "source": "Vietnam.vn",
+      "categoria": "Energia",
+      "date": "2026-11-27T03:49:57-03:00"
+    },
+    {
+      "title": "Dólar cai a R$ 5,74 e Bolsa sobe 4% com política fiscal - Acia Araçatuba",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE16Y0puLTdJMm5tU3BfTXJqNlN5YzlTVEc1STB0MGxya2pfSjk1Q2tiWG5IUFRndWkzRDZxWjk0REUyWFJLN1BXQmxwVlgzVWYtazRfR3piTWRmTGNEdXVLa3lHclFnazR4LVBHc2JzS1ljeVE?oc=5",
+      "source": "Acia Araçatuba",
+      "categoria": "Economia",
+      "date": "2026-11-27T03:17:20-03:00"
+    },
+    {
+      "title": "Ações se recuperam após um mês difícil; dólar caminha para o terceiro mês consecutivo de alta - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9adDhtRFYwQ3BXZk82OHZyem5LdzNILXRQVjFad2l4N2NPVjhQaVpmekpkVnhmbnNTWGU3bHU3cVJoVFVsMWFRejhweFJwYVAtc3pielFlNVdka1F0WVNsNWRfS1RPbjROZXZma0tGSjVrVzB1eF9z?oc=5",
+      "source": "TradingView",
+      "categoria": "Economia",
+      "date": "2026-11-27T02:53:00-03:00"
+    },
+    {
+      "title": "Agricultura integrada com energia solar: uma direção para promover o crescimento verde. - Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbDFBOWg4S3JPbC0wQ3pYa210UkxJVzR6TDlLNlNTY2pvRUZjRS1wTVcxQTVXUTZUdEIxZG5DWGJ2NHFuaFc2T0Y2YmMweVVYeG9jdzRHOXBWRk5DcEFvSWtJZlpzRWIwVGMzYkI3WnF2cnpVVUg0TGVPNW16bnhmNUZ6YnViS3BVQ0dxU2RacjFiVjIyaHRUQjBn?oc=5",
+      "source": "Vietnam.vn",
+      "categoria": "Energia",
+      "date": "2026-11-27T02:17:43-03:00"
+    },
+    {
+      "title": "Por que Trabuco provocou euforia no mercado? Entenda o que esperar para dólar, bolsa e juros - G1",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQUmpTTl9xcERkWEJlVE1yWjNaNGh5T0NjUXlrWlp0OUxTSTVubzg1YjZPUXl5YnhsTlB5akd3U1R0M0tTMGIydlYxYVJCb0pfb09Mc1RvSmR1WDNkZ2hTVTQzUV9VS0k4OWliTDJuVGRucW53S0N5RU5tSHBQdVVpV24tREtGVGh6XzNRbEV5amNZbkswWXNGMVdOcU1EUGphdll4Zy0zZkZBVnhfUjVqd1Fncm9jMGxhU2dLd3FRWWN0QndhWnRYYWhNS1QwdzA1QzBYeXlaUTV4bktua3fSAewBQVVfeXFMT2hudmRWVU1FWTZOc3pMNWI4ZEpXUU95cnFCbVNGMnFwSEdfQU85cHB0RnlXVVNJUW1aT3hrdjEwYXc1anBtTkw1REJCUVRiRVdCcjhpT2l6dXpCY0phYzUyRk40TnVBM2MyVWotQTdUamVUbkN3NG9oRGpuNE5sQ3NSZzVsejhlMHlxNkc2U2drNnJKTHpLa0JGUm5CUmJ6Ulh2UzE4WkhVUnVqNWZBQWgzQXo4NXh5eWdZX1pfN1NrUXN6aEZlLVNsZGEzUEVaTTJuMFE4Q1huQWl3eW9qbU9CbG5kaW9TUzJJYko?oc=5",
+      "source": "G1",
+      "categoria": "Economia",
+      "date": "2026-11-27T00:00:00-03:00"
+    },
+    {
+      "title": "Dólar cai a R$ 5,74 com inflação e escolha da Fazenda no radar - Vero Notícias",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPWEd3MXNUS3lXZFNWMnN6cHMyV0F0cWFjMlM5QmFscTl1WWhORjlOelE3ajdkMkpWb1REQlZvSmJPNG1xR25nTEtINDFRQ0lEOXJYdERVZklUZUtsTDJsaEZHQUh0YWVmVUdGZjBia3hpMUpXOU1KTUg5b1BPOGhkb3M4WjE0WWV4amVHYjZzU2w2OEplTU9tdm0tMA?oc=5",
+      "source": "Vero Notícias",
+      "categoria": "Economia",
+      "date": "2026-11-26T23:45:00-03:00"
+    },
+    {
+      "title": "Pedro Fernandes defende a mineração legal e a união entre estados na Expominério, ao lado de Eraí Maggi, o rei da soja - Assembleia Legislativa do Estado de Rondônia",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNeXo3djRFQ0dVNS1MazRfU0dBV00zQUNKWEROZV9sRUR6ZnY5WE5XSmFVMC1SVVN4TFFmMThfRDQwTm5FU2Vya0pIWWJGSzVYUG9keFN2RGdEUy1WSURNaE5QZV90V1R2bFpYakhkOV9sb2s0TFY2UVowd19DenR6Y0kySVFDZk1yM1YxQS1YellKLVZsVWQ2Z0JJemNtS0FFOTdhb2lJcVUwYWpSTTZHRS1VUHNJMWUycEY0MVEzZjRPOGJ3cGtkNVVVbFcwMkhsVm01dmRCYU5FeGdnT2NIYTVmWF8?oc=5",
+      "source": "Assembleia Legislativa do Estado de Rondônia",
+      "categoria": "Agro",
+      "date": "2026-11-26T23:26:15-03:00"
+    },
+    {
+      "title": "Victron Energy aposta no Paraná e mira expansão no agronegócio - Gazeta do Povo",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOQVd4ZnF5QTNOY1RudHBvTEdPTnVyVElIM1VIaWlWckxvN3lUdF9TeTFpQkRwbEtZZ3dISms0YVppcUR1UXBNWTAtODhmTVRqLTJoVC1zVGNjZDBBOTlyaXBrUEp0S0JnQ2hQOFFnV0F6MEM3NG5TeVk5X0NqOEtlTmQwdEpTRkVoX0E?oc=5",
+      "source": "Gazeta do Povo",
+      "categoria": "Agro",
+      "date": "2026-11-26T22:53:00-03:00"
+    },
+    {
+      "title": "Entidades do agronegócio brasileiro repudiam fala de Macron sobre carne “dopada” | #SBTBrasil - SBT News",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAxRnREUVhWV1ROQWxWQndNMzM2RDhCT1JPLXJxMGFFM3FIOHZfUE1VdGo3cEZtMFNnTVBoYWtZellZdGU4Tkx1MkJXSTIzSjlmdFppZjZJRmM?oc=5",
+      "source": "SBT News",
+      "categoria": "Agro",
+      "date": "2026-11-26T22:02:48-03:00"
+    },
+    {
+      "title": "Soja recua e trigo têm resultados mistos no fechamento - Brasil 61",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNejRpWlpLa2M1cGxrU3dxSTlrZHZrS09TY1U2VzRFSkJIV3Qtb2RzX0EzVzRKWXFHTjF5MlUwMnp4aU85NDh3UjJLUXByYmVuS0V5RjZocy1hT2pKTmFYQUtJbGZtWlZTUTZObGtCT3hfeS1TNTJ1Vk9mZ3pTSWwzT3VGUjBrdGZSRXJMenhFRGZOd9IBlwFBVV95cUxPbjRnNEVNSWVyeHRteHhCNFdsdW52ZnNqWGM3NGRJVElBbEJ0UzgtbDk3QTZHWEMtX0RmUWx6UWQzUElLSjNmd2hObjhhV25oNzNPRnA0N25IVG9VT0tSNmM2bTIzX0tPTGdrMU1hTGJpM1dqNzhrSi1oa0pza0wtWk9VOV81SjVTdmI3MmhhdXlXdWNwazlz?oc=5",
+      "source": "Brasil 61",
+      "categoria": "Agro",
+      "date": "2026-11-26T22:00:00-03:00"
+    },
+    {
+      "title": "Esmagamento de soja deve crescer em 2027 - Globo Rural",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOeXF2Ui14WGY4Ymlwd28taWxvcUl6Nk1Gb1V2UUNyX2llYlJXX1NhdXRZSnpxRG9xMV9SUEZVVW1faHM3Sm1lRXNZTG9XTGl4dUtVYWQ3ajFPZUxnNVVfUG5WaF9GOVhaRXdVMkNhX3QwdnI0S01mLTlfSUhPbzE5UHJyeHVVekJxU05xMF94U3p2bGU5WTFGcHNLX3hHOURoT2d2bUQwS2J3cjFm?oc=5",
+      "source": "Globo Rural",
+      "categoria": "Agro",
+      "date": "2026-11-26T21:54:19-03:00"
+    },
+    {
+      "title": "Boi e suíno recuam, enquanto frango fecha estável - Brasil 61",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxObzdKOTBhUUEwOTI1VXV5SDBUUEtENnhHQnB4SmwyTEhibW9CTnBDWVJqN3RaZzBxcFZEaWpsOUIyaXBrMU42VTlOTmJuTldGcTJsbk9lcGNzajFlV1pUQjVoOUwtUnpQRkJ6VzZ0M216eXFxb3J6YS11N0RmS1pHUjBLVmw5U1hMNWfSAY8BQVVfeXFMUDRRYjdfNmRtU0xRYk1ISV9hQTBYOVI4NGVLa0tpSWZneE5COU1jc01SVVFzdzdYZnZXNEdWaUZPb2VEMlA4YVU5aGV1QWR1Z0stbjdLcVdFN0Nwb3V0TzV5cHNVa0FFOVRISVhwZGtsWklVUVFQNzFuOWFPdU52TVllbmR5cnVMbjNfM09TQUU?oc=5",
+      "source": "Brasil 61",
+      "categoria": "Agro",
+      "date": "2026-11-26T21:30:00-03:00"
+    },
+    {
+      "title": "Dólar vai a R$ 5,58 na bolsa de Chicago, após confirmação de Trabuco na Fazenda - Valor Econômico",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPN1owZVZwVGhKNi1NZUdoSFFILTRWSWZCeEFIbzlibDlKR2x2dVJKRHRfd3FGeXBnTnFQYUtKRjZaWktac2JHOXhmTTE1RFVPelBsSnp2NmJ6RzR1eG94elkzYU9zNHo0SGJFSHU3ODFPM3BxVV90SWdubWJIM29vM3R1NWxROTZvVV9TNWlhNnMwdEtLeUZlMlB3bUlsaTNSNzhlUUhId2NuLW0yTHdFaHNYbHdYNFlwN2lRR2h0d1RHR1FEa19fMDBuMU5CQ1l3Sklz0gHiAUFVX3lxTE14aE9vSWdkM2V4MGVlZGZQN0xHMHV4Ty1nWlg4aVVTeURlbnRwVjR6V0x4a1BVclZfejloaWZxSmZuN09tcDJMSEMzeU5vMHdBZDZyMEppQ3Exc3dXZGxJUmN2c0NDUWp0MW1Pc2lvNjg4Z0tJSzNpdEt1XzdCUFdHUGZINlZLMWJ5WVZqMmFYaHBDbFY5UDZtUE9qQTJYbkRUdk1oeWVZQkxXZmVxeGdBLXhEU3N0UGMzSHRZNmJUZG00bkw2anp4Q2Z3elAwa2xEbTNRcEF5QjVDN2FFR2dGOGc?oc=5",
+      "source": "Valor Econômico",
+      "categoria": "Economia",
+      "date": "2026-11-26T21:13:51-03:00"
+    },
+    {
+      "title": "Arco Norte amplia exportações de soja e milho em 59% e expansão do Matopiba impulsiona produção de grãos - RADAR DIGITAL BRASÍLIA",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPN19KMzAwc2NHXzZxN21JTXd1bjJQLW1YNkdwT2hLMFpVWWxOUmg1OFM0em91SFlwbkV0amZYTkZDN2VwTWJObUxaVUpKd0I4TzVnSTNxb3NQejNEWkF3UDRKcXBoMFNlcE85ZTY0ekM4YW5ab0E1eFRuVXV6NjNkVG1oLVdKTFhZVjNKUG9vcUZrVWxLZTFGMVBkc2FaVWJKRzRCRG05WGhhVjhmek1iNmVwRjBkcTNwTFd0TFlyWFV3X0t5NHRyQVpzQzhVRDNWVV9GSkh5c0RNeENtOTVmbl9va2ZONWs?oc=5",
+      "source": "RADAR DIGITAL BRASÍLIA",
+      "categoria": "Agro",
+      "date": "2026-11-26T21:02:07-03:00"
     }
   ],
   "errors": [
