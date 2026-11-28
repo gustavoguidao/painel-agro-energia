@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T21:21:29.339847+00:00",
+  "generated_at": "2026-11-28T07:55:51.667285+00:00",
   "timezone": "America/Sao_Paulo",
   "solar_location": {
     "name": "Sorriso-MT",
@@ -43,7 +43,7 @@
       "source": "BCB SGS 432",
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json",
       "value": 13.75,
-      "as_of": "2026-11-27",
+      "as_of": "2026-11-28",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
@@ -67,7 +67,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?formato=json",
       "value": 13.65,
       "as_of": "2026-11-26",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": 0.0,
@@ -90,7 +90,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json",
       "value": 0.14,
       "as_of": "2026-10-01",
-      "idade_dias": 57,
+      "idade_dias": 58,
       "fonte_velha": true,
       "changes": {
         "day": null,
@@ -114,7 +114,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json",
       "value": 5.543,
       "as_of": "2026-11-27",
-      "idade_dias": 0,
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
         "day": -3.51,
@@ -137,7 +137,7 @@
       "source_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21619/dados?formato=json",
       "value": 6.0646,
       "as_of": "2026-11-27",
-      "idade_dias": 0,
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
         "day": -3.8,
@@ -158,16 +158,16 @@
       "frequency": "daily",
       "source": "Yahoo Finance ZS=F",
       "source_url": "https://finance.yahoo.com/quote/ZS=F",
-      "value": 1244.0,
-      "as_of": "2026-11-25",
-      "idade_dias": 2,
+      "value": 1266.25,
+      "as_of": "2026-11-27",
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
-        "day": 0.81,
+        "day": 1.79,
         "week": null,
-        "month": 0.22,
-        "quarter": -0.99,
-        "year": 10.6
+        "month": 3.41,
+        "quarter": -0.78,
+        "year": 11.91
       },
       "stale": false,
       "manual": false,
@@ -175,14 +175,14 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 161.33,
-        "as_of": "2026-11-25",
+        "value": 154.74,
+        "as_of": "2026-11-27",
         "changes": {
-          "day": 1.24,
+          "day": -4.08,
           "week": null,
-          "month": 7.17,
-          "quarter": 12.78,
-          "year": 20.84
+          "month": 7.3,
+          "quarter": 5.75,
+          "year": 15.53
         },
         "history_key": "soja_brl",
         "usd_as_of": "2026-11-27",
@@ -198,16 +198,16 @@
       "frequency": "daily",
       "source": "Yahoo Finance ZC=F",
       "source_url": "https://finance.yahoo.com/quote/ZC=F",
-      "value": 439.75,
-      "as_of": "2026-11-25",
-      "idade_dias": 2,
+      "value": 446.75,
+      "as_of": "2026-11-27",
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
-        "day": 1.32,
+        "day": 1.59,
         "week": null,
-        "month": -3.35,
-        "quarter": -13.82,
-        "year": 3.84
+        "month": -1.11,
+        "quarter": -12.74,
+        "year": 3.47
       },
       "stale": false,
       "manual": false,
@@ -215,14 +215,14 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 61.1,
-        "as_of": "2026-11-25",
+        "value": 58.49,
+        "as_of": "2026-11-27",
         "changes": {
-          "day": 1.75,
+          "day": -4.27,
           "week": null,
-          "month": 3.35,
-          "quarter": -1.83,
-          "year": 13.44
+          "month": 2.61,
+          "quarter": -7.0,
+          "year": 6.81
         },
         "history_key": "milho_brl",
         "usd_as_of": "2026-11-27",
@@ -238,16 +238,16 @@
       "frequency": "daily",
       "source": "Yahoo Finance KC=F",
       "source_url": "https://finance.yahoo.com/quote/KC=F",
-      "value": 275.65,
-      "as_of": "2026-11-25",
-      "idade_dias": 2,
+      "value": 280.85,
+      "as_of": "2026-11-27",
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
-        "day": 2.64,
+        "day": 1.89,
         "week": null,
-        "month": -8.41,
-        "quarter": -19.38,
-        "year": -33.45
+        "month": -2.06,
+        "quarter": -18.79,
+        "year": -31.75
       },
       "stale": false,
       "manual": false,
@@ -255,14 +255,14 @@
       "alt_brl": {
         "label": "R$/saca (60kg)",
         "unit": "R$/sc",
-        "value": 2144.89,
-        "as_of": "2026-11-25",
+        "value": 2059.23,
+        "as_of": "2026-11-27",
         "changes": {
-          "day": 3.09,
+          "day": -3.99,
           "week": null,
-          "month": -2.05,
-          "quarter": -8.16,
-          "year": -27.29
+          "month": 1.63,
+          "quarter": -13.45,
+          "year": -29.54
         },
         "history_key": "cafe_brl",
         "usd_as_of": "2026-11-27",
@@ -278,16 +278,16 @@
       "frequency": "daily",
       "source": "Yahoo Finance SB=F",
       "source_url": "https://finance.yahoo.com/quote/SB=F",
-      "value": 18.34,
-      "as_of": "2026-11-25",
-      "idade_dias": 2,
+      "value": 18.77,
+      "as_of": "2026-11-27",
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
-        "day": 3.85,
+        "day": 2.34,
         "week": null,
-        "month": -3.98,
-        "quarter": 0.82,
-        "year": 23.0
+        "month": -2.95,
+        "quarter": 6.89,
+        "year": 23.98
       },
       "stale": false,
       "manual": false,
@@ -301,16 +301,16 @@
       "frequency": "daily",
       "source": "Yahoo Finance CT=F",
       "source_url": "https://finance.yahoo.com/quote/CT=F",
-      "value": 79.65,
-      "as_of": "2026-11-25",
-      "idade_dias": 2,
+      "value": 81.07,
+      "as_of": "2026-11-27",
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
-        "day": 0.67,
+        "day": 1.78,
         "week": null,
-        "month": 0.75,
-        "quarter": -12.53,
-        "year": 27.58
+        "month": 3.74,
+        "quarter": -9.84,
+        "year": 29.15
       },
       "stale": false,
       "manual": false,
@@ -349,7 +349,7 @@
       "source_url": "https://dados.ons.org.br/dataset/cmo-semanal",
       "value": 9.2,
       "as_of": "2026-11-27",
-      "idade_dias": 0,
+      "idade_dias": 1,
       "fonte_velha": false,
       "changes": {
         "day": null,
@@ -370,16 +370,16 @@
       "frequency": "daily",
       "source": "Open-Meteo (observado)",
       "source_url": "https://open-meteo.com",
-      "value": 6.675,
-      "as_of": "2026-11-27",
+      "value": 6.878,
+      "as_of": "2026-11-28",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 35.62,
+        "day": 3.65,
         "week": null,
-        "month": 38.17,
-        "quarter": 21.61,
-        "year": 5.77
+        "month": 17.07,
+        "quarter": 22.1,
+        "year": 2.44
       },
       "stale": false,
       "manual": false,
@@ -395,7 +395,7 @@
       "source_url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis",
       "value": 6.99,
       "as_of": "2026-11-26",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": null,
@@ -404,9 +404,9 @@
         "quarter": null,
         "year": null
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null
+      "note": "Fonte indisponível nesta coleta; exibindo cache de 2026-11-26."
     },
     "diesel_to": {
       "label": "Diesel S10 — TO",
@@ -418,7 +418,7 @@
       "source_url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis",
       "value": 7.39,
       "as_of": "2026-11-26",
-      "idade_dias": 1,
+      "idade_dias": 2,
       "fonte_velha": false,
       "changes": {
         "day": null,
@@ -427,9 +427,9 @@
         "quarter": null,
         "year": null
       },
-      "stale": false,
+      "stale": true,
       "manual": false,
-      "note": null
+      "note": "Fonte indisponível nesta coleta; exibindo cache de 2026-11-26."
     },
     "chuva_go": {
       "label": "Chuva — GO (ponto representativo)",
@@ -439,27 +439,27 @@
       "frequency": "daily",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 164.3,
-      "as_of": "2026-11-27",
+      "value": 167.8,
+      "as_of": "2026-11-28",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": 6.62,
+        "day": 9.32,
         "week": null,
-        "month": 57.68,
-        "quarter": 23371.43,
-        "year": 235.31
+        "month": 58.15,
+        "quarter": 23871.43,
+        "year": 310.27
       },
       "stale": false,
       "manual": false,
       "note": "Ponto representativo: Rio Verde-GO (ajuste no perfil com o município real).",
       "chuva": {
-        "acum_7": 60.3,
-        "acum_15": 89.0,
-        "acum_30": 164.3,
-        "prev_7": 67.9,
-        "normal_30": 103.6,
-        "pct_normal": 159,
+        "acum_7": 60.8,
+        "acum_15": 94.4,
+        "acum_30": 167.8,
+        "prev_7": null,
+        "normal_30": 106.0,
+        "pct_normal": 158,
         "cidade": "Rio Verde-GO"
       }
     },
@@ -471,27 +471,27 @@
       "frequency": "daily",
       "source": "Open-Meteo",
       "source_url": "https://open-meteo.com",
-      "value": 129.6,
-      "as_of": "2026-11-27",
+      "value": 122.5,
+      "as_of": "2026-11-28",
       "idade_dias": 0,
       "fonte_velha": false,
       "changes": {
-        "day": -0.15,
+        "day": -5.48,
         "week": null,
-        "month": 46.61,
-        "quarter": 6380.0,
-        "year": -3.21
+        "month": 28.41,
+        "quarter": 6025.0,
+        "year": -18.06
       },
       "stale": false,
       "manual": false,
       "note": "Ponto representativo: Palmas-TO (ajuste no perfil com o município real).",
       "chuva": {
-        "acum_7": 34.8,
-        "acum_15": 96.2,
-        "acum_30": 129.6,
-        "prev_7": 15.9,
-        "normal_30": 192.7,
-        "pct_normal": 67,
+        "acum_7": 18.7,
+        "acum_15": 91.8,
+        "acum_30": 122.5,
+        "prev_7": null,
+        "normal_30": 197.1,
+        "pct_normal": 62,
         "cidade": "Palmas-TO"
       }
     }
@@ -503,43 +503,43 @@
       "estado": "patamar alto",
       "severidade": "positivo",
       "titulo": "Soja em patamar alto (R$/saca)",
-      "texto": "A paridade de soja em R$/saca está no patamar alto dos últimos 12 meses (percentil 100). Em 90 dias: +12,8% em R$ (Chicago -1,0%, dólar +6,6%) — o movimento vem mais do câmbio. Para quem vende soja, é um patamar de receita mais favorável — compare com a base da sua praça antes de qualquer decisão.",
+      "texto": "A paridade de soja em R$/saca está no patamar alto dos últimos 12 meses (percentil 96). Em 90 dias: +5,8% em R$ (Chicago -0,8%, dólar +6,6%) — o movimento vem mais do câmbio. Para quem vende soja, é um patamar de receita mais favorável — compare com a base da sua praça antes de qualquer decisão.",
       "gatilhos": [
         {
           "serie": "Soja — paridade R$/saca",
           "metrica": "percentil 12m",
-          "valor": 99.6,
+          "valor": 96.4,
           "limiar": ">= 90",
           "unidade": "%"
         },
         {
           "serie": "Variação 90d em R$",
           "metrica": "decomposição",
-          "valor": 12.78,
-          "limiar": "Chicago -1,0% · dólar +6,6%",
+          "valor": 5.75,
+          "limiar": "Chicago -0,8% · dólar +6,6%",
           "unidade": "%"
         }
       ],
       "insumos": [
         {
           "nome": "Soja (futuro)",
-          "as_of": "2026-11-25",
-          "idade_dias": 2
+          "as_of": "2026-11-27",
+          "idade_dias": 1
         },
         {
           "nome": "Dólar PTAX",
           "as_of": "2026-11-27",
-          "idade_dias": 2
+          "idade_dias": 1
         }
       ],
       "ativo_desde": "2026-11-11",
       "freq_ano": {
-        "pct": 34,
-        "dias": 86,
-        "total": 252
+        "pct": 35,
+        "dias": 87,
+        "total": 251
       },
       "oscilacoes_ano": 5,
-      "relevancia": 2050
+      "relevancia": 2046
     },
     {
       "id": "juros",
@@ -560,14 +560,14 @@
       "insumos": [
         {
           "nome": "Selic (meta)",
-          "as_of": "2026-11-27",
+          "as_of": "2026-11-28",
           "idade_dias": 0
         }
       ],
       "ativo_desde": "2026-03-19",
       "freq_ano": {
-        "pct": 69,
-        "dias": 254,
+        "pct": 70,
+        "dias": 255,
         "total": 366
       },
       "oscilacoes_ano": 1,
@@ -600,7 +600,7 @@
         {
           "nome": "Dólar PTAX",
           "as_of": "2026-11-27",
-          "idade_dias": 0
+          "idade_dias": 1
         }
       ],
       "ativo_desde": "2026-11-03",
@@ -629,133 +629,137 @@
   ],
   "news": [
     {
-      "title": "Dólar despenca a R$ 5,51 com ‘efeito Trabuco’, e Ibovespa devolve ganhos e fecha estável - A Crítica de Campo Grande",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdVVoTDM3NTNSZGExX2RsTnM2bUljdENoWlQzT05GeWdfSDVJU2drNDNuZWMyV09tdVRJRWJ2TlE3MEc5eTdMcjlwbHVGSGg0YmRUNGFRdVlVTW5lUGtMQ05IcnhNb1daWnpDbXJqQlRMZE9fenZhbmNhYWFvZFVzTU9XeVFOZVdxbTRkQ0hBbmxGd2ZxcXlISGM4QWtFUTVCeUxmN1dNalo?oc=5",
-      "source": "A Crítica de Campo Grande",
-      "categoria": "Economia",
-      "date": "2026-11-27T18:13:45-03:00"
-    },
-    {
-      "title": "Dólar despenca 4,3% e encerra semana em R$ 5,51 - SBT News",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPbVp4UzVLNS1SUTNPcHY2ZldJYjZxQjJNRHJkX0ZzOGZaYi1tUTl6aWFUbWxFUUFEbjBOTjZkYTFhak9GSlBnRUNJanc5WWJkUFZiV3Q2ZFFDdWRqVVAtdlFmbjUxRTNGS3k2QURTdDg3bUo0Z19jYVpvSW1RVmlQMXVzNkNRMkZJNGNzRWlRYnF5OGM?oc=5",
-      "source": "SBT News",
-      "categoria": "Economia",
-      "date": "2026-11-27T18:10:18-03:00"
-    },
-    {
-      "title": "Dólar Despenca 4% com Anúncio de Trabuco no Ministério da Fazenda - Forbes Brasil",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMmp4cGJzVlY4dEtTVldWblBMaU5yVkpYYXlvS05GYWtqV1pFRG5wcTY2b254TFNZRDJhNmpGQXYyeGNtRWZEMTN5OVBvRWFaOGdfcERpUmVYbExoVWx4eHNYSXM3Mjltb0sxck1aUFVrUWRVYmxCRnRDbzhhVE0wZzRwNE5CX2dUeW5rVnlWeEw5ejRGeGtZclVpeWVsNzRVbHZJSk9FdkpoTjJH?oc=5",
-      "source": "Forbes Brasil",
-      "categoria": "Economia",
-      "date": "2026-11-27T17:56:20-03:00"
-    },
-    {
-      "title": "Saca de milho sobe 5,16% em novembro e chega a R$ 65,33 - TV Sim Brasil",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUXVlWkxkVTlJVEFBNVJRZm1pS1pBUDE0Z013MmE2WVl6TF9ONjl6bFNrMXFDNlBhcDFQbVc1R2hnSVdmcElJc0lDbDVhTm9TckxZbzF2SG05LWp4emQ3Ykk1SEFvWDRFM3R5d1ZSczRSRmVJSHVQMXNFNFdJZHNYbXdSUHlhSndhOUVOcFBwQUFFdXp1dGFJckxpVjdZbWNn?oc=5",
-      "source": "TV Sim Brasil",
-      "categoria": "Agro",
-      "date": "2026-11-27T17:55:03-03:00"
-    },
-    {
-      "title": "Boi gordo: São Paulo registra alta para boi China, vaca e novilha - Agrolink",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZmtub3gyNllPOEZPVVRoX05nTGlGcWhlUi1PMktuX0c2bkFHU045Q2gyUlJCamU0VXlweTNyTEs3akF4T3FDUzVMQUlCdkJpU1ZDRFN6dUtHYWVwUGFVckdlc3J6bzl1dDJIWGRXM1pnYjgyeTB5c1RIaHpyclNnRFlDYkhHZTF6TVgzZmFWdXhPQWxNcHB2TUFGQXJvUTZqbXFYeDI2a1pKTzF4NEZVemZ3cVg?oc=5",
-      "source": "Agrolink",
-      "categoria": "Agro",
-      "date": "2026-11-27T17:49:00-03:00"
-    },
-    {
-      "title": "Prêmio do farelo de soja argentino sobre brasileiro sinaliza impacto de regras da UE, diz bolsa Por Reuters - Investing.com Brasil - Finanças, Câmbio e Investimentos",
-      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNNFJfXzZlb0Q4UDNtbS00ZHlZYTFacDFmQThfVllQTmZrd25kWWkyN0pobUhBZ2JNaWs2ZDlNb0ROY2dtb1prZktvand2d0ZpX1ZBUUI0dWZxb2RITXVxQzc4RFBRTFRUMUc0dHI3QWpYcDM1Z2h2NmtQNC1uNVpXTURCai1tSjQyaDJKN1hqcmRKTXlNSTNUNXc1NDJTa1dVU2x0NlFIU0VQSzlURnRIa1VXQzA5aC1yekFlempkY2VBMVZrVUpnekdna3MzR0V5VUE3Ukx3WVlNeWJ3Sl9taHhzQQ?oc=5",
-      "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
-      "categoria": "Agro",
-      "date": "2026-11-27T17:46:00-03:00"
-    },
-    {
-      "title": "Dólar fecha a R$ 5,51 com efeito Trabuco e Ibovespa vai aos 177 mil pts - Band",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTVNnR1dWc0NlcHY4VGdpZ2YwNWhmeVRVcHkzQWdvMDY3OHB0NndVdEhSRk9XdWJaUGVvcm5MWWJsZVpaaUk0cEw4MHVHTXpKck1SdUVjT0ZlVU84bXc4aGJLcE4yVEs4cEtvVnlvUDRDTnc1dTlIS0dndG9NQ3BydmhkTlZOemZ3VlFRbTVRSlZxQVNHU2hLcWxKNFQwQmppVXdjUQ?oc=5",
-      "source": "Band",
-      "categoria": "Economia",
-      "date": "2026-11-27T17:37:40-03:00"
-    },
-    {
-      "title": "Cosern é condenada por cobrança indevida após instalação de energia solar - BNews RN",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNODA5bTVDZWZocUcyczZpNHNHVE1pbkpRTVBZS2cyRmgwV0tKUGN0dzNkT1c5aklQcEIwbFlweWsyZnFxY3lLZGs2N2k1UTRXWHJpcU1laWJ4R2JjRmV5cXRzVEVhOThqS2tlX1NqSEE1dDR4b1FMbElncDNRUzNkVi1tbDU1ckNSWWprRGdLZ3NzWWRIV25GR3ZCS3N3Tk1MQ3oyWlVMM25WMUx3dmZqREl4cXNYdHBlanl6N9IBwgFBVV95cUxPZ3BFT3JZalNzX3hlYzhSamxQRkRudGxMUlZPWXpON2xoaFBLeWFoZjVyQnBDaUs4SkZiMzVaODJLUnZOcUMwZVNMSUhyQ3NCYVNjZWJ3WWNtYjY2SFNnMU0xVDY1ZVFXbUF6cDhzSmExQnAzZzgydTMwc3QxaFJ2MVJfd3BPa2RmNzhqZ0FQTmpsN3h5SThoNkd6amwxOXM5S0o2TERkLUR5ZmEzNWZwWlFjZVN5TTI1WFlFeDNCWkFudw?oc=5",
-      "source": "BNews RN",
+      "title": "Cerveja Sol é patrocinadora máster do Sertões Kitesurf 2026 e leva sua energia solar ao litoral nordestino - Estação Nerd",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZXM2QU44dXV0LUpNc2FWam9yZVV5ZWtyZmFMQ1gyR0dNNFpiV1RxQ0FId2IzMmtJeDNUNEk2YXV2M256VWtIRWg4VDRkb3hlYVpCTXF0VjdLaFFzSzRFT1lXOXRTNXRTYTE0eFVzeXZCRGZjWnlSVVJpUlpJWDM0ZDZIZmNRRjBqd1d0NER4TkRRQ25URFFBVE45b1QybHd4dllfZl8zd1BSLWx4Z2Yzb19SSjVnb0xscDk0bUgtUEYwRUJHUDRJLTlrdw?oc=5",
+      "source": "Estação Nerd",
       "categoria": "Energia",
-      "date": "2026-11-27T17:28:59-03:00"
+      "date": "2026-11-28T04:33:27-03:00"
     },
     {
-      "title": "Dólar despenca após confirmação de Trabuco na Fazenda - Gazeta do Povo",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaURTaTNJajktc2l3dDQzLTlPYlZqZGtxM1E5Y2NjTkdpdm1hSnZmWGdyU3VDLTZQRnhoUU1DYWE1LXJrcmRNYmRBWHYzWXQ1dU1ueEZtMzJ6QUZTaFZveDFPWEM1a0Mtc3AxZjNKQmY2RFJmWThRSi1JZFliU3dDQlBNVzlBT0FxWFp3TWpQZnI1YUE0RGpOVlhxLUx2V0pzVVo0TDc5NGUzdVpEZUhQaGhveWhsck1HX3c?oc=5",
-      "source": "Gazeta do Povo",
-      "categoria": "Economia",
-      "date": "2026-11-27T17:27:00-03:00"
-    },
-    {
-      "title": "Prêmio do farelo de soja argentino sobre brasileiro sinaliza impacto de regras da UE, diz bolsa - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFA5eE13MmlobDU2RzdqZVZFQjZndm9qWFpHblZGZkg2M18wZXhTaHBIT2xnNmVheS1FUEdLWDVzdFF6aTRLZHFPaE5pSG9abkd3eU1NQm91dlRXS3p4ZkRqNzNLeTJGTWZIQkVUVlotWEY3cms0ZWlJ?oc=5",
-      "source": "TradingView",
+      "title": "Dados do Imea: Plantio da soja é concluído em Mato Grosso, com 100% da área prevista - A Tribuna MT",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOSkFUWm9OOXVBY1d1Q3FENEIzLWcyd1hJSXFxSzV6bkZnUlY1aTNvUjB2N294NVlkY3k5dTdWd1FlRm9FNmdzaXJuSlRHSU1BYzdyc0ZBeVhrQTgyTGxsODZVZGoxdG9OM2hoQ0dfNC1ZVUJxYkpnNmxfQUZTRlZxR1JPeG5iOWhWQml2RzE2UUQ3ck92aVF1aWtuMUJpd1VZRXJHc3lBU0trYW02MTNJRU1IME5Wb3p2eGhhdlhzcXFENmdRUVQ0T0dmZGNQSUJVNzVzc0x3UFA?oc=5",
+      "source": "A Tribuna MT",
       "categoria": "Agro",
-      "date": "2026-11-27T17:24:37-03:00"
+      "date": "2026-11-28T01:31:02-03:00"
     },
     {
-      "title": "Dólar cai 7,07% na semana com indicação de Trabuco para a Fazenda e alívio fiscal - ADVFN",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVDU0VDRaMk5JMzBBM2RtVU9XdnllMjJVb3BUbWlHRU03XzM1VVZEYmQ2elpvbFJKZFU0eFdFckxjd1lJOHhYMUxHa2NGNWlKYjZYMDZZd3Q0b1NNMWUtVHBLSnhtbHVMOFU2bnd5ajhBNE1hRjJUOGtQTXhqWjN4N00yajk2QWN5R3ZxNVc2UUFzMVdpc2Y5ZEdCX3hUcUxGeFNLMmxPQU5LSFkxSW9vZVZ0UXJpTGs?oc=5",
-      "source": "ADVFN",
+      "title": "Dólar despenca e fecha a R$ 5,51 após escolha de Trabuco para a Fazenda - GZH",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPWGpOWEhsSkIxYkx4TURXV0VCU2Z6ZmI0eVF4a0N5cS1kXzF2UC1HbkNaQnJ3V09CVHNLNkItQ3dKU1RKenpXLVRmYndjYkotQmdpSnZ3Sm5UalJoT2FrTUVKNEI0aE10dDVoZGJZb3VhODRoTjNiOXVXVkRNZjJDZldhSVF4R1dLM0ZOR3JGS2hITzYwVi1pa2s2LTh0ejBRVUFtWm5JWnQwYXZuU3JSRGtVeHk1YWh4SlRyZFVkaS1SMTdvS1E?oc=5",
+      "source": "GZH",
       "categoria": "Economia",
-      "date": "2026-11-27T17:21:11-03:00"
+      "date": "2026-11-28T00:30:09-03:00"
     },
     {
-      "title": "Dólar recua 4% e atinge R$ 5,51 depois de Trabuco aceitar convite para comandar a Fazenda - VEJA",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQ0pKcW5lTzF1UE9Bd2dLOWNYb0E2RG5FTU5mWW5IQlpCWlB1dVE1bU4yV3hob2trVU1pM2JOT3FkRjJSSkFMMzRHdi1obEs1eEpsSlBZc18ybjljOUZYU2ZSUnBuTXNUT21xdWpsVFNYbEN3anVaQlMxbjFadWVKMnNURUE2R1M3Y21KZ19HRXY5SjJiR1d0Ynk0YWNmcWxsaHA5QTQ1bDZrMjl2ZHd4LXltZC1SN1k?oc=5",
-      "source": "VEJA",
-      "categoria": "Economia",
-      "date": "2026-11-27T17:17:19-03:00"
-    },
-    {
-      "title": "Dólar cai 3,97% com Trabuco na Fazenda; Petrobras limita alta do Ibovespa - UOL Economia",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZ2p6OG9QanQ5VUpUeVJfMWtnRHRqVnpMOUhPekpQdGh4S1M2WHBUZUtHRkk5WXRUNnlvVkxDVkEzRVpXeFZWcFpReEQ0X2JWQS05MU16RGVQNldWcF9pLWpsR1hxYmR3NExXWEpuQWtUblpUY1pWZXhzYWQwb3FFMEZ3a1cxeGUxMTNyd0FreHp5QzJSYTM3SFNwMkZ3YXhwN2NTQTZrcm96c2tvY0VuOA?oc=5",
-      "source": "UOL Economia",
-      "categoria": "Economia",
-      "date": "2026-11-27T17:17:02-03:00"
-    },
-    {
-      "title": "OCP Brasil e Embrapa pesquisam fertilizantes bioativos - Revista Cultivar",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQ282WW5NWWZQQk1weVBXOHdjWUJPYVZkVFV2OFJPQ1djei1QQVBYMDg1SDBISGw0MGJkRVJKRF84WlBZWjFDbzVvUXdfT0ZLVlkwb2VyMXRBaFFrdVdBZXVZb2M1TUVxVFVYR1NKdkdQYWtkU3NmT05WVjBOZVFaUFBteHlxeGhNUTNiN0dUSFYyWUpqT18zcy1R?oc=5",
-      "source": "Revista Cultivar",
+      "title": "Chuvas favorecem soja, mas custos e logística preocupam em Confresa - Diario de Cuiabá",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQnRwZFdrazFOVVY1dE9GaVo3QThJdGRCMXBhR05MNUpsNmw4Q2d6cnNyd3QtdklWTEFNTU9ZR1BnRHZ0Vk95RG1VQWRGUTZKNjZZMDJ3OFdVb0tTVVpfQmRoZU83LWY5NjZjV0VUVzJLeGZUMDNncmdmMUhqbFVtZ0RBc08xRHVtbHV6aXB2T1FicjFWTWxYYTRwMXkyQXlnRDVvdmh3NFFTZjZucGtJd1lqemhla3c?oc=5",
+      "source": "Diario de Cuiabá",
       "categoria": "Agro",
-      "date": "2026-11-27T17:16:18-03:00"
+      "date": "2026-11-28T00:00:00-03:00"
     },
     {
-      "title": "Com ‘efeito Trabuco’, dólar despenca 7% na semana, maior queda desde 2008 para o período - Valor Econômico",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPNWtnTjdNSWtYTlNkOXN0OTVXOF9RNkw1S2d2ZUNVUHVDNGkwbUFDTEc3SnU5dkJYclpCXzI1anRPN2pvMERQcERfcmM1MzZoNWxQQ0tZOXRfdGpRbE5XZFQwUXd5YXVVVThicHBieDRmbExiQk1YNkZBSDhfSWc2NzU1TXJwQ2Zqb3ZiMU1WY0dXZ3RUcDJMWW9DYWZVeFFMQjY2UnVxRnpyQ2lrX0xqeWQtdWlLdF9OUW5TODdwdE5tM1BUQzZTWWNodG5FYmwzM0w5S21TY0tJcTJKdmg5cWhn0gHwAUFVX3lxTE44RTZhMTVnMU9sVlZ5U0gwQUI2aG1XWEdVUzdmbVJJQzJudlhXZEQwWjRGT29abThxYTY4ZlZaYld3NzZ4bXQ1LUkwNnF2M0VLZTlPNEk4U0VlZ0VBNW4wNmRzbF9PSy1nejNseFhyc1pnN2hpZTZmT1JyeFI2RURTNUU5ODhlTkRsUVZrRWZrVGZMVXd1dGVtTzFmclJTQ2hLNV92TjFGS0ZtSnFJbjQzX2c5clVxV3MtYlY0SzhJaUVCbGJSbFdaV0cxVng3bm9kN3RmVU1ORkpiTmNERmR0VU9oUVdSUmY1ZTFtcUNjag?oc=5",
-      "source": "Valor Econômico",
-      "categoria": "Economia",
-      "date": "2026-11-27T17:16:15-03:00"
-    },
-    {
-      "title": "Exportações de soja e milho pelo Arco Norte crescem 59% - Portal BE News",
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOa2tIYkdPS0xxa1BnLWZpV0FtMzl5OXVSRkp4VnZwSHc1YXFXTWRjVWhId1llLVV2bnpHSHdpUjBwRXBDUWlUX1JJdnVqUzVPcjZqaXI2cG5ZSC1WMVlUYnA3VFhlY2J4LVp6dGlyN1ZEeTF1NGlNa093UHYyTS0xUi1DNHVpeWlvdzA4?oc=5",
-      "source": "Portal BE News",
+      "title": "Etanol de milho abre nova frente de carga para a ferrovia em MT - Diario de Cuiabá",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWEdYc1YyVGYwejNFcXBnNFV4MGVnTzRFWVg3SVU3UUFkaWNUWHB0b3hJdzRwYkhmWTJDRDRCTUctNlRpWDFHLTRldzUyY3NJU2NPaGQ4OVBLU3Y2LXJjWFJpOWhxMks0MEtTbmtEeWhJOGc1VDZLc0dkS3YwSWxtQl9xU0h0YUtVUTZGaTRsY0daOXZuUTBNWUFIb285YTZMMEVWSDRrY2NGempRRkFkWFkwcw?oc=5",
+      "source": "Diario de Cuiabá",
       "categoria": "Agro",
-      "date": "2026-11-27T17:16:00-03:00"
+      "date": "2026-11-28T00:00:00-03:00"
     },
     {
-      "title": "Dólar fecha em queda de 4% aos R$ 5,515 após anúncio de Trabuco - Poder360",
+      "title": "De R$ 5,92 a R$ 5,51, a queda do dólar após confirmação de Trabuco na Fazenda - Jovem Pan",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNcnduRURDYlNjNUlCYUNfRFN5MDVkSWNWdFRFN003QlNLSGxTVGNGSFpSX3R6WjY1UFIzbmQxc01qZW5HNXkzMWxSeHJSTUxLekVKQ0piMldwUVo5QkwyUFJsMDZsd3d6YnRlZkFfR0t6SW1YUi1aMjlEd1oxWU9mTG0wOUREQktNaWRoWFJkQ1dFdUdFaS0xbmx2WXVvN1VqV29FOVBtUVF2dw?oc=5",
+      "source": "Jovem Pan",
+      "categoria": "Economia",
+      "date": "2026-11-27T23:45:25-03:00"
+    },
+    {
+      "title": "Dólar recua 7% na semana e Ibovespa fecha sexta-feira em leve queda - Portal IN - Pompeu Vasconcelos - Balada IN",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPOEJIZHN5Ry1UZGNYc3ljTG5rcW0zWmRYUHhkb3JmY251dnlSSDFCaFI0S3lCdGpNX1lySGVTN3JoSTEtQmowV2VXeFNrbFhfRU1xNlB5eUZCOUZCd3ZMOFFHazJPUXo5T2VYQjgwaW5lT2otRmFsT1NRb19IeWVwalFoYkg5X0p4S05yRlVXaGxxT08zalJ6emJHZktNTzVrTFkxWHo0WQ?oc=5",
+      "source": "Balada IN",
+      "categoria": "Economia",
+      "date": "2026-11-27T23:37:00-03:00"
+    },
+    {
+      "title": "Dólar fecha em queda de 4%, a R$ 5,515, após anúncio de Trabuco - Poder360",
       "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNQjNSTzZDZUF1eUF2WnFmNmFzcndQU3lWMVNCbWNYUnhGNldBSVJ6MEs5V1pXOTBOQ0hOblctTTl2ZFNjT21wNHp2ZkVWcnJmZW8yWXlFVUFWbnc1WFdzOS1CYkhJZFNVNTRKcWttOV9XZTdMbzNoVFFfZmM4UjRsaDBLZUFRVzZXbWdSd212S0k1bHVTM3BRN0YyWDVjUG11UHJmOXE0VQ?oc=5",
       "source": "Poder360",
       "categoria": "Economia",
-      "date": "2026-11-27T17:15:15-03:00"
+      "date": "2026-11-27T23:04:36-03:00"
     },
     {
-      "title": "Soja sobe em Chicago com influência do câmbio no Brasil e ganhos no farelo de soja - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9na0UtLXViQTc4SDY5NGM0NWtoMjdjQWp2MllVX2RxU3QxX3J6Rl8yN0lUNjBSWnk5WGEtcTY0UU9XYng0ZFJrbEtyS0hDQW1DdS0yTlUtV3pqRnl4TVNfNmRqcjNfXy1OdjNXWFFnZUxsMzhBVjBJ?oc=5",
-      "source": "TradingView",
+      "title": "Dólar cai quase 4% com Trabuco na Fazenda e tem a maior queda semanal desde 2008 - diariodenoticias.com.br",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWWwtMEU3SHR2VG1JRHVSdUpCLU10d3Zua2JoUWoyV2xXWWFsVHBUN0Y4ZnNVZ3Q2M00xeFc1bFAtZDh0UDhjXzVoZGNRbWJ2X3VvcVFpV1J0ZWNxYlNuRm8ydnN5TjNKUGUtRlVwZ3JZNkhDYWZCWF9MVW9CNk5kOFpERllGZC1SRTU0RVdMS19iREhKcWFLTjlsdV9ybEhjX0FpdHBGTzNhODI1MTNBTGxn?oc=5",
+      "source": "diariodenoticias.com.br",
+      "categoria": "Economia",
+      "date": "2026-11-27T22:52:39-03:00"
+    },
+    {
+      "title": "Efeito Trabuco derruba dólar em 7% na semana, mas Bolsa perde fôlego - brazileconomy.com.br",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQekNzZ0Z4dXpucmtlNzY4ako0VUUxU05DcjhEV3Ewd3hfdk1nblNzWVFGM25URTYyNUVSM2E2M1JESzVyYWVOZWlmQzJGMTFKeVRoMDkyazg4dUk2dHEwZDZVQk5tdTB0UVJqUC1wbXpSUndjS2ZrWkVoRXY3RmNqMVd0aFBNU3FRakJfWkxQd0lHTTNGNGdnQ1BZdzFrdUdtWUZUS2x2bFhINFNNTFBQMUNJbw?oc=5",
+      "source": "brazileconomy.com.br",
+      "categoria": "Economia",
+      "date": "2026-11-27T22:42:20-03:00"
+    },
+    {
+      "title": "Açúcar recua, café sobe e milho tem leve baixa no mercado agro - Brasil 61",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTjlOc3l6LWhhQUZsQVVCY1BGVWFhUzJ1MjEzZnR0c0VSZXR3NUVNbTNnWWZWYjFFVWxnS2lCYlpMV2lZbE84QUxDYi11Y1MzVDROYmlucGtmdnlXQVMxeWozX1VqMkhscEtfamdUNHh3WVlPU3hmM3JuTGswOEQ0UGpmUEVKejNfQXlBOE1fOUViSVA0SEpvcHI4MNIBoAFBVV95cUxQUTFaczY5Q1U1WEJQc0swZ01oeVc3UU9rNE9qd004UVJva2Q1ZWRQSVdfRjlMTHBaM1Aya3ktY1NGcWUtZUJ1TnZUQ0I0X1VGMERpbFRuX3pkNjc3V3lwQnBpXzUta0ZWM0d0bHVZRXNRVXh1R21uZmI3QTJXY3NsNzFLdUF2SzBpaFJFNFV2N0pjOUxsNUlkR3FNTHV2eEdU?oc=5",
+      "source": "Brasil 61",
       "categoria": "Agro",
-      "date": "2026-11-27T17:14:32-03:00"
+      "date": "2026-11-27T22:30:00-03:00"
+    },
+    {
+      "title": "Dólar cai 4% e encerra a R$ 5,515 após confirmação de Trabuco - Vero Notícias",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVmpJNE5GWVZoWFVaaDc3T0htOHpDWXBMUWxaZWNyRFVuUnE2Y0FoMGdyTHpfRElLTzBsQmZIY2gtZmlvWThzZTZ5MUx2Vk9mMy16VkFoMUl3U2JXVFV0ZjBSblV3QmhDUXVqQTc2SDJ6U2RTeHExMUI4azhoZDVQc2pkWGpra2swY1lINzU1LUJPT1pLT1VwRQ?oc=5",
+      "source": "Vero Notícias",
+      "categoria": "Economia",
+      "date": "2026-11-27T22:15:00-03:00"
+    },
+    {
+      "title": "Soja recua nos dois mercados e trigo tem resultados distintos no fechamento - Brasil 61",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZFZMOVpuMDFlVjk4X1FvbzNIQTd3aENOemk1bTJvZjNTNEFzQldNMmxvb2tXTzNvbl9vUkMxNWl0X1FCUThIbHFwcVJQNHBPaG10NFRHYWdNV3dhcU1MUmc2ZEJkMzg0c0g2bDU4Njc0aGEtbXAzdW1EQzZKZmloS0J5ZkZleGdPX0E1NENOWlN5dENxNEQyZ2VoZE9hRXlCZ192X0dtMFN3LWtPN0HSAbMBQVVfeXFMTVdUSE1CSDRpZEVjbmhHbG5pa3pNS3A5WEZSb0JVS3Zocy0xSnNMSThETGJnUW5teWQ0eXZkYWxISDUxLVBfZ3pvR1U0OVJ2ZjdKcW05b2VYY2tMMWhHM2ZVRE1VYXdQS3p1bWdNWlVzSGh0LXlaeXpLUGJyQ2pRcHdGWWNlOEM5RFZCNUVpWWxqeFQxcUw1T0tZS1dZMDNOZjVUOXRnOUR5UEJzZVdWMjJmTXM?oc=5",
+      "source": "Brasil 61",
+      "categoria": "Agro",
+      "date": "2026-11-27T22:00:00-03:00"
+    },
+    {
+      "title": "'Se a Faria Lima está comemorando, o povo vai chorar', diz leitor sobre queda do dólar - Folha de S.Paulo",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOZFhiRFNLVGNHeFdxd2ZSYmdvWFg0NlRkaktaYUhMV21yWTMzem05UTVfXzloZm1PVmpwdWVBc1VCSWpEaV9BOGlfNGtCMjN0cHllOWJTLWc1U1VMZFZLZnEzSDBndXdaWVRuMUNWVHc5eldzbXN4d0Z4R3NweU1UdDhXalU5Z3hMTE1MdXNSZFU3MC1uUnkxbWM0eEt5bFRUeTRFODNPVDk4UncydXM3YVZIcVZCcm04NFVvWUkwc1p4MFEyYjROdThrbktJLVFOYWQ2dHd3NWY?oc=5",
+      "source": "Folha de S.Paulo",
+      "categoria": "Economia",
+      "date": "2026-11-27T22:00:00-03:00"
+    },
+    {
+      "title": "Boi gordo sobe, frango recua e suíno tem movimentos distintos entre os estados - Brasil 61",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYzFtVkV0Wi1URmRfLTc5VEJqWktqZ3plYkhEcVNWdS1lNTMxRjU0X05kZVgwZjlITXR1cWl4V0hUUmFRUU9RNzJtcUVNRk1CNUlFT0h2LVkzVnpXZkpnM3NDU2dHQnhSS0pXSFFPU3hXamtqLThoTHZCbEdTUmNpX0Z0YThJUjlkQVBkbE9DZnQ2TkpkT0RUbmN2SXlVbEFMRXIwbFRVcEE1dk96Rks5QdIBtgFBVV95cUxQR2oyaU11Y3p1ak9XWXRNUU9jSXdIeFhqS2hZeS11TURreVpiZ3BjWnJzMElfSi1udlNBLXp4YkdYeEx6QjItNDh2WG9mbVFSUGRzbGRfZUZuejlCY29kOFdPeVpZSG9Na2VKUzZlQ1lSUTJENnZuZWg1cGh1eldOMlpkTGtfX3B0Q3RXYS11UzN5MTd4Rmd3RHpkMlFFMnE1Y3dVM3J3aTk2a3locG1USWpzU2J4QQ?oc=5",
+      "source": "Brasil 61",
+      "categoria": "Agro",
+      "date": "2026-11-27T21:30:00-03:00"
+    },
+    {
+      "title": "Com alta de 4,1%, exportações do agronegócio alcançam US$ 16 bilhões em outubro - Gazeta de Alagoas",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVjRzWlc1Q1B2b0NHMUo0ODMzWGdkXzdVTTVod3h4NTR2aDhnSHR1OHJKLU5mVU10VnZtMTZqX1lUMG16QkR3dzJEczc0UVRObGdLTmpabC16clBOTGNKaWhuLUVDNzNPcm4waGZJQmtwa1dNQllPSHI3cnJoajlTYl9xUVU1Q3c1bThzMU9UYlJqZk1ZQ0NOU2htVmNicGxwSzRoR0taUTE2bVJ3cEgwUmRkVjNGWTdIYmZXVHJOdEbSAcgBQVVfeXFMUGpHa2Z1V054NlRGMXVDWU5Vb3ZCTFNIWlBuSWs3QklJbnB0UU54Ymo0REJOUmRZY2REaG9TWlVOSV9GQWVfSFR3SUE0UjJVdmp6MzJtb1hjcEQtczcyZ0tjcEZ2NUJMTFJETzZaVTMzMUxWZzJzZ1A4TWtQei0xdGtWOEU5WE1QUFN6eXZHNWkwQVlNQ0d4Q1N0NzlYQUl5bjVNYkFXT0xSR3RoSDk3MkhTMkl4TTNTVGx2MkZORHQ0R0dscVNMWk4?oc=5",
+      "source": "Gazeta de Alagoas",
+      "categoria": "Agro",
+      "date": "2026-11-27T21:06:53-03:00"
+    },
+    {
+      "title": "Watch live this Monday (30) the announcement of the new IPCA and INPC baskets - IBGE",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQT1ZNc0ZITnVwakhSN2xyM1AwMEZ3T3FHcENhSVc3bFZxZC1hZ1JLNjVYbEMwUTI0TzE1MFNIMUJaemNENXgycVlUV2lEb1hDWlZLQjVZR2Vyb1JKZjF2TXVOdVY0aEpnUnBBZzNSZTR3eGlaNXlrcjVPNXgzaUIxdGhyYjlFSmt4Q3lHaWcwRFFSSzltSkc3TlF2Qzh1XzNmb1JDNUc5YzJWUUNzQ0xNd3ZvOERPMmdKVG1vUjVhYmp6Wk9YR2VfOXFJOW1ocXM?oc=5",
+      "source": "IBGE",
+      "categoria": "Economia",
+      "date": "2026-11-27T20:53:28-03:00"
+    },
+    {
+      "title": "Com indicação de Luiz Carlos Trabuco para o Ministério da Fazenda, dólar tem a maior queda semanal desde 2008 - G1",
+      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPdGRLTVNXV1QxNmkxcVZUdWwtUl9DMGNFbm1xMV9xSXU2SlMwTUVFb3VRX2FDN1ZVaVdPRzEtQnFtQ28zaHZwcEw3QmtlelRQd3dhVlNTTVBmeTJlSGdtbkoyaC1XZE1Tb3Z4ZXEweHRocXNoWE9lMUNweUw4cmp0T2NHZFRpcjV2Z3h0bFdPNUxSM2RwOTRnR0tSX2FqOHJ4TVBmTmV2NlBUWVhpOGV0TTVReVdjQ2xPV2piaGctQ3NJU1lpMmc4WkdHREptaHNwRzRUNmF1Mko3aWttaTNaUFlrcS1TRVgtVG8zWkUtNXpvbkVDLVp2V2RzSmk0V0XSAY4CQVVfeXFMUG9lNGZIUHhob1RUNzZkZ0hOLW5nRk1reXgtYlkzUE1KbVg2NkQ1bjRGZEY0X1V0NkREcUtPT0kzM2NHQmhXOWRpVmVCcDkxRDRpaTctWXJ2QmZoZ0tlcXFlRFU3NnhIR09FMTFaeWdjQnBhRXpwWFdLdVRKU1ZCOGFLZ0lnTWxVcWtZTUdQdk1NSTlOeDBEWnctaVFIeEtqajRZTVlFa0lqOUcxWm12MHY3UnMxNXVJZ1JGV3VWa3FnT3ZWdjNvX3ZXY0pYTks1VXdjb3A3SEZDMWZUZjJIdTQ3QTgzZDFLR3JUekt6M0t5Sjc3N0ZmNV95UGhZRktmS195aDRWTGtIRDlteFZ3?oc=5",
+      "source": "G1",
+      "categoria": "Economia",
+      "date": "2026-11-27T20:51:01-03:00"
     }
   ],
   "errors": [
-    "boi_gordo: sem fonte automatica"
+    "boi_gordo: sem fonte automatica",
+    "diesel_go: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/qus/ultimas-4-semanas-diesel-gnv.csv (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='www.gov.br', port=443): Read timed out. (read timeout=10)\"))",
+    "diesel_to: HTTPSConnectionPool(host='www.gov.br', port=443): Max retries exceeded with url: /anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/qus/ultimas-4-semanas-diesel-gnv.csv (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='www.gov.br', port=443): Read timed out. (read timeout=10)\"))",
+    "chuva_go (previsao indisponivel): HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=-17.7975&longitude=-50.9253&daily=precipitation_sum&forecast_days=14&timezone=auto (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=10)\"))",
+    "chuva_to (previsao indisponivel): HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=-10.1849&longitude=-48.3338&daily=precipitation_sum&forecast_days=14&timezone=auto (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=10)\"))"
   ]
 }
